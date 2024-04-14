@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\mux2x1-comportamental\simulation\qsim
+vmux2x1c
+Z1 !s100 L7<^izghdYVaDoT_b`[o_2
+Z2 Ia1TaXK;L[Ac4WIdILD9]72
+Z3 VCYUeFQ<Pgi9_SEbBR<;`b0
+Z4 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\mux2x1-comportamental\simulation\qsim
+Z5 w1712320288
+Z6 8mux2x1c.vo
+Z7 Fmux2x1c.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|mux2x1c.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1712320299.396000
+Z12 !s107 mux2x1c.vo|
+!s101 -O0
+vmux2x1c_vlg_check_tst
+!i10b 1
+Z13 !s100 9:0blGYZhW?3UJ=k]Q`on0
+Z14 I0;S6:f;N[7czZI]lgI1j32
+Z15 V8lIYMmRkl^:lRT:UKXK_^2
+R4
+Z16 w1712320285
+Z17 8mux2x1c.vt
+Z18 Fmux2x1c.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1712320299.584000
+Z20 !s107 mux2x1c.vt|
+Z21 !s90 -work|work|mux2x1c.vt|
+!s101 -O0
+R10
+vmux2x1c_vlg_sample_tst
+!i10b 1
+Z22 !s100 ]en_?;C=Sz;Q0aaB]8zlA0
+Z23 IUXRKzYha7hmakGo5;h^m63
+Z24 VUEPKRaZ=BAHEmkhZ1Ug0d2
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vmux2x1c_vlg_vec_tst
+!i10b 1
+!s100 ]8R`CNf=i5=Z66BBU<CSe1
+Ib>J3YGm6Zc<jcDX4CD2TF3
+Z25 VfiX7DU=0:_`nlO?G=6ZbS1
+R4
+R16
+R17
+R18
+Z26 L0 156
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

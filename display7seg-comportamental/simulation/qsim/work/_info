@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\display7seg-comportamental\simulation\qsim
+vd7segcomp
+Z1 INUZ0CX4n5K<7AdZ;4Sl9M1
+Z2 V=FW`Y`dk?VfM8OOnng_6`0
+Z3 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\display7seg-comportamental\simulation\qsim
+Z4 w1712263245
+Z5 8d7segcomp.vo
+Z6 Fd7segcomp.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|d7segcomp.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 N<9AG0B5ldXDIX>n@TUR51
+!s85 0
+Z11 !s108 1712263250.899000
+Z12 !s107 d7segcomp.vo|
+!s101 -O0
+vd7segcomp_vlg_check_tst
+!i10b 1
+Z13 !s100 [l87Hbf=zZMO9Q6ZfQJ^83
+Z14 IYooG_RGI[FcUJkD[WMJBh2
+Z15 V9oG^BaOZ0J<SM4Vd`WBjW3
+R3
+Z16 w1712263243
+Z17 8d7segcomp.vt
+Z18 Fd7segcomp.vt
+L0 63
+R7
+r1
+!s85 0
+31
+Z19 !s108 1712263251.125000
+Z20 !s107 d7segcomp.vt|
+Z21 !s90 -work|work|d7segcomp.vt|
+!s101 -O0
+R9
+vd7segcomp_vlg_sample_tst
+!i10b 1
+Z22 !s100 :1bc?zjdJ9_f[<EaQN:K12
+Z23 I_ULVl0BVhVAcTNjBORA?11
+Z24 V:bDaO9eOnEW9IUhRPF<a?1
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vd7segcomp_vlg_vec_tst
+!i10b 1
+Z25 !s100 ;0ALB173MPhO5?hZONZLB0
+Z26 IJ][=banT^bH[3J4;=IIPH2
+Z27 VNSTBGOIH^5XHU@F>f:G]Z2
+R3
+R16
+R17
+R18
+Z28 L0 320
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

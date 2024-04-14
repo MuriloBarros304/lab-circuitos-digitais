@@ -1,0 +1,8 @@
+|mux2x1pl
+I0 => d.IN0
+I1 => d.IN0
+S0 => d.IN1
+S0 => d.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+
+

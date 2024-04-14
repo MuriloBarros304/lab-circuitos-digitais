@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\mux2x1-8bits\simulation\qsim
+vmux8b
+Z1 IgzS506K28gfnln5OD_odH2
+Z2 VdM3XeF0A8cig`d>6>6ENb3
+Z3 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\mux2x1-8bits\simulation\qsim
+Z4 w1712525558
+Z5 8mux8b.vo
+Z6 Fmux8b.vo
+L0 31
+Z7 OV;L;10.1d;51
+r1
+31
+Z8 !s90 -work|work|mux8b.vo|
+Z9 o-work work -O0
+!i10b 1
+Z10 !s100 EQQB`TXFl>c2Z]:BQeeMm0
+!s85 0
+Z11 !s108 1712525559.996000
+Z12 !s107 mux8b.vo|
+!s101 -O0
+vmux8b_vlg_check_tst
+!i10b 1
+Z13 !s100 Zo=_j^WQNFYmoVd>ib;l_2
+Z14 ImNBa4iMEed2>ObLXfg03H3
+Z15 VmNIlKl?Dl866nYNQbfmz=0
+R3
+Z16 w1712525557
+Z17 8mux8b.vt
+Z18 Fmux8b.vt
+L0 61
+R7
+r1
+!s85 0
+31
+Z19 !s108 1712525560.419000
+Z20 !s107 mux8b.vt|
+Z21 !s90 -work|work|mux8b.vt|
+!s101 -O0
+R9
+vmux8b_vlg_sample_tst
+!i10b 1
+!s100 7hWVQ?3n`ooW7zfDi7IPY2
+Id0i:hU9Mc28OKd_9AEPf00
+VjI`LA=?lgTBmB?njZ9Mh:3
+R3
+R16
+R17
+R18
+L0 29
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9
+vmux8b_vlg_vec_tst
+!i10b 1
+!s100 SShYo7]0Q_F;GU7CbPMCZ0
+I^1mI0TKkBCN?XRY=Q9XR60
+V<K0J620gJW`6hkSNmbSO92
+R3
+R16
+R17
+R18
+L0 209
+R7
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R9

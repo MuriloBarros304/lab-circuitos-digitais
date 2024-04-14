@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\lab3\mux4x1\simulation\qsim
+vmux4x1
+Z1 !s100 FT><^2lll=h9g[z[IR^AS3
+Z2 I1S]OLQgLfYAnfz^EA_Kjd2
+Z3 VnSGL8j^@ZMOcmoaE?kKXM1
+Z4 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\lab3\mux4x1\simulation\qsim
+Z5 w1711144551
+Z6 8mux4x1.vo
+Z7 Fmux4x1.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|mux4x1.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1711144562.553000
+Z12 !s107 mux4x1.vo|
+!s101 -O0
+vmux4x1_vlg_check_tst
+!i10b 1
+Z13 !s100 Q6?NnFCCO<cgT:on5=e_S0
+Z14 IaATE^lIS3cL`aVVLh575l2
+Z15 V?am]BYlZDc2ZED1Q4fI5[2
+R4
+Z16 w1711144546
+Z17 8mux4x1.vt
+Z18 Fmux4x1.vt
+L0 67
+R8
+r1
+!s85 0
+31
+Z19 !s108 1711144563.871000
+Z20 !s107 mux4x1.vt|
+Z21 !s90 -work|work|mux4x1.vt|
+!s101 -O0
+R10
+vmux4x1_vlg_sample_tst
+!i10b 1
+Z22 !s100 ZEfde3Y]9?K_GoZXXHzSP3
+Z23 Izf4YgFK`ia5@[ne]lmaY>3
+Z24 V^P4jnPLHW:@Edd>FG3Lkl0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vmux4x1_vlg_vec_tst
+!i10b 1
+!s100 Q<FlkL1SZOP6VfPNhEok52
+I@i:c36I=a6]fCTVUSAjPc0
+Z25 Vh3N=UPHXKK0;AVkLZ38jQ0
+R4
+R16
+R17
+R18
+Z26 L0 162
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

@@ -1,0 +1,47 @@
+|d7seg
+a1 => s0.IN0
+a1 => s1.IN0
+a1 => s3.IN1
+a1 => s4.IN1
+a1 => s4.IN0
+a1 => s4.IN0
+a1 => s5.IN0
+a1 => s5.IN1
+a1 => s2.IN1
+a2 => s1.IN1
+a2 => s2.IN1
+a2 => s3.IN1
+a2 => s4.IN1
+a2 => s5.IN1
+a2 => s5.IN0
+a2 => s0.IN0
+a2 => s3.IN1
+a2 => s4.IN1
+a2 => s4.IN1
+a2 => s6.IN0
+a3 => s0.IN1
+a3 => s1.IN0
+a3 => s4.IN1
+a3 => s5.IN1
+a3 => s2.IN0
+a3 => s3.IN0
+a3 => s4.IN1
+a3 => s5.IN1
+a3 => s6.IN1
+a4 => s3.IN1
+a4 => s4.IN1
+a4 => s0.IN1
+a4 => s1.IN1
+a4 => s2.IN1
+a4 => s4.IN1
+a4 => s5.IN1
+a4 => s6.IN1
+s0 <= s0.DB_MAX_OUTPUT_PORT_TYPE
+s1 <= s1.DB_MAX_OUTPUT_PORT_TYPE
+s2 <= s2.DB_MAX_OUTPUT_PORT_TYPE
+s3 <= s3.DB_MAX_OUTPUT_PORT_TYPE
+s4 <= s4.DB_MAX_OUTPUT_PORT_TYPE
+s5 <= s5.DB_MAX_OUTPUT_PORT_TYPE
+s6 <= s6.DB_MAX_OUTPUT_PORT_TYPE
+
+

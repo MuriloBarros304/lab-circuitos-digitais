@@ -1,0 +1,35 @@
+|mux4x1pl
+I0 => mux2x1pl:u1.en0
+I1 => mux2x1pl:u1.en1
+I2 => mux2x1pl:u2.en0
+I3 => mux2x1pl:u2.en1
+S0 => mux2x1pl:u1.s
+S0 => mux2x1pl:u2.s
+S1 => mux2x1pl:u3.s
+d <= mux2x1pl:u3.o
+
+
+|mux4x1pl|mux2x1pl:u1
+en0 => o.IN0
+en1 => o.IN0
+s => o.IN1
+s => o.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux4x1pl|mux2x1pl:u2
+en0 => o.IN0
+en1 => o.IN0
+s => o.IN1
+s => o.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux4x1pl|mux2x1pl:u3
+en0 => o.IN0
+en1 => o.IN0
+s => o.IN1
+s => o.IN1
+o <= o.DB_MAX_OUTPUT_PORT_TYPE
+
+
