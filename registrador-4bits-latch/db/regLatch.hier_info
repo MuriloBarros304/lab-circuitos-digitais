@@ -1,0 +1,47 @@
+|regLatch
+en3 => latchd:u1.d
+en2 => latchd:u2.d
+en1 => latchd:u3.d
+en0 => latchd:u4.d
+c => latchd:u1.clk
+c => latchd:u2.clk
+c => latchd:u3.clk
+c => latchd:u4.clk
+q3 <= latchd:u1.q
+q2 <= latchd:u2.q
+q1 <= latchd:u3.q
+q0 <= latchd:u4.q
+
+
+|regLatch|latchd:u1
+d => process_0.IN0
+d => process_0.IN0
+clk => process_0.IN1
+clk => process_0.IN1
+q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regLatch|latchd:u2
+d => process_0.IN0
+d => process_0.IN0
+clk => process_0.IN1
+clk => process_0.IN1
+q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regLatch|latchd:u3
+d => process_0.IN0
+d => process_0.IN0
+clk => process_0.IN1
+clk => process_0.IN1
+q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regLatch|latchd:u4
+d => process_0.IN0
+d => process_0.IN0
+clk => process_0.IN1
+clk => process_0.IN1
+q <= q$latch.DB_MAX_OUTPUT_PORT_TYPE
+
+

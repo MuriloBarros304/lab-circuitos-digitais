@@ -1,0 +1,6 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity regLatch is
+port(i3, i2, i1, i0, c : in bit;
+	q3, q2, q1, q0 : out bit
+	);
