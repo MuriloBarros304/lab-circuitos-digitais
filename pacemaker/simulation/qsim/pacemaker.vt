@@ -1,0 +1,244 @@
+// Copyright (C) 1991-2013 Altera Corporation
+// Your use of Altera Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Altera Program License 
+// Subscription Agreement, Altera MegaCore Function License 
+// Agreement, or other applicable license agreement, including, 
+// without limitation, that your use is for the sole purpose of 
+// programming logic devices manufactured by Altera and sold by 
+// Altera or its authorized distributors.  Please refer to the 
+// applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "04/21/2024 09:15:25"
+                                                                        
+// Verilog Self-Checking Test Bench (with test vectors) for design :    pacemaker
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module pacemaker_vlg_sample_tst(
+	clk,
+	sa,
+	sv,
+	sampler_tx
+);
+input  clk;
+input  sa;
+input  sv;
+output sampler_tx;
+
+reg sample;
+time current_time;
+always @(clk or sa or sv)
+                                                                                
+begin                                                 
+ if ($realtime > 0)                                   
+ begin                                                
+	if ($realtime == 0 || $realtime != current_time)  
+	begin									          
+		if (sample === 1'bx)                          
+			sample = 0;                               
+		else                                          
+			sample = ~sample;                         
+	end										          
+	current_time = $realtime;					      
+ end                                                  
+end                                                   
+
+assign sampler_tx = sample;
+endmodule
+
+module pacemaker_vlg_check_tst (
+	pa,
+	pv,
+	sampler_rx
+);
+input  pa;
+input  pv;
+input sampler_rx;
+
+reg  pa_expected;
+reg  pv_expected;
+
+reg  pa_prev;
+reg  pv_prev;
+
+reg  pa_expected_prev;
+reg  pv_expected_prev;
+
+reg  last_pa_exp;
+reg  last_pv_exp;
+
+reg trigger;
+
+integer i;
+integer nummismatches;
+
+reg [1:2] on_first_change ;
+
+
+initial
+begin
+trigger = 0;
+i = 0;
+nummismatches = 0;
+on_first_change = 2'b1;
+end
+
+// update real /o prevs
+
+always @(trigger)
+begin
+	pa_prev = pa;
+	pv_prev = pv;
+end
+
+// update expected /o prevs
+
+always @(trigger)
+begin
+	pa_expected_prev = pa_expected;
+	pv_expected_prev = pv_expected;
+end
+
+
+
+// expected pa
+initial
+begin
+	pa_expected = 1'bX;
+end 
+
+// expected pv
+initial
+begin
+	pv_expected = 1'bX;
+end 
+// generate trigger
+always @(pa_expected or pa or pv_expected or pv)
+begin
+	trigger <= ~trigger;
+end
+
+always @(posedge sampler_rx or negedge sampler_rx)
+begin
+`ifdef debug_tbench
+	$display("Scanning pattern %d @time = %t",i,$realtime );
+	i = i + 1;
+	$display("| expected pa = %b | expected pv = %b | ",pa_expected_prev,pv_expected_prev);
+	$display("| real pa = %b | real pv = %b | ",pa_prev,pv_prev);
+`endif
+	if (
+		( pa_expected_prev !== 1'bx ) && ( pa_prev !== pa_expected_prev )
+		&& ((pa_expected_prev !== last_pa_exp) ||
+			on_first_change[1])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port pa :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", pa_expected_prev);
+		$display ("     Real value = %b", pa_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[1] = 1'b0;
+		last_pa_exp = pa_expected_prev;
+	end
+	if (
+		( pv_expected_prev !== 1'bx ) && ( pv_prev !== pv_expected_prev )
+		&& ((pv_expected_prev !== last_pv_exp) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port pv :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", pv_expected_prev);
+		$display ("     Real value = %b", pv_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_pv_exp = pv_expected_prev;
+	end
+
+	trigger <= ~trigger;
+end
+initial 
+
+begin 
+$timeformat(-12,3," ps",6);
+#1000000;
+if (nummismatches > 0)
+	$display ("%d mismatched vectors : Simulation failed !",nummismatches);
+else
+	$display ("Simulation passed !");
+$finish;
+end 
+endmodule
+
+module pacemaker_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg sa;
+reg sv;
+// wires                                               
+wire pa;
+wire pv;
+
+wire sampler;                             
+
+// assign statements (if any)                          
+pacemaker i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.pa(pa),
+	.pv(pv),
+	.sa(sa),
+	.sv(sv)
+);
+
+// clk
+always
+begin
+	clk = 1'b0;
+	clk = #12500 1'b1;
+	#12500;
+end 
+
+// sa
+initial
+begin
+	sa = 1'b0;
+	sa = #100000 1'b1;
+	sa = #20000 1'b0;
+	sa = #240000 1'b1;
+	sa = #20000 1'b0;
+end 
+
+// sv
+initial
+begin
+	sv = 1'b0;
+	sv = #260000 1'b1;
+	sv = #20000 1'b0;
+end 
+
+pacemaker_vlg_sample_tst tb_sample (
+	.clk(clk),
+	.sa(sa),
+	.sv(sv),
+	.sampler_tx(sampler)
+);
+
+pacemaker_vlg_check_tst tb_out(
+	.pa(pa),
+	.pv(pv),
+	.sampler_rx(sampler)
+);
+endmodule
+

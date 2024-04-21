@@ -1,0 +1,190 @@
+|pacemaker
+clk => bc:bloco_controle.clk
+clk => temporizador:temporizadores.clk_cont
+sa => bc:bloco_controle.Sa
+sv => bc:bloco_controle.Sv
+pa <= bc:bloco_controle.Pa
+pv <= bc:bloco_controle.Pv
+
+
+|pacemaker|bc:bloco_controle
+Sa => mde:mde_0.Sa
+Sv => mde:mde_0.Sv
+Za => ~NO_FANOUT~
+Zv => mde:mde_0.Za
+Zv => mde:mde_0.Zv
+clk => reg:reg_0.clk
+Pa <= mde:mde_0.Pa
+Pv <= mde:mde_0.Pv
+Ta <= mde:mde_0.Ta
+Tv <= mde:mde_0.Tv
+
+
+|pacemaker|bc:bloco_controle|mde:mde_0
+s[0] => Pv.IN0
+s[0] => Tv.IN0
+s[0] => n.IN1
+s[0] => Pa.IN0
+s[0] => Ta.IN1
+s[0] => n.IN0
+s[0] => n.IN0
+s[0] => n.IN0
+s[1] => Pa.IN1
+s[1] => Tv.IN1
+s[1] => Ta.IN0
+s[2] => Pv.IN1
+s[2] => n.IN1
+s[2] => Ta.IN1
+s[2] => n.IN1
+Sa => n.IN1
+Sa => n.IN1
+Sv => n.IN1
+Sv => n.IN1
+Za => n.IN1
+Za => n.IN1
+Zv => n.IN1
+Pa <= Pa.DB_MAX_OUTPUT_PORT_TYPE
+Pv <= Pv.DB_MAX_OUTPUT_PORT_TYPE
+Ta <= Ta.DB_MAX_OUTPUT_PORT_TYPE
+Tv <= Tv.DB_MAX_OUTPUT_PORT_TYPE
+n[0] <= n.DB_MAX_OUTPUT_PORT_TYPE
+n[1] <= n.DB_MAX_OUTPUT_PORT_TYPE
+n[2] <= n.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|bc:bloco_controle|reg:reg_0
+s[0] => ffd:ffd_0.d
+s[1] => ffd:ffd_1.d
+s[2] => ffd:ffd_2.d
+clk => ffd:ffd_0.clk
+clk => ffd:ffd_1.clk
+clk => ffd:ffd_2.clk
+n[0] <= ffd:ffd_0.q
+n[1] <= ffd:ffd_1.q
+n[2] <= ffd:ffd_2.q
+
+
+|pacemaker|bc:bloco_controle|reg:reg_0|ffd:ffd_0
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|bc:bloco_controle|reg:reg_0|ffd:ffd_1
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|bc:bloco_controle|reg:reg_0|ffd:ffd_2
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores
+tv => sig_clr.IN1
+ta => sig_clr2.IN1
+clk_cont => ffd:ffd_cont_f_0.clk
+clk_cont => ffd:ffd_cont_f_1.clk
+clk_cont => ffd:ffd_cont_f_2.clk
+clk_cont => ffd:ffd_cont_f_3.clk
+clk_cont => ffd:ffd_cont_i_0.clk
+clk_cont => ffd:ffd_cont_i_1.clk
+clk_cont => ffd:ffd_cont_i_2.clk
+clk_cont => ffd:ffd_cont_i_3.clk
+clk_cont => ffd:ffd_cont_i_4.clk
+zv <= zv.DB_MAX_OUTPUT_PORT_TYPE
+za <= za.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_f_0
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_f_1
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_f_2
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_f_3
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_i_0
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_i_1
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_i_2
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_i_3
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|temporizador:temporizadores|ffd:ffd_cont_i_4
+clk => qS.CLK
+d => qS.DATAIN
+p => qS.IN0
+p => qS.PRESET
+c => qS.IN1
+q <= qS.DB_MAX_OUTPUT_PORT_TYPE
+
+

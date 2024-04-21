@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\filho\Documents\pacemaker\simulation\qsim
+vpacemaker
+Z1 !s100 fP6o:5Ue0`kMeYQced1iW3
+Z2 IJR<fbE@DnzYlUFmG;2GP[1
+Z3 VUXY^MmlK]7MY[JD0VDfZT0
+Z4 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\pacemaker\simulation\qsim
+Z5 w1713701731
+Z6 8pacemaker.vo
+Z7 Fpacemaker.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|pacemaker.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1713701735.980000
+Z12 !s107 pacemaker.vo|
+!s101 -O0
+vpacemaker_vlg_check_tst
+!i10b 1
+Z13 !s100 6aDmFV9?5z]ZjMoF[dH_a0
+Z14 I1oChdRdzK=@?0LCBKmU0M3
+Z15 V0CKYgUC0:NgkRLMQYOcH@3
+R4
+Z16 w1713701726
+Z17 8pacemaker.vt
+Z18 Fpacemaker.vt
+L0 61
+R8
+r1
+!s85 0
+31
+Z19 !s108 1713701736.060000
+Z20 !s107 pacemaker.vt|
+Z21 !s90 -work|work|pacemaker.vt|
+!s101 -O0
+R10
+vpacemaker_vlg_sample_tst
+!i10b 1
+Z22 !s100 k@6A2[2Hb1J:7K6]6b9A42
+Z23 IM^E]6Z@0nA38YBl=oZHiT3
+Z24 VgNIk5UWg_<2_`YmdKdDi92
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vpacemaker_vlg_vec_tst
+!i10b 1
+!s100 [<_>8lh`[h`kgM^On]MYk1
+In=1J7Y4;l@E6jE2SW=WmN2
+Z25 VOn8f4d5GFaZOOTnh9<m@Q3
+R4
+R16
+R17
+R18
+Z26 L0 183
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
