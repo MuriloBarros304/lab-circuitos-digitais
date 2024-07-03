@@ -1,0 +1,56 @@
+|pacemaker
+s => ~NO_FANOUT~
+clk => reg2:u1.c
+clk => comb_circ:u2.c
+clk => counter:u3.c
+pacemaker_out <= comb_circ:u2.p
+
+
+|pacemaker|reg2:u1
+c => q0~reg0.CLK
+c => q1~reg0.CLK
+i1 => q1~reg0.DATAIN
+i0 => q0~reg0.DATAIN
+q1 <= q1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q0 <= q0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|comb_circ:u2
+z => next1~2.IN1
+z => next0~2.IN1
+s => next0~1.IN0
+s => next1~1.IN1
+c => ~NO_FANOUT~
+current1 => p~0.IN0
+current1 => next0~0.IN0
+current1 => next0~1.IN1
+current1 => next1~0.IN0
+current0 => next1~0.IN1
+current0 => next0~0.IN1
+current0 => next0~3.IN1
+current0 => p~0.IN1
+next1 <= next1~2.DB_MAX_OUTPUT_PORT_TYPE
+next0 <= next0~4.DB_MAX_OUTPUT_PORT_TYPE
+t <= next0~0.DB_MAX_OUTPUT_PORT_TYPE
+p <= p~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|counter:u3
+c => tc~reg0.CLK
+c => qv[0].CLK
+c => qv[1].CLK
+c => qv[2].CLK
+cnt => tc~0.OUTPUTSELECT
+cnt => qv[2].ENA
+cnt => qv[1].ENA
+cnt => qv[0].ENA
+reset => qv[0].PRESET
+reset => qv[1].PRESET
+reset => qv[2].PRESET
+reset => tc~reg0.ENA
+tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= qv[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= qv[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= qv[2].DB_MAX_OUTPUT_PORT_TYPE
+
+
