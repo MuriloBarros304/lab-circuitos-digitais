@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "04/18/2024 20:58:31"
+// Generated on "04/19/2024 09:31:03"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    contador
 // 
@@ -267,32 +267,28 @@ contador i1 (
 always
 begin
 	clk = 1'b0;
-	clk = #10000 1'b1;
-	#10000;
+	clk = #12500 1'b1;
+	#12500;
 end 
 
 // cnt
-initial
+always
 begin
 	cnt = 1'b0;
-end 
-
-// ld
-initial
-begin
-	ld = 1'b0;
-	ld = #60000 1'b1;
-	ld = #30000 1'b0;
+	cnt = #25000 1'b1;
+	#25000;
 end 
 // data[ 3 ]
 initial
 begin
-	data[3] = 1'b0;
+	data[3] = 1'b1;
+	data[3] = #980000 1'b0;
 end 
 // data[ 2 ]
 initial
 begin
-	data[2] = 1'b0;
+	data[2] = 1'b1;
+	data[2] = #980000 1'b0;
 end 
 // data[ 1 ]
 initial
@@ -305,10 +301,20 @@ begin
 	data[0] = 1'b0;
 end 
 
+// ld
+initial
+begin
+	ld = 1'b0;
+	ld = #80000 1'b1;
+	ld = #40000 1'b0;
+end 
+
 // reset
 initial
 begin
 	reset = 1'b0;
+	reset = #380000 1'b1;
+	reset = #40000 1'b0;
 end 
 
 contador_vlg_sample_tst tb_sample (

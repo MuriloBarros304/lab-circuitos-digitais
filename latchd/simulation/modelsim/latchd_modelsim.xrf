@@ -1,7 +1,7 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/muril/OneDrive/Área de Trabalho/Lab CD/latchd/latchd.vhd
-source_file = 1, C:/Users/muril/OneDrive/Área de Trabalho/Lab CD/latchd/Waveform.vwf
-source_file = 1, C:/Users/muril/OneDrive/Área de Trabalho/Lab CD/latchd/db/latchd.cbx.xml
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/latchd/latchd.vhd
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/latchd/Waveform.vwf
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/latchd/db/latchd.cbx.xml
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd

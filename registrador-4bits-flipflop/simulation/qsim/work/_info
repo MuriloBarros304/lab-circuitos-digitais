@@ -4,82 +4,82 @@ K3
 cModel Technology
 Z0 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\registrador-4bits-flipflop\simulation\qsim
 vregFlipflop
-Z1 I^P^bcP]TK<k:eboR:bni>1
-Z2 V_Cb_fY>1VOM6ElRJa?JMA1
-Z3 dC:\Users\muril\OneDrive\Área de Trabalho\Lab CD\registrador-4bits-flipflop\simulation\qsim
-Z4 w1713295913
-Z5 8regFlipflop.vo
-Z6 FregFlipflop.vo
+Z1 !s100 9g3[d`QHH>l3ZVPh3@Hzk3
+Z2 I^P^bcP]TK<k:eboR:bni>1
+Z3 V_Cb_fY>1VOM6ElRJa?JMA1
+Z4 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\registrador-4bits-flipflop\simulation\qsim
+Z5 w1713530367
+Z6 8regFlipflop.vo
+Z7 FregFlipflop.vo
 L0 31
-Z7 OV;L;10.1d;51
+Z8 OV;L;10.1d;51
 r1
 31
-Z8 o-work work -O0
-Z9 nreg@flipflop
+Z9 !s90 -work|work|regFlipflop.vo|
+Z10 o-work work -O0
+Z11 nreg@flipflop
 !i10b 1
-Z10 !s100 9g3[d`QHH>l3ZVPh3@Hzk3
 !s85 0
-Z11 !s108 1713295936.555000
-Z12 !s107 regFlipflop.vo|
-Z13 !s90 -work|work|regFlipflop.vo|
+Z12 !s108 1713530367.548000
+Z13 !s107 regFlipflop.vo|
 !s101 -O0
 vregFlipflop_vlg_check_tst
 !i10b 1
-!s100 mI?5GVh:jdFgFd1Eb]0To3
-I?>HY:`N2z9RWz]H<`a?Wk2
-VmHB>Ug2Ng265Dj^DG@GO80
-R3
-Z14 w1713295906
-Z15 8regFlipflop.vt
-Z16 FregFlipflop.vt
+Z14 !s100 mI?5GVh:jdFgFd1Eb]0To3
+Z15 I?>HY:`N2z9RWz]H<`a?Wk2
+Z16 VmHB>Ug2Ng265Dj^DG@GO80
+R4
+Z17 w1713530366
+Z18 8regFlipflop.vt
+Z19 FregFlipflop.vt
 L0 65
-R7
+R8
 r1
 !s85 0
 31
-Z17 !s108 1713295936.855000
-Z18 !s107 regFlipflop.vt|
-Z19 !s90 -work|work|regFlipflop.vt|
+Z20 !s108 1713530367.611000
+Z21 !s107 regFlipflop.vt|
+Z22 !s90 -work|work|regFlipflop.vt|
 !s101 -O0
-R8
-nreg@flipflop_vlg_check_tst
+R10
+Z23 nreg@flipflop_vlg_check_tst
 vregFlipflop_vlg_sample_tst
 !i10b 1
-!s100 UMHBZ1[HnnkGT:oAG_NUF2
-I=0MljclLmI9gdbYnI0CcT0
-VF1:EmN?H@R:zG<`JG^Toa0
-R3
-R14
-R15
-R16
-L0 29
-R7
-r1
-!s85 0
-31
+Z24 !s100 UMHBZ1[HnnkGT:oAG_NUF2
+Z25 I=0MljclLmI9gdbYnI0CcT0
+Z26 VF1:EmN?H@R:zG<`JG^Toa0
+R4
 R17
 R18
 R19
-!s101 -O0
+L0 29
 R8
-nreg@flipflop_vlg_sample_tst
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z27 nreg@flipflop_vlg_sample_tst
 vregFlipflop_vlg_vec_tst
 !i10b 1
-!s100 LA[283I=@HONHoI0PZSHD0
-ICBd8:BzBHE4lj[R2Nb3;F1
-V@NCAn1lT42iAI9`3T@EfQ3
-R3
-R14
-R15
-R16
-L0 241
-R7
-r1
-!s85 0
-31
+!s100 QJK4?R1WJWC`3851>iP_S1
+IPj;6kdbHdj3n4WVYVfg^B0
+Z28 V@NCAn1lT42iAI9`3T@EfQ3
+R4
 R17
 R18
 R19
-!s101 -O0
+Z29 L0 241
 R8
-nreg@flipflop_vlg_vec_tst
+r1
+!s85 0
+31
+R20
+R21
+R22
+!s101 -O0
+R10
+Z30 nreg@flipflop_vlg_vec_tst

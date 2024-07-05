@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "04/16/2024 16:31:42"
+// Generated on "04/19/2024 09:39:26"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    regFlipflop
 // 
@@ -272,43 +272,48 @@ regFlipflop i1 (
 always
 begin
 	c = 1'b0;
-	c = #50000 1'b1;
-	#50000;
+	c = #25000 1'b1;
+	#25000;
 end 
 
 // en0
 always
 begin
 	en0 = 1'b0;
-	en0 = #100000 1'b1;
-	#100000;
+	en0 = #50000 1'b1;
+	#50000;
 end 
 
 // en1
-initial
+always
 begin
-	repeat(2)
-	begin
-		en1 = 1'b0;
-		en1 = #200000 1'b1;
-		# 200000;
-	end
 	en1 = 1'b0;
+	en1 = #100000 1'b1;
+	#100000;
 end 
 
 // en2
 initial
 begin
+	repeat(3)
+	begin
+		en2 = 1'b0;
+		en2 = #150000 1'b1;
+		# 150000;
+	end
 	en2 = 1'b0;
-	en2 = #400000 1'b1;
-	en2 = #400000 1'b0;
 end 
 
 // en3
 initial
 begin
+	repeat(2)
+	begin
+		en3 = 1'b0;
+		en3 = #200000 1'b1;
+		# 200000;
+	end
 	en3 = 1'b0;
-	en3 = #800000 1'b1;
 end 
 
 regFlipflop_vlg_sample_tst tb_sample (

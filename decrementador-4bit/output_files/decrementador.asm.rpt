@@ -1,6 +1,6 @@
 Assembler report for decrementador
-Thu Apr 18 21:14:12 2024
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri Apr 19 09:16:23 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,7 +10,7 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Assembler Summary
   3. Assembler Settings
   4. Assembler Generated Files
-  5. Assembler Device Options: C:/Users/filho/Documents/Lab_circuitos/Lab_4/output_files/decrementador.sof
+  5. Assembler Device Options: C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/decrementador-4bit/output_files/decrementador.sof
   6. Assembler Messages
 
 
@@ -37,7 +37,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Apr 18 21:14:12 2024 ;
+; Assembler Status      ; Successful - Fri Apr 19 09:16:23 2024 ;
 ; Revision Name         ; decrementador                         ;
 ; Top-level Entity Name ; decrementador                         ;
 ; Family                ; Cyclone IV GX                         ;
@@ -77,40 +77,40 @@ applicable agreement for further details.
 +-----------------------------------------------------------------------------+----------+---------------+
 
 
-+-----------------------------------------------------------------------------+
-; Assembler Generated Files                                                   ;
-+-----------------------------------------------------------------------------+
-; File Name                                                                   ;
-+-----------------------------------------------------------------------------+
-; C:/Users/filho/Documents/Lab_circuitos/Lab_4/output_files/decrementador.sof ;
-+-----------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+; Assembler Generated Files                                                                                ;
++----------------------------------------------------------------------------------------------------------+
+; File Name                                                                                                ;
++----------------------------------------------------------------------------------------------------------+
+; C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/decrementador-4bit/output_files/decrementador.sof ;
++----------------------------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/filho/Documents/Lab_circuitos/Lab_4/output_files/decrementador.sof ;
-+----------------+--------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                              ;
-+----------------+--------------------------------------------------------------------------------------+
-; Device         ; EP4CGX15BF14C6                                                                       ;
-; JTAG usercode  ; 0x000BD1B1                                                                           ;
-; Checksum       ; 0x000BD1B1                                                                           ;
-+----------------+--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/decrementador-4bit/output_files/decrementador.sof ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                                                           ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
+; Device         ; EP4CGX15BF14C6                                                                                                    ;
+; JTAG usercode  ; 0x000BD1B1                                                                                                        ;
+; Checksum       ; 0x000BD1B1                                                                                                        ;
++----------------+-------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------+
 ; Assembler Messages ;
 +--------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Assembler
+Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 18 21:14:11 2024
+    Info: Processing started: Fri Apr 19 09:16:22 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off decrementador -c decrementador
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
-Info: Quartus II 32-bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 383 megabytes
-    Info: Processing ended: Thu Apr 18 21:14:12 2024
+Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4604 megabytes
+    Info: Processing ended: Fri Apr 19 09:16:23 2024
     Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 

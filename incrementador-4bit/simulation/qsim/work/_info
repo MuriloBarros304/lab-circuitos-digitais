@@ -4,10 +4,10 @@ K3
 cModel Technology
 Z0 dC:\Users\filho\Documents\Lab_circuitos\Lab_4_\simulation\qsim
 vcontador
-Z1 Ii@WP;?SHamVhkTG_3z0KM2
+Z1 I:4NTD?<?4@RhnA<maeOU>1
 Z2 VGOO[zT9RDmW7TPeEJR8JF0
-Z3 dC:\Users\filho\Documents\Lab_circuitos\Lab_4_\simulation\qsim
-Z4 w1713484712
+Z3 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\incrementador-4bit\simulation\qsim
+Z4 w1713529863
 Z5 8contador.vo
 Z6 Fcontador.vo
 L0 31
@@ -17,9 +17,9 @@ r1
 Z8 !s90 -work|work|contador.vo|
 Z9 o-work work -O0
 !i10b 1
-Z10 !s100 @mXXJ^^Cz5]o5bBS2V;5L0
+Z10 !s100 a=B_YAk]WSX55]i2hoY;32
 !s85 0
-Z11 !s108 1713484713.545000
+Z11 !s108 1713529864.421000
 Z12 !s107 contador.vo|
 !s101 -O0
 vcontador_vlg_check_tst
@@ -28,54 +28,54 @@ Z13 !s100 3XG:fOi<FkHSzZ9`T0fc=3
 Z14 I@fX<V3PYmQ:jao9IoS`io2
 Z15 VzhaVz[N>@JJnF6^>Wok`V2
 R3
-Z16 w1713484711
-Z17 8contador.vt
-Z18 Fcontador.vt
+R4
+Z16 8contador.vt
+Z17 Fcontador.vt
 L0 65
 R7
 r1
 !s85 0
 31
-Z19 !s108 1713484713.608000
-Z20 !s107 contador.vt|
-Z21 !s90 -work|work|contador.vt|
+Z18 !s108 1713529864.484000
+Z19 !s107 contador.vt|
+Z20 !s90 -work|work|contador.vt|
 !s101 -O0
 R9
 vcontador_vlg_sample_tst
 !i10b 1
-Z22 !s100 WNFn69YY7]AS_gR2HY3hU3
-Z23 I^ON_OA;Tda5g`m6LN>Udk0
-Z24 V]O`KP?Y:M_O<9oP9^VX7N1
+Z21 !s100 WNFn69YY7]AS_gR2HY3hU3
+Z22 I^ON_OA;Tda5g`m6LN>Udk0
+Z23 V]O`KP?Y:M_O<9oP9^VX7N1
 R3
+R4
 R16
 R17
-R18
 L0 29
 R7
 r1
 !s85 0
 31
+R18
 R19
 R20
-R21
 !s101 -O0
 R9
 vcontador_vlg_vec_tst
 !i10b 1
-!s100 6aeQXTBQWjnD2DmcK0fL<1
-IKc_[5;SC1?QbLIPlBE`^Q3
-Z25 Vg7eM`4C4en1cUe:c[RGT<3
+Z24 !s100 DmKCzlie0JK@1Sb;JY[dT1
+Z25 ID4Ec=:`YBVggd=3o;bZ?n1
+Z26 Vg7eM`4C4en1cUe:c[RGT<3
 R3
+R4
 R16
 R17
-R18
-Z26 L0 240
+Z27 L0 240
 R7
 r1
 !s85 0
 31
+R18
 R19
 R20
-R21
 !s101 -O0
 R9

@@ -12,6 +12,7 @@
  ARCHITECTURE comportamento OF contador IS
 	BEGIN PROCESS(clk,reset)
 		VARIABLE qv: INTEGER RANGE 15 DOWNTO 0;--variável para a saida
+		
 	BEGIN
 		IF(reset='1')THEN
 			qv:=0;
@@ -19,10 +20,10 @@
 			IF(ld='1')THEN
 				qv := data;
 			ELSE
-				IF(qv > 15) THEN
-					qv := 0;
+				IF(qv >= 15) THEN
+					qv := data;
 				ELSE
-					IF(cnt < '1') THEN
+					IF(cnt = '1') THEN
 						qv := qv + 1;
 						IF(qv = 15) THEN
 							tc <= '1';

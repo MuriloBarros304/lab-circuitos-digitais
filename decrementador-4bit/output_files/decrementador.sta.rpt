@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for decrementador
-Thu Apr 18 21:14:22 2024
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri Apr 19 09:16:27 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -929,9 +929,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; TimeQuest Timing Analyzer Messages ;
 +------------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit TimeQuest Timing Analyzer
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Apr 18 21:14:20 2024
+    Info: Processing started: Fri Apr 19 09:16:26 2024
 Info: Command: quartus_sta decrementador -c decrementador
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1001,10 +1001,10 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):    -3.000        -8.135 clk 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
-Info: Quartus II 32-bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 384 megabytes
-    Info: Processing ended: Thu Apr 18 21:14:22 2024
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 4589 megabytes
+    Info: Processing ended: Fri Apr 19 09:16:27 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

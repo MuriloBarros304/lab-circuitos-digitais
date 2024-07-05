@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\decrementador-4bit\simulation\qsim
+vdecrementador
+Z1 !s100 4Q575UH;;D4iEmb353fXn3
+Z2 IGZ9YIXL2d[fEmz3^P7AVz3
+Z3 VMeKFH8^ed8z7_PX0ZfA_Q3
+Z4 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\decrementador-4bit\simulation\qsim
+Z5 w1713529439
+Z6 8decrementador.vo
+Z7 Fdecrementador.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|decrementador.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1713529439.925000
+Z12 !s107 decrementador.vo|
+!s101 -O0
+vdecrementador_vlg_check_tst
+!i10b 1
+Z13 !s100 P?j<zFcc=UXWXRB0k]0nA0
+Z14 IJ5CL2>Jo4hTUECSa[7O6M2
+Z15 V^`BBf2fH;]6F`M?L94GjF1
+R4
+Z16 w1713529438
+Z17 8decrementador.vt
+Z18 Fdecrementador.vt
+L0 65
+R8
+r1
+!s85 0
+31
+Z19 !s108 1713529439.973000
+Z20 !s107 decrementador.vt|
+Z21 !s90 -work|work|decrementador.vt|
+!s101 -O0
+R10
+vdecrementador_vlg_sample_tst
+!i10b 1
+Z22 !s100 M;NZUbZ_Qm<KbT;`N1iJU3
+Z23 IVQ=]dngYRkS[VKdomK@D60
+Z24 VUH6z4XQHDM6CSgWI91lQ`1
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vdecrementador_vlg_vec_tst
+!i10b 1
+!s100 go^@IDhzdDhUkJ]n[_c643
+IE:NRLa@S0VU>n??U@Id8L1
+Z25 VIA[V`H^h[iX<9@AFb8HBe0
+R4
+R16
+R17
+R18
+Z26 L0 240
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10

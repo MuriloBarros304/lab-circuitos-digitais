@@ -84,17 +84,17 @@ clk                          : 17        : input  : 3.3-V LVTTL       :         
 reset                        : 18        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : 19        : gnd    :                   :         :           :                
 nCONFIG                      : 20        :        :                   :         : 1         :                
-ld                           : 21        : input  : 3.3-V LVTTL       :         : 1         : N              
-cnt                          : 22        : input  : 3.3-V LVTTL       :         : 1         : N              
+cnt                          : 21        : input  : 3.3-V LVTTL       :         : 1         : N              
+ld                           : 22        : input  : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : 23        : power  :                   : 3.3V    : 1         :                
-q[3]                         : 24        : output : 3.3-V LVTTL       :         : 1         : N              
-q[2]                         : 25        : output : 3.3-V LVTTL       :         : 1         : N              
-data[2]                      : 26        : input  : 3.3-V LVTTL       :         : 1         : N              
-q[1]                         : 27        : output : 3.3-V LVTTL       :         : 1         : N              
-data[0]                      : 28        : input  : 3.3-V LVTTL       :         : 1         : N              
+q[0]                         : 24        : output : 3.3-V LVTTL       :         : 1         : N              
+data[0]                      : 25        : input  : 3.3-V LVTTL       :         : 1         : N              
+tc                           : 26        : output : 3.3-V LVTTL       :         : 1         : N              
+q[2]                         : 27        : output : 3.3-V LVTTL       :         : 1         : N              
+q[3]                         : 28        : output : 3.3-V LVTTL       :         : 1         : N              
 VCCIO1                       : 29        : power  :                   : 3.3V    : 1         :                
-q[0]                         : 30        : output : 3.3-V LVTTL       :         : 1         : N              
-tc                           : 31        : output : 3.3-V LVTTL       :         : 1         : N              
+data[3]                      : 30        : input  : 3.3-V LVTTL       :         : 1         : N              
+q[1]                         : 31        : output : 3.3-V LVTTL       :         : 1         : N              
 data[1]                      : 32        : input  : 3.3-V LVTTL       :         : 1         : N              
 GND                          : 33        : gnd    :                   :         :           :                
 GND_PLL1                     : 34        : gnd    :                   :         :           :                
@@ -104,7 +104,7 @@ VCCA_PLL1                    : 37        : power  :                   : 1.2V    
 GNDA_PLL1                    : 38        : gnd    :                   :         :           :                
 GND                          : 39        : gnd    :                   :         :           :                
 GND*                         : 40        :        :                   :         : 4         :                
-data[3]                      : 41        : input  : 3.3-V LVTTL       :         : 4         : N              
+data[2]                      : 41        : input  : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : 42        :        :                   :         : 4         :                
 GND*                         : 43        :        :                   :         : 4         :                
 GND*                         : 44        :        :                   :         : 4         :                

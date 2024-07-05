@@ -1,9 +1,9 @@
 vendor_name = ModelSim
-source_file = 1, C:/Users/muril/OneDrive/햞ea de Trabalho/Lab CD/registrador-4bits-latch/latchd.vhd
-source_file = 1, C:/Users/muril/OneDrive/햞ea de Trabalho/Lab CD/registrador-4bits-latch/regLatch.vhd
-source_file = 1, C:/Users/muril/OneDrive/햞ea de Trabalho/Lab CD/lab2/Waveform1.vwf
-source_file = 1, C:/Users/muril/OneDrive/햞ea de Trabalho/Lab CD/registrador-4bits-latch/Waveform.vwf
-source_file = 1, C:/Users/muril/OneDrive/햞ea de Trabalho/Lab CD/registrador-4bits-latch/db/regLatch.cbx.xml
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/registrador-4bits-latch/latchd.vhd
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/registrador-4bits-latch/regLatch.vhd
+source_file = 1, ../lab2/Waveform1.vwf
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/registrador-4bits-latch/Waveform.vwf
+source_file = 1, C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/registrador-4bits-latch/db/regLatch.cbx.xml
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_b.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/prmtvs_p.vhd
 source_file = 1, c:/altera/13.0sp1/quartus/libraries/vhdl/ieee/timing_b.vhd
