@@ -1,0 +1,6 @@
+
+State Machine - |pacemaker|currentstate
+Name currentstate.Pace currentstate.WaitS currentstate.RstTimer 
+currentstate.RstTimer 0 0 0 
+currentstate.WaitS 0 1 1 
+currentstate.Pace 1 0 1 

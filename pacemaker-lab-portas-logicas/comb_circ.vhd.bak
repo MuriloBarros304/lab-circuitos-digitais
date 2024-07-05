@@ -1,0 +1,15 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity comb_circ is
+	port(buttom, c, current1, current0 : in bit;
+		next1, next0, laser_out : out bit);
+	end comb_circ;
+architecture behav of comb_circ is
+begin
+	laser_out <= current1 OR current0;
+			next1 <= (NOT(current1) AND current0)
+			OR (current1 AND NOT(current0));
+			next0 <= (NOT(current1) AND
+			NOT(current0) AND buttom) OR (current1
+			AND NOT(current0));
+end architecture behav;

@@ -1,0 +1,45 @@
+library ieee;
+use ieee.std_logic_1164.all;
+entity LaserTimer is
+port (b
+: in std_logic;
+x
+: out std_logic;
+clk, rst : in std_logic
+);
+end LaserTimer;
+architecture behavior of LaserTimer is
+type statetype is
+(S_Off, S_On1, S_On2, S_on3);
+signal currentstate, nextstate: statetype;
+begin
+statereg: process(clk, rst)
+begin
+if (rst='1') then -- estado inicial
+currentstate <= S_Off;
+elsif (clk='1' and clk ' event) then
+currentstate <= nextstate;
+end if;
+end process;
+comblogic: process (currentstate, b)
+begin
+case currentstate is
+when S_Off =>
+x <='0'; -- laser desligado
+if (b='0') then
+nextstate <= S_Off;
+else
+nextstate <= S_On1;
+end if;
+when S_On1 =>
+x <= '1'; -- laser on
+nextstate <=S_On2;
+when S_On2 =>
+x <= '1'; -- laser ainda ligado
+nextstate <= S_On3;
+when S_On3 =>
+x <= '1'; -- laser ainda ligado
+nextstate <= S_Off;
+end case;
+end process;
+end behavior;
