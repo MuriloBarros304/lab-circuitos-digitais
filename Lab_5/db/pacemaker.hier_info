@@ -1,0 +1,54 @@
+|pacemaker
+clk => reg:u1.c
+clk => circ_comb:u2.c
+clk => counter:u3.c
+s => circ_comb:u2.s_bat
+z => circ_comb:u2.fim_temp
+p <= circ_comb:u2.pulso
+t <= <GND>
+
+
+|pacemaker|reg:u1
+c => q0~reg0.CLK
+c => q1~reg0.CLK
+i1 => q1~reg0.DATAIN
+i0 => q0~reg0.DATAIN
+q1 <= q1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q0 <= q0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|circ_comb:u2
+s_bat => next1.IN1
+fim_temp => next1.IN1
+fim_temp => next0.IN1
+c => ~NO_FANOUT~
+current1 => pulso.IN0
+current1 => next1.IN0
+current1 => next0.IN0
+current0 => next1.IN1
+current0 => next0.IN1
+current0 => pulso.IN1
+next1 <= next1.DB_MAX_OUTPUT_PORT_TYPE
+next0 <= next0.DB_MAX_OUTPUT_PORT_TYPE
+pulso <= pulso.DB_MAX_OUTPUT_PORT_TYPE
+temp_reset <= next0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|counter:u3
+clk => tc~reg0.CLK
+clk => \counter_process:q_var[0].CLK
+clk => \counter_process:q_var[1].CLK
+clk => \counter_process:q_var[2].CLK
+reset => tc~reg0.ACLR
+reset => \counter_process:q_var[0].ACLR
+reset => \counter_process:q_var[1].ACLR
+reset => \counter_process:q_var[2].ACLR
+data[0] => ~NO_FANOUT~
+data[1] => ~NO_FANOUT~
+data[2] => ~NO_FANOUT~
+q[0] <= \counter_process:q_var[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= \counter_process:q_var[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= \counter_process:q_var[2].DB_MAX_OUTPUT_PORT_TYPE
+tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
