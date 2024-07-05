@@ -1,29 +1,29 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
 entity counter is
-	port(
-		c: in bit; -- entrada de clock
-		cnt: in bit; -- decrementa o valor
-		reset: in bit; -- reseta 
-		tc: out bit; -- indicativo de termino
-		q: out integer range 7 downto 0); -- saída de dados
+	port (c: in bit;
+			reset: in bit;
+			data: in integer range 799 downto 0;
+			q: out integer range 799 downto 0;
+			tc: out bit);
 end counter;
 
 architecture behavior of counter is
 begin
-	process(c, reset)
-		variable qv: integer range 7 downto 0; -- variável para a saída
-	begin
-		if (reset = '1') then
-			qv := 7;
-		elsif (c'event and c = '1') then
-			if (cnt = '1') then
-				qv := qv - 1;
-				if (qv = 0) then
-					tc <= '1';
-				else
-					tc <= '0';
+	counter_process: process(c, reset)
+		variable q_var: integer range 799 downto 0;
+		begin
+			if(reset = '1') then
+				tc <= '0';
+				q_var := 0;
+			elsif(c' event and c = '1') then
+				if(q_var = 0) then 
+				tc <= '1'; 
+				q_var := 799;
+				else q_var := q_var - 1;
 				end if;
 			end if;
-		end if;
-		q <= qv;
+		q <= q_var;
 	end process;
-end architecture behavior;
+end behavior;

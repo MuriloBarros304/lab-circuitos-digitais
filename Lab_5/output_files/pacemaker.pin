@@ -70,7 +70,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 CHIP  "pacemaker"  ASSIGNED TO AN: EP4CGX15BF14C6
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -85,8 +85,8 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : A7        :        :                   :      
 RESERVED_INPUT_WITH_WEAK_PULLUP : A8        :        :                   :         : 8         :                
 GND+                         : A9        :        :                   :         : 7         :                
 GND+                         : A10       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A11       :        :                   :         : 7         :                
-RESERVED_INPUT_WITH_WEAK_PULLUP : A12       :        :                   :         : 7         :                
+s                            : A11       : input  : 2.5 V             :         : 7         : N              
+p                            : A12       : output : 2.5 V             :         : 7         : N              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A13       :        :                   :         : 7         :                
 GND                          : B1        : gnd    :                   :         :           :                
 GND                          : B2        : gnd    :                   :         :           :                
@@ -208,7 +208,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : K13       :        :                   :      
 RREF                         : L1        :        :                   :         :           :                
 GND                          : L2        : gnd    :                   :         :           :                
 MSEL2                        : L3        :        :                   :         : 3         :                
-t                            : L4        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : L4        :        :                   :         : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L5        :        :                   :         : 3         :                
 VCCIO3                       : L6        : power  :                   : 2.5V    : 3         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : L7        :        :                   :         : 3         :                
@@ -221,7 +221,7 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : L13       :        :                   :      
 GND                          : M1        : gnd    :                   :         :           :                
 VCCA_GXB                     : M2        : power  :                   : 2.5V    :           :                
 NC                           : M3        :        :                   :         :           :                
-p                            : M4        : output : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : M4        :        :                   :         : 3         :                
 GND                          : M5        : gnd    :                   :         :           :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : M6        :        :                   :         : 3         :                
 GND+                         : M7        :        :                   :         : 4         :                
@@ -234,9 +234,9 @@ RESERVED_INPUT_WITH_WEAK_PULLUP : M13       :        :                   :      
 VCCL_GXB                     : N1        : power  :                   : 1.2V    :           :                
 NC                           : N2        :        :                   :         :           :                
 MSEL1                        : N3        :        :                   :         : 3         :                
-s                            : N4        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N4        :        :                   :         : 3         :                
 ~ALTERA_NCEO~ / RESERVED_OUTPUT_OPEN_DRAIN : N5        : output : 2.5 V             :         : 3         : N              
-z                            : N6        : input  : 2.5 V             :         : 3         : N              
+RESERVED_INPUT_WITH_WEAK_PULLUP : N6        :        :                   :         : 3         :                
 GND+                         : N7        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N8        :        :                   :         : 4         :                
 RESERVED_INPUT_WITH_WEAK_PULLUP : N9        :        :                   :         : 4         :                

@@ -1,34 +1,31 @@
 library ieee;
 use ieee.std_logic_1164.all;
+
 entity pacemaker is
-	port(s, clk : in bit;
-		pacemaker_out : out bit);
-	end pacemaker;
+	port(clk, s: IN BIT;
+		  p : OUT BIT);
+end pacemaker;
+
 architecture behavior of pacemaker is
-	signal n1, n0: bit; -- Proximo estado
-	signal s1, s0: bit; -- Estado atual
-	signal sc, fc: bit; -- Começar contagem e finalizar contagem
+	signal n1, n0: BIT; --Proximo estado
+	signal s1, s0: BIT; --Estado atual
+	signal sc, fc: BIT; --Iniciar contagem, finalizar contagem
 	component reg2 is
-		port(c, i1, i0 : in bit;
-				q1, q0 : out bit);
+		port(c, i1, i0: IN BIT;
+				q1, q0: OUT BIT);
 	end component;
-	component comb_circ is
-		port(z, c, current1, current0 : in bit;
-				next1, next0, t, p : out bit);
+	component circ_comb is
+		port(s_bat, fim_temp, c, current1, current0: IN BIT;
+				next1, next0, pulso, temp_reset: OUT BIT);
 	end component;
 	component counter is
-		port(c, cnt : in bit;
-		tc : out bit;
-		q : out integer range 7 downto 0);
-	end component;
-		
+		port(c, reset: IN BIT;
+				tc: OUT BIT);
+		end component;
 begin
-		u1 : reg2 port map(c => clk, i1 => n1, i0 => n0,
-		q1 => s1, q0 => s0);
-		u2 : comb_circ port map(c => clk,
-			current1 => s1, current0 => s0,
-			next1 => n1, next0 => n0, z => fc, t => sc,
-			p => pacemaker_out);
-		u3 : counter port map(c => clk, tc => fc,
-		cnt => sc);
+	u1: reg2 port map(c => clk, i1 => n1, i0 => n0, q1 => s1, q0 => s0);
+	u2: circ_comb port map(s_bat => s, fim_temp => fc, c => clk, current1 => s1, current0 => s0,
+									next1 => n1, next0 => n0, pulso => p , temp_reset => sc);
+	u3: counter port map(c => clk, reset => sc, tc => fc);								
+	
 end architecture behavior;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pacemaker
-Wed Jul  3 13:54:30 2024
+Fri Jul  5 15:37:45 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,11 +14,9 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Inverted Register Statistics
- 10. Port Connectivity Checks: "counter:u3"
- 11. Port Connectivity Checks: "comb_circ:u2"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "counter:u3"
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -44,15 +42,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul  3 13:54:30 2024           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul  5 15:37:45 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pacemaker                                       ;
 ; Top-level Entity Name              ; pacemaker                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 8                                               ;
-;     Total combinational functions  ; 7                                               ;
-;     Dedicated logic registers      ; 6                                               ;
-; Total registers                    ; 6                                               ;
+; Total logic elements               ; 21                                              ;
+;     Total combinational functions  ; 21                                              ;
+;     Dedicated logic registers      ; 13                                              ;
+; Total registers                    ; 13                                              ;
 ; Total pins                         ; 3                                               ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -157,16 +155,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                             ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                      ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
-; reg2.vhd                         ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab/reg2.vhd      ;         ;
-; comb_circ.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab/comb_circ.vhd ;         ;
-; pacemaker.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab/pacemaker.vhd ;         ;
-; counter.vhd                      ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab/counter.vhd   ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
+; reg2.vhd                         ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-portas-logicas/reg2.vhd      ;         ;
+; comb_circ.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-portas-logicas/comb_circ.vhd ;         ;
+; pacemaker.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-portas-logicas/pacemaker.vhd ;         ;
+; counter.vhd                      ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-portas-logicas/counter.vhd   ;         ;
++----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -174,28 +172,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 8     ;
+; Estimated Total logic elements              ; 21    ;
 ;                                             ;       ;
-; Total combinational functions               ; 7     ;
+; Total combinational functions               ; 21    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 3     ;
-;     -- <=2 input functions                  ; 4     ;
+;     -- 4 input functions                    ; 8     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 13    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 7     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 12    ;
+;     -- arithmetic mode                      ; 9     ;
 ;                                             ;       ;
-; Total registers                             ; 6     ;
-;     -- Dedicated logic registers            ; 6     ;
+; Total registers                             ; 13    ;
+;     -- Dedicated logic registers            ; 13    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 3     ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 6     ;
-; Total fan-out                               ; 33    ;
-; Average fan-out                             ; 2.06  ;
+; Maximum fan-out                             ; 13    ;
+; Total fan-out                               ; 95    ;
+; Average fan-out                             ; 2.57  ;
 +---------------------------------------------+-------+
 
 
@@ -204,9 +202,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
-; |pacemaker                 ; 7 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |pacemaker              ; work         ;
-;    |comb_circ:u2|          ; 3 (3)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pacemaker|comb_circ:u2 ; work         ;
-;    |counter:u3|            ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pacemaker|counter:u3   ; work         ;
+; |pacemaker                 ; 21 (0)            ; 13 (0)       ; 0           ; 0            ; 0       ; 0         ; 3    ; 0            ; |pacemaker              ; work         ;
+;    |circ_comb:u2|          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pacemaker|circ_comb:u2 ; work         ;
+;    |counter:u3|            ; 17 (17)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pacemaker|counter:u3   ; work         ;
 ;    |reg2:u1|               ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |pacemaker|reg2:u1      ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -217,45 +215,24 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 6     ;
+; Total registers                              ; 13    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 11    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 5     ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; counter:u3|qv[2]                       ; 2       ;
-; counter:u3|qv[1]                       ; 3       ;
-; counter:u3|qv[0]                       ; 4       ;
-; Total number of inverted registers = 3 ;         ;
-+----------------------------------------+---------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:u3"                                                                                                                                   ;
-+-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                      ;
-+-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; q     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; reset ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "comb_circ:u2"                                                                                                                               ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                      ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; s    ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:u3"                                                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; data ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -273,15 +250,15 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jul  3 13:54:28 2024
+    Info: Processing started: Fri Jul  5 15:37:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pacemaker -c pacemaker
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file reg2.vhd
     Info (12022): Found design unit 1: reg2-behav
     Info (12023): Found entity 1: reg2
 Info (12021): Found 2 design units, including 1 entities, in source file comb_circ.vhd
-    Info (12022): Found design unit 1: comb_circ-behav
-    Info (12023): Found entity 1: comb_circ
+    Info (12022): Found design unit 1: circ_comb-behav
+    Info (12023): Found entity 1: circ_comb
 Info (12021): Found 2 design units, including 1 entities, in source file pacemaker.vhd
     Info (12022): Found design unit 1: pacemaker-behavior
     Info (12023): Found entity 1: pacemaker
@@ -290,21 +267,27 @@ Info (12021): Found 2 design units, including 1 entities, in source file counter
     Info (12023): Found entity 1: counter
 Info (12127): Elaborating entity "pacemaker" for the top level hierarchy
 Info (12128): Elaborating entity "reg2" for hierarchy "reg2:u1"
-Info (12128): Elaborating entity "comb_circ" for hierarchy "comb_circ:u2"
+Info (12128): Elaborating entity "circ_comb" for hierarchy "circ_comb:u2"
 Info (12128): Elaborating entity "counter" for hierarchy "counter:u3"
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[9] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[8] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[4] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[3] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[2] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[1] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[0] will power up to Low
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "s"
-Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 24 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 8 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 641 megabytes
-    Info: Processing ended: Wed Jul  3 13:54:30 2024
-    Info: Elapsed time: 00:00:02
+    Info (21061): Implemented 21 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 649 megabytes
+    Info: Processing ended: Fri Jul  5 15:37:45 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
 

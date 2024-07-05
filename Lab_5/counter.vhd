@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity counter is
-	port (clk: in bit;
+	port (c: in bit;
 			reset: in bit;
 			data: in integer range 7 downto 0;
 			q: out integer range 7 downto 0;
@@ -11,13 +11,13 @@ end counter;
 
 architecture behavior of counter is
 begin
-	counter_process: process(clk, reset)
+	counter_process: process(c, reset)
 		variable q_var: integer range 7 downto 0;
 		begin
 			if(reset = '1') then
 				tc <= '0';
 				q_var := 0;
-			elsif(clk' event and clk = '1') then
+			elsif(c' event and c = '1') then
 				if(q_var = 0) then 
 				tc <= '1'; 
 				q_var := 7;

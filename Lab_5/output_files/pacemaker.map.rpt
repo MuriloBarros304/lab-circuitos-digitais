@@ -1,6 +1,6 @@
 Analysis & Synthesis report for pacemaker
-Fri Jul 05 09:52:45 2024
-Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Fri Jul  5 14:07:07 2024
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -10,8 +10,13 @@ Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Port Connectivity Checks: "counter:u3"
-  6. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Port Connectivity Checks: "counter:u3"
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -37,24 +42,24 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Fri Jul 05 09:52:45 2024               ;
-; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul  5 14:07:07 2024           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pacemaker                                       ;
 ; Top-level Entity Name              ; pacemaker                                       ;
 ; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total GXB Receiver Channel PCS     ; N/A until Partition Merge                       ;
-; Total GXB Receiver Channel PMA     ; N/A until Partition Merge                       ;
-; Total GXB Transmitter Channel PCS  ; N/A until Partition Merge                       ;
-; Total GXB Transmitter Channel PMA  ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 8                                               ;
+;     Total combinational functions  ; 8                                               ;
+;     Dedicated logic registers      ; 6                                               ;
+; Total registers                    ; 6                                               ;
+; Total pins                         ; 3                                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total GXB Receiver Channel PCS     ; 0                                               ;
+; Total GXB Receiver Channel PMA     ; 0                                               ;
+; Total GXB Transmitter Channel PCS  ; 0                                               ;
+; Total GXB Transmitter Channel PMA  ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -150,31 +155,91 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "counter:u3"                                                                                                                                           ;
-+------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type    ; Severity         ; Details                                                                                                                                      ;
-+------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; c    ; Unknown ; Critical Warning ; Named port was not declared by the instantiated entity                                                                                       ;
-; tc   ; Output  ; Info             ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; clk  ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; data ; Input   ; Warning          ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; q    ; Output  ; Warning          ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+------+---------+------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                     ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                              ; Library ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+; pacemaker.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/Lab_5/pacemaker.vhd ;         ;
+; reg.vhd                          ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/Lab_5/reg.vhd       ;         ;
+; circ_comb.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/Lab_5/circ_comb.vhd ;         ;
+; counter.vhd                      ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/Lab_5/counter.vhd   ;         ;
++----------------------------------+-----------------+-----------------+---------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary ;
++--------------------------+------------------+
+; Resource                 ; Usage            ;
++--------------------------+------------------+
+; I/O pins                 ; 3                ;
+; DSP block 9-bit elements ; 0                ;
+; Maximum fan-out node     ; clk~input        ;
+; Maximum fan-out          ; 6                ;
+; Total fan-out            ; 42               ;
+; Average fan-out          ; 2.10             ;
++--------------------------+------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name     ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+; |pacemaker                 ; 8 (0)             ; 6 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 3    ; 0            ; |pacemaker              ; work         ;
+;    |circ_comb:u2|          ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |pacemaker|circ_comb:u2 ; work         ;
+;    |counter:u3|            ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |pacemaker|counter:u3   ; work         ;
+;    |reg:u1|                ; 0 (0)             ; 2 (2)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |pacemaker|reg:u1       ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 6     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 4     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "counter:u3"                                                                                                                                  ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                                      ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; data ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
+; q    ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
++------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 32-bit Analysis & Synthesis
+Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul 05 09:52:45 2024
+    Info: Processing started: Fri Jul  5 14:07:06 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pacemaker -c pacemaker
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pacemaker.vhd
@@ -191,17 +256,25 @@ Info (12021): Found 2 design units, including 1 entities, in source file counter
     Info (12022): Found design unit 1: counter-behavior
     Info (12023): Found entity 1: counter
 Info (12127): Elaborating entity "pacemaker" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at pacemaker.vhd(6): used implicit default value for signal "t" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at pacemaker.vhd(12): object "fc" assigned a value but never read
 Info (12128): Elaborating entity "reg" for hierarchy "reg:u1"
 Info (12128): Elaborating entity "circ_comb" for hierarchy "circ_comb:u2"
 Info (12128): Elaborating entity "counter" for hierarchy "counter:u3"
-Error (12002): Port "c" does not exist in macrofunction "u3" File: C:/Users/filho/Documents/Lab_circuitos/Lab_4/pacemaker.vhd Line: 29
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Error: Quartus II 32-bit Analysis & Synthesis was unsuccessful. 1 error, 5 warnings
-    Error: Peak virtual memory: 406 megabytes
-    Error: Processing ended: Fri Jul 05 09:52:46 2024
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:00
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[2] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[1] will power up to Low
+    Critical Warning (18010): Register counter:u3|\counter_process:q_var[0] will power up to Low
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 11 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 1 output pins
+    Info (21061): Implemented 8 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 651 megabytes
+    Info: Processing ended: Fri Jul  5 14:07:07 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

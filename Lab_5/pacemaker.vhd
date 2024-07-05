@@ -2,8 +2,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 entity pacemaker is
-	port(clk, s, z: IN BIT;
-		  p, t : OUT BIT);
+	port(clk, s: IN BIT;
+		  p : OUT BIT);
 end pacemaker;
 
 architecture behavior of pacemaker is
@@ -24,7 +24,7 @@ architecture behavior of pacemaker is
 		end component;
 begin
 	u1: reg port map(c => clk, i1 => n1, i0 => n0, q1 => s1, q0 => s0);
-	u2: circ_comb port map( s_bat => s, fim_temp => z, c => clk, current1 => s1, current0 => s0,
+	u2: circ_comb port map( s_bat => s, fim_temp => fc, c => clk, current1 => s1, current0 => s0,
 									next1 => n1, next0 => n0, pulso => p , temp_reset => sc);
 	u3: counter port map(c => clk, reset => sc, tc => fc);								
 	

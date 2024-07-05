@@ -11,16 +11,16 @@ entity counter is
 end counter;
 
 architecture behavior of counter is
-    signal q: integer range 799 downto 0; -- variável para a saída
+    signal q: integer range 7 downto 0; -- variável para a saída
 begin
     process(c, reset)
     begin
         if (reset = '1') then
-            q <= 799;
+            q <= 7;
         elsif (c'event and c = '1') then
             if (cnt = '1') then
                 if (q = 0) then
-                    q <= 799;
+                    q <= 7;
                     tc <= '1';
                 else
                     q <= q - 1;

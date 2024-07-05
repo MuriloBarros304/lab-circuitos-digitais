@@ -1,5 +1,5 @@
 Analysis & Synthesis report for pacemaker
-Thu Jul  4 17:26:50 2024
+Fri Jul  5 09:14:31 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,14 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |pacemaker|currentstate
-  9. User-Specified and Inferred Latches
- 10. General Register Statistics
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,20 +36,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jul  4 17:26:50 2024           ;
+; Analysis & Synthesis Status        ; Failed - Fri Jul  5 09:14:31 2024               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; pacemaker                                       ;
 ; Top-level Entity Name              ; pacemaker                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 7                                               ;
-;     Total combinational functions  ; 7                                               ;
-;     Dedicated logic registers      ; 3                                               ;
-; Total registers                    ; 3                                               ;
-; Total pins                         ; 5                                               ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -156,111 +149,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                            ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                                     ; Library ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
-; pacemaker.vhd                    ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-comportamental/pacemaker.vhd ;         ;
-+----------------------------------+-----------------+-----------------+--------------------------------------------------------------------------------------------------+---------+
-
-
-+-------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary           ;
-+---------------------------------------------+---------+
-; Resource                                    ; Usage   ;
-+---------------------------------------------+---------+
-; Estimated Total logic elements              ; 7       ;
-;                                             ;         ;
-; Total combinational functions               ; 7       ;
-; Logic element usage by number of LUT inputs ;         ;
-;     -- 4 input functions                    ; 3       ;
-;     -- 3 input functions                    ; 4       ;
-;     -- <=2 input functions                  ; 0       ;
-;                                             ;         ;
-; Logic elements by mode                      ;         ;
-;     -- normal mode                          ; 7       ;
-;     -- arithmetic mode                      ; 0       ;
-;                                             ;         ;
-; Total registers                             ; 3       ;
-;     -- Dedicated logic registers            ; 3       ;
-;     -- I/O registers                        ; 0       ;
-;                                             ;         ;
-; I/O pins                                    ; 5       ;
-; Embedded Multiplier 9-bit elements          ; 0       ;
-; Maximum fan-out node                        ; t$latch ;
-; Maximum fan-out                             ; 6       ;
-; Total fan-out                               ; 32      ;
-; Average fan-out                             ; 2.13    ;
-+---------------------------------------------+---------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |pacemaker                 ; 7 (7)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 5    ; 0            ; |pacemaker          ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------+
-; State Machine - |pacemaker|currentstate                                                ;
-+-----------------------+-------------------+--------------------+-----------------------+
-; Name                  ; currentstate.Pace ; currentstate.WaitS ; currentstate.RstTimer ;
-+-----------------------+-------------------+--------------------+-----------------------+
-; currentstate.RstTimer ; 0                 ; 0                  ; 0                     ;
-; currentstate.WaitS    ; 0                 ; 1                  ; 1                     ;
-; currentstate.Pace     ; 1                 ; 0                  ; 1                     ;
-+-----------------------+-------------------+--------------------+-----------------------+
-
-
-+---------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                               ;
-+----------------------------------------------------+---------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
-+----------------------------------------------------+---------------------+------------------------+
-; p$latch                                            ; Selector0           ; yes                    ;
-; t$latch                                            ; currentstate.Pace   ; yes                    ;
-; reset                                              ; currentstate.Pace   ; yes                    ;
-; Number of user-specified and inferred latches = 3  ;                     ;                        ;
-+----------------------------------------------------+---------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 3     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Jul  4 17:26:49 2024
+    Info: Processing started: Fri Jul  5 09:14:30 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off pacemaker -c pacemaker
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file pacemaker.vhd
@@ -269,28 +164,12 @@ Info (12021): Found 2 design units, including 1 entities, in source file pacemak
 Info (12021): Found 2 design units, including 1 entities, in source file counter.vhd
     Info (12022): Found design unit 1: counter-behavior
     Info (12023): Found entity 1: counter
-Info (12127): Elaborating entity "pacemaker" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at pacemaker.vhd(17): object "cnt" assigned a value but never read
-Warning (10631): VHDL Process Statement warning at pacemaker.vhd(40): inferring latch(es) for signal or variable "reset", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at pacemaker.vhd(40): inferring latch(es) for signal or variable "t", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at pacemaker.vhd(40): inferring latch(es) for signal or variable "p", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "p" at pacemaker.vhd(40)
-Info (10041): Inferred latch for "t" at pacemaker.vhd(40)
-Info (10041): Inferred latch for "reset" at pacemaker.vhd(40)
-Info (13025): Duplicate LATCH primitives merged into single LATCH primitive
-    Info (13026): Duplicate LATCH primitive "reset" merged with LATCH primitive "t$latch"
-Warning (13012): Latch p$latch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal currentstate.Pace
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 12 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 7 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 631 megabytes
-    Info: Processing ended: Thu Jul  4 17:26:50 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Error (10309): VHDL Interface Declaration error in pacemaker.vhd(55): interface object "z" of mode out cannot be read. Change object mode to buffer. File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-comportamental/pacemaker.vhd Line: 55
+Error (10309): VHDL Interface Declaration error in pacemaker.vhd(40): interface object "z" of mode out cannot be read. Change object mode to buffer. File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-comportamental/pacemaker.vhd Line: 40
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 2 errors, 1 warning
+    Error: Peak virtual memory: 584 megabytes
+    Error: Processing ended: Fri Jul  5 09:14:31 2024
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 

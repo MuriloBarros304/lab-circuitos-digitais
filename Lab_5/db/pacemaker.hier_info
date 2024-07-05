@@ -3,9 +3,7 @@ clk => reg:u1.c
 clk => circ_comb:u2.c
 clk => counter:u3.c
 s => circ_comb:u2.s_bat
-z => circ_comb:u2.fim_temp
 p <= circ_comb:u2.pulso
-t <= <GND>
 
 
 |pacemaker|reg:u1
@@ -35,10 +33,10 @@ temp_reset <= next0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |pacemaker|counter:u3
-clk => tc~reg0.CLK
-clk => \counter_process:q_var[0].CLK
-clk => \counter_process:q_var[1].CLK
-clk => \counter_process:q_var[2].CLK
+c => tc~reg0.CLK
+c => \counter_process:q_var[0].CLK
+c => \counter_process:q_var[1].CLK
+c => \counter_process:q_var[2].CLK
 reset => tc~reg0.ACLR
 reset => \counter_process:q_var[0].ACLR
 reset => \counter_process:q_var[1].ACLR
