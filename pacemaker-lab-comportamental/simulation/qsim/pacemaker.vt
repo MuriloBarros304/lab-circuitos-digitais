@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/05/2024 09:12:08"
+// Generated on "07/07/2024 17:14:36"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    pacemaker
 // 
@@ -29,17 +29,15 @@
 module pacemaker_vlg_sample_tst(
 	clk,
 	s,
-	z,
 	sampler_tx
 );
 input  clk;
 input  s;
-input  z;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(clk or s or z)
+always @(clk or s)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -60,31 +58,25 @@ endmodule
 
 module pacemaker_vlg_check_tst (
 	p,
-	t,
 	sampler_rx
 );
 input  p;
-input  t;
 input sampler_rx;
 
 reg  p_expected;
-reg  t_expected;
 
 reg  p_prev;
-reg  t_prev;
 
 reg  p_expected_prev;
-reg  t_expected_prev;
 
 reg  last_p_exp;
-reg  last_t_exp;
 
 reg trigger;
 
 integer i;
 integer nummismatches;
 
-reg [1:2] on_first_change ;
+reg [1:1] on_first_change ;
 
 
 initial
@@ -92,7 +84,7 @@ begin
 trigger = 0;
 i = 0;
 nummismatches = 0;
-on_first_change = 2'b1;
+on_first_change = 1'b1;
 end
 
 // update real /o prevs
@@ -100,7 +92,6 @@ end
 always @(trigger)
 begin
 	p_prev = p;
-	t_prev = t;
 end
 
 // update expected /o prevs
@@ -108,7 +99,6 @@ end
 always @(trigger)
 begin
 	p_expected_prev = p_expected;
-	t_expected_prev = t_expected;
 end
 
 
@@ -118,14 +108,8 @@ initial
 begin
 	p_expected = 1'bX;
 end 
-
-// expected t
-initial
-begin
-	t_expected = 1'bX;
-end 
 // generate trigger
-always @(p_expected or p or t_expected or t)
+always @(p_expected or p)
 begin
 	trigger <= ~trigger;
 end
@@ -135,8 +119,8 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected p = %b | expected t = %b | ",p_expected_prev,t_expected_prev);
-	$display("| real p = %b | real t = %b | ",p_prev,t_prev);
+	$display("| expected p = %b | ",p_expected_prev);
+	$display("| real p = %b | ",p_prev);
 `endif
 	if (
 		( p_expected_prev !== 1'bx ) && ( p_prev !== p_expected_prev )
@@ -150,19 +134,6 @@ begin
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
 		last_p_exp = p_expected_prev;
-	end
-	if (
-		( t_expected_prev !== 1'bx ) && ( t_prev !== t_expected_prev )
-		&& ((t_expected_prev !== last_t_exp) ||
-			on_first_change[2])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port t :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", t_expected_prev);
-		$display ("     Real value = %b", t_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[2] = 1'b0;
-		last_t_exp = t_expected_prev;
 	end
 
 	trigger <= ~trigger;
@@ -185,10 +156,8 @@ module pacemaker_vlg_vec_tst();
 // general purpose registers
 reg clk;
 reg s;
-reg z;
 // wires                                               
 wire p;
-wire t;
 
 wire sampler;                             
 
@@ -197,17 +166,15 @@ pacemaker i1 (
 // port map - connection between master ports and signals/registers   
 	.clk(clk),
 	.p(p),
-	.s(s),
-	.t(t),
-	.z(z)
+	.s(s)
 );
 
 // clk
 always
 begin
 	clk = 1'b0;
-	clk = #10000 1'b1;
-	#10000;
+	clk = #5000 1'b1;
+	#5000;
 end 
 
 // s
@@ -216,22 +183,14 @@ begin
 	s = 1'b0;
 end 
 
-// z
-initial
-begin
-	z = 1'b0;
-end 
-
 pacemaker_vlg_sample_tst tb_sample (
 	.clk(clk),
 	.s(s),
-	.z(z),
 	.sampler_tx(sampler)
 );
 
 pacemaker_vlg_check_tst tb_out(
 	.p(p),
-	.t(t),
 	.sampler_rx(sampler)
 );
 endmodule

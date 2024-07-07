@@ -1,5 +1,5 @@
 Simulator report for pacemaker
-Fri Jul  5 15:44:26 2024
+Sun Jul  7 17:44:18 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 59 nodes     ;
-; Simulation Coverage         ;      89.83 % ;
-; Total Number of Transitions ; 1995         ;
+; Simulation Netlist Size     ; 24 nodes     ;
+; Simulation Coverage         ;     100.00 % ;
+; Total Number of Transitions ; 539          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,106 +94,63 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      89.83 % ;
-; Total nodes checked                                 ; 59           ;
-; Total output ports checked                          ; 59           ;
-; Total output ports with complete 1/0-value coverage ; 53           ;
-; Total output ports with no 1/0-value coverage       ; 6            ;
-; Total output ports with no 1-value coverage         ; 6            ;
-; Total output ports with no 0-value coverage         ; 6            ;
+; Total coverage as a percentage                      ;     100.00 % ;
+; Total nodes checked                                 ; 24           ;
+; Total output ports checked                          ; 24           ;
+; Total output ports with complete 1/0-value coverage ; 24           ;
+; Total output ports with no 1/0-value coverage       ; 0            ;
+; Total output ports with no 1-value coverage         ; 0            ;
+; Total output ports with no 0-value coverage         ; 0            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                                          ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; Node Name                                       ; Output Port Name                                ; Output Port Type ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; |pacemaker|clk                                  ; |pacemaker|clk                                  ; out              ;
-; |pacemaker|s                                    ; |pacemaker|s                                    ; out              ;
-; |pacemaker|p                                    ; |pacemaker|p                                    ; pin_out          ;
-; |pacemaker|counter:u3|tc                        ; |pacemaker|counter:u3|tc                        ; regout           ;
-; |pacemaker|counter:u3|q_var~0                   ; |pacemaker|counter:u3|q_var~0                   ; out              ;
-; |pacemaker|counter:u3|q_var~1                   ; |pacemaker|counter:u3|q_var~1                   ; out              ;
-; |pacemaker|counter:u3|q_var~2                   ; |pacemaker|counter:u3|q_var~2                   ; out              ;
-; |pacemaker|counter:u3|q_var~3                   ; |pacemaker|counter:u3|q_var~3                   ; out              ;
-; |pacemaker|counter:u3|q_var~4                   ; |pacemaker|counter:u3|q_var~4                   ; out              ;
-; |pacemaker|counter:u3|q_var~5                   ; |pacemaker|counter:u3|q_var~5                   ; out              ;
-; |pacemaker|counter:u3|q_var~6                   ; |pacemaker|counter:u3|q_var~6                   ; out              ;
-; |pacemaker|counter:u3|q_var~7                   ; |pacemaker|counter:u3|q_var~7                   ; out              ;
-; |pacemaker|counter:u3|q_var~8                   ; |pacemaker|counter:u3|q_var~8                   ; out              ;
-; |pacemaker|counter:u3|q_var~9                   ; |pacemaker|counter:u3|q_var~9                   ; out              ;
-; |pacemaker|counter:u3|\counter_process:q_var[9] ; |pacemaker|counter:u3|\counter_process:q_var[9] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[8] ; |pacemaker|counter:u3|\counter_process:q_var[8] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[4] ; |pacemaker|counter:u3|\counter_process:q_var[4] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[3] ; |pacemaker|counter:u3|\counter_process:q_var[3] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[2] ; |pacemaker|counter:u3|\counter_process:q_var[2] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[1] ; |pacemaker|counter:u3|\counter_process:q_var[1] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[0] ; |pacemaker|counter:u3|\counter_process:q_var[0] ; regout           ;
-; |pacemaker|circ_comb:u2|pulso                   ; |pacemaker|circ_comb:u2|pulso                   ; out0             ;
-; |pacemaker|circ_comb:u2|next1~0                 ; |pacemaker|circ_comb:u2|next1~0                 ; out0             ;
-; |pacemaker|circ_comb:u2|next1~1                 ; |pacemaker|circ_comb:u2|next1~1                 ; out0             ;
-; |pacemaker|circ_comb:u2|next1                   ; |pacemaker|circ_comb:u2|next1                   ; out0             ;
-; |pacemaker|circ_comb:u2|temp_reset              ; |pacemaker|circ_comb:u2|temp_reset              ; out0             ;
-; |pacemaker|circ_comb:u2|next0~1                 ; |pacemaker|circ_comb:u2|next0~1                 ; out0             ;
-; |pacemaker|circ_comb:u2|next0                   ; |pacemaker|circ_comb:u2|next0                   ; out0             ;
-; |pacemaker|reg2:u1|q0                           ; |pacemaker|reg2:u1|q0                           ; regout           ;
-; |pacemaker|reg2:u1|q1                           ; |pacemaker|reg2:u1|q1                           ; regout           ;
-; |pacemaker|counter:u3|Add0~0                    ; |pacemaker|counter:u3|Add0~0                    ; out0             ;
-; |pacemaker|counter:u3|Add0~1                    ; |pacemaker|counter:u3|Add0~1                    ; out0             ;
-; |pacemaker|counter:u3|Add0~2                    ; |pacemaker|counter:u3|Add0~2                    ; out0             ;
-; |pacemaker|counter:u3|Add0~3                    ; |pacemaker|counter:u3|Add0~3                    ; out0             ;
-; |pacemaker|counter:u3|Add0~4                    ; |pacemaker|counter:u3|Add0~4                    ; out0             ;
-; |pacemaker|counter:u3|Add0~5                    ; |pacemaker|counter:u3|Add0~5                    ; out0             ;
-; |pacemaker|counter:u3|Add0~6                    ; |pacemaker|counter:u3|Add0~6                    ; out0             ;
-; |pacemaker|counter:u3|Add0~7                    ; |pacemaker|counter:u3|Add0~7                    ; out0             ;
-; |pacemaker|counter:u3|Add0~8                    ; |pacemaker|counter:u3|Add0~8                    ; out0             ;
-; |pacemaker|counter:u3|Add0~9                    ; |pacemaker|counter:u3|Add0~9                    ; out0             ;
-; |pacemaker|counter:u3|Add0~10                   ; |pacemaker|counter:u3|Add0~10                   ; out0             ;
-; |pacemaker|counter:u3|Add0~11                   ; |pacemaker|counter:u3|Add0~11                   ; out0             ;
-; |pacemaker|counter:u3|Add0~12                   ; |pacemaker|counter:u3|Add0~12                   ; out0             ;
-; |pacemaker|counter:u3|Add0~13                   ; |pacemaker|counter:u3|Add0~13                   ; out0             ;
-; |pacemaker|counter:u3|Add0~15                   ; |pacemaker|counter:u3|Add0~15                   ; out0             ;
-; |pacemaker|counter:u3|Add0~16                   ; |pacemaker|counter:u3|Add0~16                   ; out0             ;
-; |pacemaker|counter:u3|Add0~18                   ; |pacemaker|counter:u3|Add0~18                   ; out0             ;
-; |pacemaker|counter:u3|Add0~19                   ; |pacemaker|counter:u3|Add0~19                   ; out0             ;
-; |pacemaker|counter:u3|Add0~21                   ; |pacemaker|counter:u3|Add0~21                   ; out0             ;
-; |pacemaker|counter:u3|Add0~22                   ; |pacemaker|counter:u3|Add0~22                   ; out0             ;
-; |pacemaker|counter:u3|Add0~23                   ; |pacemaker|counter:u3|Add0~23                   ; out0             ;
-; |pacemaker|counter:u3|Add0~24                   ; |pacemaker|counter:u3|Add0~24                   ; out0             ;
-; |pacemaker|counter:u3|Equal0~0                  ; |pacemaker|counter:u3|Equal0~0                  ; out0             ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
++--------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                ;
++------------------------------------+------------------------------------+------------------+
+; Node Name                          ; Output Port Name                   ; Output Port Type ;
++------------------------------------+------------------------------------+------------------+
+; |pacemaker|clk                     ; |pacemaker|clk                     ; out              ;
+; |pacemaker|s                       ; |pacemaker|s                       ; out              ;
+; |pacemaker|p                       ; |pacemaker|p                       ; pin_out          ;
+; |pacemaker|counter:u3|q_var[0]     ; |pacemaker|counter:u3|q_var[0]     ; regout           ;
+; |pacemaker|counter:u3|q_var~0      ; |pacemaker|counter:u3|q_var~0      ; out              ;
+; |pacemaker|counter:u3|q_var~1      ; |pacemaker|counter:u3|q_var~1      ; out              ;
+; |pacemaker|counter:u3|q_var~2      ; |pacemaker|counter:u3|q_var~2      ; out              ;
+; |pacemaker|counter:u3|tc           ; |pacemaker|counter:u3|tc           ; regout           ;
+; |pacemaker|counter:u3|q_var[2]     ; |pacemaker|counter:u3|q_var[2]     ; regout           ;
+; |pacemaker|counter:u3|q_var[1]     ; |pacemaker|counter:u3|q_var[1]     ; regout           ;
+; |pacemaker|circ_comb:u2|pulso      ; |pacemaker|circ_comb:u2|pulso      ; out0             ;
+; |pacemaker|circ_comb:u2|next1~0    ; |pacemaker|circ_comb:u2|next1~0    ; out0             ;
+; |pacemaker|circ_comb:u2|next1~1    ; |pacemaker|circ_comb:u2|next1~1    ; out0             ;
+; |pacemaker|circ_comb:u2|next1      ; |pacemaker|circ_comb:u2|next1      ; out0             ;
+; |pacemaker|circ_comb:u2|temp_reset ; |pacemaker|circ_comb:u2|temp_reset ; out0             ;
+; |pacemaker|circ_comb:u2|next0~1    ; |pacemaker|circ_comb:u2|next0~1    ; out0             ;
+; |pacemaker|circ_comb:u2|next0      ; |pacemaker|circ_comb:u2|next0      ; out0             ;
+; |pacemaker|reg2:u1|q0              ; |pacemaker|reg2:u1|q0              ; regout           ;
+; |pacemaker|reg2:u1|q1              ; |pacemaker|reg2:u1|q1              ; regout           ;
+; |pacemaker|counter:u3|Add0~0       ; |pacemaker|counter:u3|Add0~0       ; out0             ;
+; |pacemaker|counter:u3|Add0~1       ; |pacemaker|counter:u3|Add0~1       ; out0             ;
+; |pacemaker|counter:u3|Add0~2       ; |pacemaker|counter:u3|Add0~2       ; out0             ;
+; |pacemaker|counter:u3|Add0~3       ; |pacemaker|counter:u3|Add0~3       ; out0             ;
+; |pacemaker|counter:u3|Equal0~0     ; |pacemaker|counter:u3|Equal0~0     ; out0             ;
++------------------------------------+------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+----------------------------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                                             ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; Node Name                                       ; Output Port Name                                ; Output Port Type ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; |pacemaker|counter:u3|\counter_process:q_var[7] ; |pacemaker|counter:u3|\counter_process:q_var[7] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[6] ; |pacemaker|counter:u3|\counter_process:q_var[6] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[5] ; |pacemaker|counter:u3|\counter_process:q_var[5] ; regout           ;
-; |pacemaker|counter:u3|Add0~14                   ; |pacemaker|counter:u3|Add0~14                   ; out0             ;
-; |pacemaker|counter:u3|Add0~17                   ; |pacemaker|counter:u3|Add0~17                   ; out0             ;
-; |pacemaker|counter:u3|Add0~20                   ; |pacemaker|counter:u3|Add0~20                   ; out0             ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
++-------------------------------------------------+
+; Missing 1-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+----------------------------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                                             ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; Node Name                                       ; Output Port Name                                ; Output Port Type ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
-; |pacemaker|counter:u3|\counter_process:q_var[7] ; |pacemaker|counter:u3|\counter_process:q_var[7] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[6] ; |pacemaker|counter:u3|\counter_process:q_var[6] ; regout           ;
-; |pacemaker|counter:u3|\counter_process:q_var[5] ; |pacemaker|counter:u3|\counter_process:q_var[5] ; regout           ;
-; |pacemaker|counter:u3|Add0~14                   ; |pacemaker|counter:u3|Add0~14                   ; out0             ;
-; |pacemaker|counter:u3|Add0~17                   ; |pacemaker|counter:u3|Add0~17                   ; out0             ;
-; |pacemaker|counter:u3|Add0~20                   ; |pacemaker|counter:u3|Add0~20                   ; out0             ;
-+-------------------------------------------------+-------------------------------------------------+------------------+
++-------------------------------------------------+
+; Missing 0-Value Coverage                        ;
++-----------+------------------+------------------+
+; Node Name ; Output Port Name ; Output Port Type ;
++-----------+------------------+------------------+
 
 
 +---------------------+
@@ -209,22 +166,19 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul  5 15:44:26 2024
+    Info: Processing started: Sun Jul  7 17:44:17 2024
 Info: Command: quartus_sim --simulation_results_format=VWF pacemaker -c pacemaker
 Info (324025): Using vector source file "/home/murilo/Documentos/GitHub/lab-circuitos-digitais/pacemaker-lab-portas-logicas/Waveform.vwf"
-Warning (328013): Ignored node in vector source file. Can't find corresponding node name "pacemaker_out" in design.
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
-Warning (324036): Found clock-sensitive change during active clock edge at time 190.0 ns on register "|pacemaker|reg2:u1|q0"
-Warning (324036): Found clock-sensitive change during active clock edge at time 250.0 ns on register "|pacemaker|reg2:u1|q1"
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      89.83 %
-Info (328052): Number of transitions in simulation is 1995
+Info (328053): Simulation coverage is     100.00 %
+Info (328052): Number of transitions in simulation is 539
 Info (324045): Vector file pacemaker.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
-Info: Quartus II 64-Bit Simulator was successful. 0 errors, 3 warnings
+Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Fri Jul  5 15:44:26 2024
-    Info: Elapsed time: 00:00:00
+    Info: Processing ended: Sun Jul  7 17:44:18 2024
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:00
 
 

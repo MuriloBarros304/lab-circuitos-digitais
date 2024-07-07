@@ -1,11 +1,24 @@
 |pacemaker
-s => nextstate.OUTPUTSELECT
-s => nextstate.OUTPUTSELECT
-s => Selector0.IN2
-clk => currentstate~1.DATAIN
-z => nextstate.DATAA
-z => nextstate.DATAA
-p <= p$latch.DB_MAX_OUTPUT_PORT_TYPE
-t <= t$latch.DB_MAX_OUTPUT_PORT_TYPE
+s => nextstate~0.DATAA
+s => comblogic~0.IN1
+s => nextstate~1.DATAA
+clk => counter:Timer.c
+clk => currentstate~7.DATAIN
+p <= p~0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|pacemaker|counter:Timer
+c => q_var[0].CLK
+c => q_var[1].CLK
+c => q_var[2].CLK
+c => tc~reg0.CLK
+reset => q_var[0].PRESET
+reset => q_var[1].PRESET
+reset => q_var[2].PRESET
+reset => tc~reg0.ACLR
+q[0] <= q_var[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_var[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_var[2].DB_MAX_OUTPUT_PORT_TYPE
+tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

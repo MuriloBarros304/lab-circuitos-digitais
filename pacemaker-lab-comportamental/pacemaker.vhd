@@ -5,31 +5,30 @@ entity pacemaker is
     port (
         s : in bit;    -- sensor de contração
         clk : in bit;
-        z : in bit;    -- fim da contagem
-        p : out bit;   -- forçar contração
-        t : out bit    -- resetar timer
+        p : out bit   -- forçar contração
     );
 end pacemaker;
 
 architecture behavior of pacemaker is
     type statetype is (RstTimer, WaitS, Pace);
     signal currentstate, nextstate: statetype;
-    signal cnt, reset : bit;
-
+    signal fc, sc : bit;
     component counter is
         port(
             c : in bit;
-            cnt : in bit;
             reset : in bit;
+            q : out integer range 0 to 7;
             tc : out bit
         );
     end component;
     
 begin
-    statereg: process(clk)
+    Timer : counter port map(reset => sc, c => clk, q => open, tc => fc);
+    
+    statereg: process(clk, sc)
     begin
         if (clk'event and clk = '1') then
-            if (reset = '1') then -- estado inicial
+            if (sc = '1') then -- estado inicial
                 currentstate <= RstTimer;
             else
                 currentstate <= nextstate;
@@ -37,23 +36,19 @@ begin
         end if;
     end process;
     
-    comblogic: process (currentstate, s, z)
+    comblogic: process (currentstate, s, fc)
     begin
+        p <= '0'; -- redefinir saída padrão
         case currentstate is
             when RstTimer =>
-                cnt <= '1';
-                reset <= '1';
-                t <= '1';
+                sc <= '1';
                 nextstate <= WaitS;
             when WaitS =>
-                cnt <= '0';
-                reset <= '0';
-                t <= '0';
-                if s = '1' then
-                    p <= '0';
-                    nextstate <= RstTimer;
-                elsif z = '1' then
+                sc <= '0';
+                if s = '0' and fc = '1' then
                     nextstate <= Pace;
+                elsif s = '1' then
+                    nextstate <= RstTimer;
                 else
                     nextstate <= WaitS;
                 end if;

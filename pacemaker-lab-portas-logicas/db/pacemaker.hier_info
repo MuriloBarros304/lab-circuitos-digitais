@@ -33,48 +33,17 @@ temp_reset <= next0~0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |pacemaker|counter:u3
+c => q_var[0].CLK
+c => q_var[1].CLK
+c => q_var[2].CLK
 c => tc~reg0.CLK
-c => \counter_process:q_var[0].CLK
-c => \counter_process:q_var[1].CLK
-c => \counter_process:q_var[2].CLK
-c => \counter_process:q_var[3].CLK
-c => \counter_process:q_var[4].CLK
-c => \counter_process:q_var[5].CLK
-c => \counter_process:q_var[6].CLK
-c => \counter_process:q_var[7].CLK
-c => \counter_process:q_var[8].CLK
-c => \counter_process:q_var[9].CLK
+reset => q_var[0].PRESET
+reset => q_var[1].PRESET
+reset => q_var[2].PRESET
 reset => tc~reg0.ACLR
-reset => \counter_process:q_var[0].ACLR
-reset => \counter_process:q_var[1].ACLR
-reset => \counter_process:q_var[2].ACLR
-reset => \counter_process:q_var[3].ACLR
-reset => \counter_process:q_var[4].ACLR
-reset => \counter_process:q_var[5].ACLR
-reset => \counter_process:q_var[6].ACLR
-reset => \counter_process:q_var[7].ACLR
-reset => \counter_process:q_var[8].ACLR
-reset => \counter_process:q_var[9].ACLR
-data[0] => ~NO_FANOUT~
-data[1] => ~NO_FANOUT~
-data[2] => ~NO_FANOUT~
-data[3] => ~NO_FANOUT~
-data[4] => ~NO_FANOUT~
-data[5] => ~NO_FANOUT~
-data[6] => ~NO_FANOUT~
-data[7] => ~NO_FANOUT~
-data[8] => ~NO_FANOUT~
-data[9] => ~NO_FANOUT~
-q[0] <= \counter_process:q_var[0].DB_MAX_OUTPUT_PORT_TYPE
-q[1] <= \counter_process:q_var[1].DB_MAX_OUTPUT_PORT_TYPE
-q[2] <= \counter_process:q_var[2].DB_MAX_OUTPUT_PORT_TYPE
-q[3] <= \counter_process:q_var[3].DB_MAX_OUTPUT_PORT_TYPE
-q[4] <= \counter_process:q_var[4].DB_MAX_OUTPUT_PORT_TYPE
-q[5] <= \counter_process:q_var[5].DB_MAX_OUTPUT_PORT_TYPE
-q[6] <= \counter_process:q_var[6].DB_MAX_OUTPUT_PORT_TYPE
-q[7] <= \counter_process:q_var[7].DB_MAX_OUTPUT_PORT_TYPE
-q[8] <= \counter_process:q_var[8].DB_MAX_OUTPUT_PORT_TYPE
-q[9] <= \counter_process:q_var[9].DB_MAX_OUTPUT_PORT_TYPE
+q[0] <= q_var[0].DB_MAX_OUTPUT_PORT_TYPE
+q[1] <= q_var[1].DB_MAX_OUTPUT_PORT_TYPE
+q[2] <= q_var[2].DB_MAX_OUTPUT_PORT_TYPE
 tc <= tc~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 

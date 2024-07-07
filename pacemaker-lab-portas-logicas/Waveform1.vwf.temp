@@ -43,7 +43,7 @@ SIGNAL("clk")
 	PARENT = "";
 }
 
-SIGNAL("pacemaker_out")
+SIGNAL("p")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -68,16 +68,11 @@ TRANSITION_LIST("clk")
 	NODE
 	{
 		REPEAT = 1;
-		NODE
-		{
-			REPEAT = 50;
-			LEVEL 0 FOR 10.0;
-			LEVEL 1 FOR 10.0;
-		}
+		LEVEL 0 FOR 1000.0;
 	}
 }
 
-TRANSITION_LIST("pacemaker_out")
+TRANSITION_LIST("p")
 {
 	NODE
 	{
@@ -106,7 +101,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "pacemaker_out";
+	CHANNEL = "p";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 1;

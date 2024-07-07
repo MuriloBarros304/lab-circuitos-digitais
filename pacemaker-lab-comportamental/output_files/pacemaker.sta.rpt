@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for pacemaker
-Fri Jul  5 09:11:04 2024
+Sun Jul  7 17:38:16 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -18,42 +18,42 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  10. Slow Model Minimum Pulse Width Summary
  11. Slow Model Setup: 'currentstate.Pace'
  12. Slow Model Setup: 'clk'
- 13. Slow Model Setup: 's'
- 14. Slow Model Hold: 's'
- 15. Slow Model Hold: 'clk'
- 16. Slow Model Hold: 'currentstate.Pace'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Hold: 'currentstate.Pace'
+ 15. Slow Model Recovery: 'clk'
+ 16. Slow Model Removal: 'clk'
  17. Slow Model Minimum Pulse Width: 'clk'
- 18. Slow Model Minimum Pulse Width: 's'
- 19. Slow Model Minimum Pulse Width: 'currentstate.Pace'
- 20. Setup Times
- 21. Hold Times
- 22. Clock to Output Times
- 23. Minimum Clock to Output Times
- 24. Fast Model Setup Summary
- 25. Fast Model Hold Summary
- 26. Fast Model Recovery Summary
- 27. Fast Model Removal Summary
- 28. Fast Model Minimum Pulse Width Summary
- 29. Fast Model Setup: 'currentstate.Pace'
- 30. Fast Model Setup: 'clk'
- 31. Fast Model Setup: 's'
- 32. Fast Model Hold: 'clk'
- 33. Fast Model Hold: 's'
- 34. Fast Model Hold: 'currentstate.Pace'
- 35. Fast Model Minimum Pulse Width: 'clk'
- 36. Fast Model Minimum Pulse Width: 's'
- 37. Fast Model Minimum Pulse Width: 'currentstate.Pace'
- 38. Setup Times
- 39. Hold Times
- 40. Clock to Output Times
- 41. Minimum Clock to Output Times
- 42. Multicorner Timing Analysis Summary
- 43. Setup Times
- 44. Hold Times
- 45. Clock to Output Times
- 46. Minimum Clock to Output Times
- 47. Setup Transfers
- 48. Hold Transfers
+ 18. Slow Model Minimum Pulse Width: 'currentstate.Pace'
+ 19. Setup Times
+ 20. Hold Times
+ 21. Clock to Output Times
+ 22. Minimum Clock to Output Times
+ 23. Fast Model Setup Summary
+ 24. Fast Model Hold Summary
+ 25. Fast Model Recovery Summary
+ 26. Fast Model Removal Summary
+ 27. Fast Model Minimum Pulse Width Summary
+ 28. Fast Model Setup: 'currentstate.Pace'
+ 29. Fast Model Setup: 'clk'
+ 30. Fast Model Hold: 'clk'
+ 31. Fast Model Hold: 'currentstate.Pace'
+ 32. Fast Model Recovery: 'clk'
+ 33. Fast Model Removal: 'clk'
+ 34. Fast Model Minimum Pulse Width: 'clk'
+ 35. Fast Model Minimum Pulse Width: 'currentstate.Pace'
+ 36. Setup Times
+ 37. Hold Times
+ 38. Clock to Output Times
+ 39. Minimum Clock to Output Times
+ 40. Multicorner Timing Analysis Summary
+ 41. Setup Times
+ 42. Hold Times
+ 43. Clock to Output Times
+ 44. Minimum Clock to Output Times
+ 45. Setup Transfers
+ 46. Hold Transfers
+ 47. Recovery Transfers
+ 48. Removal Transfers
  49. Report TCCS
  50. Report RSKM
  51. Unconstrained Paths
@@ -111,18 +111,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------+
 ; clk               ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk }               ;
 ; currentstate.Pace ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { currentstate.Pace } ;
-; s                 ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { s }                 ;
 +-------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Slow Model Fmax Summary                                                                                          ;
-+------------+-----------------+-------------------+---------------------------------------------------------------+
-; Fmax       ; Restricted Fmax ; Clock Name        ; Note                                                          ;
-+------------+-----------------+-------------------+---------------------------------------------------------------+
-; 616.9 MHz  ; 420.17 MHz      ; clk               ; limit due to minimum period restriction (max I/O toggle rate) ;
-; 2645.5 MHz ; 627.35 MHz      ; currentstate.Pace ; limit due to hold check                                       ;
-+------------+-----------------+-------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                   ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note                                                          ;
++------------+-----------------+------------+---------------------------------------------------------------+
+; 771.01 MHz ; 420.17 MHz      ; clk        ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+------------+---------------------------------------------------------------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -131,9 +129,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; currentstate.Pace ; -3.304 ; -3.304        ;
-; clk               ; -0.621 ; -1.698        ;
-; s                 ; 1.654  ; 0.000         ;
+; currentstate.Pace ; -2.780 ; -2.780        ;
+; clk               ; -0.297 ; -0.810        ;
 +-------------------+--------+---------------+
 
 
@@ -142,22 +139,27 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; s                 ; -2.140 ; -2.140        ;
-; clk               ; -1.968 ; -4.887        ;
-; currentstate.Pace ; -0.797 ; -0.797        ;
+; clk               ; -2.160 ; -5.141        ;
+; currentstate.Pace ; 2.798  ; 0.000         ;
 +-------------------+--------+---------------+
 
 
--------------------------------
-; Slow Model Recovery Summary ;
--------------------------------
-No paths to report.
++-------------------------------+
+; Slow Model Recovery Summary   ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 2.088 ; 0.000         ;
++-------+-------+---------------+
 
 
-------------------------------
-; Slow Model Removal Summary ;
-------------------------------
-No paths to report.
++--------------------------------+
+; Slow Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -1.318 ; -5.272        ;
++-------+--------+---------------+
 
 
 +--------------------------------------------+
@@ -165,98 +167,109 @@ No paths to report.
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; clk               ; -1.380 ; -4.380        ;
-; s                 ; -1.380 ; -1.380        ;
+; clk               ; -1.380 ; -8.380        ;
 ; currentstate.Pace ; 0.500  ; 0.000         ;
 +-------------------+--------+---------------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'currentstate.Pace'                                                                             ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node ; Launch Clock ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; -2.780 ; currentstate.WaitS ; sc      ; clk          ; currentstate.Pace ; 1.000        ; -2.079     ; 0.719      ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                             ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; -0.297 ; counter:Timer|tc       ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 1.333      ;
+; -0.284 ; currentstate.RstTimer  ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 1.320      ;
+; -0.242 ; currentstate.WaitS     ; currentstate.RstTimer  ; clk               ; clk         ; 1.000        ; 0.000      ; 1.278      ;
+; -0.232 ; counter:Timer|q_var[2] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 1.268      ;
+; -0.150 ; currentstate.WaitS     ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 1.186      ;
+; -0.040 ; counter:Timer|q_var[1] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 1.076      ;
+; -0.039 ; counter:Timer|q_var[1] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 1.075      ;
+; 0.089  ; counter:Timer|tc       ; currentstate.Pace      ; clk               ; clk         ; 1.000        ; 0.000      ; 0.947      ;
+; 0.230  ; counter:Timer|q_var[0] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.806      ;
+; 0.232  ; counter:Timer|q_var[0] ; counter:Timer|q_var[1] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.804      ;
+; 0.232  ; counter:Timer|q_var[0] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.804      ;
+; 0.232  ; currentstate.WaitS     ; currentstate.Pace      ; clk               ; clk         ; 1.000        ; 0.000      ; 0.804      ;
+; 0.379  ; counter:Timer|q_var[0] ; counter:Timer|q_var[0] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; counter:Timer|tc       ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; counter:Timer|q_var[2] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 0.379  ; counter:Timer|q_var[1] ; counter:Timer|q_var[1] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.657      ;
+; 1.787  ; sc                     ; currentstate.WaitS     ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 1.328      ;
+; 2.171  ; sc                     ; currentstate.Pace      ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 0.944      ;
+; 2.430  ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.500        ; 2.698      ; 1.054      ;
+; 2.461  ; sc                     ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 0.654      ;
+; 2.930  ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 1.000        ; 2.698      ; 1.054      ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                              ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; -2.160 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.000        ; 2.698      ; 1.054      ;
+; -1.691 ; sc                     ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 0.654      ;
+; -1.660 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; -0.500       ; 2.698      ; 1.054      ;
+; -1.580 ; sc                     ; currentstate.WaitS     ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 0.765      ;
+; -1.401 ; sc                     ; currentstate.Pace      ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 0.944      ;
+; 0.391  ; counter:Timer|q_var[0] ; counter:Timer|q_var[0] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; counter:Timer|q_var[1] ; counter:Timer|q_var[1] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; counter:Timer|q_var[2] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391  ; counter:Timer|tc       ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.657      ;
+; 0.538  ; currentstate.WaitS     ; currentstate.Pace      ; clk               ; clk         ; 0.000        ; 0.000      ; 0.804      ;
+; 0.538  ; counter:Timer|q_var[0] ; counter:Timer|q_var[1] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.804      ;
+; 0.538  ; counter:Timer|q_var[0] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.804      ;
+; 0.540  ; counter:Timer|q_var[0] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.806      ;
+; 0.681  ; counter:Timer|tc       ; currentstate.Pace      ; clk               ; clk         ; 0.000        ; 0.000      ; 0.947      ;
+; 0.809  ; counter:Timer|q_var[1] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 1.075      ;
+; 0.810  ; counter:Timer|q_var[1] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 1.076      ;
+; 0.920  ; currentstate.WaitS     ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 1.186      ;
+; 1.002  ; counter:Timer|q_var[2] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 1.268      ;
+; 1.012  ; currentstate.WaitS     ; currentstate.RstTimer  ; clk               ; clk         ; 0.000        ; 0.000      ; 1.278      ;
+; 1.054  ; currentstate.RstTimer  ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 1.320      ;
+; 1.067  ; counter:Timer|tc       ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 1.333      ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'currentstate.Pace'                                                                             ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node ; Launch Clock ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; 2.798 ; currentstate.WaitS ; sc      ; clk          ; currentstate.Pace ; 0.000        ; -2.079     ; 0.719      ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Slow Model Recovery: 'clk'                                                                                            ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; 2.088 ; sc        ; counter:Timer|q_var[0] ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 1.027      ;
+; 2.088 ; sc        ; counter:Timer|q_var[1] ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 1.027      ;
+; 2.088 ; sc        ; counter:Timer|q_var[2] ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 1.027      ;
+; 2.088 ; sc        ; counter:Timer|tc       ; currentstate.Pace ; clk         ; 1.000        ; 2.079      ; 1.027      ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'currentstate.Pace'                                                                                  ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; Slack  ; From Node          ; To Node ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; -3.304 ; currentstate.WaitS ; t$latch ; clk               ; currentstate.Pace ; 1.000        ; -2.589     ; 0.731      ;
-; 0.311  ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 0.500        ; 1.258      ; 0.711      ;
-; 0.811  ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 1.000        ; 1.258      ; 0.711      ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 'clk'                                                                                                           ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; Slack  ; From Node             ; To Node               ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; -0.621 ; currentstate.WaitS    ; currentstate.Pace     ; clk               ; clk         ; 1.000        ; -0.842     ; 0.815      ;
-; -0.620 ; currentstate.WaitS    ; currentstate.RstTimer ; clk               ; clk         ; 1.000        ; -0.842     ; 0.814      ;
-; -0.457 ; currentstate.WaitS    ; currentstate.WaitS    ; clk               ; clk         ; 1.000        ; 0.000      ; 1.493      ;
-; 0.062  ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 0.500        ; 2.697      ; 3.171      ;
-; 0.091  ; s                     ; currentstate.Pace     ; s                 ; clk         ; 0.500        ; 2.697      ; 3.142      ;
-; 0.224  ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 0.500        ; 3.539      ; 3.851      ;
-; 0.562  ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 1.000        ; 2.697      ; 3.171      ;
-; 0.591  ; s                     ; currentstate.Pace     ; s                 ; clk         ; 1.000        ; 2.697      ; 3.142      ;
-; 0.724  ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 1.000        ; 3.539      ; 3.851      ;
-; 1.077  ; currentstate.RstTimer ; currentstate.WaitS    ; clk               ; clk         ; 1.000        ; 0.842      ; 0.801      ;
-; 1.650  ; t$latch               ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 1.000        ; 1.747      ; 1.133      ;
-; 2.016  ; t$latch               ; currentstate.Pace     ; currentstate.Pace ; clk         ; 1.000        ; 1.747      ; 0.767      ;
-; 2.179  ; t$latch               ; currentstate.WaitS    ; currentstate.Pace ; clk         ; 1.000        ; 2.589      ; 1.446      ;
-; 2.238  ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.500        ; 2.697      ; 1.245      ;
-; 2.738  ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 1.000        ; 2.697      ; 1.245      ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Slow Model Setup: 's'                                                                                          ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; 1.654 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 0.500        ; 2.601      ; 0.711      ;
-; 2.154 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 1.000        ; 2.601      ; 0.711      ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 's'                                                                                            ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; Slack  ; From Node         ; To Node ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; -2.140 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 0.000        ; 2.601      ; 0.711      ;
-; -1.640 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; -0.500       ; 2.601      ; 0.711      ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'clk'                                                                                                            ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; Slack  ; From Node             ; To Node               ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; -1.968 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.000        ; 2.697      ; 1.245      ;
-; -1.673 ; t$latch               ; currentstate.WaitS    ; currentstate.Pace ; clk         ; 0.000        ; 2.589      ; 1.182      ;
-; -1.468 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; -0.500       ; 2.697      ; 1.245      ;
-; -1.246 ; t$latch               ; currentstate.Pace     ; currentstate.Pace ; clk         ; 0.000        ; 1.747      ; 0.767      ;
-; -0.880 ; t$latch               ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.000        ; 1.747      ; 1.133      ;
-; -0.307 ; currentstate.RstTimer ; currentstate.WaitS    ; clk               ; clk         ; 0.000        ; 0.842      ; 0.801      ;
-; 0.046  ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 0.000        ; 3.539      ; 3.851      ;
-; 0.179  ; s                     ; currentstate.Pace     ; s                 ; clk         ; 0.000        ; 2.697      ; 3.142      ;
-; 0.208  ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 0.000        ; 2.697      ; 3.171      ;
-; 0.546  ; s                     ; currentstate.WaitS    ; s                 ; clk         ; -0.500       ; 3.539      ; 3.851      ;
-; 0.679  ; s                     ; currentstate.Pace     ; s                 ; clk         ; -0.500       ; 2.697      ; 3.142      ;
-; 0.708  ; s                     ; currentstate.RstTimer ; s                 ; clk         ; -0.500       ; 2.697      ; 3.171      ;
-; 1.227  ; currentstate.WaitS    ; currentstate.WaitS    ; clk               ; clk         ; 0.000        ; 0.000      ; 1.493      ;
-; 1.390  ; currentstate.WaitS    ; currentstate.RstTimer ; clk               ; clk         ; 0.000        ; -0.842     ; 0.814      ;
-; 1.391  ; currentstate.WaitS    ; currentstate.Pace     ; clk               ; clk         ; 0.000        ; -0.842     ; 0.815      ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Slow Model Hold: 'currentstate.Pace'                                                                                   ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; Slack  ; From Node          ; To Node ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; -0.797 ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 0.000        ; 1.258      ; 0.711      ;
-; -0.297 ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; -0.500       ; 1.258      ; 0.711      ;
-; 3.320  ; currentstate.WaitS ; t$latch ; clk               ; currentstate.Pace ; 0.000        ; -2.589     ; 0.731      ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
+; Slow Model Removal: 'clk'                                                                                              ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; -1.318 ; sc        ; counter:Timer|q_var[0] ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 1.027      ;
+; -1.318 ; sc        ; counter:Timer|q_var[1] ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 1.027      ;
+; -1.318 ; sc        ; counter:Timer|q_var[2] ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 1.027      ;
+; -1.318 ; sc        ; counter:Timer|tc       ; currentstate.Pace ; clk         ; 0.000        ; 2.079      ; 1.027      ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -265,12 +278,28 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
 +--------+--------------+----------------+------------------+-------+------------+---------------------------+
 ; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|tc          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|tc          ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.Pace         ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.Pace         ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.RstTimer     ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.RstTimer     ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.WaitS        ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.WaitS        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|tc|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|tc|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout               ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout               ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
@@ -286,44 +315,17 @@ No paths to report.
 +--------+--------------+----------------+------------------+-------+------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Slow Model Minimum Pulse Width: 's'                                                                  ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target              ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; s     ; Rise       ; s                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; Selector0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; Selector0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; Selector0~0|dataa   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; Selector0~0|dataa   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Fall       ; p$latch             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Fall       ; p$latch             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; p$latch|datac       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; p$latch|datac       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; s|combout           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; s|combout           ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
 ; Slow Model Minimum Pulse Width: 'currentstate.Pace'                                                                  ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
 ; Slack ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                   ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; Selector0~0|combout      ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; Selector0~0|combout      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; Selector0~0|datab        ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; Selector0~0|datab        ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; currentstate.Pace|regout ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; currentstate.Pace|regout ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Fall       ; p$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Fall       ; p$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; p$latch|datac            ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; p$latch|datac            ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; t$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; t$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; t$latch|dataa            ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; t$latch|dataa            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; sc                       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; sc                       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; sc|datac                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; sc|datac                 ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
 
 
@@ -332,19 +334,17 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; s         ; clk        ; 0.438  ; 0.438  ; Rise       ; clk             ;
-; z         ; clk        ; -0.522 ; -0.522 ; Rise       ; clk             ;
+; s         ; clk        ; -0.260 ; -0.260 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
-+-------------------------------------------------------------------------+
-; Hold Times                                                              ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; s         ; clk        ; -0.046 ; -0.046 ; Rise       ; clk             ;
-; z         ; clk        ; 0.822  ; 0.822  ; Rise       ; clk             ;
-+-----------+------------+--------+--------+------------+-----------------+
++-----------------------------------------------------------------------+
+; Hold Times                                                            ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; s         ; clk        ; 1.102 ; 1.102 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -352,9 +352,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 4.346 ; 4.346 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 4.649 ; 4.649 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 5.992 ; 5.992 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 3.431 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 3.431 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -363,9 +362,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 4.346 ; 4.346 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 4.649 ; 4.649 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 5.992 ; 5.992 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 3.431 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 3.431 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -374,9 +372,8 @@ No paths to report.
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; currentstate.Pace ; -1.252 ; -1.252        ;
-; clk               ; 0.326  ; 0.000         ;
-; s                 ; 1.129  ; 0.000         ;
+; currentstate.Pace ; -1.167 ; -1.167        ;
+; clk               ; 0.413  ; 0.000         ;
 +-------------------+--------+---------------+
 
 
@@ -385,22 +382,27 @@ No paths to report.
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; clk               ; -1.357 ; -3.518        ;
-; s                 ; -1.034 ; -1.034        ;
-; currentstate.Pace ; -0.334 ; -0.334        ;
+; clk               ; -1.434 ; -3.756        ;
+; currentstate.Pace ; 1.749  ; 0.000         ;
 +-------------------+--------+---------------+
 
 
--------------------------------
-; Fast Model Recovery Summary ;
--------------------------------
-No paths to report.
++-------------------------------+
+; Fast Model Recovery Summary   ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 1.853 ; 0.000         ;
++-------+-------+---------------+
 
 
-------------------------------
-; Fast Model Removal Summary ;
-------------------------------
-No paths to report.
++--------------------------------+
+; Fast Model Removal Summary     ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; -0.973 ; -3.892        ;
++-------+--------+---------------+
 
 
 +--------------------------------------------+
@@ -408,98 +410,109 @@ No paths to report.
 +-------------------+--------+---------------+
 ; Clock             ; Slack  ; End Point TNS ;
 +-------------------+--------+---------------+
-; clk               ; -1.380 ; -4.380        ;
-; s                 ; -1.380 ; -1.380        ;
+; clk               ; -1.380 ; -8.380        ;
 ; currentstate.Pace ; 0.500  ; 0.000         ;
 +-------------------+--------+---------------+
 
 
++-------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'currentstate.Pace'                                                                             ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; Slack  ; From Node          ; To Node ; Launch Clock ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; -1.167 ; currentstate.WaitS ; sc      ; clk          ; currentstate.Pace ; 1.000        ; -1.392     ; 0.357      ;
++--------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                            ;
++-------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack ; From Node              ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; 0.413 ; currentstate.RstTimer  ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 0.619      ;
+; 0.413 ; counter:Timer|tc       ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 0.619      ;
+; 0.431 ; currentstate.WaitS     ; currentstate.RstTimer  ; clk               ; clk         ; 1.000        ; 0.000      ; 0.601      ;
+; 0.433 ; counter:Timer|q_var[2] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.599      ;
+; 0.475 ; currentstate.WaitS     ; currentstate.WaitS     ; clk               ; clk         ; 1.000        ; 0.000      ; 0.557      ;
+; 0.513 ; counter:Timer|q_var[1] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.519      ;
+; 0.515 ; counter:Timer|q_var[1] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.517      ;
+; 0.548 ; counter:Timer|tc       ; currentstate.Pace      ; clk               ; clk         ; 1.000        ; 0.000      ; 0.484      ;
+; 0.629 ; counter:Timer|q_var[0] ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.403      ;
+; 0.630 ; counter:Timer|q_var[0] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.402      ;
+; 0.631 ; counter:Timer|q_var[0] ; counter:Timer|q_var[1] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.401      ;
+; 0.632 ; currentstate.WaitS     ; currentstate.Pace      ; clk               ; clk         ; 1.000        ; 0.000      ; 0.400      ;
+; 0.665 ; counter:Timer|q_var[0] ; counter:Timer|q_var[0] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; counter:Timer|tc       ; counter:Timer|tc       ; clk               ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; counter:Timer|q_var[2] ; counter:Timer|q_var[2] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 0.665 ; counter:Timer|q_var[1] ; counter:Timer|q_var[1] ; clk               ; clk         ; 1.000        ; 0.000      ; 0.367      ;
+; 1.814 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.500        ; 1.671      ; 0.530      ;
+; 1.846 ; sc                     ; currentstate.WaitS     ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.578      ;
+; 2.003 ; sc                     ; currentstate.Pace      ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.421      ;
+; 2.144 ; sc                     ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.280      ;
+; 2.314 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 1.000        ; 1.671      ; 0.530      ;
++-------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                              ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node              ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+; -1.434 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.000        ; 1.671      ; 0.530      ;
+; -1.264 ; sc                     ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.280      ;
+; -1.199 ; sc                     ; currentstate.WaitS     ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.345      ;
+; -1.123 ; sc                     ; currentstate.Pace      ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.421      ;
+; -0.934 ; currentstate.Pace      ; currentstate.RstTimer  ; currentstate.Pace ; clk         ; -0.500       ; 1.671      ; 0.530      ;
+; 0.215  ; counter:Timer|q_var[0] ; counter:Timer|q_var[0] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; counter:Timer|q_var[1] ; counter:Timer|q_var[1] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; counter:Timer|q_var[2] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215  ; counter:Timer|tc       ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.248  ; currentstate.WaitS     ; currentstate.Pace      ; clk               ; clk         ; 0.000        ; 0.000      ; 0.400      ;
+; 0.249  ; counter:Timer|q_var[0] ; counter:Timer|q_var[1] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.401      ;
+; 0.250  ; counter:Timer|q_var[0] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.402      ;
+; 0.251  ; counter:Timer|q_var[0] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.403      ;
+; 0.332  ; counter:Timer|tc       ; currentstate.Pace      ; clk               ; clk         ; 0.000        ; 0.000      ; 0.484      ;
+; 0.365  ; counter:Timer|q_var[1] ; counter:Timer|q_var[2] ; clk               ; clk         ; 0.000        ; 0.000      ; 0.517      ;
+; 0.367  ; counter:Timer|q_var[1] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.519      ;
+; 0.405  ; currentstate.WaitS     ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 0.557      ;
+; 0.447  ; counter:Timer|q_var[2] ; counter:Timer|tc       ; clk               ; clk         ; 0.000        ; 0.000      ; 0.599      ;
+; 0.449  ; currentstate.WaitS     ; currentstate.RstTimer  ; clk               ; clk         ; 0.000        ; 0.000      ; 0.601      ;
+; 0.467  ; currentstate.RstTimer  ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 0.619      ;
+; 0.467  ; counter:Timer|tc       ; currentstate.WaitS     ; clk               ; clk         ; 0.000        ; 0.000      ; 0.619      ;
++--------+------------------------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'currentstate.Pace'                                                                             ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node ; Launch Clock ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+; 1.749 ; currentstate.WaitS ; sc      ; clk          ; currentstate.Pace ; 0.000        ; -1.392     ; 0.357      ;
++-------+--------------------+---------+--------------+-------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------+
+; Fast Model Recovery: 'clk'                                                                                            ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack ; From Node ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; 1.853 ; sc        ; counter:Timer|q_var[0] ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.571      ;
+; 1.853 ; sc        ; counter:Timer|q_var[1] ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.571      ;
+; 1.853 ; sc        ; counter:Timer|q_var[2] ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.571      ;
+; 1.853 ; sc        ; counter:Timer|tc       ; currentstate.Pace ; clk         ; 1.000        ; 1.392      ; 0.571      ;
++-------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+
+
 +------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'currentstate.Pace'                                                                                  ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; Slack  ; From Node          ; To Node ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; -1.252 ; currentstate.WaitS ; t$latch ; clk               ; currentstate.Pace ; 1.000        ; -1.472     ; 0.368      ;
-; 0.429  ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 0.500        ; 0.545      ; 0.352      ;
-; 0.929  ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 1.000        ; 0.545      ; 0.352      ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 'clk'                                                                                                          ;
-+-------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; Slack ; From Node             ; To Node               ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; 0.326 ; currentstate.WaitS    ; currentstate.WaitS    ; clk               ; clk         ; 1.000        ; 0.000      ; 0.706      ;
-; 0.392 ; currentstate.WaitS    ; currentstate.Pace     ; clk               ; clk         ; 1.000        ; -0.230     ; 0.410      ;
-; 0.393 ; currentstate.WaitS    ; currentstate.RstTimer ; clk               ; clk         ; 1.000        ; -0.230     ; 0.409      ;
-; 0.488 ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 0.500        ; 1.900      ; 1.944      ;
-; 0.556 ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 0.500        ; 1.670      ; 1.646      ;
-; 0.572 ; s                     ; currentstate.Pace     ; s                 ; clk         ; 0.500        ; 1.670      ; 1.630      ;
-; 0.861 ; currentstate.RstTimer ; currentstate.WaitS    ; clk               ; clk         ; 1.000        ; 0.230      ; 0.401      ;
-; 0.988 ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 1.000        ; 1.900      ; 1.944      ;
-; 1.056 ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 1.000        ; 1.670      ; 1.646      ;
-; 1.072 ; s                     ; currentstate.Pace     ; s                 ; clk         ; 1.000        ; 1.670      ; 1.630      ;
-; 1.737 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.500        ; 1.670      ; 0.606      ;
-; 1.762 ; t$latch               ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 1.000        ; 1.242      ; 0.512      ;
-; 1.861 ; t$latch               ; currentstate.WaitS    ; currentstate.Pace ; clk         ; 1.000        ; 1.472      ; 0.643      ;
-; 1.929 ; t$latch               ; currentstate.Pace     ; currentstate.Pace ; clk         ; 1.000        ; 1.242      ; 0.345      ;
-; 2.237 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 1.000        ; 1.670      ; 0.606      ;
-+-------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Fast Model Setup: 's'                                                                                          ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; Slack ; From Node         ; To Node ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; 1.129 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 0.500        ; 1.245      ; 0.352      ;
-; 1.629 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 1.000        ; 1.245      ; 0.352      ;
-+-------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'clk'                                                                                                            ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; Slack  ; From Node             ; To Node               ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-; -1.357 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.000        ; 1.670      ; 0.606      ;
-; -1.112 ; t$latch               ; currentstate.WaitS    ; currentstate.Pace ; clk         ; 0.000        ; 1.472      ; 0.512      ;
-; -1.049 ; t$latch               ; currentstate.Pace     ; currentstate.Pace ; clk         ; 0.000        ; 1.242      ; 0.345      ;
-; -0.882 ; t$latch               ; currentstate.RstTimer ; currentstate.Pace ; clk         ; 0.000        ; 1.242      ; 0.512      ;
-; -0.857 ; currentstate.Pace     ; currentstate.RstTimer ; currentstate.Pace ; clk         ; -0.500       ; 1.670      ; 0.606      ;
-; -0.192 ; s                     ; currentstate.Pace     ; s                 ; clk         ; 0.000        ; 1.670      ; 1.630      ;
-; -0.176 ; s                     ; currentstate.RstTimer ; s                 ; clk         ; 0.000        ; 1.670      ; 1.646      ;
-; -0.108 ; s                     ; currentstate.WaitS    ; s                 ; clk         ; 0.000        ; 1.900      ; 1.944      ;
-; 0.019  ; currentstate.RstTimer ; currentstate.WaitS    ; clk               ; clk         ; 0.000        ; 0.230      ; 0.401      ;
-; 0.308  ; s                     ; currentstate.Pace     ; s                 ; clk         ; -0.500       ; 1.670      ; 1.630      ;
-; 0.324  ; s                     ; currentstate.RstTimer ; s                 ; clk         ; -0.500       ; 1.670      ; 1.646      ;
-; 0.392  ; s                     ; currentstate.WaitS    ; s                 ; clk         ; -0.500       ; 1.900      ; 1.944      ;
-; 0.487  ; currentstate.WaitS    ; currentstate.RstTimer ; clk               ; clk         ; 0.000        ; -0.230     ; 0.409      ;
-; 0.488  ; currentstate.WaitS    ; currentstate.Pace     ; clk               ; clk         ; 0.000        ; -0.230     ; 0.410      ;
-; 0.554  ; currentstate.WaitS    ; currentstate.WaitS    ; clk               ; clk         ; 0.000        ; 0.000      ; 0.706      ;
-+--------+-----------------------+-----------------------+-------------------+-------------+--------------+------------+------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 's'                                                                                            ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; Slack  ; From Node         ; To Node ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-; -1.034 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; 0.000        ; 1.245      ; 0.352      ;
-; -0.534 ; currentstate.Pace ; p$latch ; currentstate.Pace ; s           ; -0.500       ; 1.245      ; 0.352      ;
-+--------+-------------------+---------+-------------------+-------------+--------------+------------+------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Fast Model Hold: 'currentstate.Pace'                                                                                   ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; Slack  ; From Node          ; To Node ; Launch Clock      ; Latch Clock       ; Relationship ; Clock Skew ; Data Delay ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
-; -0.334 ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; 0.000        ; 0.545      ; 0.352      ;
-; 0.166  ; currentstate.Pace  ; p$latch ; currentstate.Pace ; currentstate.Pace ; -0.500       ; 0.545      ; 0.352      ;
-; 1.840  ; currentstate.WaitS ; t$latch ; clk               ; currentstate.Pace ; 0.000        ; -1.472     ; 0.368      ;
-+--------+--------------------+---------+-------------------+-------------------+--------------+------------+------------+
+; Fast Model Removal: 'clk'                                                                                              ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node ; To Node                ; Launch Clock      ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
+; -0.973 ; sc        ; counter:Timer|q_var[0] ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.571      ;
+; -0.973 ; sc        ; counter:Timer|q_var[1] ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.571      ;
+; -0.973 ; sc        ; counter:Timer|q_var[2] ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.571      ;
+; -0.973 ; sc        ; counter:Timer|tc       ; currentstate.Pace ; clk         ; 0.000        ; 1.392      ; 0.571      ;
++--------+-----------+------------------------+-------------------+-------------+--------------+------------+------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -508,12 +521,28 @@ No paths to report.
 ; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                    ;
 +--------+--------------+----------------+------------------+-------+------------+---------------------------+
 ; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clk   ; Rise       ; clk                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[0]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[1]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|q_var[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|q_var[2]    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; counter:Timer|tc          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; counter:Timer|tc          ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.Pace         ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.Pace         ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.RstTimer     ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.RstTimer     ;
 ; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clk   ; Rise       ; currentstate.WaitS        ;
 ; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; currentstate.WaitS        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[0]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[1]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|q_var[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|q_var[2]|clk        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; Timer|tc|clk              ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; Timer|tc|clk              ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk|combout               ;
 ; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; clk   ; Rise       ; clk|combout               ;
 ; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; clk   ; Rise       ; clk~clkctrl|inclk[0]      ;
@@ -529,44 +558,17 @@ No paths to report.
 +--------+--------------+----------------+------------------+-------+------------+---------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Fast Model Minimum Pulse Width: 's'                                                                  ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target              ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; s     ; Rise       ; s                   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; Selector0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; Selector0~0|combout ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; Selector0~0|dataa   ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; Selector0~0|dataa   ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Fall       ; p$latch             ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Fall       ; p$latch             ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; p$latch|datac       ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; p$latch|datac       ;
-; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; s     ; Rise       ; s|combout           ;
-; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; s     ; Rise       ; s|combout           ;
-+--------+--------------+----------------+------------------+-------+------------+---------------------+
-
-
 +----------------------------------------------------------------------------------------------------------------------+
 ; Fast Model Minimum Pulse Width: 'currentstate.Pace'                                                                  ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
 ; Slack ; Actual Width ; Required Width ; Type             ; Clock             ; Clock Edge ; Target                   ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; Selector0~0|combout      ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; Selector0~0|combout      ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; Selector0~0|datab        ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; Selector0~0|datab        ;
 ; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; currentstate.Pace|regout ;
 ; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; currentstate.Pace|regout ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Fall       ; p$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Fall       ; p$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; p$latch|datac            ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; p$latch|datac            ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; t$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; t$latch                  ;
-; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; t$latch|dataa            ;
-; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; t$latch|dataa            ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; sc                       ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; sc                       ;
+; 0.500 ; 0.500        ; 0.000          ; High Pulse Width ; currentstate.Pace ; Rise       ; sc|datac                 ;
+; 0.500 ; 0.500        ; 0.000          ; Low Pulse Width  ; currentstate.Pace ; Rise       ; sc|datac                 ;
 +-------+--------------+----------------+------------------+-------------------+------------+--------------------------+
 
 
@@ -575,8 +577,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; s         ; clk        ; 0.012  ; 0.012  ; Rise       ; clk             ;
-; z         ; clk        ; -0.470 ; -0.470 ; Rise       ; clk             ;
+; s         ; clk        ; -0.480 ; -0.480 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -585,8 +586,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s         ; clk        ; 0.192 ; 0.192 ; Rise       ; clk             ;
-; z         ; clk        ; 0.699 ; 0.699 ; Rise       ; clk             ;
+; s         ; clk        ; 0.879 ; 0.879 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -595,9 +595,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 2.239 ; 2.239 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 2.353 ; 2.353 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 3.053 ; 3.053 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 1.847 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 1.847 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -606,9 +605,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 2.239 ; 2.239 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 2.353 ; 2.353 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 3.053 ; 3.053 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 1.847 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 1.847 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -617,14 +615,12 @@ No paths to report.
 +--------------------+--------+--------+----------+---------+---------------------+
 ; Clock              ; Setup  ; Hold   ; Recovery ; Removal ; Minimum Pulse Width ;
 +--------------------+--------+--------+----------+---------+---------------------+
-; Worst-case Slack   ; -3.304 ; -2.140 ; N/A      ; N/A     ; -1.380              ;
-;  clk               ; -0.621 ; -1.968 ; N/A      ; N/A     ; -1.380              ;
-;  currentstate.Pace ; -3.304 ; -0.797 ; N/A      ; N/A     ; 0.500               ;
-;  s                 ; 1.129  ; -2.140 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS    ; -5.002 ; -7.824 ; 0.0      ; 0.0     ; -5.76               ;
-;  clk               ; -1.698 ; -4.887 ; N/A      ; N/A     ; -4.380              ;
-;  currentstate.Pace ; -3.304 ; -0.797 ; N/A      ; N/A     ; 0.000               ;
-;  s                 ; 0.000  ; -2.140 ; N/A      ; N/A     ; -1.380              ;
+; Worst-case Slack   ; -2.780 ; -2.160 ; 1.853    ; -1.318  ; -1.380              ;
+;  clk               ; -0.297 ; -2.160 ; 1.853    ; -1.318  ; -1.380              ;
+;  currentstate.Pace ; -2.780 ; 1.749  ; N/A      ; N/A     ; 0.500               ;
+; Design-wide TNS    ; -3.59  ; -5.141 ; 0.0      ; -5.272  ; -8.38               ;
+;  clk               ; -0.810 ; -5.141 ; 0.000    ; -5.272  ; -8.380              ;
+;  currentstate.Pace ; -2.780 ; 0.000  ; N/A      ; N/A     ; 0.000               ;
 +--------------------+--------+--------+----------+---------+---------------------+
 
 
@@ -633,8 +629,7 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; s         ; clk        ; 0.438  ; 0.438  ; Rise       ; clk             ;
-; z         ; clk        ; -0.470 ; -0.470 ; Rise       ; clk             ;
+; s         ; clk        ; -0.260 ; -0.260 ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -643,8 +638,7 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s         ; clk        ; 0.192 ; 0.192 ; Rise       ; clk             ;
-; z         ; clk        ; 0.822 ; 0.822 ; Rise       ; clk             ;
+; s         ; clk        ; 1.102 ; 1.102 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -653,9 +647,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 4.346 ; 4.346 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 4.649 ; 4.649 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 5.992 ; 5.992 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 3.431 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 3.431 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -664,9 +657,8 @@ No paths to report.
 +-----------+-------------------+-------+-------+------------+-------------------+
 ; Data Port ; Clock Port        ; Rise  ; Fall  ; Clock Edge ; Clock Reference   ;
 +-----------+-------------------+-------+-------+------------+-------------------+
-; t         ; currentstate.Pace ; 2.239 ; 2.239 ; Rise       ; currentstate.Pace ;
-; p         ; currentstate.Pace ; 2.353 ; 2.353 ; Fall       ; currentstate.Pace ;
-; p         ; s                 ; 3.053 ; 3.053 ; Fall       ; s                 ;
+; p         ; currentstate.Pace ; 1.847 ;       ; Rise       ; currentstate.Pace ;
+; p         ; currentstate.Pace ;       ; 1.847 ; Fall       ; currentstate.Pace ;
 +-----------+-------------------+-------+-------+------------+-------------------+
 
 
@@ -675,12 +667,9 @@ No paths to report.
 +-------------------+-------------------+----------+----------+----------+----------+
 ; From Clock        ; To Clock          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------+-------------------+----------+----------+----------+----------+
-; clk               ; clk               ; 4        ; 0        ; 0        ; 0        ;
+; clk               ; clk               ; 16       ; 0        ; 0        ; 0        ;
 ; currentstate.Pace ; clk               ; 5        ; 1        ; 0        ; 0        ;
-; s                 ; clk               ; 3        ; 3        ; 0        ; 0        ;
 ; clk               ; currentstate.Pace ; 1        ; 0        ; 0        ; 0        ;
-; currentstate.Pace ; currentstate.Pace ; 0        ; 0        ; 1        ; 1        ;
-; currentstate.Pace ; s                 ; 0        ; 0        ; 1        ; 1        ;
 +-------------------+-------------------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -690,13 +679,30 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +-------------------+-------------------+----------+----------+----------+----------+
 ; From Clock        ; To Clock          ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +-------------------+-------------------+----------+----------+----------+----------+
-; clk               ; clk               ; 4        ; 0        ; 0        ; 0        ;
+; clk               ; clk               ; 16       ; 0        ; 0        ; 0        ;
 ; currentstate.Pace ; clk               ; 5        ; 1        ; 0        ; 0        ;
-; s                 ; clk               ; 3        ; 3        ; 0        ; 0        ;
 ; clk               ; currentstate.Pace ; 1        ; 0        ; 0        ; 0        ;
-; currentstate.Pace ; currentstate.Pace ; 0        ; 0        ; 1        ; 1        ;
-; currentstate.Pace ; s                 ; 0        ; 0        ; 1        ; 1        ;
 +-------------------+-------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------+
+; Recovery Transfers                                                       ;
++-------------------+----------+----------+----------+----------+----------+
+; From Clock        ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------+----------+----------+----------+----------+----------+
+; currentstate.Pace ; clk      ; 4        ; 0        ; 0        ; 0        ;
++-------------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++--------------------------------------------------------------------------+
+; Removal Transfers                                                        ;
++-------------------+----------+----------+----------+----------+----------+
+; From Clock        ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++-------------------+----------+----------+----------+----------+----------+
+; currentstate.Pace ; clk      ; 4        ; 0        ; 0        ; 0        ;
++-------------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
 
@@ -720,9 +726,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 2     ; 2    ;
-; Unconstrained Output Ports      ; 2     ; 2    ;
-; Unconstrained Output Port Paths ; 2     ; 2    ;
+; Unconstrained Input Port Paths  ; 3     ; 3    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
 
 
@@ -732,71 +738,76 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Jul  5 09:11:03 2024
+    Info: Processing started: Sun Jul  7 17:38:15 2024
 Info: Command: quartus_sta pacemaker -c pacemaker
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
-Warning (335093): TimeQuest Timing Analyzer is analyzing 2 combinational loops as latches.
+Warning (335093): TimeQuest Timing Analyzer is analyzing 1 combinational loops as latches.
 Critical Warning (332012): Synopsys Design Constraints File file not found: 'pacemaker.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
 Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
 Info (332105): Deriving Clocks
     Info (332105): create_clock -period 1.000 -name clk clk
-    Info (332105): create_clock -period 1.000 -name s s
     Info (332105): create_clock -period 1.000 -name currentstate.Pace currentstate.Pace
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.304
+Info (332146): Worst-case setup slack is -2.780
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.304        -3.304 currentstate.Pace 
-    Info (332119):    -0.621        -1.698 clk 
-    Info (332119):     1.654         0.000 s 
-Info (332146): Worst-case hold slack is -2.140
+    Info (332119):    -2.780        -2.780 currentstate.Pace 
+    Info (332119):    -0.297        -0.810 clk 
+Info (332146): Worst-case hold slack is -2.160
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -2.140        -2.140 s 
-    Info (332119):    -1.968        -4.887 clk 
-    Info (332119):    -0.797        -0.797 currentstate.Pace 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
+    Info (332119):    -2.160        -5.141 clk 
+    Info (332119):     2.798         0.000 currentstate.Pace 
+Info (332146): Worst-case recovery slack is 2.088
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     2.088         0.000 clk 
+Info (332146): Worst-case removal slack is -1.318
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.318        -5.272 clk 
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -4.380 clk 
-    Info (332119):    -1.380        -1.380 s 
+    Info (332119):    -1.380        -8.380 clk 
     Info (332119):     0.500         0.000 currentstate.Pace 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -1.252
+Info (332146): Worst-case setup slack is -1.167
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.252        -1.252 currentstate.Pace 
-    Info (332119):     0.326         0.000 clk 
-    Info (332119):     1.129         0.000 s 
-Info (332146): Worst-case hold slack is -1.357
+    Info (332119):    -1.167        -1.167 currentstate.Pace 
+    Info (332119):     0.413         0.000 clk 
+Info (332146): Worst-case hold slack is -1.434
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.357        -3.518 clk 
-    Info (332119):    -1.034        -1.034 s 
-    Info (332119):    -0.334        -0.334 currentstate.Pace 
-Info (332140): No Recovery paths to report
-Info (332140): No Removal paths to report
+    Info (332119):    -1.434        -3.756 clk 
+    Info (332119):     1.749         0.000 currentstate.Pace 
+Info (332146): Worst-case recovery slack is 1.853
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     1.853         0.000 clk 
+Info (332146): Worst-case removal slack is -0.973
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -0.973        -3.892 clk 
 Info (332146): Worst-case minimum pulse width slack is -1.380
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -1.380        -4.380 clk 
-    Info (332119):    -1.380        -1.380 s 
+    Info (332119):    -1.380        -8.380 clk 
     Info (332119):     0.500         0.000 currentstate.Pace 
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
     Info: Peak virtual memory: 488 megabytes
-    Info: Processing ended: Fri Jul  5 09:11:04 2024
+    Info: Processing ended: Sun Jul  7 17:38:16 2024
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
