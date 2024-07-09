@@ -5,13 +5,13 @@ entity counter is
     port (
         c: in bit;
         reset: in bit;
-        q: out integer range 0 to 7;
+        q: out integer range 7 downto 0;
         tc: out bit
     );
 end counter;
 
 architecture behavior of counter is
-    signal q_var: integer range 0 to 7 := 7; -- Sinal interno para o contador
+    signal q_var: integer range 7 downto 0 := 7; -- Sinal interno para o contador
 begin
     counter_process: process(c, reset)
     begin

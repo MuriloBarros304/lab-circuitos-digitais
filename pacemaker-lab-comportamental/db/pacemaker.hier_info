@@ -3,8 +3,11 @@ s => nextstate~0.DATAA
 s => comblogic~0.IN1
 s => nextstate~1.DATAA
 clk => counter:Timer.c
-clk => currentstate~7.DATAIN
+clk => currentstate~4.DATAIN
 p <= p~0.DB_MAX_OUTPUT_PORT_TYPE
+d[0] <= counter:Timer.q[0]
+d[1] <= counter:Timer.q[1]
+d[2] <= counter:Timer.q[2]
 
 
 |pacemaker|counter:Timer
