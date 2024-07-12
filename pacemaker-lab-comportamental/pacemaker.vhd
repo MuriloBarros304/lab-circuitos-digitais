@@ -5,8 +5,7 @@ entity pacemaker is
     port (
         s : in bit;    -- sensor de contração
         clk : in bit;
-        p : out bit;   -- forçar contração
-        d : out integer range 7 downto 0
+        p : out bit   -- forçar contração
     );
 end pacemaker;
 
@@ -18,13 +17,12 @@ architecture behavior of pacemaker is
         port(
             c : in bit;
             reset : in bit;
-            q : out integer range 7 downto 0;
             tc : out bit
         );
     end component;
     
 begin
-    Timer : counter port map(reset => sc, c => clk, q => d, tc => fc);
+    Timer : counter port map(reset => sc, c => clk, tc => fc);
     
     statereg: process(clk)
     begin

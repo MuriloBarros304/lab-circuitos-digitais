@@ -1,4 +1,4 @@
-Fitter Status : Successful - Tue Jul  9 16:15:13 2024
+Fitter Status : Successful - Thu Jul 11 10:48:54 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : pacemaker
 Top-level Entity Name : pacemaker
@@ -9,7 +9,7 @@ Total logic elements : 7 / 33,216 ( < 1 % )
     Total combinational functions : 7 / 33,216 ( < 1 % )
     Dedicated logic registers : 7 / 33,216 ( < 1 % )
 Total registers : 7
-Total pins : 6 / 475 ( 1 % )
+Total pins : 3 / 475 ( < 1 % )
 Total virtual pins : 0
 Total memory bits : 0 / 483,840 ( 0 % )
 Embedded Multiplier 9-bit elements : 0 / 70 ( 0 % )

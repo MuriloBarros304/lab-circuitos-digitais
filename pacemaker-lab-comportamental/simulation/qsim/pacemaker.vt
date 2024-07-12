@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/07/2024 17:14:36"
+// Generated on "07/09/2024 16:37:47"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    pacemaker
 // 
@@ -173,14 +173,20 @@ pacemaker i1 (
 always
 begin
 	clk = 1'b0;
-	clk = #5000 1'b1;
-	#5000;
+	clk = #10000 1'b1;
+	#10000;
 end 
 
 // s
 initial
 begin
 	s = 1'b0;
+	s = #60000 1'b1;
+	s = #20000 1'b0;
+	s = #80000 1'b1;
+	s = #20000 1'b0;
+	s = #160000 1'b1;
+	s = #20000 1'b0;
 end 
 
 pacemaker_vlg_sample_tst tb_sample (
