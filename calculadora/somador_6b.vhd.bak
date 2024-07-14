@@ -18,13 +18,9 @@ component mux2x1_6b is
     );
 end component;
 
-component somador is
+component somador_6b is
 	port(
-      a : in bit;      -- Primeiro operando de 1 bit
-      b : in bit;      -- Segundo operando de 1 bit
-      cin : in bit;    -- Carry-in de 1 bit
-      sum : out bit;   -- Soma de 1 bit
-      cout : out bit   -- Carry-out de 1 bit
+	
 	);
 end component;	
 	
