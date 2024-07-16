@@ -45,6 +45,7 @@ signal carry2 : bit;
 signal carry3 : bit;
 signal carry4 : bit;
 signal rin0 : bit; -- entrada do registrador
+signal rin1 : bit;
 signal ld : bit;
 	
 architecture behaviorial of calc is
@@ -58,5 +59,5 @@ begin
 	m5: mux2x1_6b port map(a(5) => b0, b(5) => not(b5), s => sub, d(5) => sin(5)); 
 	
 	-- somador
-	s0: somador port map(a => a0, b => sin(0), cin => carry1, cout => carry2, sum => rin0);
-	s1:
+	s0: somador port map(a => a0, b => sin(0), cin => sub, cout => carry1, sum => rin0);
+	s1: somador port map(a => a1, b => sin(1), cin => carry1, cout => carry2, sum => rin1);
