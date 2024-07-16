@@ -5,25 +5,20 @@ a3 => somador:u3.a
 a2 => somador:u2.a
 a1 => somador:u1.a
 a0 => somador:u0.a
-b5 => mux2x1_6b:m5.b[5]
-b4 => mux2x1_6b:m4.b[4]
-b3 => mux2x1_6b:m3.a[3]
-b3 => mux2x1_6b:m3.b[3]
-b2 => mux2x1_6b:m2.a[2]
-b2 => mux2x1_6b:m2.b[2]
-b1 => mux2x1_6b:m1.a[1]
-b1 => mux2x1_6b:m1.b[1]
+b5 => mux2x1_6b:m0.a[5]
+b5 => mux2x1_6b:m0.b[5]
+b4 => mux2x1_6b:m0.a[4]
+b4 => mux2x1_6b:m0.b[4]
+b3 => mux2x1_6b:m0.a[3]
+b3 => mux2x1_6b:m0.b[3]
+b2 => mux2x1_6b:m0.a[2]
+b2 => mux2x1_6b:m0.b[2]
+b1 => mux2x1_6b:m0.a[1]
+b1 => mux2x1_6b:m0.b[1]
 b0 => mux2x1_6b:m0.a[0]
-b0 => mux2x1_6b:m4.a[4]
-b0 => mux2x1_6b:m5.a[5]
 b0 => mux2x1_6b:m0.b[0]
 clk => reg6:r0.c
 sub => mux2x1_6b:m0.s
-sub => mux2x1_6b:m1.s
-sub => mux2x1_6b:m2.s
-sub => mux2x1_6b:m3.s
-sub => mux2x1_6b:m4.s
-sub => mux2x1_6b:m5.s
 sub => somador:u0.cin
 load => reg6:r0.load
 s5 <= reg6:r0.q5
@@ -35,267 +30,102 @@ s0 <= reg6:r0.q0
 
 
 |calc|mux2x1_6b:m0
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calc|mux2x1_6b:m1
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calc|mux2x1_6b:m2
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calc|mux2x1_6b:m3
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calc|mux2x1_6b:m4
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
-
-
-|calc|mux2x1_6b:m5
-a[0] => d.IN0
-a[1] => d.IN0
-a[2] => d.IN0
-a[3] => d.IN0
-a[4] => d.IN0
-a[5] => d.IN0
-b[0] => d.IN0
-b[1] => d.IN0
-b[2] => d.IN0
-b[3] => d.IN0
-b[4] => d.IN0
-b[5] => d.IN0
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-s => d.IN1
-d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[4] <= d.DB_MAX_OUTPUT_PORT_TYPE
-d[5] <= d.DB_MAX_OUTPUT_PORT_TYPE
+a[0] => d~1.IN0
+a[1] => d~4.IN0
+a[2] => d~7.IN0
+a[3] => d~10.IN0
+a[4] => d~13.IN0
+a[5] => d~16.IN0
+b[0] => d~0.IN0
+b[1] => d~3.IN0
+b[2] => d~6.IN0
+b[3] => d~9.IN0
+b[4] => d~12.IN0
+b[5] => d~15.IN0
+s => d~0.IN1
+s => d~3.IN1
+s => d~6.IN1
+s => d~9.IN1
+s => d~12.IN1
+s => d~15.IN1
+s => d~16.IN1
+s => d~13.IN1
+s => d~10.IN1
+s => d~7.IN1
+s => d~4.IN1
+s => d~1.IN1
+d[0] <= d~2.DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d~5.DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d~8.DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d~11.DB_MAX_OUTPUT_PORT_TYPE
+d[4] <= d~14.DB_MAX_OUTPUT_PORT_TYPE
+d[5] <= d~17.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u0
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u1
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u2
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u3
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u4
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|somador:u5
-a => sum.IN0
-a => cout.IN0
-b => sum.IN1
-b => cout.IN1
-cin => sum.IN1
-cin => cout.IN1
-sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
-cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+a => sum~0.IN0
+a => cout~0.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+cin => sum~1.IN1
+cin => cout~1.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~2.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |calc|reg6:r0
