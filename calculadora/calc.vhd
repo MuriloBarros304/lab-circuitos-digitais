@@ -10,7 +10,9 @@ entity calc is
 		load : in bit;
 		s5, s4, s3, s2, s1, s0 : out bit
 	);
-	
+end calc;
+
+architecture behav of calc is
 component mux2x1_6b is
    port (
       a : in bit_vector (5 downto 0);  
@@ -20,13 +22,13 @@ component mux2x1_6b is
     );
 end component;
 
-component somador_6b is
+component somador is
 	port(
-        a : in bit;    
-        b : in bit;      
-        cin : in bit;    
-        sum : out bit;   
-        cout : out bit   
+      a : in bit;    
+      b : in bit;      
+      cin : in bit;    
+      sum : out bit;   
+      cout : out bit   
 	);
 end component;	
 	
@@ -44,11 +46,11 @@ signal carry1 : bit;
 signal carry2 : bit;
 signal carry3 : bit;
 signal carry4 : bit;
+signal carry5 : bit;
 signal rin0 : bit; -- entrada do registrador
 signal rin1 : bit;
 signal ld : bit;
 	
-architecture behaviorial of calc is
 begin
 	-- mux
 	m0: mux2x1_6b port map(a(0) => b0, b(0) => not(b0), s => sub, d(0) => sin(0)); -- verificar se pode usar not aqui
@@ -61,3 +63,16 @@ begin
 	-- somador
 	s0: somador port map(a => a0, b => sin(0), cin => sub, cout => carry1, sum => rin0);
 	s1: somador port map(a => a1, b => sin(1), cin => carry1, cout => carry2, sum => rin1);
+	s2: somador port map(a => a2, b => sin(2), cin => carry2, cout => carry3, sum => rin2);
+	s3: somador port map(a => a3, b => sin(3), cin => carry3, cout => carry4, sum => rin3);
+	s4: somador port map(a => a4, b => sin(4), cin => carry4, cout => carry5, sum => rin4);
+	s5: somador port map(a => a5, b => sin(5), cin => carry5, sum => rin5);
+
+	-- registrador
+	r0: reg6 port map(c => clk, load => load, i0 => rin0, q0 => s0);
+	r1: reg6 port map(c => clk, load => load, i1 => rin1, q1 => s1);
+	r2: reg6 port map(c => clk, load => load, i2 => rin2, q2 => s2);
+	r3: reg6 port map(c => clk, load => load, i3 => rin3, q3 => s3);
+	r4: reg6 port map(c => clk, load => load, i4 => rin4, q4 => s4);
+	r5: reg6 port map(c => clk, load => load, i5 => rin5, q5 => s5);
+end behav;

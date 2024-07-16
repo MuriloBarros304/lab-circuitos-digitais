@@ -1,9 +1,9 @@
 entity mux2x1_6b is
     port (
-        a : in std_logic_vector (5 downto 0);  -- Entrada a de 6 bits
-        b : in std_logic_vector (5 downto 0);  -- Entrada b de 6 bits
+        a : in bit_vector (5 downto 0);  -- Entrada a de 6 bits
+        b : in bit_vector (5 downto 0);  -- Entrada b de 6 bits
         s : in bit;                   -- Sinal de seleção
-        d : out std_logic_vector (5 downto 0) -- Saída y de 6 bits
+        d : out bit_vector (5 downto 0) -- Saída y de 6 bits
     );
 end mux2x1_6b;
 
