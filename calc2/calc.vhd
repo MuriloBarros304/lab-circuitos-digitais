@@ -47,7 +47,12 @@ architecture behav of calc is
 
 begin
     -- mux
-    m0: mux2x1_6b port map(a => (b5 & b4 & b3 & b2 & b1 & b0), b => not(b5 & b4 & b3 & b2 & b1 & b0), s => sub, d => sin);
+    m0: mux2x1_6b port map(
+        a => (a5, a4, a3, a2, a1, a0),
+        b => (not a5, not a4, not a3, not a2, not a1, not a0),
+        s => sub,
+        d => sin
+    );
 
     -- somador
     u0: somador port map(a => a0, b => sin(0), cin => sub, cout => carry1, sum => rin0);
@@ -58,6 +63,10 @@ begin
     u5: somador port map(a => a5, b => sin(5), cin => carry5, cout => open, sum => rin5);
 
     -- registrador
-    r0: reg6 port map(c => clk, load => load, i0 => rin0, i1 => rin1, i2 => rin2, i3 => rin3,
-                      i4 => rin4, i5 => rin5, q0 => s0, q1 => s1, q2 => s2, q3 => s3, q4 => s4, q5 => s5);
+    r0: reg6 port map(
+        c => clk, load => load, 
+        i0 => rin0, i1 => rin1, i2 => rin2, i3 => rin3, i4 => rin4, i5 => rin5, 
+        q0 => s0, q1 => s1, q2 => s2, q3 => s3, q4 => s4, q5 => s5
+    );
+
 end behav;
