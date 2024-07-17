@@ -52,8 +52,8 @@ begin
 	m1: mux2x1_6b port map(a(1) => b1, b(1) => (not b1), s => sub, d(1) => sin(1)); 
 	m2: mux2x1_6b port map(a(2) => b2, b(2) => (not b2), s => sub, d(2) => sin(2)); 
 	m3: mux2x1_6b port map(a(3) => b3, b(3) => (not b3), s => sub, d(3) => sin(3)); 
-	m4: mux2x1_6b port map(a(4) => b0, b(4) => (not b4), s => sub, d(4) => sin(4)); 
-	m5: mux2x1_6b port map(a(5) => b0, b(5) => (not b5), s => sub, d(5) => sin(5)); 
+	m4: mux2x1_6b port map(a(4) => b4, b(4) => (not b4), s => sub, d(4) => sin(4)); 
+	m5: mux2x1_6b port map(a(5) => b5, b(5) => (not b5), s => sub, d(5) => sin(5)); 
 	
 	-- somador
 	
