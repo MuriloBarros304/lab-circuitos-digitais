@@ -3,7 +3,7 @@ $comment
 		vcd file calc.msim.vcd -direction
 $end
 $date
-	Tue Jul 16 22:42:49 2024
+	Wed Jul 17 17:42:19 2024
 $end
 $version
 	ModelSim Version 10.1d
@@ -41,41 +41,39 @@ $var wire 1 9 unknown $end
 $var tri1 1 : devclrn $end
 $var tri1 1 ; devpor $end
 $var tri1 1 < devoe $end
-$var wire 1 = m4|d~0_combout $end
-$var wire 1 > u2|cout~0_combout $end
-$var wire 1 ? u4|cout~0_combout $end
-$var wire 1 @ a5~combout $end
-$var wire 1 A clk~combout $end
-$var wire 1 B clk~clkctrl_outclk $end
-$var wire 1 C b0~combout $end
-$var wire 1 D sub~combout $end
+$var wire 1 = u0|cout~0_combout $end
+$var wire 1 > u1|cout~0_combout $end
+$var wire 1 ? u2|cout~0_combout $end
+$var wire 1 @ u4|cout~0_combout $end
+$var wire 1 A a1~combout $end
+$var wire 1 B clk~combout $end
+$var wire 1 C clk~clkctrl_outclk $end
+$var wire 1 D a5~combout $end
 $var wire 1 E b5~combout $end
-$var wire 1 F u0|sum~combout $end
+$var wire 1 F u0|sum~0_combout $end
 $var wire 1 G load~combout $end
 $var wire 1 H r0|q5~regout $end
-$var wire 1 I u0|cout~0_combout $end
-$var wire 1 J a4~combout $end
+$var wire 1 I a4~combout $end
+$var wire 1 J sub~combout $end
 $var wire 1 K b4~combout $end
-$var wire 1 L m4|d~1_combout $end
-$var wire 1 M u1|sum~combout $end
-$var wire 1 N r0|q4~regout $end
-$var wire 1 O b3~combout $end
-$var wire 1 P a3~combout $end
-$var wire 1 Q u1|cout~0_combout $end
-$var wire 1 R u2|sum~0_combout $end
-$var wire 1 S r0|q3~regout $end
-$var wire 1 T b2~combout $end
-$var wire 1 U a2~combout $end
-$var wire 1 V u3|sum~0_combout $end
-$var wire 1 W r0|q2~regout $end
-$var wire 1 X b1~combout $end
-$var wire 1 Y a1~combout $end
-$var wire 1 Z u3|cout~0_combout $end
-$var wire 1 [ u4|sum~0_combout $end
-$var wire 1 \ r0|q1~regout $end
-$var wire 1 ] a0~combout $end
-$var wire 1 ^ u5|sum~0_combout $end
-$var wire 1 _ r0|q0~regout $end
+$var wire 1 L u1|sum~combout $end
+$var wire 1 M r0|q4~regout $end
+$var wire 1 N b3~combout $end
+$var wire 1 O a3~combout $end
+$var wire 1 P u2|sum~0_combout $end
+$var wire 1 Q r0|q3~regout $end
+$var wire 1 R a2~combout $end
+$var wire 1 S b2~combout $end
+$var wire 1 T u3|sum~0_combout $end
+$var wire 1 U r0|q2~regout $end
+$var wire 1 V u3|cout~0_combout $end
+$var wire 1 W b1~combout $end
+$var wire 1 X u4|sum~0_combout $end
+$var wire 1 Y r0|q1~regout $end
+$var wire 1 Z a0~combout $end
+$var wire 1 [ b0~combout $end
+$var wire 1 \ u5|sum~0_combout $end
+$var wire 1 ] r0|q0~regout $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
@@ -142,286 +140,490 @@ x9
 0[
 0\
 0]
-0^
-0_
 $end
 #20000
 1-
-1A
+1/
 1B
+1J
+1C
 06
+1\
+1X
+1T
+1P
+1L
+1=
+0L
+1>
+0P
+1?
+1V
+0T
+0X
+1@
+0\
 #40000
-0-
-0A
-0B
-16
-#60000
 1#
 1%
 1*
 1,
-1-
-1U
-1J
-1O
-1E
-1A
-1B
-06
-1V
-1M
+0-
 1R
+1I
+1N
+1E
+0B
+0C
+16
+1T
+1L
+1P
+0?
+1F
+0=
+0T
+0L
+#60000
+1-
+1B
+1C
+06
+1Q
+1H
+13
+15
 #80000
 0-
-0A
 0B
+0C
 16
 #100000
 1-
-1A
 1B
+1C
 06
-1W
-1S
-1N
-12
-13
-14
 #120000
 0-
-0A
 0B
+0C
 16
 #140000
 1-
-1A
 1B
+1C
 06
-#160000
+#150000
 0#
 0%
 0*
 0,
-0-
-0U
-0J
-0O
+0R
+0I
+0N
 0E
-0A
-0B
 16
 0V
-0M
-0R
-#180000
-1-
-1A
-1B
+1T
+1L
+0>
+0P
+1?
+0F
+1=
+1X
+0@
+1P
+0?
+1V
+0T
+0L
+1>
+1\
+0V
+1T
+0X
+1@
+0P
+1?
+1X
+0@
+0\
+1V
+0T
+1\
+0X
+1@
+0\
+#160000
+0-
+0B
+0C
 06
-0W
-0S
-0N
-02
+#180000
+1&
+1%
+1*
+1,
+1-
+1D
+1I
+1N
+1E
+1B
+1C
+16
+1L
+1P
+0?
+0V
+1T
+1X
+0@
+1\
+0Q
+0H
 03
-04
+05
 #200000
 0-
-0A
 0B
-16
+0C
+06
 #220000
 1-
-1A
 1B
-06
-#240000
-0-
-0A
-0B
+1C
 16
+1]
+1Y
+1U
+1Q
+1M
+10
+11
+12
+13
+14
+#240000
+1(
+1)
+1+
+0&
+0,
+0-
+1W
+1S
+1K
+0D
+0E
+0B
+0C
+06
+0X
+0T
+0L
 #260000
 1-
-1A
 1B
-06
+1C
+16
+0Y
+0U
+0M
+01
+02
+04
 #280000
 0-
-0A
 0B
-16
+0C
+06
 #300000
 1-
-1A
 1B
-06
+1C
+16
 #320000
 0-
-0A
 0B
+0C
+06
+#330000
+1#
+0%
+0*
+0(
+0+
+1R
+0I
+0N
+0W
+0K
 16
+1T
+0P
+1?
+1X
+1V
+0T
+0X
+1@
+0\
 #340000
 1-
-1A
 1B
+1C
 06
+0]
+0Q
+00
+03
 #360000
 0-
-0A
 0B
+0C
 16
 #380000
 1-
-1A
 1B
+1C
 06
 #400000
+0)
+0#
 0-
-0A
+0S
+0R
 0B
+0C
 16
 #420000
 1-
-1A
 1B
+1C
 06
 #440000
 0-
-0A
 0B
+0C
 16
 #460000
 1-
-1A
 1B
+1C
 06
 #480000
+0/
 0-
-0A
+0J
 0B
+0C
 16
+1\
+1X
+0V
+1T
+1P
+1L
+0@
+0?
+0>
+0=
+0X
+0\
+0T
+0P
+0L
 #500000
 1-
-1A
 1B
+1C
 06
 #520000
 0-
-0A
 0B
+0C
 16
 #540000
 1-
-1A
 1B
+1C
 06
+#550000
+1,
+1%
+1*
+1#
+1E
+1I
+1N
+1R
+16
+1F
+1L
+1P
+1T
 #560000
 0-
-0A
 0B
-16
+0C
+06
 #580000
 1-
-1A
 1B
-06
+1C
+16
+1U
+1Q
+1M
+1H
+12
+13
+14
+15
 #600000
 0-
-0A
 0B
-16
+0C
+06
 #620000
 1-
-1A
 1B
-06
+1C
+16
 #640000
 0-
-0A
 0B
-16
+0C
+06
 #660000
 1-
-1A
 1B
-06
-#680000
-0-
-0A
-0B
+1C
 16
+#680000
+1$
+1&
+1+
+0#
+0-
+1O
+1D
+1K
+0R
+0B
+0C
+06
+0P
+1?
+0F
+1=
+0L
+1>
+0T
+1T
+1L
+1P
 #700000
 1-
-1A
 1B
-06
+1C
+16
+0H
+05
 #720000
 0-
-0A
 0B
-16
+0C
+06
 #740000
 1-
-1A
 1B
-06
+1C
+16
 #760000
 0-
-0A
 0B
-16
-#780000
-1-
-1A
-1B
+0C
 06
+#780000
+0%
+0*
+0$
+0+
+1-
+0I
+0N
+0O
+0K
+1B
+1C
+16
+0>
+0?
+0P
+0T
 #800000
 0-
-0A
 0B
-16
+0C
+06
 #820000
 1-
-1A
 1B
-06
+1C
+16
+0U
+0Q
+02
+03
 #840000
 0-
-0A
 0B
-16
+0C
+06
 #860000
 1-
-1A
 1B
-06
-#880000
-0-
-0A
-0B
+1C
 16
+#880000
+0,
+0&
+0-
+0E
+0D
+0B
+0C
+06
+0=
+0L
 #900000
 1-
-1A
 1B
-06
+1C
+16
+0M
+04
 #920000
 0-
-0A
 0B
-16
+0C
+06
 #940000
 1-
-1A
 1B
-06
+1C
+16
 #960000
 0-
-0A
 0B
-16
+0C
+06
 #980000
 1-
-1A
 1B
-06
+1C
+16
 #1000000

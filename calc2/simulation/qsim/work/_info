@@ -4,11 +4,11 @@ K3
 cModel Technology
 Z0 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\calc2\simulation\qsim
 vcalc
-Z1 !s100 Y:eh9N>bRb24b<W@PVlD40
-Z2 Igf6UC?SnOCX_eMAHWn:Ei0
+Z1 !s100 06F`7;ODD53WlZWH0KN=L0
+Z2 I@CZS6[2[Gg]lUP;4@XbYT3
 Z3 VJL5eEA;THG3XGC8L2gd>k0
 Z4 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\calc2\simulation\qsim
-Z5 w1721180568
+Z5 w1721248938
 Z6 8calc.vo
 Z7 Fcalc.vo
 L0 31
@@ -19,7 +19,7 @@ Z9 !s90 -work|work|calc.vo|
 Z10 o-work work -O0
 !i10b 1
 !s85 0
-Z11 !s108 1721180569.579000
+Z11 !s108 1721248939.315000
 Z12 !s107 calc.vo|
 !s101 -O0
 vcalc_vlg_check_tst
@@ -36,7 +36,7 @@ R8
 r1
 !s85 0
 31
-Z18 !s108 1721180569.634000
+Z18 !s108 1721248939.377000
 Z19 !s107 calc.vt|
 Z20 !s90 -work|work|calc.vt|
 !s101 -O0
@@ -62,8 +62,8 @@ R20
 R10
 vcalc_vlg_vec_tst
 !i10b 1
-!s100 ;<@W]]>E_20ATiRXFO;9^1
-IZjJm0c4UBancA0TP`ZH`e2
+!s100 GzEQEAi1Nj?oIPSTTN1X20
+I;AMKGKjn^L7DNVcG4QnG_0
 Z24 V=[R6>467WG;:9MKFORQ7k1
 R4
 R5
