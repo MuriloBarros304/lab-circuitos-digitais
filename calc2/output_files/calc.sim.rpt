@@ -1,5 +1,5 @@
 Simulator report for calc
-Wed Jul 17 14:56:28 2024
+Wed Jul 17 15:08:48 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -46,8 +46,8 @@ applicable agreement for further details.
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
 ; Simulation Netlist Size     ; 82 nodes     ;
-; Simulation Coverage         ;      58.54 % ;
-; Total Number of Transitions ; 271          ;
+; Simulation Coverage         ;      70.73 % ;
+; Total Number of Transitions ; 378          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,13 +94,13 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      58.54 % ;
+; Total coverage as a percentage                      ;      70.73 % ;
 ; Total nodes checked                                 ; 82           ;
 ; Total output ports checked                          ; 82           ;
-; Total output ports with complete 1/0-value coverage ; 48           ;
-; Total output ports with no 1/0-value coverage       ; 22           ;
-; Total output ports with no 1-value coverage         ; 30           ;
-; Total output ports with no 0-value coverage         ; 26           ;
+; Total output ports with complete 1/0-value coverage ; 58           ;
+; Total output ports with no 1/0-value coverage       ; 16           ;
+; Total output ports with no 1-value coverage         ; 23           ;
+; Total output ports with no 0-value coverage         ; 17           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -111,11 +111,18 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; Node Name               ; Output Port Name        ; Output Port Type ;
 +-------------------------+-------------------------+------------------+
 ; |calc|b1                ; |calc|b1                ; out              ;
+; |calc|b2                ; |calc|b2                ; out              ;
 ; |calc|b4                ; |calc|b4                ; out              ;
 ; |calc|clk               ; |calc|clk               ; out              ;
 ; |calc|sub               ; |calc|sub               ; out              ;
+; |calc|s1                ; |calc|s1                ; pin_out          ;
+; |calc|s2                ; |calc|s2                ; pin_out          ;
+; |calc|s3                ; |calc|s3                ; pin_out          ;
 ; |calc|s4                ; |calc|s4                ; pin_out          ;
 ; |calc|s5                ; |calc|s5                ; pin_out          ;
+; |calc|reg6:r0|q1        ; |calc|reg6:r0|q1        ; regout           ;
+; |calc|reg6:r0|q2        ; |calc|reg6:r0|q2        ; regout           ;
+; |calc|reg6:r0|q3        ; |calc|reg6:r0|q3        ; regout           ;
 ; |calc|reg6:r0|q4        ; |calc|reg6:r0|q4        ; regout           ;
 ; |calc|reg6:r0|q5        ; |calc|reg6:r0|q5        ; regout           ;
 ; |calc|somador:u5|sum~0  ; |calc|somador:u5|sum~0  ; out0             ;
@@ -132,7 +139,9 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |calc|somador:u2|sum    ; |calc|somador:u2|sum    ; out0             ;
 ; |calc|somador:u2|cout~0 ; |calc|somador:u2|cout~0 ; out0             ;
 ; |calc|somador:u2|cout~1 ; |calc|somador:u2|cout~1 ; out0             ;
+; |calc|somador:u2|cout~2 ; |calc|somador:u2|cout~2 ; out0             ;
 ; |calc|somador:u2|cout~3 ; |calc|somador:u2|cout~3 ; out0             ;
+; |calc|somador:u2|cout   ; |calc|somador:u2|cout   ; out0             ;
 ; |calc|somador:u1|sum~0  ; |calc|somador:u1|sum~0  ; out0             ;
 ; |calc|somador:u1|sum    ; |calc|somador:u1|sum    ; out0             ;
 ; |calc|somador:u1|cout~0 ; |calc|somador:u1|cout~0 ; out0             ;
@@ -150,6 +159,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |calc|mux2x1_6b:m0|d~4  ; |calc|mux2x1_6b:m0|d~4  ; out0             ;
 ; |calc|mux2x1_6b:m0|d[1] ; |calc|mux2x1_6b:m0|d[1] ; out0             ;
 ; |calc|mux2x1_6b:m0|d~6  ; |calc|mux2x1_6b:m0|d~6  ; out0             ;
+; |calc|mux2x1_6b:m0|d~7  ; |calc|mux2x1_6b:m0|d~7  ; out0             ;
 ; |calc|mux2x1_6b:m0|d[2] ; |calc|mux2x1_6b:m0|d[2] ; out0             ;
 ; |calc|mux2x1_6b:m0|d~10 ; |calc|mux2x1_6b:m0|d~10 ; out0             ;
 ; |calc|mux2x1_6b:m0|d[3] ; |calc|mux2x1_6b:m0|d[3] ; out0             ;
@@ -174,28 +184,21 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |calc|a4                ; |calc|a4                ; out              ;
 ; |calc|a5                ; |calc|a5                ; out              ;
 ; |calc|b0                ; |calc|b0                ; out              ;
-; |calc|b2                ; |calc|b2                ; out              ;
 ; |calc|b3                ; |calc|b3                ; out              ;
 ; |calc|b5                ; |calc|b5                ; out              ;
 ; |calc|load              ; |calc|load              ; out              ;
 ; |calc|s0                ; |calc|s0                ; pin_out          ;
-; |calc|s1                ; |calc|s1                ; pin_out          ;
 ; |calc|reg6:r0|q0        ; |calc|reg6:r0|q0        ; regout           ;
-; |calc|reg6:r0|q1        ; |calc|reg6:r0|q1        ; regout           ;
 ; |calc|somador:u4|cout~0 ; |calc|somador:u4|cout~0 ; out0             ;
 ; |calc|somador:u4|cout~1 ; |calc|somador:u4|cout~1 ; out0             ;
 ; |calc|somador:u4|cout~2 ; |calc|somador:u4|cout~2 ; out0             ;
 ; |calc|somador:u3|cout~0 ; |calc|somador:u3|cout~0 ; out0             ;
 ; |calc|somador:u3|cout~1 ; |calc|somador:u3|cout~1 ; out0             ;
 ; |calc|somador:u3|cout~2 ; |calc|somador:u3|cout~2 ; out0             ;
-; |calc|somador:u2|cout~2 ; |calc|somador:u2|cout~2 ; out0             ;
-; |calc|somador:u2|cout   ; |calc|somador:u2|cout   ; out0             ;
 ; |calc|somador:u0|cout~0 ; |calc|somador:u0|cout~0 ; out0             ;
 ; |calc|somador:u0|cout~1 ; |calc|somador:u0|cout~1 ; out0             ;
 ; |calc|somador:u0|cout~2 ; |calc|somador:u0|cout~2 ; out0             ;
 ; |calc|mux2x1_6b:m0|d~1  ; |calc|mux2x1_6b:m0|d~1  ; out0             ;
-; |calc|mux2x1_6b:m0|d~7  ; |calc|mux2x1_6b:m0|d~7  ; out0             ;
-; |calc|mux2x1_6b:m0|d~9  ; |calc|mux2x1_6b:m0|d~9  ; out0             ;
 ; |calc|mux2x1_6b:m0|d~16 ; |calc|mux2x1_6b:m0|d~16 ; out0             ;
 +-------------------------+-------------------------+------------------+
 
@@ -210,18 +213,10 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |calc|a3                ; |calc|a3                ; out              ;
 ; |calc|a4                ; |calc|a4                ; out              ;
 ; |calc|a5                ; |calc|a5                ; out              ;
-; |calc|b2                ; |calc|b2                ; out              ;
-; |calc|b3                ; |calc|b3                ; out              ;
 ; |calc|b5                ; |calc|b5                ; out              ;
 ; |calc|load              ; |calc|load              ; out              ;
 ; |calc|s0                ; |calc|s0                ; pin_out          ;
-; |calc|s1                ; |calc|s1                ; pin_out          ;
-; |calc|s2                ; |calc|s2                ; pin_out          ;
-; |calc|s3                ; |calc|s3                ; pin_out          ;
 ; |calc|reg6:r0|q0        ; |calc|reg6:r0|q0        ; regout           ;
-; |calc|reg6:r0|q1        ; |calc|reg6:r0|q1        ; regout           ;
-; |calc|reg6:r0|q2        ; |calc|reg6:r0|q2        ; regout           ;
-; |calc|reg6:r0|q3        ; |calc|reg6:r0|q3        ; regout           ;
 ; |calc|somador:u4|cout~0 ; |calc|somador:u4|cout~0 ; out0             ;
 ; |calc|somador:u4|cout~1 ; |calc|somador:u4|cout~1 ; out0             ;
 ; |calc|somador:u4|cout~2 ; |calc|somador:u4|cout~2 ; out0             ;
@@ -229,7 +224,6 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |calc|somador:u3|cout~1 ; |calc|somador:u3|cout~1 ; out0             ;
 ; |calc|somador:u3|cout~2 ; |calc|somador:u3|cout~2 ; out0             ;
 ; |calc|somador:u0|cout~1 ; |calc|somador:u0|cout~1 ; out0             ;
-; |calc|mux2x1_6b:m0|d~7  ; |calc|mux2x1_6b:m0|d~7  ; out0             ;
 ; |calc|mux2x1_6b:m0|d~9  ; |calc|mux2x1_6b:m0|d~9  ; out0             ;
 ; |calc|mux2x1_6b:m0|d~16 ; |calc|mux2x1_6b:m0|d~16 ; out0             ;
 +-------------------------+-------------------------+------------------+
@@ -248,7 +242,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Jul 17 14:56:28 2024
+    Info: Processing started: Wed Jul 17 15:08:48 2024
 Info: Command: quartus_sim --simulation_results_format=VWF calc -c calc
 Info (324025): Using vector source file "/home/murilo/Documentos/GitHub/lab-circuitos-digitais/calc2/Waveform2.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
@@ -260,12 +254,12 @@ Warning (324036): Found clock-sensitive change during active clock edge at time 
 Warning (324036): Found clock-sensitive change during active clock edge at time 310.0 ns on register "|calc|reg6:r0|q2"
 Warning (324036): Found clock-sensitive change during active clock edge at time 310.0 ns on register "|calc|reg6:r0|q3"
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      58.54 %
-Info (328052): Number of transitions in simulation is 271
+Info (328053): Simulation coverage is      70.73 %
+Info (328052): Number of transitions in simulation is 378
 Info (324045): Vector file calc.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Wed Jul 17 14:56:28 2024
+    Info: Processing ended: Wed Jul 17 15:08:48 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
