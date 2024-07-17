@@ -1,32 +1,32 @@
 |calc
-a5 => somador:u5.a
-a4 => somador:u4.a
-a3 => somador:u3.a
-a2 => somador:u2.a
-a1 => somador:u1.a
 a0 => somador:u0.a
-b5 => mux2x1_6b:m0.a[0]
-b5 => mux2x1_6b:m0.b[0]
-b4 => mux2x1_6b:m0.a[1]
-b4 => mux2x1_6b:m0.b[1]
-b3 => mux2x1_6b:m0.a[2]
-b3 => mux2x1_6b:m0.b[2]
-b2 => mux2x1_6b:m0.a[3]
-b2 => mux2x1_6b:m0.b[3]
-b1 => mux2x1_6b:m0.a[4]
-b1 => mux2x1_6b:m0.b[4]
-b0 => mux2x1_6b:m0.a[5]
-b0 => mux2x1_6b:m0.b[5]
+a1 => somador:u1.a
+a2 => somador:u2.a
+a3 => somador:u3.a
+a4 => somador:u4.a
+a5 => somador:u5.a
+b0 => mux2x1_6b:m0.a[0]
+b0 => mux2x1_6b:m0.b[0]
+b1 => mux2x1_6b:m0.a[1]
+b1 => mux2x1_6b:m0.b[1]
+b2 => mux2x1_6b:m0.a[2]
+b2 => mux2x1_6b:m0.b[2]
+b3 => mux2x1_6b:m0.a[3]
+b3 => mux2x1_6b:m0.b[3]
+b4 => mux2x1_6b:m0.a[4]
+b4 => mux2x1_6b:m0.b[4]
+b5 => mux2x1_6b:m0.a[5]
+b5 => mux2x1_6b:m0.b[5]
 clk => reg6:r0.c
 sub => mux2x1_6b:m0.s
 sub => somador:u0.cin
 load => reg6:r0.load
-s5 <= reg6:r0.q5
-s4 <= reg6:r0.q4
-s3 <= reg6:r0.q3
-s2 <= reg6:r0.q2
-s1 <= reg6:r0.q1
 s0 <= reg6:r0.q0
+s1 <= reg6:r0.q1
+s2 <= reg6:r0.q2
+s3 <= reg6:r0.q3
+s4 <= reg6:r0.q4
+s5 <= reg6:r0.q5
 
 
 |calc|mux2x1_6b:m0

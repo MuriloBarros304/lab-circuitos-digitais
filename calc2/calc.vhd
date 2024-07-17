@@ -3,12 +3,12 @@ use ieee.std_logic_1164.all;
 
 entity calc is
     port(
-        a5, a4, a3, a2, a1, a0 : in bit;
-        b5, b4, b3, b2, b1, b0 : in bit;
+        a0, a1, a2, a3, a4, a5 : in bit;
+        b0, b1, b2, b3, b4, b5 : in bit;
         clk : in bit;
         sub : in bit;
         load : in bit;
-        s5, s4, s3, s2, s1, s0 : out bit
+        s0, s1, s2, s3, s4, s5 : out bit
     );
 end calc;
 
@@ -48,8 +48,8 @@ architecture behav of calc is
 begin
     -- mux
     m0: mux2x1_6b port map(
-        a => (a5, a4, a3, a2, a1, a0),
-        b => (not a5, not a4, not a3, not a2, not a1, not a0),
+        a => (b5, b4, b3, b2, b1, b0),
+        b => (not b5, not b4, not b3, not b2, not b1, not b0),
         s => sub,
         d => sin
     );
