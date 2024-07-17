@@ -14,7 +14,7 @@ begin
    process(a, b, cin)
    begin
       -- Atribuição das operações lógicas para o somador completo de 1 bit
-      sum <= (a xor b) xor cin;  -- Soma usando portas XOR
-      cout <= (a and b) or ((a xor b) and cin);  -- Carry usando portas AND e OR
+      sum <= a xor b xor cin;  -- Soma usando portas XOR
+      cout <= (a and b) or (a and cin) or (b and cin);  -- Carry usando portas AND e OR
    end process;
 end behavioral;

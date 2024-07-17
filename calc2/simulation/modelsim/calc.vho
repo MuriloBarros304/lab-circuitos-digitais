@@ -16,7 +16,7 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition"
 
--- DATE "07/16/2024 17:47:34"
+-- DATE "07/16/2024 20:54:32"
 
 -- 
 -- Device: Altera EP2C35F672C6 Package FBGA672

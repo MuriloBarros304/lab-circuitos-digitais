@@ -1,10 +1,10 @@
-Analysis & Synthesis Status : Successful - Tue Jul 16 17:47:16 2024
+Analysis & Synthesis Status : Successful - Tue Jul 16 22:42:11 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : calc
 Top-level Entity Name : calc
 Family : Cyclone II
-Total logic elements : 16
-    Total combinational functions : 16
+Total logic elements : 13
+    Total combinational functions : 13
     Dedicated logic registers : 6
 Total registers : 6
 Total pins : 21
