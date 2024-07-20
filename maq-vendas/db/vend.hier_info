@@ -1,0 +1,164 @@
+|vend
+a[0] => subtractor:u0.x[0]
+a[0] => comparator:u1.a[0]
+a[1] => subtractor:u0.x[1]
+a[1] => comparator:u1.a[1]
+a[2] => subtractor:u0.x[2]
+a[2] => comparator:u1.a[2]
+a[3] => subtractor:u0.x[3]
+a[3] => comparator:u1.a[3]
+b[0] => subtractor:u0.y[0]
+b[0] => comparator:u1.b[0]
+b[1] => subtractor:u0.y[1]
+b[1] => comparator:u1.b[1]
+b[2] => subtractor:u0.y[2]
+b[2] => comparator:u1.b[2]
+b[3] => subtractor:u0.y[3]
+b[3] => comparator:u1.b[3]
+d[0] <= subtractor:u0.d[0]
+d[1] <= subtractor:u0.d[1]
+d[2] <= subtractor:u0.d[2]
+d[3] <= subtractor:u0.d[3]
+out_eq <= comparator:u1.out_eq
+out_gt <= comparator:u1.out_gt
+
+
+|vend|subtractor:u0
+x[0] => subtract:s0.x
+x[1] => subtract:s1.x
+x[2] => subtract:s2.x
+x[3] => subtract:s3.x
+y[0] => subtract:s0.y
+y[1] => subtract:s1.y
+y[2] => subtract:s2.y
+y[3] => subtract:s3.y
+bin => subtract:s0.bin
+d[0] <= subtract:s0.d
+d[1] <= subtract:s1.d
+d[2] <= subtract:s2.d
+d[3] <= subtract:s3.d
+bout[0] <= <GND>
+bout[1] <= <GND>
+bout[2] <= <GND>
+bout[3] <= subtract:s3.bout
+
+
+|vend|subtractor:u0|subtract:s0
+x => d~0.IN0
+x => bout~0.IN0
+x => bout~1.IN0
+y => d~0.IN1
+y => bout~1.IN1
+y => bout~3.IN0
+bin => d~1.IN1
+bin => bout~0.IN1
+bin => bout~3.IN1
+d <= d~1.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|subtractor:u0|subtract:s1
+x => d~0.IN0
+x => bout~0.IN0
+x => bout~1.IN0
+y => d~0.IN1
+y => bout~1.IN1
+y => bout~3.IN0
+bin => d~1.IN1
+bin => bout~0.IN1
+bin => bout~3.IN1
+d <= d~1.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|subtractor:u0|subtract:s2
+x => d~0.IN0
+x => bout~0.IN0
+x => bout~1.IN0
+y => d~0.IN1
+y => bout~1.IN1
+y => bout~3.IN0
+bin => d~1.IN1
+bin => bout~0.IN1
+bin => bout~3.IN1
+d <= d~1.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|subtractor:u0|subtract:s3
+x => d~0.IN0
+x => bout~0.IN0
+x => bout~1.IN0
+y => d~0.IN1
+y => bout~1.IN1
+y => bout~3.IN0
+bin => d~1.IN1
+bin => bout~0.IN1
+bin => bout~3.IN1
+d <= d~1.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|comparator:u1
+a[0] => compare:c0.a
+a[1] => compare:c1.a
+a[2] => compare:c2.a
+a[3] => compare:c3.a
+b[0] => compare:c0.b
+b[1] => compare:c1.b
+b[2] => compare:c2.b
+b[3] => compare:c3.b
+in_eq => compare:c3.in_eq
+in_gt => compare:c3.in_gt
+out_eq <= compare:c0.out_eq
+out_gt <= compare:c0.out_gt
+
+
+|vend|comparator:u1|compare:c3
+a => out_gt~0.IN0
+a => out_eq~0.IN0
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+in_eq => out_gt~0.IN1
+in_eq => out_eq~1.IN1
+in_gt => out_gt~2.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|comparator:u1|compare:c2
+a => out_gt~0.IN0
+a => out_eq~0.IN0
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+in_eq => out_gt~0.IN1
+in_eq => out_eq~1.IN1
+in_gt => out_gt~2.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|comparator:u1|compare:c1
+a => out_gt~0.IN0
+a => out_eq~0.IN0
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+in_eq => out_gt~0.IN1
+in_eq => out_eq~1.IN1
+in_gt => out_gt~2.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|comparator:u1|compare:c0
+a => out_gt~0.IN0
+a => out_eq~0.IN0
+b => out_eq~0.IN1
+b => out_gt~1.IN1
+in_eq => out_gt~0.IN1
+in_eq => out_eq~1.IN1
+in_gt => out_gt~2.IN1
+out_eq <= out_eq~1.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt~2.DB_MAX_OUTPUT_PORT_TYPE
+
+

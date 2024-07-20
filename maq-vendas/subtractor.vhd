@@ -1,25 +1,26 @@
--- subtrator de 1 bit
+-- Subtrator de 1 bit
 entity subtract is
     port(
         x, y, bin : in bit;
         d, bout : out bit
     );
 end subtract;
-              
+
 architecture behav of subtract is
 begin
-    d <= a xor b xor bin;
-    bout <= (not(a) and bin) or (not(a) and b) or (b and bin);
+    d <= x xor y xor bin;
+    bout <= (not x and bin) or (not x and y) or (y and bin);
 end behav;
 
--- subtrator de 4 bits
+-- Subtrator de 4 bits
 entity subtractor is
     port(
         x, y : in bit_vector (3 downto 0);
+        bin : in bit;
         d, bout : out bit_vector (3 downto 0)
     );
 end subtractor;
-              
+
 architecture hardware of subtractor is
     component subtract is
         port(
@@ -29,8 +30,8 @@ architecture hardware of subtractor is
     end component;
     signal carry1, carry2, carry3 : bit;
 begin
-    s0: subtractor port map(x => x(0), y => y(0), bin => open, d => d(0), bout => carry1);
-    s1: subtractor port map(x => x(1), y => y(1), bin => carry1, d => d(1), bout => carry2);
-    s2: subtractor port map(x => x(2), y => y(2), bin => carry2, d => d(2), bout => carry3);
-    s3: subtractor port map(x => x(3), y => y(3), bin => open, d => d(3), bout => open);
+    s0: subtract port map(x => x(0), y => y(0), bin => bin, d => d(0), bout => carry1);
+    s1: subtract port map(x => x(1), y => y(1), bin => carry1, d => d(1), bout => carry2);
+    s2: subtract port map(x => x(2), y => y(2), bin => carry2, d => d(2), bout => carry3);
+    s3: subtract port map(x => x(3), y => y(3), bin => carry3, d => d(3), bout => bout(3));
 end hardware;
