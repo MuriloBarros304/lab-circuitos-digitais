@@ -108,8 +108,8 @@ b[0] => compare:c0.b
 b[1] => compare:c1.b
 b[2] => compare:c2.b
 b[3] => compare:c3.b
-in_eq => compare:c3.in_eq
-in_gt => compare:c3.in_gt
+in_eq => ~NO_FANOUT~
+in_gt => ~NO_FANOUT~
 out_eq <= compare:c0.out_eq
 out_gt <= compare:c0.out_gt
 

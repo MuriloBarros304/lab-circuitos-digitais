@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vend
-Sat Jul 20 13:52:46 2024
+Sat Jul 20 14:25:47 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,10 +14,11 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Port Connectivity Checks: "comparator:u1"
- 10. Port Connectivity Checks: "subtractor:u0"
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "comparator:u1|compare:c3"
+ 10. Port Connectivity Checks: "comparator:u1"
+ 11. Port Connectivity Checks: "subtractor:u0"
+ 12. Elapsed Time Per Partition
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -43,13 +44,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 20 13:52:46 2024           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 20 14:25:47 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; vend                                            ;
 ; Top-level Entity Name              ; vend                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 6                                               ;
-;     Total combinational functions  ; 6                                               ;
+; Total logic elements               ; 11                                              ;
+;     Total combinational functions  ; 11                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
 ; Total pins                         ; 14                                              ;
@@ -172,16 +173,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 6     ;
+; Estimated Total logic elements              ; 11    ;
 ;                                             ;       ;
-; Total combinational functions               ; 6     ;
+; Total combinational functions               ; 11    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 3     ;
-;     -- 3 input functions                    ; 1     ;
+;     -- 4 input functions                    ; 7     ;
+;     -- 3 input functions                    ; 2     ;
 ;     -- <=2 input functions                  ; 2     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 6     ;
+;     -- normal mode                          ; 11    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
@@ -191,9 +192,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; I/O pins                                    ; 14    ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; a[0]  ;
-; Maximum fan-out                             ; 3     ;
-; Total fan-out                               ; 23    ;
-; Average fan-out                             ; 1.15  ;
+; Maximum fan-out                             ; 4     ;
+; Total fan-out                               ; 44    ;
+; Average fan-out                             ; 1.76  ;
 +---------------------------------------------+-------+
 
 
@@ -202,12 +203,15 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; |vend                      ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |vend                           ; work         ;
-;    |subtractor:u0|         ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0             ; work         ;
+; |vend                      ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |vend                           ; work         ;
+;    |comparator:u1|         ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1             ; work         ;
+;       |compare:c0|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1|compare:c0  ; work         ;
+;       |compare:c3|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1|compare:c3  ; work         ;
+;    |subtractor:u0|         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0             ; work         ;
 ;       |subtract:s0|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s0 ; work         ;
 ;       |subtract:s1|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s1 ; work         ;
 ;       |subtract:s2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s2 ; work         ;
-;       |subtract:s3|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s3 ; work         ;
+;       |subtract:s3|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s3 ; work         ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -225,6 +229,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------+
+; Port Connectivity Checks: "comparator:u1|compare:c3" ;
++-------+-------+----------+---------------------------+
+; Port  ; Type  ; Severity ; Details                   ;
++-------+-------+----------+---------------------------+
+; in_eq ; Input ; Info     ; Stuck at VCC              ;
+; in_gt ; Input ; Info     ; Stuck at GND              ;
++-------+-------+----------+---------------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -262,7 +276,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 20 13:52:44 2024
+    Info: Processing started: Sat Jul 20 14:25:46 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vend -c vend
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file vend.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -282,21 +296,20 @@ Warning (12125): Using design file comparator.vhd, which is not specified as a d
     Info (12023): Found entity 1: compare
     Info (12023): Found entity 2: comparator
 Info (12128): Elaborating entity "comparator" for hierarchy "comparator:u1"
+Warning (10540): VHDL Signal Declaration warning at comparator.vhd(32): used explicit default value for signal "init_eq" because signal was never assigned a value
+Warning (10540): VHDL Signal Declaration warning at comparator.vhd(33): used explicit default value for signal "init_gt" because signal was never assigned a value
 Info (12128): Elaborating entity "compare" for hierarchy "comparator:u1|compare:c3"
 Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "out_eq" is stuck at GND
-    Warning (13410): Pin "out_gt" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 20 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 8 input pins
     Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 6 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 625 megabytes
-    Info: Processing ended: Sat Jul 20 13:52:46 2024
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:02
+    Info (21061): Implemented 11 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
+    Info: Peak virtual memory: 621 megabytes
+    Info: Processing ended: Sat Jul 20 14:25:47 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 

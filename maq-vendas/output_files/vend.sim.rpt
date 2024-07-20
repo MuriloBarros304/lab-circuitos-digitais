@@ -1,5 +1,5 @@
 Simulator report for vend
-Sat Jul 20 13:57:30 2024
+Sat Jul 20 14:26:23 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -45,9 +45,9 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 32 nodes     ;
-; Simulation Coverage         ;      75.00 % ;
-; Total Number of Transitions ; 96           ;
+; Simulation Netlist Size     ; 49 nodes     ;
+; Simulation Coverage         ;      89.80 % ;
+; Total Number of Transitions ; 153          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -94,80 +94,95 @@ Please use Quartus II 64-Bit to view the waveform report data.
 +-----------------------------------------------------+--------------+
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
-; Total coverage as a percentage                      ;      75.00 % ;
-; Total nodes checked                                 ; 32           ;
-; Total output ports checked                          ; 32           ;
-; Total output ports with complete 1/0-value coverage ; 24           ;
-; Total output ports with no 1/0-value coverage       ; 7            ;
-; Total output ports with no 1-value coverage         ; 8            ;
-; Total output ports with no 0-value coverage         ; 7            ;
+; Total coverage as a percentage                      ;      89.80 % ;
+; Total nodes checked                                 ; 49           ;
+; Total output ports checked                          ; 49           ;
+; Total output ports with complete 1/0-value coverage ; 44           ;
+; Total output ports with no 1/0-value coverage       ; 5            ;
+; Total output ports with no 1-value coverage         ; 5            ;
+; Total output ports with no 0-value coverage         ; 5            ;
 +-----------------------------------------------------+--------------+
 
 
 The following table displays output ports that toggle between 1 and 0 during simulation.
-+----------------------------------------------------------------------------------------------------+
-; Complete 1/0-Value Coverage                                                                        ;
-+----------------------------------------+----------------------------------------+------------------+
-; Node Name                              ; Output Port Name                       ; Output Port Type ;
-+----------------------------------------+----------------------------------------+------------------+
-; |vend|a[0]                             ; |vend|a[0]                             ; out              ;
-; |vend|a[1]                             ; |vend|a[1]                             ; out              ;
-; |vend|a[2]                             ; |vend|a[2]                             ; out              ;
-; |vend|a[3]                             ; |vend|a[3]                             ; out              ;
-; |vend|b[1]                             ; |vend|b[1]                             ; out              ;
-; |vend|d[0]                             ; |vend|d[0]                             ; pin_out          ;
-; |vend|d[1]                             ; |vend|d[1]                             ; pin_out          ;
-; |vend|d[2]                             ; |vend|d[2]                             ; pin_out          ;
-; |vend|d[3]                             ; |vend|d[3]                             ; pin_out          ;
-; |vend|subtractor:u0|subtract:s3|d~0    ; |vend|subtractor:u0|subtract:s3|d~0    ; out0             ;
-; |vend|subtractor:u0|subtract:s3|d      ; |vend|subtractor:u0|subtract:s3|d      ; out0             ;
-; |vend|subtractor:u0|subtract:s2|d~0    ; |vend|subtractor:u0|subtract:s2|d~0    ; out0             ;
-; |vend|subtractor:u0|subtract:s2|d      ; |vend|subtractor:u0|subtract:s2|d      ; out0             ;
-; |vend|subtractor:u0|subtract:s2|bout~0 ; |vend|subtractor:u0|subtract:s2|bout~0 ; out0             ;
-; |vend|subtractor:u0|subtract:s2|bout~2 ; |vend|subtractor:u0|subtract:s2|bout~2 ; out0             ;
-; |vend|subtractor:u0|subtract:s2|bout   ; |vend|subtractor:u0|subtract:s2|bout   ; out0             ;
-; |vend|subtractor:u0|subtract:s1|d~0    ; |vend|subtractor:u0|subtract:s1|d~0    ; out0             ;
-; |vend|subtractor:u0|subtract:s1|d      ; |vend|subtractor:u0|subtract:s1|d      ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout~0 ; |vend|subtractor:u0|subtract:s1|bout~0 ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout~1 ; |vend|subtractor:u0|subtract:s1|bout~1 ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout~2 ; |vend|subtractor:u0|subtract:s1|bout~2 ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout   ; |vend|subtractor:u0|subtract:s1|bout   ; out0             ;
-; |vend|subtractor:u0|subtract:s0|d~0    ; |vend|subtractor:u0|subtract:s0|d~0    ; out0             ;
-; |vend|subtractor:u0|subtract:s0|bout~1 ; |vend|subtractor:u0|subtract:s0|bout~1 ; out0             ;
-+----------------------------------------+----------------------------------------+------------------+
++------------------------------------------------------------------------------------------------------+
+; Complete 1/0-Value Coverage                                                                          ;
++-----------------------------------------+-----------------------------------------+------------------+
+; Node Name                               ; Output Port Name                        ; Output Port Type ;
++-----------------------------------------+-----------------------------------------+------------------+
+; |vend|a[0]                              ; |vend|a[0]                              ; out              ;
+; |vend|a[2]                              ; |vend|a[2]                              ; out              ;
+; |vend|a[3]                              ; |vend|a[3]                              ; out              ;
+; |vend|b[0]                              ; |vend|b[0]                              ; out              ;
+; |vend|b[1]                              ; |vend|b[1]                              ; out              ;
+; |vend|b[2]                              ; |vend|b[2]                              ; out              ;
+; |vend|b[3]                              ; |vend|b[3]                              ; out              ;
+; |vend|d[0]                              ; |vend|d[0]                              ; pin_out          ;
+; |vend|d[1]                              ; |vend|d[1]                              ; pin_out          ;
+; |vend|d[2]                              ; |vend|d[2]                              ; pin_out          ;
+; |vend|d[3]                              ; |vend|d[3]                              ; pin_out          ;
+; |vend|out_eq                            ; |vend|out_eq                            ; pin_out          ;
+; |vend|out_gt                            ; |vend|out_gt                            ; pin_out          ;
+; |vend|comparator:u1|compare:c0|out_gt~0 ; |vend|comparator:u1|compare:c0|out_gt~0 ; out0             ;
+; |vend|comparator:u1|compare:c0|out_gt   ; |vend|comparator:u1|compare:c0|out_gt   ; out0             ;
+; |vend|comparator:u1|compare:c0|out_eq~0 ; |vend|comparator:u1|compare:c0|out_eq~0 ; out0             ;
+; |vend|comparator:u1|compare:c0|out_eq   ; |vend|comparator:u1|compare:c0|out_eq   ; out0             ;
+; |vend|comparator:u1|compare:c1|out_gt   ; |vend|comparator:u1|compare:c1|out_gt   ; out0             ;
+; |vend|comparator:u1|compare:c1|out_eq~0 ; |vend|comparator:u1|compare:c1|out_eq~0 ; out0             ;
+; |vend|comparator:u1|compare:c1|out_eq   ; |vend|comparator:u1|compare:c1|out_eq   ; out0             ;
+; |vend|comparator:u1|compare:c2|out_gt~0 ; |vend|comparator:u1|compare:c2|out_gt~0 ; out0             ;
+; |vend|comparator:u1|compare:c2|out_gt~1 ; |vend|comparator:u1|compare:c2|out_gt~1 ; out0             ;
+; |vend|comparator:u1|compare:c2|out_gt   ; |vend|comparator:u1|compare:c2|out_gt   ; out0             ;
+; |vend|comparator:u1|compare:c2|out_eq~0 ; |vend|comparator:u1|compare:c2|out_eq~0 ; out0             ;
+; |vend|comparator:u1|compare:c2|out_eq   ; |vend|comparator:u1|compare:c2|out_eq   ; out0             ;
+; |vend|comparator:u1|compare:c3|out_gt~1 ; |vend|comparator:u1|compare:c3|out_gt~1 ; out0             ;
+; |vend|comparator:u1|compare:c3|out_eq~0 ; |vend|comparator:u1|compare:c3|out_eq~0 ; out0             ;
+; |vend|subtractor:u0|subtract:s3|d~0     ; |vend|subtractor:u0|subtract:s3|d~0     ; out0             ;
+; |vend|subtractor:u0|subtract:s3|d       ; |vend|subtractor:u0|subtract:s3|d       ; out0             ;
+; |vend|subtractor:u0|subtract:s2|d~0     ; |vend|subtractor:u0|subtract:s2|d~0     ; out0             ;
+; |vend|subtractor:u0|subtract:s2|d       ; |vend|subtractor:u0|subtract:s2|d       ; out0             ;
+; |vend|subtractor:u0|subtract:s2|bout~0  ; |vend|subtractor:u0|subtract:s2|bout~0  ; out0             ;
+; |vend|subtractor:u0|subtract:s2|bout~1  ; |vend|subtractor:u0|subtract:s2|bout~1  ; out0             ;
+; |vend|subtractor:u0|subtract:s2|bout~2  ; |vend|subtractor:u0|subtract:s2|bout~2  ; out0             ;
+; |vend|subtractor:u0|subtract:s2|bout~3  ; |vend|subtractor:u0|subtract:s2|bout~3  ; out0             ;
+; |vend|subtractor:u0|subtract:s2|bout    ; |vend|subtractor:u0|subtract:s2|bout    ; out0             ;
+; |vend|subtractor:u0|subtract:s1|d~0     ; |vend|subtractor:u0|subtract:s1|d~0     ; out0             ;
+; |vend|subtractor:u0|subtract:s1|d       ; |vend|subtractor:u0|subtract:s1|d       ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout~0  ; |vend|subtractor:u0|subtract:s1|bout~0  ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout~1  ; |vend|subtractor:u0|subtract:s1|bout~1  ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout~2  ; |vend|subtractor:u0|subtract:s1|bout~2  ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout    ; |vend|subtractor:u0|subtract:s1|bout    ; out0             ;
+; |vend|subtractor:u0|subtract:s0|d~0     ; |vend|subtractor:u0|subtract:s0|d~0     ; out0             ;
+; |vend|subtractor:u0|subtract:s0|bout~1  ; |vend|subtractor:u0|subtract:s0|bout~1  ; out0             ;
++-----------------------------------------+-----------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 1 during simulation.
-+----------------------------------------------------------------------------------------------------+
-; Missing 1-Value Coverage                                                                           ;
-+----------------------------------------+----------------------------------------+------------------+
-; Node Name                              ; Output Port Name                       ; Output Port Type ;
-+----------------------------------------+----------------------------------------+------------------+
-; |vend|b[0]                             ; |vend|b[0]                             ; out              ;
-; |vend|b[2]                             ; |vend|b[2]                             ; out              ;
-; |vend|b[3]                             ; |vend|b[3]                             ; out              ;
-; |vend|out_eq                           ; |vend|out_eq                           ; pin_out          ;
-; |vend|out_gt                           ; |vend|out_gt                           ; pin_out          ;
-; |vend|subtractor:u0|subtract:s2|bout~1 ; |vend|subtractor:u0|subtract:s2|bout~1 ; out0             ;
-; |vend|subtractor:u0|subtract:s2|bout~3 ; |vend|subtractor:u0|subtract:s2|bout~3 ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout~3 ; |vend|subtractor:u0|subtract:s1|bout~3 ; out0             ;
-+----------------------------------------+----------------------------------------+------------------+
++------------------------------------------------------------------------------------------------------+
+; Missing 1-Value Coverage                                                                             ;
++-----------------------------------------+-----------------------------------------+------------------+
+; Node Name                               ; Output Port Name                        ; Output Port Type ;
++-----------------------------------------+-----------------------------------------+------------------+
+; |vend|a[1]                              ; |vend|a[1]                              ; out              ;
+; |vend|comparator:u1|compare:c0|out_gt~1 ; |vend|comparator:u1|compare:c0|out_gt~1 ; out0             ;
+; |vend|comparator:u1|compare:c1|out_gt~0 ; |vend|comparator:u1|compare:c1|out_gt~0 ; out0             ;
+; |vend|comparator:u1|compare:c1|out_gt~1 ; |vend|comparator:u1|compare:c1|out_gt~1 ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout~3  ; |vend|subtractor:u0|subtract:s1|bout~3  ; out0             ;
++-----------------------------------------+-----------------------------------------+------------------+
 
 
 The following table displays output ports that do not toggle to 0 during simulation.
-+----------------------------------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                                                           ;
-+----------------------------------------+----------------------------------------+------------------+
-; Node Name                              ; Output Port Name                       ; Output Port Type ;
-+----------------------------------------+----------------------------------------+------------------+
-; |vend|b[2]                             ; |vend|b[2]                             ; out              ;
-; |vend|b[3]                             ; |vend|b[3]                             ; out              ;
-; |vend|out_eq                           ; |vend|out_eq                           ; pin_out          ;
-; |vend|out_gt                           ; |vend|out_gt                           ; pin_out          ;
-; |vend|subtractor:u0|subtract:s2|bout~1 ; |vend|subtractor:u0|subtract:s2|bout~1 ; out0             ;
-; |vend|subtractor:u0|subtract:s2|bout~3 ; |vend|subtractor:u0|subtract:s2|bout~3 ; out0             ;
-; |vend|subtractor:u0|subtract:s1|bout~3 ; |vend|subtractor:u0|subtract:s1|bout~3 ; out0             ;
-+----------------------------------------+----------------------------------------+------------------+
++------------------------------------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                                                             ;
++-----------------------------------------+-----------------------------------------+------------------+
+; Node Name                               ; Output Port Name                        ; Output Port Type ;
++-----------------------------------------+-----------------------------------------+------------------+
+; |vend|a[1]                              ; |vend|a[1]                              ; out              ;
+; |vend|comparator:u1|compare:c0|out_gt~1 ; |vend|comparator:u1|compare:c0|out_gt~1 ; out0             ;
+; |vend|comparator:u1|compare:c1|out_gt~0 ; |vend|comparator:u1|compare:c1|out_gt~0 ; out0             ;
+; |vend|comparator:u1|compare:c1|out_gt~1 ; |vend|comparator:u1|compare:c1|out_gt~1 ; out0             ;
+; |vend|subtractor:u0|subtract:s1|bout~3  ; |vend|subtractor:u0|subtract:s1|bout~3  ; out0             ;
++-----------------------------------------+-----------------------------------------+------------------+
 
 
 +---------------------+
@@ -183,19 +198,19 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 20 13:57:29 2024
+    Info: Processing started: Sat Jul 20 14:26:23 2024
 Info: Command: quartus_sim --simulation_results_format=VWF vend -c vend
 Info (324025): Using vector source file "/home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/Waveform.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
-Info (328053): Simulation coverage is      75.00 %
-Info (328052): Number of transitions in simulation is 96
+Info (328053): Simulation coverage is      89.80 %
+Info (328052): Number of transitions in simulation is 153
 Info (324045): Vector file vend.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Sat Jul 20 13:57:30 2024
-    Info: Elapsed time: 00:00:01
+    Info: Processing ended: Sat Jul 20 14:26:23 2024
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
 
