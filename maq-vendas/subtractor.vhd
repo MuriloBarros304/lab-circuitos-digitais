@@ -1,4 +1,4 @@
--- Subtrator de 1 bit
+-- subtrator de 1 bit
 entity subtract is
     port(
         x, y, bin : in bit;
