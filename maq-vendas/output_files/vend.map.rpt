@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vend
-Tue Jul 23 15:29:17 2024
+Tue Jul 23 16:10:31 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,13 +41,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 23 15:29:17 2024           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 23 16:10:31 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; vend                                            ;
 ; Top-level Entity Name              ; vend                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 82                                              ;
-;     Total combinational functions  ; 50                                              ;
+; Total logic elements               ; 63                                              ;
+;     Total combinational functions  ; 31                                              ;
 ;     Dedicated logic registers      ; 32                                              ;
 ; Total registers                    ; 32                                              ;
 ; Total pins                         ; 17                                              ;
@@ -169,16 +169,16 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 82    ;
+; Estimated Total logic elements              ; 63    ;
 ;                                             ;       ;
-; Total combinational functions               ; 50    ;
+; Total combinational functions               ; 31    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 44    ;
-;     -- 3 input functions                    ; 2     ;
-;     -- <=2 input functions                  ; 4     ;
+;     -- 4 input functions                    ; 29    ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 2     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 50    ;
+;     -- normal mode                          ; 31    ;
 ;     -- arithmetic mode                      ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 32    ;
@@ -189,8 +189,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clock ;
 ; Maximum fan-out                             ; 32    ;
-; Total fan-out                               ; 290   ;
-; Average fan-out                             ; 2.93  ;
+; Total fan-out                               ; 220   ;
+; Average fan-out                             ; 2.75  ;
 +---------------------------------------------+-------+
 
 
@@ -199,11 +199,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
 ; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Library Name ;
 +----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+--------------+
-; |vend                      ; 50 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |vend                                   ; work         ;
-;    |regfile:u2|            ; 50 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2                        ; work         ;
+; |vend                      ; 31 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 17   ; 0            ; |vend                                   ; work         ;
+;    |regfile:u2|            ; 31 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2                        ; work         ;
 ;       |decoder3x8:d0|      ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|decoder3x8:d0          ; work         ;
-;       |decoder3x8:d1|      ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|decoder3x8:d1          ; work         ;
-;       |mux:m|              ; 38 (38)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|mux:m                  ; work         ;
+;       |mux:m|              ; 23 (23)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|mux:m                  ; work         ;
 ;       |regist:r0|          ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|regist:r0              ; work         ;
 ;          |flipflop:ff0|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|regist:r0|flipflop:ff0 ; work         ;
 ;          |flipflop:ff1|    ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|regfile:u2|regist:r0|flipflop:ff1 ; work         ;
@@ -268,7 +267,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -278,7 +277,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jul 23 15:29:13 2024
+    Info: Processing started: Tue Jul 23 16:10:29 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vend -c vend
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file vend.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -307,14 +306,14 @@ Info (12128): Elaborating entity "threestate" for hierarchy "regfile:u2|threesta
 Info (12128): Elaborating entity "mux" for hierarchy "regfile:u2|mux:m"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 99 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 80 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 4 output pins
-    Info (21061): Implemented 82 logic cells
+    Info (21061): Implemented 63 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 619 megabytes
-    Info: Processing ended: Tue Jul 23 15:29:17 2024
-    Info: Elapsed time: 00:00:04
+    Info: Processing ended: Tue Jul 23 16:10:31 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

@@ -230,6 +230,6 @@ begin
     t7: threestate port map(a => r7_t7, s => ts_d1(7), y => t7_dt);
 
     -- mux
-    m: mux port map(s => w_addr, i0 => t0_dt, i1 => t1_dt, i2 => t2_dt, i3 => t3_dt,
+    m: mux port map(s => r_addr, i0 => t0_dt, i1 => t1_dt, i2 => t2_dt, i3 => t3_dt,
     i4 => t4_dt, i5 => t5_dt, i6 => t6_dt, i7 => t7_dt, d => r_data);
 end architecture;
