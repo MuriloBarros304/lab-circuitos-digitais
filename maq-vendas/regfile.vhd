@@ -87,6 +87,60 @@ begin
     y(3) <= a(3) and s;
 end architecture;
 
+entity mux is
+    port (
+        i0 : in bit_vector(3 downto 0);
+        i1 : in bit_vector(3 downto 0);
+        i2 : in bit_vector(3 downto 0);
+        i3 : in bit_vector(3 downto 0);
+        i4 : in bit_vector(3 downto 0);
+        i5 : in bit_vector(3 downto 0);
+        i6 : in bit_vector(3 downto 0);
+        i7 : in bit_vector(3 downto 0);
+        s : in bit_vector(2 downto 0);
+        d : out bit_vector(3 downto 0)
+    );
+end mux;
+
+architecture hardware of mux is
+begin
+    d(0) <= (i0(0) and not s(2) and not s(1) and not s(0)) or
+            (i1(0) and not s(2) and not s(1) and s(0)) or
+            (i2(0) and not s(2) and s(1) and not s(0)) or
+            (i3(0) and not s(2) and s(1) and s(0)) or
+            (i4(0) and s(2) and not s(1) and not s(0)) or
+            (i5(0) and s(2) and not s(1) and s(0)) or
+            (i6(0) and s(2) and s(1) and not s(0)) or
+            (i7(0) and s(2) and s(1) and s(0));
+
+    d(1) <= (i0(1) and not s(2) and not s(1) and not s(0)) or
+            (i1(1) and not s(2) and not s(1) and s(0)) or
+            (i2(1) and not s(2) and s(1) and not s(0)) or
+            (i3(1) and not s(2) and s(1) and s(0)) or
+            (i4(1) and s(2) and not s(1) and not s(0)) or
+            (i5(1) and s(2) and not s(1) and s(0)) or
+            (i6(1) and s(2) and s(1) and not s(0)) or
+            (i7(1) and s(2) and s(1) and s(0));
+
+    d(2) <= (i0(2) and not s(2) and not s(1) and not s(0)) or
+            (i1(2) and not s(2) and not s(1) and s(0)) or
+            (i2(2) and not s(2) and s(1) and not s(0)) or
+            (i3(2) and not s(2) and s(1) and s(0)) or
+            (i4(2) and s(2) and not s(1) and not s(0)) or
+            (i5(2) and s(2) and not s(1) and s(0)) or
+            (i6(2) and s(2) and s(1) and not s(0)) or
+            (i7(2) and s(2) and s(1) and s(0));
+
+    d(3) <= (i0(3) and not s(2) and not s(1) and not s(0)) or
+            (i1(3) and not s(2) and not s(1) and s(0)) or
+            (i2(3) and not s(2) and s(1) and not s(0)) or
+            (i3(3) and not s(2) and s(1) and s(0)) or
+            (i4(3) and s(2) and not s(1) and not s(0)) or
+            (i5(3) and s(2) and not s(1) and s(0)) or
+            (i6(3) and s(2) and s(1) and not s(0)) or
+            (i7(3) and s(2) and s(1) and s(0));
+end architecture hardware;
+
 -- banco de registradores:
 -- 8 registradores de 4 bits cada, ligados a decodificadores 
 -- 3x8 para ler e escrever no array
@@ -127,10 +181,27 @@ architecture registerfile of regfile is
             y : out bit_vector(3 downto 0) -- sinal de saída
         );
     end component;
+
+    component mux is
+        port(
+            i0 : in bit_vector(3 downto 0);
+            i1 : in bit_vector(3 downto 0);
+            i2 : in bit_vector(3 downto 0);
+            i3 : in bit_vector(3 downto 0);
+            i4 : in bit_vector(3 downto 0);
+            i5 : in bit_vector(3 downto 0);
+            i6 : in bit_vector(3 downto 0);
+            i7 : in bit_vector(3 downto 0);
+            s : in bit_vector(2 downto 0);
+            d : out bit_vector(3 downto 0)
+        );
+    end component;
+
     signal d0_rf : bit_vector(7 downto 0); -- sinal de controle de escrita
     signal ts_d1 : bit_vector(7 downto 0); -- sinal de controle de leitura
-    signal reg_out : bit_vector(3 downto 0); -- sinal de saída temporário para registro
-    signal r0_t0, r1_t1, r2_t2, r3_t3, r4_t4, r5_t5, r6_t6, r7_t7 : bit_vector(3 downto 0)
+    signal reg_out : bit_vector(3 downto 0); -- sinal de saída temporário
+    signal r0_t0, r1_t1, r2_t2, r3_t3, r4_t4, r5_t5, r6_t6, r7_t7 : bit_vector(3 downto 0);
+    signal t0_dt, t1_dt, t2_dt, t3_dt, t4_dt, t5_dt, t6_dt, t7_dt : bit_vector(3 downto 0);
 begin
     -- decodificador de escrita
     d0: decoder3x8 port map(a => w_addr, en => w_en, y => d0_rf);
@@ -149,12 +220,16 @@ begin
     r7: regist port map(load => d0_rf(7), clk => clock, d => w_data, q => r7_t7);
 
     -- three state drivers
-    t0: threestate port map(a => r0_t0, s => ts_d1(0), y => r_data);
-    t1: threestate port map(a => r1_t1, s => ts_d1(1), y => r_data);
-    t2: threestate port map(a => r2_t2, s => ts_d1(2), y => r_data);
-    t3: threestate port map(a => r3_t3, s => ts_d1(3), y => r_data);
-    t4: threestate port map(a => r4_t4, s => ts_d1(4), y => r_data);
-    t5: threestate port map(a => r5_t5, s => ts_d1(5), y => r_data);
-    t6: threestate port map(a => r6_t6, s => ts_d1(6), y => r_data);
-    t7: threestate port map(a => r7_t7, s => ts_d1(7), y => r_data);
+    t0: threestate port map(a => r0_t0, s => ts_d1(0), y => t0_dt);
+    t1: threestate port map(a => r1_t1, s => ts_d1(1), y => t1_dt);
+    t2: threestate port map(a => r2_t2, s => ts_d1(2), y => t2_dt);
+    t3: threestate port map(a => r3_t3, s => ts_d1(3), y => t3_dt);
+    t4: threestate port map(a => r4_t4, s => ts_d1(4), y => t4_dt);
+    t5: threestate port map(a => r5_t5, s => ts_d1(5), y => t5_dt);
+    t6: threestate port map(a => r6_t6, s => ts_d1(6), y => t6_dt);
+    t7: threestate port map(a => r7_t7, s => ts_d1(7), y => t7_dt);
+
+    -- mux
+    m: mux port map(s => w_addr, i0 => t0_dt, i1 => t1_dt, i2 => t2_dt, i3 => t3_dt,
+    i4 => t4_dt, i5 => t5_dt, i6 => t6_dt, i7 => t7_dt, d => r_data);
 end architecture;

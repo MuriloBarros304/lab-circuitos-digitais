@@ -1,5 +1,5 @@
 Assembler report for vend
-Sat Jul 20 14:26:00 2024
+Tue Jul 23 15:29:35 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sat Jul 20 14:26:00 2024 ;
+; Assembler Status      ; Successful - Tue Jul 23 15:29:35 2024 ;
 ; Revision Name         ; vend                                  ;
 ; Top-level Entity Name ; vend                                  ;
 ; Family                ; Cyclone II                            ;
@@ -94,8 +94,8 @@ applicable agreement for further details.
 ; Option         ; Setting           ;
 +----------------+-------------------+
 ; Device         ; EP2C70F672C6      ;
-; JTAG usercode  ; 0x00607E83        ;
-; Checksum       ; 0x00607E83        ;
+; JTAG usercode  ; 0x00611488        ;
+; Checksum       ; 0x00611488        ;
 +----------------+-------------------+
 
 
@@ -106,7 +106,7 @@ applicable agreement for further details.
 +--------------------+---------------+
 ; Device             ; EPCS16        ;
 ; JTAG usercode      ; 0x00000000    ;
-; Checksum           ; 0x187F621A    ;
+; Checksum           ; 0x187DBFE4    ;
 ; Compression Ratio  ; 3             ;
 +--------------------+---------------+
 
@@ -117,13 +117,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 20 14:25:57 2024
+    Info: Processing started: Tue Jul 23 15:29:32 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off vend -c vend
 Info (115031): Writing out detailed assembly data for power analysis
 Info (115030): Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 542 megabytes
-    Info: Processing ended: Sat Jul 20 14:26:00 2024
+    Info: Peak virtual memory: 551 megabytes
+    Info: Processing ended: Tue Jul 23 15:29:35 2024
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:03
 
