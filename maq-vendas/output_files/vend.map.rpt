@@ -1,5 +1,5 @@
 Analysis & Synthesis report for vend
-Sat Jul 20 14:25:47 2024
+Tue Jul 23 14:00:51 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,15 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "comparator:u1|compare:c3"
- 10. Port Connectivity Checks: "comparator:u1"
- 11. Port Connectivity Checks: "subtractor:u0"
- 12. Elapsed Time Per Partition
- 13. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -44,20 +36,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 20 14:25:47 2024           ;
+; Analysis & Synthesis Status        ; Failed - Tue Jul 23 14:00:51 2024               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; vend                                            ;
 ; Top-level Entity Name              ; vend                                            ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 11                                              ;
-;     Total combinational functions  ; 11                                              ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 14                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -157,159 +149,75 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                 ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                    ; Library ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
-; vend.vhd                         ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/vend.vhd       ;         ;
-; subtractor.vhd                   ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/subtractor.vhd ;         ;
-; comparator.vhd                   ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/comparator.vhd ;         ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 11    ;
-;                                             ;       ;
-; Total combinational functions               ; 11    ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 7     ;
-;     -- 3 input functions                    ; 2     ;
-;     -- <=2 input functions                  ; 2     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 11    ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 14    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-; Maximum fan-out node                        ; a[0]  ;
-; Maximum fan-out                             ; 4     ;
-; Total fan-out                               ; 44    ;
-; Average fan-out                             ; 1.76  ;
-+---------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-; |vend                      ; 11 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |vend                           ; work         ;
-;    |comparator:u1|         ; 6 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1             ; work         ;
-;       |compare:c0|         ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1|compare:c0  ; work         ;
-;       |compare:c3|         ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|comparator:u1|compare:c3  ; work         ;
-;    |subtractor:u0|         ; 5 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0             ; work         ;
-;       |subtract:s0|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s0 ; work         ;
-;       |subtract:s1|        ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s1 ; work         ;
-;       |subtract:s2|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s2 ; work         ;
-;       |subtract:s3|        ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |vend|subtractor:u0|subtract:s3 ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------+
-; Port Connectivity Checks: "comparator:u1|compare:c3" ;
-+-------+-------+----------+---------------------------+
-; Port  ; Type  ; Severity ; Details                   ;
-+-------+-------+----------+---------------------------+
-; in_eq ; Input ; Info     ; Stuck at VCC              ;
-; in_gt ; Input ; Info     ; Stuck at GND              ;
-+-------+-------+----------+---------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "comparator:u1"                                                                                                                               ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; in_eq ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; in_gt ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "subtractor:u0"                                                                                                                               ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                      ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; bout ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; bin  ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Jul 20 14:25:46 2024
+    Info: Processing started: Tue Jul 23 14:00:50 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off vend -c vend
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file vend.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: vend-behav
     Info (12023): Found entity 1: vend
 Info (12127): Elaborating entity "vend" for the top level hierarchy
-Warning (12125): Using design file subtractor.vhd, which is not specified as a design file for the current project, but contains definitions for 4 design units and 2 entities in project
-    Info (12022): Found design unit 1: subtract-behav
-    Info (12022): Found design unit 2: subtractor-hardware
-    Info (12023): Found entity 1: subtract
-    Info (12023): Found entity 2: subtractor
-Info (12128): Elaborating entity "subtractor" for hierarchy "subtractor:u0"
-Info (12128): Elaborating entity "subtract" for hierarchy "subtractor:u0|subtract:s0"
-Warning (12125): Using design file comparator.vhd, which is not specified as a design file for the current project, but contains definitions for 4 design units and 2 entities in project
-    Info (12022): Found design unit 1: compare-behav
-    Info (12022): Found design unit 2: comparator-hardware
-    Info (12023): Found entity 1: compare
-    Info (12023): Found entity 2: comparator
-Info (12128): Elaborating entity "comparator" for hierarchy "comparator:u1"
-Warning (10540): VHDL Signal Declaration warning at comparator.vhd(32): used explicit default value for signal "init_eq" because signal was never assigned a value
-Warning (10540): VHDL Signal Declaration warning at comparator.vhd(33): used explicit default value for signal "init_gt" because signal was never assigned a value
-Info (12128): Elaborating entity "compare" for hierarchy "comparator:u1|compare:c3"
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 8 input pins
-    Info (21059): Implemented 6 output pins
-    Info (21061): Implemented 11 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 621 megabytes
-    Info: Processing ended: Sat Jul 20 14:25:47 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Warning (12125): Using design file regfile.vhd, which is not specified as a design file for the current project, but contains definitions for 10 design units and 5 entities in project
+    Info (12022): Found design unit 1: flipflop-behavioral
+    Info (12022): Found design unit 2: regist-structural
+    Info (12022): Found design unit 3: decoder3x8-structural
+    Info (12022): Found design unit 4: threestate-hardware
+    Info (12022): Found design unit 5: regfile-registerfile
+    Info (12023): Found entity 1: flipflop
+    Info (12023): Found entity 2: regist
+    Info (12023): Found entity 3: decoder3x8
+    Info (12023): Found entity 4: threestate
+    Info (12023): Found entity 5: regfile
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:u2"
+Info (12128): Elaborating entity "decoder3x8" for hierarchy "regfile:u2|decoder3x8:d0"
+Info (12128): Elaborating entity "regist" for hierarchy "regfile:u2|regist:r0"
+Info (12128): Elaborating entity "flipflop" for hierarchy "regfile:u2|regist:r0|flipflop:ff0"
+Info (12128): Elaborating entity "threestate" for hierarchy "regfile:u2|threestate:t0"
+Error (12014): Net "regfile:u2|r_data[3]", which fans out to "regfile:u2|r_data[3]", cannot be assigned more than one value File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 98
+    Error (12015): Net is fed by "regfile:u2|threestate:t0|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t1|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t2|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t3|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t4|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t5|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t6|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t7|y[3]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+Error (12014): Net "regfile:u2|r_data[2]", which fans out to "regfile:u2|r_data[2]", cannot be assigned more than one value File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 98
+    Error (12015): Net is fed by "regfile:u2|threestate:t0|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t1|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t2|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t3|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t4|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t5|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t6|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t7|y[2]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+Error (12014): Net "regfile:u2|r_data[1]", which fans out to "regfile:u2|r_data[1]", cannot be assigned more than one value File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 98
+    Error (12015): Net is fed by "regfile:u2|threestate:t0|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t1|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t2|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t3|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t4|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t5|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t6|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t7|y[1]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+Error (12014): Net "regfile:u2|r_data[0]", which fans out to "regfile:u2|r_data[0]", cannot be assigned more than one value File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 98
+    Error (12015): Net is fed by "regfile:u2|threestate:t0|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t1|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t2|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t3|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t4|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t5|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t6|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+    Error (12015): Net is fed by "regfile:u2|threestate:t7|y[0]" File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/regfile.vhd Line: 78
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 36 errors, 3 warnings
+    Error: Peak virtual memory: 586 megabytes
+    Error: Processing ended: Tue Jul 23 14:00:51 2024
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 
