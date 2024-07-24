@@ -7,13 +7,13 @@ entity vend is
         --a, b : in bit_vector (3 downto 0);
         --d : out bit_vector (3 downto 0);
         --out_eq, out_gt : out bit
-		  w_data : in bit_vector(3 downto 0); -- dados para escrita
-        w_addr : in bit_vector(2 downto 0); -- endereço de escrita
-        w_en : in bit;                         -- sinal de habilitação para escrita
+        w_data : in bit_vector(3 downto 0);  -- dados para escrita
+        w_addr : in bit_vector(2 downto 0);  -- endereço de escrita
+        w_en : in bit;                       -- sinal de habilitação para escrita
         r_data : out bit_vector(3 downto 0); -- dados para leitura
-        r_addr : in bit_vector(2 downto 0); -- endereço de leitura
-        r_en : in bit;                         -- sinal de habilitação para leitura
-        clock : in bit                     -- clock
+        r_addr : in bit_vector(2 downto 0);  -- endereço de leitura
+        r_en : in bit;                       -- sinal de habilitação para leitura
+        clock : in bit                       -- clock
     );
 end vend;
 
@@ -34,13 +34,13 @@ architecture behav of vend is
 	 
 	 component regfile is
 	     port(
-				w_data : in bit_vector(3 downto 0); -- dados para escrita
-				w_addr : in bit_vector(2 downto 0); -- endereço de escrita
-				w_en : in bit;                         -- sinal de habilitação para escrita
+				w_data : in bit_vector(3 downto 0);  -- dados para escrita
+				w_addr : in bit_vector(2 downto 0);  -- endereço de escrita
+				w_en : in bit;                       -- sinal de habilitação para escrita
 				r_data : out bit_vector(3 downto 0); -- dados para leitura
-				r_addr : in bit_vector(2 downto 0); -- endereço de leitura
-				r_en : in bit;                         -- sinal de habilitação para leitura
-				clock : in bit                      -- clock				
+				r_addr : in bit_vector(2 downto 0);  -- endereço de leitura
+				r_en : in bit;                       -- sinal de habilitação para leitura
+				clock : in bit                       -- clock				
 		  );
 	 end component;
 begin 

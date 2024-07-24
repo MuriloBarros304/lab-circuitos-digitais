@@ -1,5 +1,5 @@
 Fitter report for vend
-Tue Jul 23 16:10:39 2024
+Wed Jul 24 09:54:39 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Tue Jul 23 16:10:39 2024           ;
+; Fitter Status                      ; Successful - Wed Jul 24 09:54:39 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; vend                                            ;
 ; Top-level Entity Name              ; vend                                            ;
@@ -1591,7 +1591,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  53 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  50 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  46 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1619,7 +1619,7 @@ Warning (169174): The Reserve All Unused Pins setting has not been specified, an
 Info (144001): Generated suppressed messages file /home/murilo/Documentos/GitHub/lab-circuitos-digitais/maq-vendas/output_files/vend.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 805 megabytes
-    Info: Processing ended: Tue Jul 23 16:10:39 2024
+    Info: Processing ended: Wed Jul 24 09:54:39 2024
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:07
 
