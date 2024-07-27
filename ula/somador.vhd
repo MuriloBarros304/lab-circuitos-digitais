@@ -6,15 +6,13 @@ entity somador is
        sum : out bit;   -- Soma de 1 bit
        cout : out bit   -- Carry-out de 1 bit
     );
- end somador;
+end somador;
  
- -- Declaração da arquitetura
- architecture behavioral of somador is
- begin
+architecture behavioral of somador is
+begin
     process(a, b, cin)
     begin
-       -- Atribuição das operações lógicas para o somador completo de 1 bit
-       sum <= ((a xor b) xor cin);  -- Soma usando portas XOR
-       cout <= ((a and b) or (a and cin) or (b and cin));  -- Carry usando portas AND e OR
+        sum <= ((a xor b) xor cin);
+        cout <= ((a and b) or (a and cin) or (b and cin));
     end process;
- end behavioral;
+end behavioral;
