@@ -8,7 +8,8 @@ entity vend is
         s, a : in bit_vector(3 downto 0);
         conf, c, clock : in bit;
         sel_out : out bit_vector(2 downto 0) := sel;
-        disp_moeda, w : out bit
+        disp_moeda, w : out bit;
+        dbg : out bit
     );
 end vend;
 
@@ -44,13 +45,15 @@ architecture behav of vend is
             tot_gt_s : out bit;
             tot_eq_s : out bit;
             prod_eq_0 : out bit;
-            vm_gt_tr : out bit
+            vm_gt_tr : out bit;
+            dbg : out bit
         );
     end component;
     signal s0, s1, s2 : bit;
     signal n0, n1, n2 : bit;
     signal tot_gt_s, tot_eq_s, prod_eq_0, vm_gt_tr : bit;
     signal ld_tot, clr_tot, ld_sel, clr_sel, ld_vm, clr_vm, v_w_en, v_r_en, vm_gt_tr_s : bit;
+    signal dbg_s : bit;
 begin 
     --registradores de estado
     r0: reg3 port map(d(0) => n0, d(1) => n1, d(2) => n2, clk => clock, load => '1',
@@ -66,5 +69,6 @@ begin
     dp: datapath port map(sel => sel, s => s, a => a, ld_tot => ld_tot, clr_tot => clr_tot,
     ld_sel => ld_sel, clr_sel => clr_sel, ld_vm => ld_vm, clr_vm => clr_vm, v_w_en => v_w_en,
     v_r_en => v_r_en, clock => clock, tot_gt_s => tot_gt_s, tot_eq_s => tot_eq_s, prod_eq_0 => prod_eq_0,
-    vm_gt_tr => vm_gt_tr);
+    vm_gt_tr => vm_gt_tr, dbg => dbg_s);
+    dbg_s <= v_r_en;
 end architecture behav;

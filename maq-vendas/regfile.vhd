@@ -136,13 +136,13 @@ entity regfile is
         r_addr : in bit_vector(2 downto 0);  -- endereço de leitura
         r_en : in bit;                       -- sinal de habilitação para leitura
         clock : in bit;                      -- clock
-		  reset : in bit
+        reset : in bit
     );
 end regfile;
 architecture registerfile of regfile is
     component regist is
         port(
-            d : in bit_vector(3 downto 0);  -- sinal de entrada
+            d : in bit_vector(3 downto 0):="0111";  -- sinal de entrada
             clk : in bit;                   -- clock
             load : in bit;                  -- load
             reset : in bit;                 -- reset
@@ -184,7 +184,7 @@ architecture registerfile of regfile is
     signal d0_rf : bit_vector(7 downto 0);                                                  -- sinal de controle de escrita
     signal ts_d1 : bit_vector(7 downto 0);                                                  -- sinal de controle de leitura
     signal reg_out : bit_vector(3 downto 0);                                                -- sinal de saída temporário
-    signal r0_t0, r1_t1, r2_t2, r3_t3, r4_t4, r5_t5, r6_t6, r7_t7 : bit_vector(3 downto 0); -- saída dos registradores e entrada dos drivers
+    signal r0_t0, r1_t1, r2_t2, r3_t3, r4_t4, r5_t5, r6_t6, r7_t7 : bit_vector(3 downto 0)  -- saída dos registradores e entrada dos drivers
     signal t0_dt, t1_dt, t2_dt, t3_dt, t4_dt, t5_dt, t6_dt, t7_dt : bit_vector(3 downto 0); -- saída dos drivers no mux
 
 begin

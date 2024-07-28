@@ -14,7 +14,8 @@ entity datapath is
         tot_gt_s : out bit;
         tot_eq_s : out bit;
         prod_eq_0 : out bit;
-        vm_gt_tr : out bit
+        vm_gt_tr : out bit;
+        dbg : out bit
     );
 end datapath;
 architecture hardware of datapath is
@@ -68,7 +69,8 @@ architecture hardware of datapath is
             cout : out bit
         );
     end component;
-    signal v_w_data, v_r_data, totreg, tr, vmreg : bit_vector(3 downto 0);
+    signal totreg, tr, vmreg : bit_vector(3 downto 0);
+    signal v_w_data, v_r_data : bit_vector(3 downto 0) := "0111";
     signal v_wr_addr : bit_vector(2 downto 0);
     signal tot, vm : bit_vector(3 downto 0) := "0000";
 begin

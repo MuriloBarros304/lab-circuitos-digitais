@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "07/20/2024 14:08:39"
+// Generated on "07/28/2024 13:38:05"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    vend
 // 
@@ -28,16 +28,24 @@
 `timescale 1 ps/ 1 ps
 module vend_vlg_sample_tst(
 	a,
-	b,
+	c,
+	clock,
+	conf,
+	s,
+	sel,
 	sampler_tx
 );
 input [3:0] a;
-input [3:0] b;
+input  c;
+input  clock;
+input  conf;
+input [3:0] s;
+input [2:0] sel;
 output sampler_tx;
 
 reg sample;
 time current_time;
-always @(a or b)
+always @(a or c or clock or conf or s or sel)
                                                                                 
 begin                                                 
  if ($realtime > 0)                                   
@@ -57,31 +65,31 @@ assign sampler_tx = sample;
 endmodule
 
 module vend_vlg_check_tst (
-	d,
-	out_eq,
-	out_gt,
+	disp_moeda,
+	sel_out,
+	w,
 	sampler_rx
 );
-input [3:0] d;
-input  out_eq;
-input  out_gt;
+input  disp_moeda;
+input [2:0] sel_out;
+input  w;
 input sampler_rx;
 
-reg [3:0] d_expected;
-reg  out_eq_expected;
-reg  out_gt_expected;
+reg  disp_moeda_expected;
+reg [2:0] sel_out_expected;
+reg  w_expected;
 
-reg [3:0] d_prev;
-reg  out_eq_prev;
-reg  out_gt_prev;
+reg  disp_moeda_prev;
+reg [2:0] sel_out_prev;
+reg  w_prev;
 
-reg [3:0] d_expected_prev;
-reg  out_eq_expected_prev;
-reg  out_gt_expected_prev;
+reg  disp_moeda_expected_prev;
+reg [2:0] sel_out_expected_prev;
+reg  w_expected_prev;
 
-reg [3:0] last_d_exp;
-reg  last_out_eq_exp;
-reg  last_out_gt_exp;
+reg  last_disp_moeda_exp;
+reg [2:0] last_sel_out_exp;
+reg  last_w_exp;
 
 reg trigger;
 
@@ -103,55 +111,50 @@ end
 
 always @(trigger)
 begin
-	d_prev = d;
-	out_eq_prev = out_eq;
-	out_gt_prev = out_gt;
+	disp_moeda_prev = disp_moeda;
+	sel_out_prev = sel_out;
+	w_prev = w;
 end
 
 // update expected /o prevs
 
 always @(trigger)
 begin
-	d_expected_prev = d_expected;
-	out_eq_expected_prev = out_eq_expected;
-	out_gt_expected_prev = out_gt_expected;
+	disp_moeda_expected_prev = disp_moeda_expected;
+	sel_out_expected_prev = sel_out_expected;
+	w_expected_prev = w_expected;
 end
 
 
-// expected d[ 3 ]
+
+// expected disp_moeda
 initial
 begin
-	d_expected[3] = 1'bX;
+	disp_moeda_expected = 1'bX;
 end 
-// expected d[ 2 ]
+// expected sel_out[ 2 ]
 initial
 begin
-	d_expected[2] = 1'bX;
+	sel_out_expected[2] = 1'bX;
 end 
-// expected d[ 1 ]
+// expected sel_out[ 1 ]
 initial
 begin
-	d_expected[1] = 1'bX;
+	sel_out_expected[1] = 1'bX;
 end 
-// expected d[ 0 ]
+// expected sel_out[ 0 ]
 initial
 begin
-	d_expected[0] = 1'bX;
+	sel_out_expected[0] = 1'bX;
 end 
 
-// expected out_eq
+// expected w
 initial
 begin
-	out_eq_expected = 1'bX;
-end 
-
-// expected out_gt
-initial
-begin
-	out_gt_expected = 1'bX;
+	w_expected = 1'bX;
 end 
 // generate trigger
-always @(d_expected or d or out_eq_expected or out_eq or out_gt_expected or out_gt)
+always @(disp_moeda_expected or disp_moeda or sel_out_expected or sel_out or w_expected or w)
 begin
 	trigger <= ~trigger;
 end
@@ -161,86 +164,73 @@ begin
 `ifdef debug_tbench
 	$display("Scanning pattern %d @time = %t",i,$realtime );
 	i = i + 1;
-	$display("| expected d = %b | expected out_eq = %b | expected out_gt = %b | ",d_expected_prev,out_eq_expected_prev,out_gt_expected_prev);
-	$display("| real d = %b | real out_eq = %b | real out_gt = %b | ",d_prev,out_eq_prev,out_gt_prev);
+	$display("| expected disp_moeda = %b | expected sel_out = %b | expected w = %b | ",disp_moeda_expected_prev,sel_out_expected_prev,w_expected_prev);
+	$display("| real disp_moeda = %b | real sel_out = %b | real w = %b | ",disp_moeda_prev,sel_out_prev,w_prev);
 `endif
 	if (
-		( d_expected_prev[0] !== 1'bx ) && ( d_prev[0] !== d_expected_prev[0] )
-		&& ((d_expected_prev[0] !== last_d_exp[0]) ||
+		( disp_moeda_expected_prev !== 1'bx ) && ( disp_moeda_prev !== disp_moeda_expected_prev )
+		&& ((disp_moeda_expected_prev !== last_disp_moeda_exp) ||
 			on_first_change[1])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port d[0] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", d_expected_prev);
-		$display ("     Real value = %b", d_prev);
+		$display ("ERROR! Vector Mismatch for output port disp_moeda :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", disp_moeda_expected_prev);
+		$display ("     Real value = %b", disp_moeda_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[1] = 1'b0;
-		last_d_exp[0] = d_expected_prev[0];
+		last_disp_moeda_exp = disp_moeda_expected_prev;
 	end
 	if (
-		( d_expected_prev[1] !== 1'bx ) && ( d_prev[1] !== d_expected_prev[1] )
-		&& ((d_expected_prev[1] !== last_d_exp[1]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port d[1] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", d_expected_prev);
-		$display ("     Real value = %b", d_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_d_exp[1] = d_expected_prev[1];
-	end
-	if (
-		( d_expected_prev[2] !== 1'bx ) && ( d_prev[2] !== d_expected_prev[2] )
-		&& ((d_expected_prev[2] !== last_d_exp[2]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port d[2] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", d_expected_prev);
-		$display ("     Real value = %b", d_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_d_exp[2] = d_expected_prev[2];
-	end
-	if (
-		( d_expected_prev[3] !== 1'bx ) && ( d_prev[3] !== d_expected_prev[3] )
-		&& ((d_expected_prev[3] !== last_d_exp[3]) ||
-			on_first_change[1])
-	)
-	begin
-		$display ("ERROR! Vector Mismatch for output port d[3] :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", d_expected_prev);
-		$display ("     Real value = %b", d_prev);
-		nummismatches = nummismatches + 1;
-		on_first_change[1] = 1'b0;
-		last_d_exp[3] = d_expected_prev[3];
-	end
-	if (
-		( out_eq_expected_prev !== 1'bx ) && ( out_eq_prev !== out_eq_expected_prev )
-		&& ((out_eq_expected_prev !== last_out_eq_exp) ||
+		( sel_out_expected_prev[0] !== 1'bx ) && ( sel_out_prev[0] !== sel_out_expected_prev[0] )
+		&& ((sel_out_expected_prev[0] !== last_sel_out_exp[0]) ||
 			on_first_change[2])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port out_eq :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", out_eq_expected_prev);
-		$display ("     Real value = %b", out_eq_prev);
+		$display ("ERROR! Vector Mismatch for output port sel_out[0] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sel_out_expected_prev);
+		$display ("     Real value = %b", sel_out_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[2] = 1'b0;
-		last_out_eq_exp = out_eq_expected_prev;
+		last_sel_out_exp[0] = sel_out_expected_prev[0];
 	end
 	if (
-		( out_gt_expected_prev !== 1'bx ) && ( out_gt_prev !== out_gt_expected_prev )
-		&& ((out_gt_expected_prev !== last_out_gt_exp) ||
+		( sel_out_expected_prev[1] !== 1'bx ) && ( sel_out_prev[1] !== sel_out_expected_prev[1] )
+		&& ((sel_out_expected_prev[1] !== last_sel_out_exp[1]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sel_out[1] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sel_out_expected_prev);
+		$display ("     Real value = %b", sel_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_sel_out_exp[1] = sel_out_expected_prev[1];
+	end
+	if (
+		( sel_out_expected_prev[2] !== 1'bx ) && ( sel_out_prev[2] !== sel_out_expected_prev[2] )
+		&& ((sel_out_expected_prev[2] !== last_sel_out_exp[2]) ||
+			on_first_change[2])
+	)
+	begin
+		$display ("ERROR! Vector Mismatch for output port sel_out[2] :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", sel_out_expected_prev);
+		$display ("     Real value = %b", sel_out_prev);
+		nummismatches = nummismatches + 1;
+		on_first_change[2] = 1'b0;
+		last_sel_out_exp[2] = sel_out_expected_prev[2];
+	end
+	if (
+		( w_expected_prev !== 1'bx ) && ( w_prev !== w_expected_prev )
+		&& ((w_expected_prev !== last_w_exp) ||
 			on_first_change[3])
 	)
 	begin
-		$display ("ERROR! Vector Mismatch for output port out_gt :: @time = %t",  $realtime);
-		$display ("     Expected value = %b", out_gt_expected_prev);
-		$display ("     Real value = %b", out_gt_prev);
+		$display ("ERROR! Vector Mismatch for output port w :: @time = %t",  $realtime);
+		$display ("     Expected value = %b", w_expected_prev);
+		$display ("     Real value = %b", w_prev);
 		nummismatches = nummismatches + 1;
 		on_first_change[3] = 1'b0;
-		last_out_gt_exp = out_gt_expected_prev;
+		last_w_exp = w_expected_prev;
 	end
 
 	trigger <= ~trigger;
@@ -262,11 +252,15 @@ module vend_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg [3:0] a;
-reg [3:0] b;
+reg c;
+reg clock;
+reg conf;
+reg [3:0] s;
+reg [2:0] sel;
 // wires                                               
-wire [3:0] d;
-wire out_eq;
-wire out_gt;
+wire disp_moeda;
+wire [2:0] sel_out;
+wire w;
 
 wire sampler;                             
 
@@ -274,24 +268,24 @@ wire sampler;
 vend i1 (
 // port map - connection between master ports and signals/registers   
 	.a(a),
-	.b(b),
-	.d(d),
-	.out_eq(out_eq),
-	.out_gt(out_gt)
+	.c(c),
+	.clock(clock),
+	.conf(conf),
+	.disp_moeda(disp_moeda),
+	.s(s),
+	.sel(sel),
+	.sel_out(sel_out),
+	.w(w)
 );
 // a[ 3 ]
 initial
 begin
 	a[3] = 1'b0;
-	a[3] = #170000 1'b1;
-	a[3] = #220000 1'b0;
 end 
 // a[ 2 ]
 initial
 begin
 	a[2] = 1'b0;
-	a[2] = #20000 1'b1;
-	a[2] = #150000 1'b0;
 end 
 // a[ 1 ]
 initial
@@ -302,51 +296,89 @@ end
 initial
 begin
 	a[0] = 1'b0;
-	a[0] = #20000 1'b1;
-	a[0] = #150000 1'b0;
-	a[0] = #220000 1'b1;
-	a[0] = #210000 1'b0;
+	a[0] = #30000 1'b1;
+	a[0] = #240000 1'b0;
 end 
-// b[ 3 ]
+
+// c
 initial
 begin
-	b[3] = 1'b0;
-	b[3] = #490000 1'b1;
-	b[3] = #110000 1'b0;
+	c = 1'b0;
+	c = #30000 1'b1;
+	c = #240000 1'b0;
 end 
-// b[ 2 ]
+
+// clock
+always
+begin
+	clock = 1'b0;
+	clock = #5000 1'b1;
+	#5000;
+end 
+
+// conf
 initial
 begin
-	b[2] = 1'b0;
-	b[2] = #490000 1'b1;
-	b[2] = #110000 1'b0;
+	conf = 1'b0;
+	conf = #70000 1'b1;
+	conf = #200000 1'b0;
 end 
-// b[ 1 ]
+// s[ 3 ]
 initial
 begin
-	b[1] = 1'b0;
-	b[1] = #240000 1'b1;
-	b[1] = #360000 1'b0;
+	s[3] = 1'b0;
 end 
-// b[ 0 ]
+// s[ 2 ]
 initial
 begin
-	b[0] = 1'b1;
-	b[0] = #240000 1'b0;
-	b[0] = #250000 1'b1;
-	b[0] = #110000 1'b0;
+	s[2] = 1'b1;
+end 
+// s[ 1 ]
+initial
+begin
+	s[1] = 1'b1;
+end 
+// s[ 0 ]
+initial
+begin
+	s[0] = 1'b1;
+end 
+// sel[ 2 ]
+initial
+begin
+	sel[2] = 1'b0;
+	sel[2] = #130000 1'b1;
+	sel[2] = #30000 1'b0;
+	sel[2] = #30000 1'b1;
+	sel[2] = #80000 1'b0;
+end 
+// sel[ 1 ]
+initial
+begin
+	sel[1] = 1'b0;
+	sel[1] = #130000 1'b1;
+	sel[1] = #150000 1'b0;
+end 
+// sel[ 0 ]
+initial
+begin
+	sel[0] = 1'b1;
 end 
 
 vend_vlg_sample_tst tb_sample (
 	.a(a),
-	.b(b),
+	.c(c),
+	.clock(clock),
+	.conf(conf),
+	.s(s),
+	.sel(sel),
 	.sampler_tx(sampler)
 );
 
 vend_vlg_check_tst tb_out(
-	.d(d),
-	.out_eq(out_eq),
-	.out_gt(out_gt),
+	.disp_moeda(disp_moeda),
+	.sel_out(sel_out),
+	.w(w),
 	.sampler_rx(sampler)
 );
 endmodule
