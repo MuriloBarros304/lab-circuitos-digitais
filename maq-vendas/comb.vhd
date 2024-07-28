@@ -1,0 +1,48 @@
+entity comb is
+    port(
+        s2, s1, s0, c, conf, tot_eq_s, tot_gt_s, vm_gt_tr, prod_eq_0 : in bit;
+        n2, n1, n0, ld_tot, clr_tot, ld_sel, clr_sel, ld_vm, clr_vm, v_w_en, v_r_en : out bit;
+        disp_moeda, w : out bit
+    );
+end comb;
+
+architecture hardware of comb is
+begin
+    n2 <= (not(s2) and 
+          ((not(s1) and s0 and prod_eq_0) or 
+           (s1 and not(s0) and not(c) and ((tot_eq_s and tot_gt_s) or tot_eq_s)) or 
+           (s2 and not(s1) and s0)));
+
+    n1 <= (not(s2) and 
+           ((not(s1) and s0 and ((conf and prod_eq_0) or conf)) or 
+            (s1 and 
+             (not(s0) and 
+              ((tot_eq_s and tot_gt_s) or 
+               (c and (tot_eq_s and tot_gt_s)) or ((c and tot_eq_s)) or s0)))));
+
+    n0 <= (not(s2) and not(s1) and not(s0)) or
+          (not(s2) and not(s1) and s0 and not(conf) and not(prod_eq_0)) or
+          (not(s2) and s1 and not(s0) and (tot_gt_s or (c and not(tot_gt_s)))) or
+          (s2 and not(s1) and s0 and not(vm_gt_tr)) or
+          (s2 and s1 and not(s0));
+
+    ld_tot <= (not(s2) and s1 and s0);
+
+    clr_tot <= (not(s2) and not(s1) and not(s0));
+
+    ld_sel <= (not(s2) and not(s1) and s0);
+
+    clr_sel <= (not(s2) and not(s1) and not(s0));
+
+    ld_vm <= (s2 and not(s1) and s0);
+
+    clr_vm <= (not(s2) and not(s1) and not(s0));
+
+    v_w_en <= (s2 and not(s1) and not(s0));
+
+    v_r_en <= (not(s2) and not(s1) and s0);
+
+    disp_moeda <= (s2 and not(s1) and s0);
+
+    w <= (s2 and s1 and not(s0));
+end architecture hardware;

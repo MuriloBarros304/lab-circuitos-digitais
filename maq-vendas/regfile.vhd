@@ -1,29 +1,10 @@
--- flipflop
-entity flipflop is
-    port (
-        d : in bit;       -- entrada de dados
-        clk : in bit;     -- sinal de clock
-        load : in bit;    -- sinal de habilitação
-        q : out bit       -- saída do registrador
-    );
-end flipflop;
-
-architecture behavioral of flipflop is -- comportamental
-begin
-    process(clk, load)
-    begin
-        if (clk'event and clk = '1' and load = '1') then
-            q <= d;             
-        end if;
-    end process;
-end behavioral;
-
 -- registrador de 4 bits
 entity regist is
     port(
         d : in bit_vector(3 downto 0);  -- sinal de entrada
         clk : in bit;                   -- clock
         load : in bit;                  -- load
+        reset : in bit;                 -- reset
         q : out bit_vector(3 downto 0)  -- sinal de saída
     );
 end regist;
@@ -34,6 +15,7 @@ architecture structural of regist is
             d : in bit;
             clk : in bit;
             load : in bit;
+            reset : in bit;
             q : out bit
         );
     end component;
@@ -41,10 +23,10 @@ architecture structural of regist is
     signal q_internal : bit_vector(3 downto 0);
 
 begin
-    ff0: flipflop port map(d => d(0), clk => clk, load => load, q => q_internal(0));
-    ff1: flipflop port map(d => d(1), clk => clk, load => load, q => q_internal(1));
-    ff2: flipflop port map(d => d(2), clk => clk, load => load, q => q_internal(2));
-    ff3: flipflop port map(d => d(3), clk => clk, load => load, q => q_internal(3));
+    ff0: flipflop port map(d => d(0), clk => clk, load => load, reset => reset, q => q_internal(0));
+    ff1: flipflop port map(d => d(1), clk => clk, load => load, reset => reset, q => q_internal(1));
+    ff2: flipflop port map(d => d(2), clk => clk, load => load, reset => reset, q => q_internal(2));
+    ff3: flipflop port map(d => d(3), clk => clk, load => load, reset => reset, q => q_internal(3));
 
     q <= q_internal;
 end structural;
@@ -153,16 +135,17 @@ entity regfile is
         r_data : out bit_vector(3 downto 0); -- dados para leitura
         r_addr : in bit_vector(2 downto 0);  -- endereço de leitura
         r_en : in bit;                       -- sinal de habilitação para leitura
-        clock : in bit                       -- clock
+        clock : in bit;                      -- clock
+		  reset : in bit
     );
 end regfile;
-
 architecture registerfile of regfile is
     component regist is
         port(
             d : in bit_vector(3 downto 0);  -- sinal de entrada
             clk : in bit;                   -- clock
             load : in bit;                  -- load
+            reset : in bit;                 -- reset
             q : out bit_vector(3 downto 0)  -- sinal de saída
         );
     end component;
@@ -203,6 +186,7 @@ architecture registerfile of regfile is
     signal reg_out : bit_vector(3 downto 0);                                                -- sinal de saída temporário
     signal r0_t0, r1_t1, r2_t2, r3_t3, r4_t4, r5_t5, r6_t6, r7_t7 : bit_vector(3 downto 0); -- saída dos registradores e entrada dos drivers
     signal t0_dt, t1_dt, t2_dt, t3_dt, t4_dt, t5_dt, t6_dt, t7_dt : bit_vector(3 downto 0); -- saída dos drivers no mux
+
 begin
     -- decodificador de escrita
     d0: decoder3x8 port map(a => w_addr, en => w_en, y => d0_rf);
@@ -211,14 +195,14 @@ begin
     d1: decoder3x8 port map(a => r_addr, en => r_en, y => ts_d1);
 
     -- registradores
-    r0: regist port map(load => d0_rf(0), clk => clock, d => w_data, q => r0_t0);
-    r1: regist port map(load => d0_rf(1), clk => clock, d => w_data, q => r1_t1);
-    r2: regist port map(load => d0_rf(2), clk => clock, d => w_data, q => r2_t2);
-    r3: regist port map(load => d0_rf(3), clk => clock, d => w_data, q => r3_t3);
-    r4: regist port map(load => d0_rf(4), clk => clock, d => w_data, q => r4_t4);
-    r5: regist port map(load => d0_rf(5), clk => clock, d => w_data, q => r5_t5);
-    r6: regist port map(load => d0_rf(6), clk => clock, d => w_data, q => r6_t6);
-    r7: regist port map(load => d0_rf(7), clk => clock, d => w_data, q => r7_t7);
+    r0: regist port map(load => d0_rf(0), clk => clock, reset => reset, d => w_data, q => r0_t0);
+    r1: regist port map(load => d0_rf(1), clk => clock, reset => reset, d => w_data, q => r1_t1);
+    r2: regist port map(load => d0_rf(2), clk => clock, reset => reset, d => w_data, q => r2_t2);
+    r3: regist port map(load => d0_rf(3), clk => clock, reset => reset, d => w_data, q => r3_t3);
+    r4: regist port map(load => d0_rf(4), clk => clock, reset => reset, d => w_data, q => r4_t4);
+    r5: regist port map(load => d0_rf(5), clk => clock, reset => reset, d => w_data, q => r5_t5);
+    r6: regist port map(load => d0_rf(6), clk => clock, reset => reset, d => w_data, q => r6_t6);
+    r7: regist port map(load => d0_rf(7), clk => clock, reset => reset, d => w_data, q => r7_t7);
 
     -- three state drivers
     t0: threestate port map(a => r0_t0, s => ts_d1(0), y => t0_dt);

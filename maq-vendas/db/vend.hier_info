@@ -1,24 +1,167 @@
 |vend
-w_data[0] => regfile:u2.w_data[0]
-w_data[1] => regfile:u2.w_data[1]
-w_data[2] => regfile:u2.w_data[2]
-w_data[3] => regfile:u2.w_data[3]
-w_addr[0] => regfile:u2.w_addr[0]
-w_addr[1] => regfile:u2.w_addr[1]
-w_addr[2] => regfile:u2.w_addr[2]
-w_en => regfile:u2.w_en
-r_data[0] <= regfile:u2.r_data[0]
-r_data[1] <= regfile:u2.r_data[1]
-r_data[2] <= regfile:u2.r_data[2]
-r_data[3] <= regfile:u2.r_data[3]
-r_addr[0] => regfile:u2.r_addr[0]
-r_addr[1] => regfile:u2.r_addr[1]
-r_addr[2] => regfile:u2.r_addr[2]
-r_en => regfile:u2.r_en
-clock => regfile:u2.clock
+sel[0] => datapath:dp.sel[0]
+sel[0] => sel_out[0].DATAIN
+sel[1] => datapath:dp.sel[1]
+sel[1] => sel_out[1].DATAIN
+sel[2] => datapath:dp.sel[2]
+sel[2] => sel_out[2].DATAIN
+s[0] => datapath:dp.s[0]
+s[1] => datapath:dp.s[1]
+s[2] => datapath:dp.s[2]
+s[3] => datapath:dp.s[3]
+a[0] => datapath:dp.a[0]
+a[1] => datapath:dp.a[1]
+a[2] => datapath:dp.a[2]
+a[3] => datapath:dp.a[3]
+conf => comb:cb.conf
+c => comb:cb.c
+clock => reg3:r0.clk
+clock => datapath:dp.clock
+sel_out[0] <= sel[0].DB_MAX_OUTPUT_PORT_TYPE
+sel_out[1] <= sel[1].DB_MAX_OUTPUT_PORT_TYPE
+sel_out[2] <= sel[2].DB_MAX_OUTPUT_PORT_TYPE
+disp_moeda <= comb:cb.disp_moeda
+w <= comb:cb.w
 
 
-|vend|regfile:u2
+|vend|reg3:r0
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+
+
+|vend|reg3:r0|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|reg3:r0|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|reg3:r0|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|comb:cb
+s2 => n2.IN0
+s2 => n0.IN0
+s2 => n2.IN1
+s2 => n1.IN1
+s2 => n0.IN0
+s2 => n0.IN0
+s1 => n2.IN0
+s1 => n1.IN1
+s1 => n0.IN1
+s1 => n0.IN1
+s1 => n2.IN0
+s1 => n2.IN1
+s1 => n0.IN1
+s0 => n2.IN1
+s0 => n2.IN1
+s0 => n1.IN1
+s0 => n0.IN1
+s0 => ld_tot.IN1
+s0 => v_r_en.IN1
+s0 => disp_moeda.IN1
+s0 => n2.IN1
+s0 => n1.IN1
+s0 => n0.IN1
+s0 => n0.IN1
+s0 => n0.IN1
+s0 => clr_sel.IN1
+s0 => clr_vm.IN1
+s0 => v_w_en.IN1
+c => n1.IN1
+c => n1.IN0
+c => n0.IN0
+c => n2.IN1
+conf => n1.IN0
+conf => n1.IN1
+conf => n0.IN1
+tot_eq_s => n2.IN0
+tot_eq_s => n2.IN1
+tot_eq_s => n1.IN1
+tot_gt_s => n2.IN1
+tot_gt_s => n0.IN1
+tot_gt_s => n0.IN1
+vm_gt_tr => n0.IN1
+prod_eq_0 => n2.IN1
+prod_eq_0 => n1.IN1
+prod_eq_0 => n0.IN1
+n2 <= n2.DB_MAX_OUTPUT_PORT_TYPE
+n1 <= n1.DB_MAX_OUTPUT_PORT_TYPE
+n0 <= n0.DB_MAX_OUTPUT_PORT_TYPE
+ld_tot <= ld_tot.DB_MAX_OUTPUT_PORT_TYPE
+clr_tot <= n0.DB_MAX_OUTPUT_PORT_TYPE
+ld_sel <= n0.DB_MAX_OUTPUT_PORT_TYPE
+clr_sel <= clr_sel.DB_MAX_OUTPUT_PORT_TYPE
+ld_vm <= n2.DB_MAX_OUTPUT_PORT_TYPE
+clr_vm <= clr_vm.DB_MAX_OUTPUT_PORT_TYPE
+v_w_en <= v_w_en.DB_MAX_OUTPUT_PORT_TYPE
+v_r_en <= v_r_en.DB_MAX_OUTPUT_PORT_TYPE
+disp_moeda <= disp_moeda.DB_MAX_OUTPUT_PORT_TYPE
+w <= n0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp
+sel[0] => reg3:rs0.d[0]
+sel[1] => reg3:rs0.d[1]
+sel[2] => reg3:rs0.d[2]
+s[0] => comparator:it2.b[0]
+s[0] => subtractor:cm0.y[0]
+s[1] => comparator:it2.b[1]
+s[1] => subtractor:cm0.y[1]
+s[2] => comparator:it2.b[2]
+s[2] => subtractor:cm0.y[2]
+s[3] => comparator:it2.b[3]
+s[3] => subtractor:cm0.y[3]
+a[0] => ~NO_FANOUT~
+a[1] => ~NO_FANOUT~
+a[2] => ~NO_FANOUT~
+a[3] => ~NO_FANOUT~
+ld_tot => regist:it1.load
+clr_tot => regist:it1.reset
+ld_sel => reg3:rs0.load
+clr_sel => reg3:rs0.reset
+ld_vm => regist:cm1.load
+clr_vm => regist:cm1.reset
+v_w_en => regfile:pe0.w_en
+v_r_en => regfile:pe0.r_en
+clock => regfile:pe0.clock
+clock => reg3:rs0.clk
+clock => regist:it1.clk
+clock => regist:cm1.clk
+tot_gt_s <= comparator:it2.out_gt
+tot_eq_s <= comparator:it2.out_eq
+prod_eq_0 <= comparator:pe1.out_eq
+vm_gt_tr <= comparator:cm3.out_gt
+
+
+|vend|datapath:dp|regfile:pe0
 w_data[0] => regist:r0.d[0]
 w_data[0] => regist:r1.d[0]
 w_data[0] => regist:r2.d[0]
@@ -74,79 +217,87 @@ clock => regist:r4.clk
 clock => regist:r5.clk
 clock => regist:r6.clk
 clock => regist:r7.clk
+reset => regist:r0.reset
+reset => regist:r1.reset
+reset => regist:r2.reset
+reset => regist:r3.reset
+reset => regist:r4.reset
+reset => regist:r5.reset
+reset => regist:r6.reset
+reset => regist:r7.reset
 
 
-|vend|regfile:u2|decoder3x8:d0
-a[0] => y~3.IN1
-a[0] => y~8.IN1
-a[0] => y~13.IN1
-a[0] => y~18.IN1
-a[0] => y~15.IN1
-a[0] => y~10.IN1
-a[0] => y~5.IN1
-a[0] => y~0.IN1
-a[1] => y~7.IN0
-a[1] => y~17.IN0
-a[1] => y~12.IN0
-a[1] => y~2.IN0
-a[2] => y~12.IN1
-a[2] => y~17.IN1
-a[2] => y~7.IN1
-a[2] => y~2.IN1
-en => y~1.IN1
-en => y~4.IN1
-en => y~6.IN1
-en => y~9.IN1
-en => y~11.IN1
-en => y~14.IN1
-en => y~16.IN1
-en => y~19.IN1
-y[0] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~4.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~6.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~9.DB_MAX_OUTPUT_PORT_TYPE
-y[4] <= y~11.DB_MAX_OUTPUT_PORT_TYPE
-y[5] <= y~14.DB_MAX_OUTPUT_PORT_TYPE
-y[6] <= y~16.DB_MAX_OUTPUT_PORT_TYPE
-y[7] <= y~19.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|decoder3x8:d0
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[1] => y.IN0
+a[1] => y.IN0
+a[1] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN1
+a[2] => y.IN1
+a[2] => y.IN1
+a[2] => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|decoder3x8:d1
-a[0] => y~3.IN1
-a[0] => y~8.IN1
-a[0] => y~13.IN1
-a[0] => y~18.IN1
-a[0] => y~15.IN1
-a[0] => y~10.IN1
-a[0] => y~5.IN1
-a[0] => y~0.IN1
-a[1] => y~7.IN0
-a[1] => y~17.IN0
-a[1] => y~12.IN0
-a[1] => y~2.IN0
-a[2] => y~12.IN1
-a[2] => y~17.IN1
-a[2] => y~7.IN1
-a[2] => y~2.IN1
-en => y~1.IN1
-en => y~4.IN1
-en => y~6.IN1
-en => y~9.IN1
-en => y~11.IN1
-en => y~14.IN1
-en => y~16.IN1
-en => y~19.IN1
-y[0] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~4.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~6.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~9.DB_MAX_OUTPUT_PORT_TYPE
-y[4] <= y~11.DB_MAX_OUTPUT_PORT_TYPE
-y[5] <= y~14.DB_MAX_OUTPUT_PORT_TYPE
-y[6] <= y~16.DB_MAX_OUTPUT_PORT_TYPE
-y[7] <= y~19.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|decoder3x8:d1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[0] => y.IN1
+a[1] => y.IN0
+a[1] => y.IN0
+a[1] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN1
+a[2] => y.IN1
+a[2] => y.IN1
+a[2] => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+en => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[4] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[5] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[6] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[7] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r0
+|vend|datapath:dp|regfile:pe0|regist:r0
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -159,41 +310,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r0|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r0|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r0|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r0|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r0|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r0|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r0|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r0|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r1
+|vend|datapath:dp|regfile:pe0|regist:r1
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -206,41 +365,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r1|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r1|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r1|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r1|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r1|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r1|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r1|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r1|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r2
+|vend|datapath:dp|regfile:pe0|regist:r2
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -253,41 +420,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r2|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r2|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r2|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r2|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r2|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r2|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r2|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r2|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r3
+|vend|datapath:dp|regfile:pe0|regist:r3
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -300,41 +475,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r3|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r3|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r3|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r3|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r3|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r3|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r3|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r3|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r4
+|vend|datapath:dp|regfile:pe0|regist:r4
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -347,41 +530,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r4|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r4|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r4|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r4|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r4|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r4|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r4|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r4|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r5
+|vend|datapath:dp|regfile:pe0|regist:r5
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -394,41 +585,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r5|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r5|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r5|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r5|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r5|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r5|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r5|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r5|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r6
+|vend|datapath:dp|regfile:pe0|regist:r6
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -441,41 +640,49 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r6|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r6|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r6|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r6|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r6|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r6|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r6|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r6|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r7
+|vend|datapath:dp|regfile:pe0|regist:r7
 d[0] => flipflop:ff0.d
 d[1] => flipflop:ff1.d
 d[2] => flipflop:ff2.d
@@ -488,292 +695,939 @@ load => flipflop:ff0.load
 load => flipflop:ff1.load
 load => flipflop:ff2.load
 load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
 q[3] <= flipflop:ff3.q
 
 
-|vend|regfile:u2|regist:r7|flipflop:ff0
+|vend|datapath:dp|regfile:pe0|regist:r7|flipflop:ff0
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r7|flipflop:ff1
+|vend|datapath:dp|regfile:pe0|regist:r7|flipflop:ff1
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r7|flipflop:ff2
+|vend|datapath:dp|regfile:pe0|regist:r7|flipflop:ff2
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|regist:r7|flipflop:ff3
+|vend|datapath:dp|regfile:pe0|regist:r7|flipflop:ff3
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
+reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t0
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t0
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t1
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t1
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t2
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t2
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t3
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t3
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t4
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t4
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t5
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t5
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t6
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t6
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|threestate:t7
-a[0] => y~0.IN0
-a[1] => y~1.IN0
-a[2] => y~2.IN0
-a[3] => y~3.IN0
-s => y~0.IN1
-s => y~1.IN1
-s => y~2.IN1
-s => y~3.IN1
-y[0] <= y~0.DB_MAX_OUTPUT_PORT_TYPE
-y[1] <= y~1.DB_MAX_OUTPUT_PORT_TYPE
-y[2] <= y~2.DB_MAX_OUTPUT_PORT_TYPE
-y[3] <= y~3.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|threestate:t7
+a[0] => y.IN0
+a[1] => y.IN0
+a[2] => y.IN0
+a[3] => y.IN0
+s => y.IN1
+s => y.IN1
+s => y.IN1
+s => y.IN1
+y[0] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[1] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[2] <= y.DB_MAX_OUTPUT_PORT_TYPE
+y[3] <= y.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|vend|regfile:u2|mux:m
-i0[0] => d~0.IN0
-i0[1] => d~31.IN0
-i0[2] => d~62.IN0
-i0[3] => d~93.IN0
-i1[0] => d~3.IN0
-i1[1] => d~34.IN0
-i1[2] => d~65.IN0
-i1[3] => d~96.IN0
-i2[0] => d~7.IN0
-i2[1] => d~38.IN0
-i2[2] => d~69.IN0
-i2[3] => d~100.IN0
-i3[0] => d~11.IN0
-i3[1] => d~42.IN0
-i3[2] => d~73.IN0
-i3[3] => d~104.IN0
-i4[0] => d~15.IN0
-i4[1] => d~46.IN0
-i4[2] => d~77.IN0
-i4[3] => d~108.IN0
-i5[0] => d~19.IN0
-i5[1] => d~50.IN0
-i5[2] => d~81.IN0
-i5[3] => d~112.IN0
-i6[0] => d~23.IN0
-i6[1] => d~54.IN0
-i6[2] => d~85.IN0
-i6[3] => d~116.IN0
-i7[0] => d~27.IN0
-i7[1] => d~58.IN0
-i7[2] => d~89.IN0
-i7[3] => d~120.IN0
-s[0] => d~5.IN1
-s[0] => d~13.IN1
-s[0] => d~21.IN1
-s[0] => d~29.IN1
-s[0] => d~36.IN1
-s[0] => d~44.IN1
-s[0] => d~52.IN1
-s[0] => d~60.IN1
-s[0] => d~67.IN1
-s[0] => d~75.IN1
-s[0] => d~83.IN1
-s[0] => d~91.IN1
-s[0] => d~98.IN1
-s[0] => d~106.IN1
-s[0] => d~114.IN1
-s[0] => d~122.IN1
-s[0] => d~95.IN1
-s[0] => d~102.IN1
-s[0] => d~110.IN1
-s[0] => d~118.IN1
-s[0] => d~64.IN1
-s[0] => d~71.IN1
-s[0] => d~79.IN1
-s[0] => d~87.IN1
-s[0] => d~33.IN1
-s[0] => d~40.IN1
-s[0] => d~48.IN1
-s[0] => d~56.IN1
-s[0] => d~2.IN1
-s[0] => d~9.IN1
-s[0] => d~17.IN1
-s[0] => d~25.IN1
-s[1] => d~8.IN1
-s[1] => d~12.IN1
-s[1] => d~24.IN1
-s[1] => d~28.IN1
-s[1] => d~39.IN1
-s[1] => d~43.IN1
-s[1] => d~55.IN1
-s[1] => d~59.IN1
-s[1] => d~70.IN1
-s[1] => d~74.IN1
-s[1] => d~86.IN1
-s[1] => d~90.IN1
-s[1] => d~101.IN1
-s[1] => d~105.IN1
-s[1] => d~117.IN1
-s[1] => d~121.IN1
-s[1] => d~94.IN1
-s[1] => d~97.IN1
-s[1] => d~109.IN1
-s[1] => d~113.IN1
-s[1] => d~63.IN1
-s[1] => d~66.IN1
-s[1] => d~78.IN1
-s[1] => d~82.IN1
-s[1] => d~32.IN1
-s[1] => d~35.IN1
-s[1] => d~47.IN1
-s[1] => d~51.IN1
-s[1] => d~1.IN1
-s[1] => d~4.IN1
-s[1] => d~16.IN1
-s[1] => d~20.IN1
-s[2] => d~15.IN1
-s[2] => d~19.IN1
-s[2] => d~23.IN1
-s[2] => d~27.IN1
-s[2] => d~46.IN1
-s[2] => d~50.IN1
-s[2] => d~54.IN1
-s[2] => d~58.IN1
-s[2] => d~77.IN1
-s[2] => d~81.IN1
-s[2] => d~85.IN1
-s[2] => d~89.IN1
-s[2] => d~108.IN1
-s[2] => d~112.IN1
-s[2] => d~116.IN1
-s[2] => d~120.IN1
-s[2] => d~93.IN1
-s[2] => d~96.IN1
-s[2] => d~100.IN1
-s[2] => d~104.IN1
-s[2] => d~62.IN1
-s[2] => d~65.IN1
-s[2] => d~69.IN1
-s[2] => d~73.IN1
-s[2] => d~31.IN1
-s[2] => d~34.IN1
-s[2] => d~38.IN1
-s[2] => d~42.IN1
-s[2] => d~0.IN1
-s[2] => d~3.IN1
-s[2] => d~7.IN1
-s[2] => d~11.IN1
-d[0] <= d~30.DB_MAX_OUTPUT_PORT_TYPE
-d[1] <= d~61.DB_MAX_OUTPUT_PORT_TYPE
-d[2] <= d~92.DB_MAX_OUTPUT_PORT_TYPE
-d[3] <= d~123.DB_MAX_OUTPUT_PORT_TYPE
+|vend|datapath:dp|regfile:pe0|mux:m
+i0[0] => d.IN0
+i0[1] => d.IN0
+i0[2] => d.IN0
+i0[3] => d.IN0
+i1[0] => d.IN0
+i1[1] => d.IN0
+i1[2] => d.IN0
+i1[3] => d.IN0
+i2[0] => d.IN0
+i2[1] => d.IN0
+i2[2] => d.IN0
+i2[3] => d.IN0
+i3[0] => d.IN0
+i3[1] => d.IN0
+i3[2] => d.IN0
+i3[3] => d.IN0
+i4[0] => d.IN0
+i4[1] => d.IN0
+i4[2] => d.IN0
+i4[3] => d.IN0
+i5[0] => d.IN0
+i5[1] => d.IN0
+i5[2] => d.IN0
+i5[3] => d.IN0
+i6[0] => d.IN0
+i6[1] => d.IN0
+i6[2] => d.IN0
+i6[3] => d.IN0
+i7[0] => d.IN0
+i7[1] => d.IN0
+i7[2] => d.IN0
+i7[3] => d.IN0
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[0] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[1] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+s[2] => d.IN1
+d[0] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[1] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[2] <= d.DB_MAX_OUTPUT_PORT_TYPE
+d[3] <= d.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:pe1
+a[0] => compare:c0.a
+a[1] => compare:c1.a
+a[2] => compare:c2.a
+a[3] => compare:c3.a
+b[0] => compare:c0.b
+b[1] => compare:c1.b
+b[2] => compare:c2.b
+b[3] => compare:c3.b
+in_eq => ~NO_FANOUT~
+in_gt => ~NO_FANOUT~
+out_eq <= compare:c0.out_eq
+out_gt <= compare:c0.out_gt
+
+
+|vend|datapath:dp|comparator:pe1|compare:c3
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:pe1|compare:c2
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:pe1|compare:c1
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:pe1|compare:c0
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:pe2
+x[0] => subtract:s0.x
+x[1] => subtract:s1.x
+x[2] => subtract:s2.x
+x[3] => subtract:s3.x
+y[0] => subtract:s0.y
+y[1] => subtract:s1.y
+y[2] => subtract:s2.y
+y[3] => subtract:s3.y
+bin => subtract:s0.bin
+d[0] <= subtract:s0.d
+d[1] <= subtract:s1.d
+d[2] <= subtract:s2.d
+d[3] <= subtract:s3.d
+bout[0] <= <GND>
+bout[1] <= <GND>
+bout[2] <= <GND>
+bout[3] <= subtract:s3.bout
+
+
+|vend|datapath:dp|subtractor:pe2|subtract:s0
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:pe2|subtract:s1
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:pe2|subtract:s2
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:pe2|subtract:s3
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|reg3:rs0
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+
+
+|vend|datapath:dp|reg3:rs0|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|reg3:rs0|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|reg3:rs0|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:it0
+a[0] => add:s0.a
+a[1] => add:s1.a
+a[2] => add:s2.a
+a[3] => add:s3.a
+b[0] => add:s0.b
+b[1] => add:s1.b
+b[2] => add:s2.b
+b[3] => add:s3.b
+cin => ~NO_FANOUT~
+sum[0] <= add:s0.sum
+sum[1] <= add:s1.sum
+sum[2] <= add:s2.sum
+sum[3] <= add:s3.sum
+cout <= add:s3.cout
+
+
+|vend|datapath:dp|adder:it0|add:s0
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:it0|add:s1
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:it0|add:s2
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:it0|add:s3
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:it1
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+
+
+|vend|datapath:dp|regist:it1|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:it1|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:it1|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:it1|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:it2
+a[0] => compare:c0.a
+a[1] => compare:c1.a
+a[2] => compare:c2.a
+a[3] => compare:c3.a
+b[0] => compare:c0.b
+b[1] => compare:c1.b
+b[2] => compare:c2.b
+b[3] => compare:c3.b
+in_eq => ~NO_FANOUT~
+in_gt => ~NO_FANOUT~
+out_eq <= compare:c0.out_eq
+out_gt <= compare:c0.out_gt
+
+
+|vend|datapath:dp|comparator:it2|compare:c3
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:it2|compare:c2
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:it2|compare:c1
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:it2|compare:c0
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:cm0
+x[0] => subtract:s0.x
+x[1] => subtract:s1.x
+x[2] => subtract:s2.x
+x[3] => subtract:s3.x
+y[0] => subtract:s0.y
+y[1] => subtract:s1.y
+y[2] => subtract:s2.y
+y[3] => subtract:s3.y
+bin => subtract:s0.bin
+d[0] <= subtract:s0.d
+d[1] <= subtract:s1.d
+d[2] <= subtract:s2.d
+d[3] <= subtract:s3.d
+bout[0] <= <GND>
+bout[1] <= <GND>
+bout[2] <= <GND>
+bout[3] <= subtract:s3.bout
+
+
+|vend|datapath:dp|subtractor:cm0|subtract:s0
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:cm0|subtract:s1
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:cm0|subtract:s2
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|subtractor:cm0|subtract:s3
+x => d.IN0
+x => bout.IN0
+x => bout.IN0
+y => d.IN1
+y => bout.IN1
+y => bout.IN0
+bin => d.IN1
+bin => bout.IN1
+bin => bout.IN1
+d <= d.DB_MAX_OUTPUT_PORT_TYPE
+bout <= bout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:cm1
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+
+
+|vend|datapath:dp|regist:cm1|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:cm1|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:cm1|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|regist:cm1|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:cm2
+a[0] => add:s0.a
+a[1] => add:s1.a
+a[2] => add:s2.a
+a[3] => add:s3.a
+b[0] => add:s0.b
+b[1] => add:s1.b
+b[2] => add:s2.b
+b[3] => add:s3.b
+cin => ~NO_FANOUT~
+sum[0] <= add:s0.sum
+sum[1] <= add:s1.sum
+sum[2] <= add:s2.sum
+sum[3] <= add:s3.sum
+cout <= add:s3.cout
+
+
+|vend|datapath:dp|adder:cm2|add:s0
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:cm2|add:s1
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:cm2|add:s2
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|adder:cm2|add:s3
+a => sum.IN0
+a => cout.IN0
+a => cout.IN0
+b => sum.IN1
+b => cout.IN1
+b => cout.IN0
+cin => sum.IN1
+cin => cout.IN1
+cin => cout.IN1
+sum <= sum.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:cm3
+a[0] => compare:c0.a
+a[1] => compare:c1.a
+a[2] => compare:c2.a
+a[3] => compare:c3.a
+b[0] => compare:c0.b
+b[1] => compare:c1.b
+b[2] => compare:c2.b
+b[3] => compare:c3.b
+in_eq => ~NO_FANOUT~
+in_gt => ~NO_FANOUT~
+out_eq <= compare:c0.out_eq
+out_gt <= compare:c0.out_gt
+
+
+|vend|datapath:dp|comparator:cm3|compare:c3
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:cm3|compare:c2
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:cm3|compare:c1
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|vend|datapath:dp|comparator:cm3|compare:c0
+a => out_gt.IN0
+a => out_eq.IN0
+b => out_eq.IN1
+b => out_gt.IN1
+in_eq => out_gt.IN1
+in_eq => out_eq.IN1
+in_gt => out_gt.IN1
+out_eq <= out_eq.DB_MAX_OUTPUT_PORT_TYPE
+out_gt <= out_gt.DB_MAX_OUTPUT_PORT_TYPE
 
 

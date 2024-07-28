@@ -1,0 +1,82 @@
+entity datapath is
+    port(
+        sel : in bit_vector(2 downto 0);
+        s, a : in bit_vector(3 downto 0);
+        ld_tot : in bit;
+        clr_tot : in bit;
+        ld_sel : in bit;
+        clr_sel : in bit;
+        ld_vm : in bit;
+        clr_vm : in bit;
+        v_w_en : in bit;
+        v_r_en : in bit;
+        clock : in bit;
+        tot_gt_s : out bit;
+        tot_eq_s : out bit;
+        prod_eq_0 : out bit;
+    );
+end datapath;
+architecture hardware of datapath is
+    component regfile is
+        port(
+            w_data : in bit_vector(3 downto 0);
+            w_addr : in bit_vector(2 downto 0);
+            w_en : in bit;
+            r_data : out bit_vector(3 downto 0);
+            r_addr : in bit_vector(2 downto 0);
+            r_en : in bit;
+            clock : in bit
+        );
+    end component;
+    component subtractor is
+        port(
+            x, y : in bit_vector(3 downto 0);
+            d, bout : out bit_vector(3 downto 0)
+        );
+    end component;
+    component comparator is
+        port(
+            a, b : in bit_vector(3 downto 0);
+            out_eq, out_gt : out bit
+        );
+    end component;
+    component regist is -- 4 bits
+        port(
+        d : in bit_vector(3 downto 0);  -- sinal de entrada
+        clk : in bit;                   -- clock
+        load : in bit;                  -- load
+        q : out bit_vector(3 downto 0)  -- sinal de saída
+    );
+    end component;
+    component adder is
+        port(
+            a : in bit_vector(3 downto 0);
+            b : in bit_vector(3 downto 0);
+            cin : in bit;
+            sum : out bit_vector(3 downto 0);
+            cout : out bit
+        );
+    end component;
+    signal v_w_data, v_r_data, totreg, tr, vmreg : bit_vector(3 downto 0);
+    signal v_wr_addr : bit;
+    signal tot, vm : bit_vector(3 downto 0) := "0000";
+begin
+    -- comparação e subtração das quantidades de produtos
+    pe0: regfile port map(w_data => v_w_data, w_addr => v_wr_addr, w_en => v_w_en, 
+    r_data => v_r_data, r_addr => v_wr_addr, r_en => v_r_en, clock => clock);
+    pe1: comparator port map(a => v_r_data, b => "0000", out_eq => prod_eq_0, out_gt => open);
+    pe2: subtractor port map(x => v_r_data, y => "0001", d => v_w_data, bout => open);
+
+    -- registrador de seleção
+    rs0: reg3 port map(d => sel, clk => clock, load => ld_sel, reset => clr_sel, q => v_wr_addr);
+
+    -- incremento de total
+    it0: adder port map(a => totreg, b => "0001", cin => open, sum => tot, cout => open);
+    it1: regist port map(d => tot, clk => clock, load => ld_tot, reset => clr_tot, q => totreg);
+    it2: comparator port map(a => totreg, b => s, out_eq => tot_eq_s, out_gt => tot_gt_s);
+
+    -- calcula moedas
+    cm0: subtractor port map(x => totreg, y => s, d => tr, bout => open);
+    cm1: regist port map(d => vm, clk => clock, load => ld_vm, reset => clr_vm, q => vmreg);
+    cm2: adder port map(a => vmreg, b => "0101", cin => open, sum => vm, cout => open);
+    cm3: comparator port map(a => vm, b => tr, out_eq => open, out_gt => vm_gt_tr);
