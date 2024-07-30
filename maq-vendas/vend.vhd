@@ -19,6 +19,7 @@ architecture behav of vend is
             d : in bit_vector(2 downto 0);
             clk : in bit;
             load : in bit;
+            reset : in bit;        
             q : out bit_vector(2 downto 0)
         );
     end component;
@@ -57,7 +58,7 @@ architecture behav of vend is
 begin 
     --registradores de estado
     r0: reg3 port map(d(0) => n0, d(1) => n1, d(2) => n2, clk => clock, load => '1',
-    q(0) => s0, q(1) => s1, q(2) => s2);
+    reset => '0', q(0) => s0, q(1) => s1, q(2) => s2);
 
     --combinacional
     cb: comb port map(s2 => s2, s1 => s1, s0 => s0, c => c, conf => conf, tot_eq_s => tot_eq_s,

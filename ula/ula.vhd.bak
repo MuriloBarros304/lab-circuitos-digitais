@@ -65,12 +65,12 @@ architecture ula of ula is
         c0: cinext port map(x => x, y => y, z => z, cin => cin);
 
         -- somadores
-        som0: somador port map(a => ia(0), b => ib(0), cin => cin, sum => s0, cout => carry1);
-        som1: somador port map(a => ia(1), b => ib(1), cin => carry1, sum => s1, cout => carry2);
-        som2: somador port map(a => ia(2), b => ib(2), cin => carry2, sum => s2, cout => carry3);
-        som3: somador port map(a => ia(3), b => ib(3), cin => carry3, sum => s3, cout => carry4);
-        som4: somador port map(a => ia(4), b => ib(4), cin => carry4, sum => s4, cout => carry5);
-        som5: somador port map(a => ia(5), b => ib(5), cin => carry5, sum => s5, cout => open);
+        s0: somador port map(a => ia(0), b => ib(0), cin => cin, sum => s0, cout => carry1);
+        s1: somador port map(a => ia(1), b => ib(1), cin => carry1, sum => s1, cout => carry2);
+        s2: somador port map(a => ia(2), b => ib(2), cin => carry2, sum => s2, cout => carry3);
+        s3: somador port map(a => ia(3), b => ib(3), cin => carry3, sum => s3, cout => carry4);
+        s4: somador port map(a => ia(4), b => ib(4), cin => carry4, sum => s4, cout => carry5);
+        s5: somador port map(a => ia(5), b => ib(5), cin => carry5, sum => s5, cout => open);
 
         -- registrador
         r: reg6 port map(c => clk, load => ld, i0 => s0, i1 => s1, i2 => s2, i3 => s3, i4 => s4,

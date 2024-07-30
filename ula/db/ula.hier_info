@@ -1,0 +1,303 @@
+|ula
+x => abext:a0.x
+x => abext:a1.x
+x => abext:a2.x
+x => abext:a3.x
+x => abext:a4.x
+x => abext:a5.x
+x => cinext:c0.x
+y => abext:a0.y
+y => abext:a1.y
+y => abext:a2.y
+y => abext:a3.y
+y => abext:a4.y
+y => abext:a5.y
+y => cinext:c0.y
+z => abext:a0.z
+z => abext:a1.z
+z => abext:a2.z
+z => abext:a3.z
+z => abext:a4.z
+z => abext:a5.z
+z => cinext:c0.z
+a[0] => abext:a0.a
+a[1] => abext:a1.a
+a[2] => abext:a2.a
+a[3] => abext:a3.a
+a[4] => abext:a4.a
+a[5] => abext:a5.a
+b[0] => abext:a0.b
+b[1] => abext:a1.b
+b[2] => abext:a2.b
+b[3] => abext:a3.b
+b[4] => abext:a4.b
+b[5] => abext:a5.b
+ld => reg6:r.load
+clk => reg6:r.c
+s[0] <= reg6:r.q0
+s[1] <= reg6:r.q1
+s[2] <= reg6:r.q2
+s[3] <= reg6:r.q3
+s[4] <= reg6:r.q4
+s[5] <= reg6:r.q5
+
+
+|ula|abext:a0
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|abext:a1
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|abext:a2
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|abext:a3
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|abext:a4
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|abext:a5
+x => ia~13.IN1
+x => ia~0.IN0
+x => ib~0.IN0
+y => ia~11.IN1
+y => ia~7.IN1
+z => ia~5.IN1
+z => ia~9.IN0
+z => ib~1.IN0
+z => ia~2.IN1
+z => ia~8.IN1
+a => ia~0.IN1
+a => ia~1.IN0
+a => ia~3.IN0
+a => ia~9.IN1
+b => ia~1.IN1
+b => ia~3.IN1
+b => ib~1.IN1
+b => ib~0.IN1
+ia <= ia~14.DB_MAX_OUTPUT_PORT_TYPE
+ib <= ib~2.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|cinext:c0
+x => cin~0.IN0
+x => cin~2.IN0
+y => cin~2.IN1
+y => cin~0.IN1
+z => cin~1.IN1
+z => cin~3.IN1
+cin <= cin~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som0
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som1
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som2
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som3
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som4
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|somador:som5
+a => sum~0.IN0
+a => cout~0.IN0
+a => cout~1.IN0
+b => sum~0.IN1
+b => cout~0.IN1
+b => cout~3.IN0
+cin => sum~1.IN1
+cin => cout~1.IN1
+cin => cout~3.IN1
+sum <= sum~1.DB_MAX_OUTPUT_PORT_TYPE
+cout <= cout~4.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ula|reg6:r
+c => q0~reg0.CLK
+c => q1~reg0.CLK
+c => q2~reg0.CLK
+c => q3~reg0.CLK
+c => q4~reg0.CLK
+c => q5~reg0.CLK
+load => q0~reg0.ENA
+load => q1~reg0.ENA
+load => q2~reg0.ENA
+load => q3~reg0.ENA
+load => q4~reg0.ENA
+load => q5~reg0.ENA
+i0 => q0~reg0.DATAIN
+i1 => q1~reg0.DATAIN
+i2 => q2~reg0.DATAIN
+i3 => q3~reg0.DATAIN
+i4 => q4~reg0.DATAIN
+i5 => q5~reg0.DATAIN
+q0 <= q0~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q1 <= q1~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q2 <= q2~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q3 <= q3~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q4 <= q4~reg0.DB_MAX_OUTPUT_PORT_TYPE
+q5 <= q5~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
