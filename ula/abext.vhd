@@ -15,6 +15,5 @@ architecture abext of abext is
         ia <= ((not(x) and a) or (x and ((not(y) and ((not(z) and (a and b))
             or (z and ((a xor b) or (a and b))))) or (y and ((not(z) and (a xor b))
             or (z and not(a)))))));
-        ib <= ((not(x) and not(b)) and (z xor b));
-
+        ib <= ((not(x) and not(y)) and (z xor b));
 end abext;
