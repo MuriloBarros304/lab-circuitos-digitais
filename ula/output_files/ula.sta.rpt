@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for ula
-Tue Jul 30 17:33:37 2024
+Wed Jul 31 13:28:07 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -174,30 +174,30 @@ No paths to report.
 +--------+--------------+----------------+------------------+-------+------------+----------------------+
 
 
-+-------------------------------------------------------------------------+
-; Setup Times                                                             ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; clk        ; 10.323 ; 10.323 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; 10.323 ; 10.323 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; 8.598  ; 8.598  ; Rise       ; clk             ;
-;  a[2]     ; clk        ; 8.472  ; 8.472  ; Rise       ; clk             ;
-;  a[3]     ; clk        ; 6.135  ; 6.135  ; Rise       ; clk             ;
-;  a[4]     ; clk        ; 5.440  ; 5.440  ; Rise       ; clk             ;
-;  a[5]     ; clk        ; 4.214  ; 4.214  ; Rise       ; clk             ;
-; b[*]      ; clk        ; 8.463  ; 8.463  ; Rise       ; clk             ;
-;  b[0]     ; clk        ; 6.934  ; 6.934  ; Rise       ; clk             ;
-;  b[1]     ; clk        ; 8.463  ; 8.463  ; Rise       ; clk             ;
-;  b[2]     ; clk        ; 8.276  ; 8.276  ; Rise       ; clk             ;
-;  b[3]     ; clk        ; 6.617  ; 6.617  ; Rise       ; clk             ;
-;  b[4]     ; clk        ; 5.479  ; 5.479  ; Rise       ; clk             ;
-;  b[5]     ; clk        ; 4.505  ; 4.505  ; Rise       ; clk             ;
-; ld        ; clk        ; 4.565  ; 4.565  ; Rise       ; clk             ;
-; x         ; clk        ; 5.688  ; 5.688  ; Rise       ; clk             ;
-; y         ; clk        ; 10.416 ; 10.416 ; Rise       ; clk             ;
-; z         ; clk        ; 10.483 ; 10.483 ; Rise       ; clk             ;
-+-----------+------------+--------+--------+------------+-----------------+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; a[*]      ; clk        ; 7.575 ; 7.575 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; 7.424 ; 7.424 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; 7.575 ; 7.575 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; 6.433 ; 6.433 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; 5.899 ; 5.899 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; 5.787 ; 5.787 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; 4.100 ; 4.100 ; Rise       ; clk             ;
+; b[*]      ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; 7.275 ; 7.275 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; 6.620 ; 6.620 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; 5.812 ; 5.812 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; 5.376 ; 5.376 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; 4.491 ; 4.491 ; Rise       ; clk             ;
+; ld        ; clk        ; 3.799 ; 3.799 ; Rise       ; clk             ;
+; x         ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+; y         ; clk        ; 7.619 ; 7.619 ; Rise       ; clk             ;
+; z         ; clk        ; 4.144 ; 4.144 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------+
@@ -205,24 +205,24 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; clk        ; -3.687 ; -3.687 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; -3.687 ; -3.687 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; -4.285 ; -4.285 ; Rise       ; clk             ;
-;  a[2]     ; clk        ; -4.572 ; -4.572 ; Rise       ; clk             ;
-;  a[3]     ; clk        ; -4.251 ; -4.251 ; Rise       ; clk             ;
-;  a[4]     ; clk        ; -4.435 ; -4.435 ; Rise       ; clk             ;
-;  a[5]     ; clk        ; -3.956 ; -3.956 ; Rise       ; clk             ;
-; b[*]      ; clk        ; -0.700 ; -0.700 ; Rise       ; clk             ;
-;  b[0]     ; clk        ; -0.700 ; -0.700 ; Rise       ; clk             ;
-;  b[1]     ; clk        ; -4.436 ; -4.436 ; Rise       ; clk             ;
-;  b[2]     ; clk        ; -4.639 ; -4.639 ; Rise       ; clk             ;
-;  b[3]     ; clk        ; -4.291 ; -4.291 ; Rise       ; clk             ;
-;  b[4]     ; clk        ; -3.993 ; -3.993 ; Rise       ; clk             ;
-;  b[5]     ; clk        ; -4.242 ; -4.242 ; Rise       ; clk             ;
-; ld        ; clk        ; -4.152 ; -4.152 ; Rise       ; clk             ;
-; x         ; clk        ; -0.600 ; -0.600 ; Rise       ; clk             ;
-; y         ; clk        ; -4.172 ; -4.172 ; Rise       ; clk             ;
-; z         ; clk        ; -3.902 ; -3.902 ; Rise       ; clk             ;
+; a[*]      ; clk        ; -2.967 ; -2.967 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; -2.967 ; -2.967 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; -3.712 ; -3.712 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; -3.649 ; -3.649 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; -4.067 ; -4.067 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; -4.154 ; -4.154 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; -3.728 ; -3.728 ; Rise       ; clk             ;
+; b[*]      ; clk        ; -3.750 ; -3.750 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; -4.078 ; -4.078 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; -3.859 ; -3.859 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; -3.829 ; -3.829 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; -3.942 ; -3.942 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; -3.750 ; -3.750 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; -4.120 ; -4.120 ; Rise       ; clk             ;
+; ld        ; clk        ; -3.556 ; -3.556 ; Rise       ; clk             ;
+; x         ; clk        ; -0.339 ; -0.339 ; Rise       ; clk             ;
+; y         ; clk        ; -3.664 ; -3.664 ; Rise       ; clk             ;
+; z         ; clk        ; 0.006  ; 0.006  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -231,13 +231,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 7.951 ; 7.951 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 7.937 ; 7.937 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 7.692 ; 7.692 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 7.366 ; 7.366 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 7.811 ; 7.811 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 7.951 ; 7.951 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 6.659 ; 6.659 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 6.410 ; 6.410 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 6.653 ; 6.653 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 6.659 ; 6.659 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 6.431 ; 6.431 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 6.630 ; 6.630 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 6.416 ; 6.416 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -246,13 +246,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 7.366 ; 7.366 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 7.937 ; 7.937 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 7.692 ; 7.692 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 7.366 ; 7.366 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 7.811 ; 7.811 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 7.951 ; 7.951 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 6.410 ; 6.410 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 6.410 ; 6.410 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 6.653 ; 6.653 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 6.659 ; 6.659 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 6.431 ; 6.431 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 6.630 ; 6.630 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 6.416 ; 6.416 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -333,24 +333,24 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; a[*]      ; clk        ; 4.968 ; 4.968 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; 4.968 ; 4.968 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; 4.119 ; 4.119 ; Rise       ; clk             ;
-;  a[2]     ; clk        ; 4.154 ; 4.154 ; Rise       ; clk             ;
-;  a[3]     ; clk        ; 3.062 ; 3.062 ; Rise       ; clk             ;
-;  a[4]     ; clk        ; 2.797 ; 2.797 ; Rise       ; clk             ;
-;  a[5]     ; clk        ; 2.221 ; 2.221 ; Rise       ; clk             ;
-; b[*]      ; clk        ; 4.072 ; 4.072 ; Rise       ; clk             ;
-;  b[0]     ; clk        ; 2.890 ; 2.890 ; Rise       ; clk             ;
-;  b[1]     ; clk        ; 4.072 ; 4.072 ; Rise       ; clk             ;
-;  b[2]     ; clk        ; 4.059 ; 4.059 ; Rise       ; clk             ;
-;  b[3]     ; clk        ; 3.303 ; 3.303 ; Rise       ; clk             ;
-;  b[4]     ; clk        ; 2.781 ; 2.781 ; Rise       ; clk             ;
-;  b[5]     ; clk        ; 2.348 ; 2.348 ; Rise       ; clk             ;
-; ld        ; clk        ; 2.483 ; 2.483 ; Rise       ; clk             ;
-; x         ; clk        ; 2.347 ; 2.347 ; Rise       ; clk             ;
-; y         ; clk        ; 5.014 ; 5.014 ; Rise       ; clk             ;
-; z         ; clk        ; 5.082 ; 5.082 ; Rise       ; clk             ;
+; a[*]      ; clk        ; 3.589 ; 3.589 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; 3.549 ; 3.549 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; 3.589 ; 3.589 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; 3.110 ; 3.110 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; 2.883 ; 2.883 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; 2.838 ; 2.838 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; 2.122 ; 2.122 ; Rise       ; clk             ;
+; b[*]      ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; 3.602 ; 3.602 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; 3.474 ; 3.474 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; 3.198 ; 3.198 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; 2.827 ; 2.827 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; 2.660 ; 2.660 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; 2.285 ; 2.285 ; Rise       ; clk             ;
+; ld        ; clk        ; 2.080 ; 2.080 ; Rise       ; clk             ;
+; x         ; clk        ; 1.336 ; 1.336 ; Rise       ; clk             ;
+; y         ; clk        ; 3.631 ; 3.631 ; Rise       ; clk             ;
+; z         ; clk        ; 1.478 ; 1.478 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -359,24 +359,24 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; -2.242 ; -2.242 ; Rise       ; clk             ;
-;  a[2]     ; clk        ; -2.414 ; -2.414 ; Rise       ; clk             ;
-;  a[3]     ; clk        ; -2.232 ; -2.232 ; Rise       ; clk             ;
-;  a[4]     ; clk        ; -2.340 ; -2.340 ; Rise       ; clk             ;
-;  a[5]     ; clk        ; -2.093 ; -2.093 ; Rise       ; clk             ;
-; b[*]      ; clk        ; -0.072 ; -0.072 ; Rise       ; clk             ;
-;  b[0]     ; clk        ; -0.072 ; -0.072 ; Rise       ; clk             ;
-;  b[1]     ; clk        ; -2.304 ; -2.304 ; Rise       ; clk             ;
-;  b[2]     ; clk        ; -2.426 ; -2.426 ; Rise       ; clk             ;
-;  b[3]     ; clk        ; -2.292 ; -2.292 ; Rise       ; clk             ;
-;  b[4]     ; clk        ; -2.128 ; -2.128 ; Rise       ; clk             ;
-;  b[5]     ; clk        ; -2.221 ; -2.221 ; Rise       ; clk             ;
-; ld        ; clk        ; -2.295 ; -2.295 ; Rise       ; clk             ;
-; x         ; clk        ; -0.040 ; -0.040 ; Rise       ; clk             ;
-; y         ; clk        ; -2.187 ; -2.187 ; Rise       ; clk             ;
-; z         ; clk        ; -2.098 ; -2.098 ; Rise       ; clk             ;
+; a[*]      ; clk        ; -1.613 ; -1.613 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; -1.613 ; -1.613 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; -1.921 ; -1.921 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; -1.918 ; -1.918 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; -2.118 ; -2.118 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; -2.127 ; -2.127 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; -1.944 ; -1.944 ; Rise       ; clk             ;
+; b[*]      ; clk        ; -1.962 ; -1.962 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; -2.095 ; -2.095 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; -2.003 ; -2.003 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; -1.993 ; -1.993 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; -2.035 ; -2.035 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; -1.962 ; -1.962 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; -2.107 ; -2.107 ; Rise       ; clk             ;
+; ld        ; clk        ; -1.951 ; -1.951 ; Rise       ; clk             ;
+; x         ; clk        ; 0.168  ; 0.168  ; Rise       ; clk             ;
+; y         ; clk        ; -1.927 ; -1.927 ; Rise       ; clk             ;
+; z         ; clk        ; 0.325  ; 0.325  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -385,13 +385,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 4.402 ; 4.402 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 4.402 ; 4.402 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 4.287 ; 4.287 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 4.134 ; 4.134 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 4.338 ; 4.338 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 4.298 ; 4.298 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 3.791 ; 3.791 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 3.791 ; 3.791 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -400,13 +400,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 4.134 ; 4.134 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 4.402 ; 4.402 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 4.287 ; 4.287 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 4.134 ; 4.134 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 4.338 ; 4.338 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 4.298 ; 4.298 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 3.791 ; 3.791 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -422,30 +422,30 @@ No paths to report.
 +------------------+-------+------+----------+---------+---------------------+
 
 
-+-------------------------------------------------------------------------+
-; Setup Times                                                             ;
-+-----------+------------+--------+--------+------------+-----------------+
-; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
-+-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; clk        ; 10.323 ; 10.323 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; 10.323 ; 10.323 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; 8.598  ; 8.598  ; Rise       ; clk             ;
-;  a[2]     ; clk        ; 8.472  ; 8.472  ; Rise       ; clk             ;
-;  a[3]     ; clk        ; 6.135  ; 6.135  ; Rise       ; clk             ;
-;  a[4]     ; clk        ; 5.440  ; 5.440  ; Rise       ; clk             ;
-;  a[5]     ; clk        ; 4.214  ; 4.214  ; Rise       ; clk             ;
-; b[*]      ; clk        ; 8.463  ; 8.463  ; Rise       ; clk             ;
-;  b[0]     ; clk        ; 6.934  ; 6.934  ; Rise       ; clk             ;
-;  b[1]     ; clk        ; 8.463  ; 8.463  ; Rise       ; clk             ;
-;  b[2]     ; clk        ; 8.276  ; 8.276  ; Rise       ; clk             ;
-;  b[3]     ; clk        ; 6.617  ; 6.617  ; Rise       ; clk             ;
-;  b[4]     ; clk        ; 5.479  ; 5.479  ; Rise       ; clk             ;
-;  b[5]     ; clk        ; 4.505  ; 4.505  ; Rise       ; clk             ;
-; ld        ; clk        ; 4.565  ; 4.565  ; Rise       ; clk             ;
-; x         ; clk        ; 5.688  ; 5.688  ; Rise       ; clk             ;
-; y         ; clk        ; 10.416 ; 10.416 ; Rise       ; clk             ;
-; z         ; clk        ; 10.483 ; 10.483 ; Rise       ; clk             ;
-+-----------+------------+--------+--------+------------+-----------------+
++-----------------------------------------------------------------------+
+; Setup Times                                                           ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; a[*]      ; clk        ; 7.575 ; 7.575 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; 7.424 ; 7.424 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; 7.575 ; 7.575 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; 6.433 ; 6.433 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; 5.899 ; 5.899 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; 5.787 ; 5.787 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; 4.100 ; 4.100 ; Rise       ; clk             ;
+; b[*]      ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; 7.275 ; 7.275 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; 6.620 ; 6.620 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; 5.812 ; 5.812 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; 5.376 ; 5.376 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; 4.491 ; 4.491 ; Rise       ; clk             ;
+; ld        ; clk        ; 3.799 ; 3.799 ; Rise       ; clk             ;
+; x         ; clk        ; 3.758 ; 3.758 ; Rise       ; clk             ;
+; y         ; clk        ; 7.619 ; 7.619 ; Rise       ; clk             ;
+; z         ; clk        ; 4.144 ; 4.144 ; Rise       ; clk             ;
++-----------+------------+-------+-------+------------+-----------------+
 
 
 +-------------------------------------------------------------------------+
@@ -453,24 +453,24 @@ No paths to report.
 +-----------+------------+--------+--------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +-----------+------------+--------+--------+------------+-----------------+
-; a[*]      ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
-;  a[0]     ; clk        ; -1.979 ; -1.979 ; Rise       ; clk             ;
-;  a[1]     ; clk        ; -2.242 ; -2.242 ; Rise       ; clk             ;
-;  a[2]     ; clk        ; -2.414 ; -2.414 ; Rise       ; clk             ;
-;  a[3]     ; clk        ; -2.232 ; -2.232 ; Rise       ; clk             ;
-;  a[4]     ; clk        ; -2.340 ; -2.340 ; Rise       ; clk             ;
-;  a[5]     ; clk        ; -2.093 ; -2.093 ; Rise       ; clk             ;
-; b[*]      ; clk        ; -0.072 ; -0.072 ; Rise       ; clk             ;
-;  b[0]     ; clk        ; -0.072 ; -0.072 ; Rise       ; clk             ;
-;  b[1]     ; clk        ; -2.304 ; -2.304 ; Rise       ; clk             ;
-;  b[2]     ; clk        ; -2.426 ; -2.426 ; Rise       ; clk             ;
-;  b[3]     ; clk        ; -2.292 ; -2.292 ; Rise       ; clk             ;
-;  b[4]     ; clk        ; -2.128 ; -2.128 ; Rise       ; clk             ;
-;  b[5]     ; clk        ; -2.221 ; -2.221 ; Rise       ; clk             ;
-; ld        ; clk        ; -2.295 ; -2.295 ; Rise       ; clk             ;
-; x         ; clk        ; -0.040 ; -0.040 ; Rise       ; clk             ;
-; y         ; clk        ; -2.187 ; -2.187 ; Rise       ; clk             ;
-; z         ; clk        ; -2.098 ; -2.098 ; Rise       ; clk             ;
+; a[*]      ; clk        ; -1.613 ; -1.613 ; Rise       ; clk             ;
+;  a[0]     ; clk        ; -1.613 ; -1.613 ; Rise       ; clk             ;
+;  a[1]     ; clk        ; -1.921 ; -1.921 ; Rise       ; clk             ;
+;  a[2]     ; clk        ; -1.918 ; -1.918 ; Rise       ; clk             ;
+;  a[3]     ; clk        ; -2.118 ; -2.118 ; Rise       ; clk             ;
+;  a[4]     ; clk        ; -2.127 ; -2.127 ; Rise       ; clk             ;
+;  a[5]     ; clk        ; -1.944 ; -1.944 ; Rise       ; clk             ;
+; b[*]      ; clk        ; -1.962 ; -1.962 ; Rise       ; clk             ;
+;  b[0]     ; clk        ; -2.095 ; -2.095 ; Rise       ; clk             ;
+;  b[1]     ; clk        ; -2.003 ; -2.003 ; Rise       ; clk             ;
+;  b[2]     ; clk        ; -1.993 ; -1.993 ; Rise       ; clk             ;
+;  b[3]     ; clk        ; -2.035 ; -2.035 ; Rise       ; clk             ;
+;  b[4]     ; clk        ; -1.962 ; -1.962 ; Rise       ; clk             ;
+;  b[5]     ; clk        ; -2.107 ; -2.107 ; Rise       ; clk             ;
+; ld        ; clk        ; -1.951 ; -1.951 ; Rise       ; clk             ;
+; x         ; clk        ; 0.168  ; 0.168  ; Rise       ; clk             ;
+; y         ; clk        ; -1.927 ; -1.927 ; Rise       ; clk             ;
+; z         ; clk        ; 0.325  ; 0.325  ; Rise       ; clk             ;
 +-----------+------------+--------+--------+------------+-----------------+
 
 
@@ -479,13 +479,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 7.951 ; 7.951 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 7.937 ; 7.937 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 7.692 ; 7.692 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 7.366 ; 7.366 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 7.811 ; 7.811 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 7.951 ; 7.951 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 6.659 ; 6.659 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 6.410 ; 6.410 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 6.653 ; 6.653 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 6.659 ; 6.659 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 6.431 ; 6.431 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 6.630 ; 6.630 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 6.416 ; 6.416 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -494,13 +494,13 @@ No paths to report.
 +-----------+------------+-------+-------+------------+-----------------+
 ; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +-----------+------------+-------+-------+------------+-----------------+
-; s[*]      ; clk        ; 4.134 ; 4.134 ; Rise       ; clk             ;
-;  s[0]     ; clk        ; 4.402 ; 4.402 ; Rise       ; clk             ;
-;  s[1]     ; clk        ; 4.287 ; 4.287 ; Rise       ; clk             ;
-;  s[2]     ; clk        ; 4.134 ; 4.134 ; Rise       ; clk             ;
-;  s[3]     ; clk        ; 4.338 ; 4.338 ; Rise       ; clk             ;
-;  s[4]     ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  s[5]     ; clk        ; 4.298 ; 4.298 ; Rise       ; clk             ;
+; s[*]      ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  s[0]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
+;  s[1]     ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  s[2]     ; clk        ; 3.791 ; 3.791 ; Rise       ; clk             ;
+;  s[3]     ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  s[4]     ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  s[5]     ; clk        ; 3.671 ; 3.671 ; Rise       ; clk             ;
 +-----------+------------+-------+-------+------------+-----------------+
 
 
@@ -542,7 +542,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jul 30 17:33:37 2024
+    Info: Processing started: Wed Jul 31 13:28:07 2024
 Info: Command: quartus_sta ula -c ula
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -580,7 +580,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Tue Jul 30 17:33:37 2024
+    Info: Processing ended: Wed Jul 31 13:28:07 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

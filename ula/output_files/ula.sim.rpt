@@ -1,5 +1,5 @@
 Simulator report for ula
-Tue Jul 30 17:40:34 2024
+Wed Jul 31 13:41:30 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 ; Simulation End Time         ; 1.0 us       ;
 ; Simulation Netlist Size     ; 179 nodes    ;
 ; Simulation Coverage         ;      65.36 % ;
-; Total Number of Transitions ; 825          ;
+; Total Number of Transitions ; 810          ;
 ; Simulation Breakpoints      ; 0            ;
 ; Family                      ; Cyclone II   ;
 +-----------------------------+--------------+
@@ -98,9 +98,9 @@ Please use Quartus II 64-Bit to view the waveform report data.
 ; Total nodes checked                                 ; 179          ;
 ; Total output ports checked                          ; 179          ;
 ; Total output ports with complete 1/0-value coverage ; 117          ;
-; Total output ports with no 1/0-value coverage       ; 50           ;
-; Total output ports with no 1-value coverage         ; 56           ;
-; Total output ports with no 0-value coverage         ; 56           ;
+; Total output ports with no 1/0-value coverage       ; 61           ;
+; Total output ports with no 1-value coverage         ; 61           ;
+; Total output ports with no 0-value coverage         ; 62           ;
 +-----------------------------------------------------+--------------+
 
 
@@ -113,7 +113,6 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |ula|x                   ; |ula|x                   ; out              ;
 ; |ula|y                   ; |ula|y                   ; out              ;
 ; |ula|z                   ; |ula|z                   ; out              ;
-; |ula|a[1]                ; |ula|a[1]                ; out              ;
 ; |ula|clk                 ; |ula|clk                 ; out              ;
 ; |ula|s[0]                ; |ula|s[0]                ; pin_out          ;
 ; |ula|s[1]                ; |ula|s[1]                ; pin_out          ;
@@ -131,10 +130,11 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |ula|somador:som5|sum    ; |ula|somador:som5|sum    ; out0             ;
 ; |ula|somador:som4|sum~0  ; |ula|somador:som4|sum~0  ; out0             ;
 ; |ula|somador:som4|sum    ; |ula|somador:som4|sum    ; out0             ;
+; |ula|somador:som4|cout~3 ; |ula|somador:som4|cout~3 ; out0             ;
+; |ula|somador:som4|cout   ; |ula|somador:som4|cout   ; out0             ;
 ; |ula|somador:som3|sum~0  ; |ula|somador:som3|sum~0  ; out0             ;
 ; |ula|somador:som3|sum    ; |ula|somador:som3|sum    ; out0             ;
-; |ula|somador:som3|cout~1 ; |ula|somador:som3|cout~1 ; out0             ;
-; |ula|somador:som3|cout~2 ; |ula|somador:som3|cout~2 ; out0             ;
+; |ula|somador:som3|cout~3 ; |ula|somador:som3|cout~3 ; out0             ;
 ; |ula|somador:som3|cout   ; |ula|somador:som3|cout   ; out0             ;
 ; |ula|somador:som2|sum~0  ; |ula|somador:som2|sum~0  ; out0             ;
 ; |ula|somador:som2|sum    ; |ula|somador:som2|sum    ; out0             ;
@@ -145,6 +145,7 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |ula|somador:som2|cout   ; |ula|somador:som2|cout   ; out0             ;
 ; |ula|somador:som1|sum~0  ; |ula|somador:som1|sum~0  ; out0             ;
 ; |ula|somador:som1|sum    ; |ula|somador:som1|sum    ; out0             ;
+; |ula|somador:som1|cout~0 ; |ula|somador:som1|cout~0 ; out0             ;
 ; |ula|somador:som1|cout~1 ; |ula|somador:som1|cout~1 ; out0             ;
 ; |ula|somador:som1|cout~2 ; |ula|somador:som1|cout~2 ; out0             ;
 ; |ula|somador:som1|cout   ; |ula|somador:som1|cout   ; out0             ;
@@ -187,7 +188,9 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |ula|abext:a3|ia~12      ; |ula|abext:a3|ia~12      ; out0             ;
 ; |ula|abext:a3|ia~13      ; |ula|abext:a3|ia~13      ; out0             ;
 ; |ula|abext:a3|ia         ; |ula|abext:a3|ia         ; out0             ;
+; |ula|abext:a3|ib~0       ; |ula|abext:a3|ib~0       ; out0             ;
 ; |ula|abext:a3|ib~1       ; |ula|abext:a3|ib~1       ; out0             ;
+; |ula|abext:a3|ib         ; |ula|abext:a3|ib         ; out0             ;
 ; |ula|abext:a2|ia~0       ; |ula|abext:a2|ia~0       ; out0             ;
 ; |ula|abext:a2|ia~5       ; |ula|abext:a2|ia~5       ; out0             ;
 ; |ula|abext:a2|ia~6       ; |ula|abext:a2|ia~6       ; out0             ;
@@ -204,21 +207,18 @@ The following table displays output ports that toggle between 1 and 0 during sim
 ; |ula|abext:a1|ia~0       ; |ula|abext:a1|ia~0       ; out0             ;
 ; |ula|abext:a1|ia~2       ; |ula|abext:a1|ia~2       ; out0             ;
 ; |ula|abext:a1|ia~5       ; |ula|abext:a1|ia~5       ; out0             ;
-; |ula|abext:a1|ia~6       ; |ula|abext:a1|ia~6       ; out0             ;
 ; |ula|abext:a1|ia~7       ; |ula|abext:a1|ia~7       ; out0             ;
-; |ula|abext:a1|ia~8       ; |ula|abext:a1|ia~8       ; out0             ;
-; |ula|abext:a1|ia~9       ; |ula|abext:a1|ia~9       ; out0             ;
-; |ula|abext:a1|ia~10      ; |ula|abext:a1|ia~10      ; out0             ;
-; |ula|abext:a1|ia~11      ; |ula|abext:a1|ia~11      ; out0             ;
 ; |ula|abext:a1|ia~12      ; |ula|abext:a1|ia~12      ; out0             ;
 ; |ula|abext:a1|ia~13      ; |ula|abext:a1|ia~13      ; out0             ;
 ; |ula|abext:a1|ia         ; |ula|abext:a1|ia         ; out0             ;
+; |ula|abext:a1|ib~0       ; |ula|abext:a1|ib~0       ; out0             ;
 ; |ula|abext:a1|ib~1       ; |ula|abext:a1|ib~1       ; out0             ;
+; |ula|abext:a1|ib         ; |ula|abext:a1|ib         ; out0             ;
+; |ula|abext:a0|ia~0       ; |ula|abext:a0|ia~0       ; out0             ;
 ; |ula|abext:a0|ia~5       ; |ula|abext:a0|ia~5       ; out0             ;
 ; |ula|abext:a0|ia~6       ; |ula|abext:a0|ia~6       ; out0             ;
 ; |ula|abext:a0|ia~7       ; |ula|abext:a0|ia~7       ; out0             ;
 ; |ula|abext:a0|ia~8       ; |ula|abext:a0|ia~8       ; out0             ;
-; |ula|abext:a0|ia~9       ; |ula|abext:a0|ia~9       ; out0             ;
 ; |ula|abext:a0|ia~10      ; |ula|abext:a0|ia~10      ; out0             ;
 ; |ula|abext:a0|ia~11      ; |ula|abext:a0|ia~11      ; out0             ;
 ; |ula|abext:a0|ia~12      ; |ula|abext:a0|ia~12      ; out0             ;
@@ -237,6 +237,7 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; Node Name                ; Output Port Name         ; Output Port Type ;
 +--------------------------+--------------------------+------------------+
 ; |ula|a[0]                ; |ula|a[0]                ; out              ;
+; |ula|a[1]                ; |ula|a[1]                ; out              ;
 ; |ula|a[2]                ; |ula|a[2]                ; out              ;
 ; |ula|a[3]                ; |ula|a[3]                ; out              ;
 ; |ula|a[4]                ; |ula|a[4]                ; out              ;
@@ -250,75 +251,9 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |ula|somador:som4|cout~0 ; |ula|somador:som4|cout~0 ; out0             ;
 ; |ula|somador:som4|cout~1 ; |ula|somador:som4|cout~1 ; out0             ;
 ; |ula|somador:som4|cout~2 ; |ula|somador:som4|cout~2 ; out0             ;
-; |ula|somador:som4|cout~3 ; |ula|somador:som4|cout~3 ; out0             ;
-; |ula|somador:som4|cout   ; |ula|somador:som4|cout   ; out0             ;
 ; |ula|somador:som3|cout~0 ; |ula|somador:som3|cout~0 ; out0             ;
-; |ula|somador:som3|cout~3 ; |ula|somador:som3|cout~3 ; out0             ;
-; |ula|abext:a5|ia~0       ; |ula|abext:a5|ia~0       ; out0             ;
-; |ula|abext:a5|ia~1       ; |ula|abext:a5|ia~1       ; out0             ;
-; |ula|abext:a5|ia~2       ; |ula|abext:a5|ia~2       ; out0             ;
-; |ula|abext:a5|ia~3       ; |ula|abext:a5|ia~3       ; out0             ;
-; |ula|abext:a5|ia~4       ; |ula|abext:a5|ia~4       ; out0             ;
-; |ula|abext:a5|ia~5       ; |ula|abext:a5|ia~5       ; out0             ;
-; |ula|abext:a5|ia~6       ; |ula|abext:a5|ia~6       ; out0             ;
-; |ula|abext:a5|ia~7       ; |ula|abext:a5|ia~7       ; out0             ;
-; |ula|abext:a5|ia~8       ; |ula|abext:a5|ia~8       ; out0             ;
-; |ula|abext:a4|ia~0       ; |ula|abext:a4|ia~0       ; out0             ;
-; |ula|abext:a4|ia~1       ; |ula|abext:a4|ia~1       ; out0             ;
-; |ula|abext:a4|ia~2       ; |ula|abext:a4|ia~2       ; out0             ;
-; |ula|abext:a4|ia~3       ; |ula|abext:a4|ia~3       ; out0             ;
-; |ula|abext:a4|ia~4       ; |ula|abext:a4|ia~4       ; out0             ;
-; |ula|abext:a4|ia~5       ; |ula|abext:a4|ia~5       ; out0             ;
-; |ula|abext:a4|ia~6       ; |ula|abext:a4|ia~6       ; out0             ;
-; |ula|abext:a4|ia~7       ; |ula|abext:a4|ia~7       ; out0             ;
-; |ula|abext:a4|ia~8       ; |ula|abext:a4|ia~8       ; out0             ;
-; |ula|abext:a3|ia~0       ; |ula|abext:a3|ia~0       ; out0             ;
-; |ula|abext:a3|ia~1       ; |ula|abext:a3|ia~1       ; out0             ;
-; |ula|abext:a3|ia~2       ; |ula|abext:a3|ia~2       ; out0             ;
-; |ula|abext:a3|ia~3       ; |ula|abext:a3|ia~3       ; out0             ;
-; |ula|abext:a3|ia~4       ; |ula|abext:a3|ia~4       ; out0             ;
-; |ula|abext:a3|ia~10      ; |ula|abext:a3|ia~10      ; out0             ;
-; |ula|abext:a3|ib~0       ; |ula|abext:a3|ib~0       ; out0             ;
-; |ula|abext:a3|ib         ; |ula|abext:a3|ib         ; out0             ;
-; |ula|abext:a2|ia~1       ; |ula|abext:a2|ia~1       ; out0             ;
-; |ula|abext:a2|ia~2       ; |ula|abext:a2|ia~2       ; out0             ;
-; |ula|abext:a2|ia~3       ; |ula|abext:a2|ia~3       ; out0             ;
-; |ula|abext:a2|ia~4       ; |ula|abext:a2|ia~4       ; out0             ;
-; |ula|abext:a2|ia~9       ; |ula|abext:a2|ia~9       ; out0             ;
-; |ula|abext:a1|ia~1       ; |ula|abext:a1|ia~1       ; out0             ;
-; |ula|abext:a1|ia~4       ; |ula|abext:a1|ia~4       ; out0             ;
-; |ula|abext:a0|ia~0       ; |ula|abext:a0|ia~0       ; out0             ;
-; |ula|abext:a0|ia~1       ; |ula|abext:a0|ia~1       ; out0             ;
-; |ula|abext:a0|ia~2       ; |ula|abext:a0|ia~2       ; out0             ;
-; |ula|abext:a0|ia~3       ; |ula|abext:a0|ia~3       ; out0             ;
-; |ula|abext:a0|ia~4       ; |ula|abext:a0|ia~4       ; out0             ;
-+--------------------------+--------------------------+------------------+
-
-
-The following table displays output ports that do not toggle to 0 during simulation.
-+------------------------------------------------------------------------+
-; Missing 0-Value Coverage                                               ;
-+--------------------------+--------------------------+------------------+
-; Node Name                ; Output Port Name         ; Output Port Type ;
-+--------------------------+--------------------------+------------------+
-; |ula|a[2]                ; |ula|a[2]                ; out              ;
-; |ula|a[3]                ; |ula|a[3]                ; out              ;
-; |ula|a[4]                ; |ula|a[4]                ; out              ;
-; |ula|a[5]                ; |ula|a[5]                ; out              ;
-; |ula|b[0]                ; |ula|b[0]                ; out              ;
-; |ula|b[2]                ; |ula|b[2]                ; out              ;
-; |ula|b[3]                ; |ula|b[3]                ; out              ;
-; |ula|b[4]                ; |ula|b[4]                ; out              ;
-; |ula|b[5]                ; |ula|b[5]                ; out              ;
-; |ula|ld                  ; |ula|ld                  ; out              ;
-; |ula|somador:som4|cout~0 ; |ula|somador:som4|cout~0 ; out0             ;
-; |ula|somador:som4|cout~1 ; |ula|somador:som4|cout~1 ; out0             ;
-; |ula|somador:som4|cout~2 ; |ula|somador:som4|cout~2 ; out0             ;
-; |ula|somador:som4|cout~3 ; |ula|somador:som4|cout~3 ; out0             ;
-; |ula|somador:som4|cout   ; |ula|somador:som4|cout   ; out0             ;
-; |ula|somador:som3|cout~0 ; |ula|somador:som3|cout~0 ; out0             ;
-; |ula|somador:som3|cout~3 ; |ula|somador:som3|cout~3 ; out0             ;
-; |ula|somador:som1|cout~0 ; |ula|somador:som1|cout~0 ; out0             ;
+; |ula|somador:som3|cout~1 ; |ula|somador:som3|cout~1 ; out0             ;
+; |ula|somador:som3|cout~2 ; |ula|somador:som3|cout~2 ; out0             ;
 ; |ula|somador:som1|cout~3 ; |ula|somador:som1|cout~3 ; out0             ;
 ; |ula|abext:a5|ia~0       ; |ula|abext:a5|ia~0       ; out0             ;
 ; |ula|abext:a5|ia~1       ; |ula|abext:a5|ia~1       ; out0             ;
@@ -344,19 +279,95 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |ula|abext:a3|ia~3       ; |ula|abext:a3|ia~3       ; out0             ;
 ; |ula|abext:a3|ia~4       ; |ula|abext:a3|ia~4       ; out0             ;
 ; |ula|abext:a3|ia~10      ; |ula|abext:a3|ia~10      ; out0             ;
-; |ula|abext:a3|ib~0       ; |ula|abext:a3|ib~0       ; out0             ;
-; |ula|abext:a3|ib         ; |ula|abext:a3|ib         ; out0             ;
 ; |ula|abext:a2|ia~1       ; |ula|abext:a2|ia~1       ; out0             ;
 ; |ula|abext:a2|ia~2       ; |ula|abext:a2|ia~2       ; out0             ;
 ; |ula|abext:a2|ia~3       ; |ula|abext:a2|ia~3       ; out0             ;
 ; |ula|abext:a2|ia~4       ; |ula|abext:a2|ia~4       ; out0             ;
 ; |ula|abext:a2|ia~9       ; |ula|abext:a2|ia~9       ; out0             ;
+; |ula|abext:a1|ia~1       ; |ula|abext:a1|ia~1       ; out0             ;
 ; |ula|abext:a1|ia~3       ; |ula|abext:a1|ia~3       ; out0             ;
 ; |ula|abext:a1|ia~4       ; |ula|abext:a1|ia~4       ; out0             ;
-; |ula|abext:a1|ib~0       ; |ula|abext:a1|ib~0       ; out0             ;
-; |ula|abext:a1|ib         ; |ula|abext:a1|ib         ; out0             ;
+; |ula|abext:a1|ia~6       ; |ula|abext:a1|ia~6       ; out0             ;
+; |ula|abext:a1|ia~8       ; |ula|abext:a1|ia~8       ; out0             ;
+; |ula|abext:a1|ia~9       ; |ula|abext:a1|ia~9       ; out0             ;
+; |ula|abext:a1|ia~10      ; |ula|abext:a1|ia~10      ; out0             ;
+; |ula|abext:a1|ia~11      ; |ula|abext:a1|ia~11      ; out0             ;
 ; |ula|abext:a0|ia~1       ; |ula|abext:a0|ia~1       ; out0             ;
 ; |ula|abext:a0|ia~2       ; |ula|abext:a0|ia~2       ; out0             ;
+; |ula|abext:a0|ia~3       ; |ula|abext:a0|ia~3       ; out0             ;
+; |ula|abext:a0|ia~4       ; |ula|abext:a0|ia~4       ; out0             ;
+; |ula|abext:a0|ia~9       ; |ula|abext:a0|ia~9       ; out0             ;
++--------------------------+--------------------------+------------------+
+
+
+The following table displays output ports that do not toggle to 0 during simulation.
++------------------------------------------------------------------------+
+; Missing 0-Value Coverage                                               ;
++--------------------------+--------------------------+------------------+
+; Node Name                ; Output Port Name         ; Output Port Type ;
++--------------------------+--------------------------+------------------+
+; |ula|a[0]                ; |ula|a[0]                ; out              ;
+; |ula|a[1]                ; |ula|a[1]                ; out              ;
+; |ula|a[2]                ; |ula|a[2]                ; out              ;
+; |ula|a[3]                ; |ula|a[3]                ; out              ;
+; |ula|a[4]                ; |ula|a[4]                ; out              ;
+; |ula|a[5]                ; |ula|a[5]                ; out              ;
+; |ula|b[0]                ; |ula|b[0]                ; out              ;
+; |ula|b[1]                ; |ula|b[1]                ; out              ;
+; |ula|b[2]                ; |ula|b[2]                ; out              ;
+; |ula|b[3]                ; |ula|b[3]                ; out              ;
+; |ula|b[4]                ; |ula|b[4]                ; out              ;
+; |ula|b[5]                ; |ula|b[5]                ; out              ;
+; |ula|ld                  ; |ula|ld                  ; out              ;
+; |ula|somador:som4|cout~0 ; |ula|somador:som4|cout~0 ; out0             ;
+; |ula|somador:som4|cout~1 ; |ula|somador:som4|cout~1 ; out0             ;
+; |ula|somador:som4|cout~2 ; |ula|somador:som4|cout~2 ; out0             ;
+; |ula|somador:som3|cout~0 ; |ula|somador:som3|cout~0 ; out0             ;
+; |ula|somador:som3|cout~1 ; |ula|somador:som3|cout~1 ; out0             ;
+; |ula|somador:som3|cout~2 ; |ula|somador:som3|cout~2 ; out0             ;
+; |ula|somador:som1|cout~3 ; |ula|somador:som1|cout~3 ; out0             ;
+; |ula|abext:a5|ia~0       ; |ula|abext:a5|ia~0       ; out0             ;
+; |ula|abext:a5|ia~1       ; |ula|abext:a5|ia~1       ; out0             ;
+; |ula|abext:a5|ia~2       ; |ula|abext:a5|ia~2       ; out0             ;
+; |ula|abext:a5|ia~3       ; |ula|abext:a5|ia~3       ; out0             ;
+; |ula|abext:a5|ia~4       ; |ula|abext:a5|ia~4       ; out0             ;
+; |ula|abext:a5|ia~5       ; |ula|abext:a5|ia~5       ; out0             ;
+; |ula|abext:a5|ia~6       ; |ula|abext:a5|ia~6       ; out0             ;
+; |ula|abext:a5|ia~7       ; |ula|abext:a5|ia~7       ; out0             ;
+; |ula|abext:a5|ia~8       ; |ula|abext:a5|ia~8       ; out0             ;
+; |ula|abext:a4|ia~0       ; |ula|abext:a4|ia~0       ; out0             ;
+; |ula|abext:a4|ia~1       ; |ula|abext:a4|ia~1       ; out0             ;
+; |ula|abext:a4|ia~2       ; |ula|abext:a4|ia~2       ; out0             ;
+; |ula|abext:a4|ia~3       ; |ula|abext:a4|ia~3       ; out0             ;
+; |ula|abext:a4|ia~4       ; |ula|abext:a4|ia~4       ; out0             ;
+; |ula|abext:a4|ia~5       ; |ula|abext:a4|ia~5       ; out0             ;
+; |ula|abext:a4|ia~6       ; |ula|abext:a4|ia~6       ; out0             ;
+; |ula|abext:a4|ia~7       ; |ula|abext:a4|ia~7       ; out0             ;
+; |ula|abext:a4|ia~8       ; |ula|abext:a4|ia~8       ; out0             ;
+; |ula|abext:a3|ia~0       ; |ula|abext:a3|ia~0       ; out0             ;
+; |ula|abext:a3|ia~1       ; |ula|abext:a3|ia~1       ; out0             ;
+; |ula|abext:a3|ia~2       ; |ula|abext:a3|ia~2       ; out0             ;
+; |ula|abext:a3|ia~3       ; |ula|abext:a3|ia~3       ; out0             ;
+; |ula|abext:a3|ia~4       ; |ula|abext:a3|ia~4       ; out0             ;
+; |ula|abext:a3|ia~10      ; |ula|abext:a3|ia~10      ; out0             ;
+; |ula|abext:a2|ia~1       ; |ula|abext:a2|ia~1       ; out0             ;
+; |ula|abext:a2|ia~2       ; |ula|abext:a2|ia~2       ; out0             ;
+; |ula|abext:a2|ia~3       ; |ula|abext:a2|ia~3       ; out0             ;
+; |ula|abext:a2|ia~4       ; |ula|abext:a2|ia~4       ; out0             ;
+; |ula|abext:a2|ia~9       ; |ula|abext:a2|ia~9       ; out0             ;
+; |ula|abext:a1|ia~1       ; |ula|abext:a1|ia~1       ; out0             ;
+; |ula|abext:a1|ia~3       ; |ula|abext:a1|ia~3       ; out0             ;
+; |ula|abext:a1|ia~4       ; |ula|abext:a1|ia~4       ; out0             ;
+; |ula|abext:a1|ia~6       ; |ula|abext:a1|ia~6       ; out0             ;
+; |ula|abext:a1|ia~8       ; |ula|abext:a1|ia~8       ; out0             ;
+; |ula|abext:a1|ia~9       ; |ula|abext:a1|ia~9       ; out0             ;
+; |ula|abext:a1|ia~10      ; |ula|abext:a1|ia~10      ; out0             ;
+; |ula|abext:a1|ia~11      ; |ula|abext:a1|ia~11      ; out0             ;
+; |ula|abext:a0|ia~1       ; |ula|abext:a0|ia~1       ; out0             ;
+; |ula|abext:a0|ia~2       ; |ula|abext:a0|ia~2       ; out0             ;
+; |ula|abext:a0|ia~3       ; |ula|abext:a0|ia~3       ; out0             ;
+; |ula|abext:a0|ia~4       ; |ula|abext:a0|ia~4       ; out0             ;
+; |ula|abext:a0|ia~9       ; |ula|abext:a0|ia~9       ; out0             ;
 +--------------------------+--------------------------+------------------+
 
 
@@ -373,18 +384,18 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Jul 30 17:40:34 2024
+    Info: Processing started: Wed Jul 31 13:41:30 2024
 Info: Command: quartus_sim --simulation_results_format=VWF ula -c ula
 Info (324025): Using vector source file "/home/murilo/Documentos/GitHub/lab-circuitos-digitais/ula/Waveform.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
     Info (310004): Simulation has been partitioned into sub-simulations according to the maximum transition count determined by the engine. Transitions from memory will be flushed out to disk at the end of each sub-simulation to reduce memory requirements.
 Info (310002): Simulation partitioned into 1 sub-simulations
 Info (328053): Simulation coverage is      65.36 %
-Info (328052): Number of transitions in simulation is 825
+Info (328052): Number of transitions in simulation is 810
 Info (324045): Vector file ula.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 633 megabytes
-    Info: Processing ended: Tue Jul 30 17:40:34 2024
+    Info: Processing ended: Wed Jul 31 13:41:30 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 
