@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 package bus_array_pkg is
-        type bus_array is array(15 downto 0) of std_logic_vector(15 downto 0);
+        type bus_array is array(15 downto 0) of std_logic_vector(15 downto 0); -- array de 16 sinais de 16 bits
 end package;
 
 library ieee;

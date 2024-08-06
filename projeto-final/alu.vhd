@@ -10,22 +10,22 @@ end alu;
 
 architecture behav of alu is
 
-    signal IA, IB 	: std_logic_vector(3 downto 0);
-    signal Cin, Cout		: std_logic;
+    signal IA, IB : std_logic_vector(3 downto 0);
+    signal Cin, Cout : std_logic;
     
     component alext is
-        Port(
-            x, y, z 	: in std_logic;
-            a, b		: in std_logic;
-            ia, ib	: out std_logic);
+        port(
+            x, y, z : in std_logic;
+            a, b : in std_logic;
+            ia, ib : out std_logic);
         end component;
     
     component somador6 is
         port(
-            A, B			: in std_logic_vector(3 downto 0);
-            Cin			: in std_logic;
-            Cout			: out std_logic;
-            Z				: out std_logic_vector(3 downto 0));
+            A, B : in std_logic_vector(3 downto 0);
+            Cin : in std_logic;
+            Cout : out std_logic;
+            Z : out std_logic_vector(3 downto 0));
     end component;
 
 begin
