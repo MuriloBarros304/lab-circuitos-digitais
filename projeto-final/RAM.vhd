@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 USE ieee.std_logic_arith.all;
 
 ENTITY RAM IS
-PORT(
+     port(
           clock : IN STD_LOGIC; 
           rw_enable : IN STD_LOGIC;
           mem_enable : IN STD_LOGIC;

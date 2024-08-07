@@ -13,7 +13,7 @@ entity regfile is
 end regfile;
 
 architecture behav of regfile is
-    type tmp_array is array(0 to 15) of std_logic_vector(7 downto 0);
+    type tmp_array is array(0 to 15) of std_logic_vector(7 downto 0); -- array de 16 sinais de 8 bits
 
     signal out_deco: std_logic_vector(3 downto 0);
     signal out_regs: tmp_array;

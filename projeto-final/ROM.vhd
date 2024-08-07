@@ -11,7 +11,7 @@ PORT(
 );
 END ROM;
 ARCHITECTURE behav OF ROM IS
-     TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+     TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0); -- 16 endereços de 8 bits
     
      CONSTANT mem: rom_type :=
            (2 => "01011001", -- Aloca um dado no endereço 2
