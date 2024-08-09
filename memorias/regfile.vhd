@@ -40,14 +40,15 @@ component mux4_1 is
 end component;
 
 begin
-
+    -- decodificador de endereços de escrita
     deco0 : decode4 port map(en=>W_en, i=>W_addr, D=>out_deco);
     
+    -- registradores ligados ao mux
     reg0 : reg8 port map(clk=>clk, load=>out_deco(0), D=>W_data, Q=>out_regs(0));
     reg1 : reg8 port map(clk=>clk, load=>out_deco(1), D=>W_data, Q=>out_regs(1));
     reg2 : reg8 port map(clk=>clk, load=>out_deco(2), D=>W_data, Q=>out_regs(2));
     reg3 : reg8 port map(clk=>clk, load=>out_deco(3), D=>W_data, Q=>out_regs(3));
     
+    -- mux para leitura dos dados, a seleção é feita pelo endereço de leitura
     mux0 : mux4_1 port map(A=>out_regs, S=>R_addr, Z=>R_data);
-	
 end behav;
