@@ -1,3 +1,4 @@
+/* Simulator = Quartus II Simulator */
 /*
 WARNING: Do NOT edit the input and output ports in this file in a text
 editor if you plan to continue editing the block that represents it in
@@ -26,7 +27,7 @@ HEADER
 	TIME_UNIT = ns;
 	DATA_OFFSET = 0.0;
 	DATA_DURATION = 1000.0;
-	SIMULATION_TIME = 1000.0;
+	SIMULATION_TIME = 0.0;
 	GRID_PHASE = 0.0;
 	GRID_PERIOD = 10.0;
 	GRID_DUTY_CYCLE = 50;
@@ -345,9 +346,7 @@ TRANSITION_LIST("R_data[7]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 15.0;
-		LEVEL 1 FOR 180.0;
-		LEVEL 0 FOR 805.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -356,8 +355,7 @@ TRANSITION_LIST("R_data[6]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 15.0;
-		LEVEL 1 FOR 985.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -366,8 +364,7 @@ TRANSITION_LIST("R_data[5]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 15.0;
-		LEVEL 1 FOR 985.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -376,9 +373,7 @@ TRANSITION_LIST("R_data[4]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 525.0;
-		LEVEL 1 FOR 275.0;
-		LEVEL 0 FOR 200.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -387,8 +382,7 @@ TRANSITION_LIST("R_data[3]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 15.0;
-		LEVEL 1 FOR 985.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -397,8 +391,7 @@ TRANSITION_LIST("R_data[2]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 195.0;
-		LEVEL 1 FOR 805.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -407,8 +400,7 @@ TRANSITION_LIST("R_data[1]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 195.0;
-		LEVEL 1 FOR 805.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -417,7 +409,7 @@ TRANSITION_LIST("R_data[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
+		LEVEL X FOR 1000.0;
 	}
 }
 
@@ -444,8 +436,12 @@ TRANSITION_LIST("W_addr[0]")
 	NODE
 	{
 		REPEAT = 1;
-		LEVEL 0 FOR 200.0;
-		LEVEL 1 FOR 600.0;
+		NODE
+		{
+			REPEAT = 1;
+			LEVEL 0 FOR 400.0;
+			LEVEL 1 FOR 400.0;
+		}
 		LEVEL 0 FOR 200.0;
 	}
 }
@@ -684,7 +680,7 @@ DISPLAY_LINE
 DISPLAY_LINE
 {
 	CHANNEL = "W_addr";
-	EXPAND_STATUS = EXPANDED;
+	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 14;
 	TREE_LEVEL = 0;

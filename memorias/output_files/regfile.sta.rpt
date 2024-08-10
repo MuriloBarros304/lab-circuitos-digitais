@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for regfile
-Sat Aug 10 13:39:04 2024
+Sat Aug 10 14:09:11 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -255,8 +255,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
 ; W_addr[*]  ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; 4.225 ; 4.225 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; 4.225 ; 4.225 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; 3.828 ; 3.828 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; 3.325 ; 3.325 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; 3.551 ; 3.551 ; Rise       ; clk             ;
@@ -276,8 +276,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
 ; W_addr[*]  ; clk        ; -3.959 ; -3.959 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; -4.054 ; -4.054 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; -3.959 ; -3.959 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; -3.959 ; -3.959 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; -4.054 ; -4.054 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; -2.635 ; -2.635 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; -2.635 ; -2.635 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; -2.702 ; -2.702 ; Rise       ; clk             ;
@@ -520,8 +520,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
 ; W_addr[*]  ; clk        ; 2.363 ; 2.363 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; 2.363 ; 2.363 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; 2.320 ; 2.320 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; 2.320 ; 2.320 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; 2.363 ; 2.363 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; 2.079 ; 2.079 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; 1.857 ; 1.857 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; 1.951 ; 1.951 ; Rise       ; clk             ;
@@ -541,8 +541,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
 ; W_addr[*]  ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; -2.188 ; -2.188 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; -2.188 ; -2.188 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; -1.498 ; -1.498 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; -1.498 ; -1.498 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; -1.539 ; -1.539 ; Rise       ; clk             ;
@@ -656,8 +656,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
 ; W_addr[*]  ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; 4.225 ; 4.225 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; 4.225 ; 4.225 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; 4.320 ; 4.320 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; 3.828 ; 3.828 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; 3.325 ; 3.325 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; 3.551 ; 3.551 ; Rise       ; clk             ;
@@ -677,8 +677,8 @@ No paths to report.
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
 ; W_addr[*]  ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
-;  W_addr[0] ; clk        ; -2.188 ; -2.188 ; Rise       ; clk             ;
-;  W_addr[1] ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+;  W_addr[0] ; clk        ; -2.173 ; -2.173 ; Rise       ; clk             ;
+;  W_addr[1] ; clk        ; -2.188 ; -2.188 ; Rise       ; clk             ;
 ; W_data[*]  ; clk        ; -1.498 ; -1.498 ; Rise       ; clk             ;
 ;  W_data[0] ; clk        ; -1.498 ; -1.498 ; Rise       ; clk             ;
 ;  W_data[1] ; clk        ; -1.539 ; -1.539 ; Rise       ; clk             ;
@@ -812,7 +812,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Aug 10 13:39:04 2024
+    Info: Processing started: Sat Aug 10 14:09:11 2024
 Info: Command: quartus_sta regfile -c regfile
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -850,7 +850,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
     Info: Peak virtual memory: 499 megabytes
-    Info: Processing ended: Sat Aug 10 13:39:04 2024
+    Info: Processing ended: Sat Aug 10 14:09:11 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 

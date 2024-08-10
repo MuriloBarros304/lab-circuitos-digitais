@@ -452,7 +452,7 @@ GND*                         : J21       :        :                   :         
 GND*                         : J22       :        :                   :         : 5         :                
 R_data[7]                    : J23       : output : 3.3-V LVTTL       :         : 5         : N              
 R_data[3]                    : J24       : output : 3.3-V LVTTL       :         : 5         : N              
-W_addr[1]                    : J25       : input  : 3.3-V LVTTL       :         : 5         : N              
+W_addr[0]                    : J25       : input  : 3.3-V LVTTL       :         : 5         : N              
 R_data[4]                    : J26       : output : 3.3-V LVTTL       :         : 5         : N              
 GND*                         : K1        :        :                   :         : 2         :                
 GND*                         : K2        :        :                   :         : 2         :                
@@ -499,7 +499,7 @@ VCCINT                       : L16       : power  :                   : 1.2V    
 VCCINT                       : L17       : power  :                   : 1.2V    :           :                
 VCCINT                       : L18       : power  :                   : 1.2V    :           :                
 GND*                         : L19       :        :                   :         : 5         :                
-W_addr[0]                    : L20       : input  : 3.3-V LVTTL       :         : 5         : N              
+W_addr[1]                    : L20       : input  : 3.3-V LVTTL       :         : 5         : N              
 W_en                         : L21       : input  : 3.3-V LVTTL       :         : 5         : N              
 GND                          : L22       : gnd    :                   :         :           :                
 GND*                         : L23       :        :                   :         : 5         :                

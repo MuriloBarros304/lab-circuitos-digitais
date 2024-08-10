@@ -1,6 +1,6 @@
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
+
 entity regfile is
     port(
         clk : in std_logic;
@@ -13,7 +13,7 @@ entity regfile is
 end regfile;
 
 architecture behav of regfile is
-    type tmp_array is array(0 to 3) of std_logic_vector(7 downto 0); -- array de 4 sinais de 8 bits
+    type tmp_array is array(3 downto 0) of std_logic_vector(7 downto 0); -- array de 4 sinais de 8 bits
 
     signal out_deco: std_logic_vector(3 downto 0);
     signal out_regs: tmp_array;

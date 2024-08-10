@@ -1,5 +1,5 @@
 Fitter report for regfile
-Sat Aug 10 13:38:57 2024
+Sat Aug 10 14:09:06 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sat Aug 10 13:38:57 2024           ;
+; Fitter Status                      ; Successful - Sat Aug 10 14:09:06 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; regfile                                         ;
 ; Top-level Entity Name              ; regfile                                         ;
@@ -310,8 +310,8 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; R_addr[0] ; K19   ; 5        ; 65           ; 25           ; 1           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; R_addr[1] ; D13   ; 3        ; 31           ; 36           ; 3           ; 12                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; R_en      ; C13   ; 3        ; 31           ; 36           ; 2           ; 0                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; W_addr[0] ; L20   ; 5        ; 65           ; 24           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; W_addr[1] ; J25   ; 5        ; 65           ; 24           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; W_addr[0] ; J25   ; 5        ; 65           ; 24           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; W_addr[1] ; L20   ; 5        ; 65           ; 24           ; 1           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; W_data[0] ; H26   ; 5        ; 65           ; 26           ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; W_data[1] ; H23   ; 5        ; 65           ; 27           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 ; W_data[2] ; K22   ; 5        ; 65           ; 28           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
@@ -746,7 +746,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; J22      ; 357        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; J23      ; 339        ; 5        ; R_data[7]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J24      ; 338        ; 5        ; R_data[3]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; J25      ; 327        ; 5        ; W_addr[1]                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; J25      ; 327        ; 5        ; W_addr[0]                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; J26      ; 326        ; 5        ; R_data[4]                                ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; K1       ; 42         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; K2       ; 43         ; 2        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -793,7 +793,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; L17      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L18      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; L19      ; 322        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; L20      ; 328        ; 5        ; W_addr[0]                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; L20      ; 328        ; 5        ; W_addr[1]                                ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L21      ; 329        ; 5        ; W_en                                     ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; L22      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; L23      ; 325        ; 5        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
@@ -1141,9 +1141,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; R_addr[0] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; W_data[0] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; clk       ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
-; W_addr[0] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
-; W_en      ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; W_addr[1] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; W_en      ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
+; W_addr[0] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; W_data[1] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; W_data[2] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; W_data[3] ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
@@ -1175,61 +1175,61 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - mux4_1:mux0|Mux0~0              ; 0                 ; 6       ;
 ;      - mux4_1:mux0|Mux0~1              ; 0                 ; 6       ;
 ; W_data[0]                              ;                   ;         ;
-;      - reg8:reg2|flipflop:ff0|q        ; 0                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff0|q        ; 0                 ; 6       ;
-;      - reg8:reg0|flipflop:ff0|q        ; 0                 ; 6       ;
-;      - reg8:reg3|flipflop:ff0|q~feeder ; 1                 ; 6       ;
+;      - reg8:reg2|flipflop:ff0|q        ; 0                 ; 6       ;
+;      - reg8:reg3|flipflop:ff0|q        ; 0                 ; 6       ;
+;      - reg8:reg0|flipflop:ff0|q~feeder ; 1                 ; 6       ;
 ; clk                                    ;                   ;         ;
-; W_addr[0]                              ;                   ;         ;
+; W_addr[1]                              ;                   ;         ;
 ;      - decode4:deco0|D~0               ; 1                 ; 6       ;
 ;      - decode4:deco0|D~1               ; 1                 ; 6       ;
-;      - decode4:deco0|D~2               ; 1                 ; 6       ;
 ;      - decode4:deco0|D[0]              ; 1                 ; 6       ;
+;      - decode4:deco0|D~2               ; 1                 ; 6       ;
 ; W_en                                   ;                   ;         ;
 ;      - decode4:deco0|D~0               ; 1                 ; 6       ;
 ;      - decode4:deco0|D~1               ; 1                 ; 6       ;
-;      - decode4:deco0|D~2               ; 1                 ; 6       ;
 ;      - decode4:deco0|D[0]              ; 1                 ; 6       ;
-; W_addr[1]                              ;                   ;         ;
+;      - decode4:deco0|D~2               ; 1                 ; 6       ;
+; W_addr[0]                              ;                   ;         ;
 ;      - decode4:deco0|D~0               ; 0                 ; 6       ;
 ;      - decode4:deco0|D~1               ; 0                 ; 6       ;
-;      - decode4:deco0|D~2               ; 0                 ; 6       ;
 ;      - decode4:deco0|D[0]              ; 0                 ; 6       ;
+;      - decode4:deco0|D~2               ; 0                 ; 6       ;
 ; W_data[1]                              ;                   ;         ;
-;      - reg8:reg3|flipflop:ff1|q        ; 1                 ; 6       ;
-;      - reg8:reg2|flipflop:ff1|q        ; 1                 ; 6       ;
+;      - reg8:reg0|flipflop:ff1|q        ; 1                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff1|q        ; 1                 ; 6       ;
-;      - reg8:reg0|flipflop:ff1|q~feeder ; 1                 ; 6       ;
+;      - reg8:reg2|flipflop:ff1|q        ; 1                 ; 6       ;
+;      - reg8:reg3|flipflop:ff1|q~feeder ; 1                 ; 6       ;
 ; W_data[2]                              ;                   ;         ;
-;      - reg8:reg3|flipflop:ff2|q        ; 0                 ; 6       ;
-;      - reg8:reg2|flipflop:ff2|q        ; 0                 ; 6       ;
+;      - reg8:reg0|flipflop:ff2|q        ; 0                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff2|q        ; 0                 ; 6       ;
-;      - reg8:reg0|flipflop:ff2|q~feeder ; 0                 ; 6       ;
+;      - reg8:reg2|flipflop:ff2|q        ; 0                 ; 6       ;
+;      - reg8:reg3|flipflop:ff2|q~feeder ; 0                 ; 6       ;
 ; W_data[3]                              ;                   ;         ;
-;      - reg8:reg3|flipflop:ff3|q        ; 0                 ; 6       ;
-;      - reg8:reg2|flipflop:ff3|q        ; 0                 ; 6       ;
+;      - reg8:reg0|flipflop:ff3|q        ; 0                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff3|q        ; 0                 ; 6       ;
-;      - reg8:reg0|flipflop:ff3|q~feeder ; 0                 ; 6       ;
+;      - reg8:reg2|flipflop:ff3|q        ; 0                 ; 6       ;
+;      - reg8:reg3|flipflop:ff3|q~feeder ; 0                 ; 6       ;
 ; W_data[4]                              ;                   ;         ;
-;      - reg8:reg2|flipflop:ff4|q        ; 1                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff4|q        ; 1                 ; 6       ;
-;      - reg8:reg0|flipflop:ff4|q        ; 1                 ; 6       ;
-;      - reg8:reg3|flipflop:ff4|q~feeder ; 1                 ; 6       ;
+;      - reg8:reg2|flipflop:ff4|q        ; 1                 ; 6       ;
+;      - reg8:reg3|flipflop:ff4|q        ; 1                 ; 6       ;
+;      - reg8:reg0|flipflop:ff4|q~feeder ; 1                 ; 6       ;
 ; W_data[5]                              ;                   ;         ;
-;      - reg8:reg3|flipflop:ff5|q        ; 0                 ; 6       ;
-;      - reg8:reg2|flipflop:ff5|q        ; 0                 ; 6       ;
-;      - reg8:reg1|flipflop:ff5|q        ; 0                 ; 6       ;
 ;      - reg8:reg0|flipflop:ff5|q        ; 0                 ; 6       ;
+;      - reg8:reg1|flipflop:ff5|q        ; 0                 ; 6       ;
+;      - reg8:reg2|flipflop:ff5|q        ; 0                 ; 6       ;
+;      - reg8:reg3|flipflop:ff5|q        ; 0                 ; 6       ;
 ; W_data[6]                              ;                   ;         ;
-;      - reg8:reg2|flipflop:ff6|q        ; 1                 ; 6       ;
 ;      - reg8:reg1|flipflop:ff6|q        ; 1                 ; 6       ;
-;      - reg8:reg0|flipflop:ff6|q        ; 1                 ; 6       ;
-;      - reg8:reg3|flipflop:ff6|q~feeder ; 0                 ; 6       ;
+;      - reg8:reg2|flipflop:ff6|q        ; 1                 ; 6       ;
+;      - reg8:reg3|flipflop:ff6|q        ; 1                 ; 6       ;
+;      - reg8:reg0|flipflop:ff6|q~feeder ; 0                 ; 6       ;
 ; W_data[7]                              ;                   ;         ;
-;      - reg8:reg3|flipflop:ff7|q        ; 1                 ; 6       ;
-;      - reg8:reg2|flipflop:ff7|q        ; 1                 ; 6       ;
-;      - reg8:reg1|flipflop:ff7|q        ; 1                 ; 6       ;
 ;      - reg8:reg0|flipflop:ff7|q        ; 1                 ; 6       ;
+;      - reg8:reg1|flipflop:ff7|q        ; 1                 ; 6       ;
+;      - reg8:reg2|flipflop:ff7|q        ; 1                 ; 6       ;
+;      - reg8:reg3|flipflop:ff7|q        ; 1                 ; 6       ;
 +----------------------------------------+-------------------+---------+
 
 
@@ -1239,10 +1239,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name               ; Location          ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +--------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; clk                ; PIN_P2            ; 32      ; Clock        ; yes    ; Global Clock         ; GCLK3            ; --                        ;
-; decode4:deco0|D[0] ; LCCOMB_X64_Y24_N6 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decode4:deco0|D[0] ; LCCOMB_X64_Y24_N4 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; decode4:deco0|D~0  ; LCCOMB_X64_Y24_N0 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; decode4:deco0|D~1  ; LCCOMB_X64_Y24_N2 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decode4:deco0|D~2  ; LCCOMB_X64_Y24_N4 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decode4:deco0|D~2  ; LCCOMB_X64_Y24_N6 ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +--------------------+-------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1262,8 +1262,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------+---------+
 ; R_addr[0]                ; 12      ;
 ; R_addr[1]                ; 12      ;
-; decode4:deco0|D[0]       ; 8       ;
 ; decode4:deco0|D~2        ; 8       ;
+; decode4:deco0|D[0]       ; 8       ;
 ; decode4:deco0|D~1        ; 8       ;
 ; decode4:deco0|D~0        ; 8       ;
 ; W_data[7]                ; 4       ;
@@ -1273,58 +1273,58 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; W_data[3]                ; 4       ;
 ; W_data[2]                ; 4       ;
 ; W_data[1]                ; 4       ;
-; W_addr[1]                ; 4       ;
-; W_en                     ; 4       ;
 ; W_addr[0]                ; 4       ;
+; W_en                     ; 4       ;
+; W_addr[1]                ; 4       ;
 ; W_data[0]                ; 4       ;
 ; mux4_1:mux0|Mux0~1       ; 1       ;
-; reg8:reg0|flipflop:ff7|q ; 1       ;
-; mux4_1:mux0|Mux0~0       ; 1       ;
 ; reg8:reg3|flipflop:ff7|q ; 1       ;
-; reg8:reg1|flipflop:ff7|q ; 1       ;
+; mux4_1:mux0|Mux0~0       ; 1       ;
+; reg8:reg0|flipflop:ff7|q ; 1       ;
 ; reg8:reg2|flipflop:ff7|q ; 1       ;
+; reg8:reg1|flipflop:ff7|q ; 1       ;
 ; mux4_1:mux0|Mux1~1       ; 1       ;
-; reg8:reg0|flipflop:ff6|q ; 1       ;
-; mux4_1:mux0|Mux1~0       ; 1       ;
 ; reg8:reg3|flipflop:ff6|q ; 1       ;
-; reg8:reg2|flipflop:ff6|q ; 1       ;
+; mux4_1:mux0|Mux1~0       ; 1       ;
+; reg8:reg0|flipflop:ff6|q ; 1       ;
 ; reg8:reg1|flipflop:ff6|q ; 1       ;
+; reg8:reg2|flipflop:ff6|q ; 1       ;
 ; mux4_1:mux0|Mux2~1       ; 1       ;
-; reg8:reg0|flipflop:ff5|q ; 1       ;
-; mux4_1:mux0|Mux2~0       ; 1       ;
 ; reg8:reg3|flipflop:ff5|q ; 1       ;
-; reg8:reg1|flipflop:ff5|q ; 1       ;
+; mux4_1:mux0|Mux2~0       ; 1       ;
+; reg8:reg0|flipflop:ff5|q ; 1       ;
 ; reg8:reg2|flipflop:ff5|q ; 1       ;
+; reg8:reg1|flipflop:ff5|q ; 1       ;
 ; mux4_1:mux0|Mux3~1       ; 1       ;
-; reg8:reg0|flipflop:ff4|q ; 1       ;
-; mux4_1:mux0|Mux3~0       ; 1       ;
 ; reg8:reg3|flipflop:ff4|q ; 1       ;
-; reg8:reg2|flipflop:ff4|q ; 1       ;
+; mux4_1:mux0|Mux3~0       ; 1       ;
+; reg8:reg0|flipflop:ff4|q ; 1       ;
 ; reg8:reg1|flipflop:ff4|q ; 1       ;
+; reg8:reg2|flipflop:ff4|q ; 1       ;
 ; mux4_1:mux0|Mux4~1       ; 1       ;
-; reg8:reg0|flipflop:ff3|q ; 1       ;
-; mux4_1:mux0|Mux4~0       ; 1       ;
 ; reg8:reg3|flipflop:ff3|q ; 1       ;
-; reg8:reg1|flipflop:ff3|q ; 1       ;
+; mux4_1:mux0|Mux4~0       ; 1       ;
+; reg8:reg0|flipflop:ff3|q ; 1       ;
 ; reg8:reg2|flipflop:ff3|q ; 1       ;
+; reg8:reg1|flipflop:ff3|q ; 1       ;
 ; mux4_1:mux0|Mux5~1       ; 1       ;
-; reg8:reg0|flipflop:ff2|q ; 1       ;
-; mux4_1:mux0|Mux5~0       ; 1       ;
 ; reg8:reg3|flipflop:ff2|q ; 1       ;
-; reg8:reg2|flipflop:ff2|q ; 1       ;
+; mux4_1:mux0|Mux5~0       ; 1       ;
+; reg8:reg0|flipflop:ff2|q ; 1       ;
 ; reg8:reg1|flipflop:ff2|q ; 1       ;
+; reg8:reg2|flipflop:ff2|q ; 1       ;
 ; mux4_1:mux0|Mux6~1       ; 1       ;
-; reg8:reg0|flipflop:ff1|q ; 1       ;
-; mux4_1:mux0|Mux6~0       ; 1       ;
 ; reg8:reg3|flipflop:ff1|q ; 1       ;
-; reg8:reg1|flipflop:ff1|q ; 1       ;
+; mux4_1:mux0|Mux6~0       ; 1       ;
+; reg8:reg0|flipflop:ff1|q ; 1       ;
 ; reg8:reg2|flipflop:ff1|q ; 1       ;
+; reg8:reg1|flipflop:ff1|q ; 1       ;
 ; mux4_1:mux0|Mux7~1       ; 1       ;
-; reg8:reg0|flipflop:ff0|q ; 1       ;
-; mux4_1:mux0|Mux7~0       ; 1       ;
 ; reg8:reg3|flipflop:ff0|q ; 1       ;
-; reg8:reg2|flipflop:ff0|q ; 1       ;
+; mux4_1:mux0|Mux7~0       ; 1       ;
+; reg8:reg0|flipflop:ff0|q ; 1       ;
 ; reg8:reg1|flipflop:ff0|q ; 1       ;
+; reg8:reg2|flipflop:ff0|q ; 1       ;
 +--------------------------+---------+
 
 
@@ -1524,9 +1524,9 @@ Critical Warning (169085): No exact pin location assignment(s) for 23 pins of 23
     Info (169086): Pin R_addr[0] not assigned to an exact location on the device
     Info (169086): Pin W_data[0] not assigned to an exact location on the device
     Info (169086): Pin clk not assigned to an exact location on the device
-    Info (169086): Pin W_addr[0] not assigned to an exact location on the device
-    Info (169086): Pin W_en not assigned to an exact location on the device
     Info (169086): Pin W_addr[1] not assigned to an exact location on the device
+    Info (169086): Pin W_en not assigned to an exact location on the device
+    Info (169086): Pin W_addr[0] not assigned to an exact location on the device
     Info (169086): Pin W_data[1] not assigned to an exact location on the device
     Info (169086): Pin W_data[2] not assigned to an exact location on the device
     Info (169086): Pin W_data[3] not assigned to an exact location on the device
@@ -1555,7 +1555,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 6 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 7 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  58 pins available
         Info (176213): I/O bank number 8 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  56 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
@@ -1582,14 +1582,14 @@ Warning (306006): Found 8 output pins without output pin load capacitance assign
 Info (306005): Delay annotation completed successfully
 Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/output_files/regfile.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 707 megabytes
-    Info: Processing ended: Sat Aug 10 13:38:57 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:06
+    Info: Processing ended: Sat Aug 10 14:09:06 2024
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:04
 
 
 +----------------------------+
