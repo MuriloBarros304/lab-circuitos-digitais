@@ -1,5 +1,5 @@
 Analysis & Synthesis report for regfile
-Sat Aug 10 11:40:21 2024
+Sat Aug 10 13:38:47 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,7 +10,17 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 10. Port Connectivity Checks: "reg8:reg3"
+ 11. Port Connectivity Checks: "reg8:reg2"
+ 12. Port Connectivity Checks: "reg8:reg1"
+ 13. Port Connectivity Checks: "reg8:reg0"
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +46,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Sat Aug 10 11:40:21 2024               ;
+; Analysis & Synthesis Status        ; Successful - Sat Aug 10 13:38:47 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; regfile                                         ;
 ; Top-level Entity Name              ; regfile                                         ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 52                                              ;
+;     Total combinational functions  ; 20                                              ;
+;     Dedicated logic registers      ; 32                                              ;
+; Total registers                    ; 32                                              ;
+; Total pins                         ; 23                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,13 +159,172 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                            ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+; regfile.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/regfile.vhd ;         ;
+; decode4.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/decode4.vhd ;         ;
+; reg8.vhd                         ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/reg8.vhd    ;         ;
+; mux4_1.vhd                       ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/mux4_1.vhd  ;         ;
++----------------------------------+-----------------+-----------------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 52    ;
+;                                             ;       ;
+; Total combinational functions               ; 20    ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 16    ;
+;     -- 3 input functions                    ; 4     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 20    ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 32    ;
+;     -- Dedicated logic registers            ; 32    ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 23    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 32    ;
+; Total fan-out                               ; 180   ;
+; Average fan-out                             ; 2.40  ;
++---------------------------------------------+-------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name             ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
+; |regfile                   ; 20 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 23   ; 0            ; |regfile                        ; work         ;
+;    |decode4:deco0|         ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|decode4:deco0          ; work         ;
+;    |mux4_1:mux0|           ; 16 (16)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|mux4_1:mux0            ; work         ;
+;    |reg8:reg0|             ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0              ; work         ;
+;       |flipflop:ff0|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff0 ; work         ;
+;       |flipflop:ff1|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff1 ; work         ;
+;       |flipflop:ff2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff2 ; work         ;
+;       |flipflop:ff3|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff3 ; work         ;
+;       |flipflop:ff4|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff4 ; work         ;
+;       |flipflop:ff5|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff5 ; work         ;
+;       |flipflop:ff6|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff6 ; work         ;
+;       |flipflop:ff7|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg0|flipflop:ff7 ; work         ;
+;    |reg8:reg1|             ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1              ; work         ;
+;       |flipflop:ff0|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff0 ; work         ;
+;       |flipflop:ff1|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff1 ; work         ;
+;       |flipflop:ff2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff2 ; work         ;
+;       |flipflop:ff3|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff3 ; work         ;
+;       |flipflop:ff4|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff4 ; work         ;
+;       |flipflop:ff5|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff5 ; work         ;
+;       |flipflop:ff6|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff6 ; work         ;
+;       |flipflop:ff7|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg1|flipflop:ff7 ; work         ;
+;    |reg8:reg2|             ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2              ; work         ;
+;       |flipflop:ff0|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff0 ; work         ;
+;       |flipflop:ff1|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff1 ; work         ;
+;       |flipflop:ff2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff2 ; work         ;
+;       |flipflop:ff3|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff3 ; work         ;
+;       |flipflop:ff4|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff4 ; work         ;
+;       |flipflop:ff5|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff5 ; work         ;
+;       |flipflop:ff6|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff6 ; work         ;
+;       |flipflop:ff7|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg2|flipflop:ff7 ; work         ;
+;    |reg8:reg3|             ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3              ; work         ;
+;       |flipflop:ff0|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff0 ; work         ;
+;       |flipflop:ff1|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff1 ; work         ;
+;       |flipflop:ff2|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff2 ; work         ;
+;       |flipflop:ff3|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff3 ; work         ;
+;       |flipflop:ff4|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff4 ; work         ;
+;       |flipflop:ff5|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff5 ; work         ;
+;       |flipflop:ff6|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff6 ; work         ;
+;       |flipflop:ff7|       ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |regfile|reg8:reg3|flipflop:ff7 ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 32    ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 32    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |regfile|mux4_1:mux0|Mux7  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg8:reg3"                                                                                                                                   ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg8:reg2"                                                                                                                                   ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg8:reg1"                                                                                                                                   ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg8:reg0"                                                                                                                                   ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
++-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sat Aug 10 11:40:20 2024
+    Info: Processing started: Sat Aug 10 13:38:44 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off regfile -c regfile
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file regfile.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -171,11 +340,27 @@ Warning (12125): Using design file reg8.vhd, which is not specified as a design 
     Info (12022): Found design unit 2: reg8-structural
     Info (12023): Found entity 1: flipflop
     Info (12023): Found entity 2: reg8
-Error (10482): VHDL error at reg8.vhd(29): object "std_logic_vector" is used but not declared File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/memorias/reg8.vhd Line: 29
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 4 warnings
-    Error: Peak virtual memory: 587 megabytes
-    Error: Processing ended: Sat Aug 10 11:40:21 2024
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Info (12128): Elaborating entity "reg8" for hierarchy "reg8:reg0"
+Info (12128): Elaborating entity "flipflop" for hierarchy "reg8:reg0|flipflop:ff0"
+Warning (10492): VHDL Process Statement warning at reg8.vhd(22): signal "load" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (12125): Using design file mux4_1.vhd, which is not specified as a design file for the current project, but contains definitions for 3 design units and 1 entities in project
+    Info (12022): Found design unit 1: bus_array_pkg
+    Info (12022): Found design unit 2: mux4_1-main
+    Info (12023): Found entity 1: mux4_1
+Info (12128): Elaborating entity "mux4_1" for hierarchy "mux4_1:mux0"
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "R_en"
+Info (21057): Implemented 75 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 15 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 52 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 9 warnings
+    Info: Peak virtual memory: 633 megabytes
+    Info: Processing ended: Sat Aug 10 13:38:47 2024
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:02
 
 

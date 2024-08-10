@@ -1,0 +1,559 @@
+|regfile
+clk => reg8:reg0.clk
+clk => reg8:reg1.clk
+clk => reg8:reg2.clk
+clk => reg8:reg3.clk
+W_data[0] => reg8:reg0.D[0]
+W_data[0] => reg8:reg1.D[0]
+W_data[0] => reg8:reg2.D[0]
+W_data[0] => reg8:reg3.D[0]
+W_data[1] => reg8:reg0.D[1]
+W_data[1] => reg8:reg1.D[1]
+W_data[1] => reg8:reg2.D[1]
+W_data[1] => reg8:reg3.D[1]
+W_data[2] => reg8:reg0.D[2]
+W_data[2] => reg8:reg1.D[2]
+W_data[2] => reg8:reg2.D[2]
+W_data[2] => reg8:reg3.D[2]
+W_data[3] => reg8:reg0.D[3]
+W_data[3] => reg8:reg1.D[3]
+W_data[3] => reg8:reg2.D[3]
+W_data[3] => reg8:reg3.D[3]
+W_data[4] => reg8:reg0.D[4]
+W_data[4] => reg8:reg1.D[4]
+W_data[4] => reg8:reg2.D[4]
+W_data[4] => reg8:reg3.D[4]
+W_data[5] => reg8:reg0.D[5]
+W_data[5] => reg8:reg1.D[5]
+W_data[5] => reg8:reg2.D[5]
+W_data[5] => reg8:reg3.D[5]
+W_data[6] => reg8:reg0.D[6]
+W_data[6] => reg8:reg1.D[6]
+W_data[6] => reg8:reg2.D[6]
+W_data[6] => reg8:reg3.D[6]
+W_data[7] => reg8:reg0.D[7]
+W_data[7] => reg8:reg1.D[7]
+W_data[7] => reg8:reg2.D[7]
+W_data[7] => reg8:reg3.D[7]
+W_addr[0] => decode4:deco0.i[0]
+W_addr[1] => decode4:deco0.i[1]
+W_en => decode4:deco0.en
+R_addr[0] => mux4_1:mux0.S[0]
+R_addr[1] => mux4_1:mux0.S[1]
+R_en => ~NO_FANOUT~
+R_data[0] <= mux4_1:mux0.Z[0]
+R_data[1] <= mux4_1:mux0.Z[1]
+R_data[2] <= mux4_1:mux0.Z[2]
+R_data[3] <= mux4_1:mux0.Z[3]
+R_data[4] <= mux4_1:mux0.Z[4]
+R_data[5] <= mux4_1:mux0.Z[5]
+R_data[6] <= mux4_1:mux0.Z[6]
+R_data[7] <= mux4_1:mux0.Z[7]
+
+
+|regfile|decode4:deco0
+en => D~1.IN1
+en => D~3.IN1
+en => D~5.IN1
+en => D~7.IN1
+i[0] => D~2.IN0
+i[0] => D~6.IN0
+i[0] => D~4.IN0
+i[0] => D~0.IN0
+i[1] => D~4.IN1
+i[1] => D~6.IN1
+i[1] => D~2.IN1
+i[1] => D~0.IN1
+D[0] <= D~1.DB_MAX_OUTPUT_PORT_TYPE
+D[1] <= D~3.DB_MAX_OUTPUT_PORT_TYPE
+D[2] <= D~5.DB_MAX_OUTPUT_PORT_TYPE
+D[3] <= D~7.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+d[4] => flipflop:ff4.d
+d[5] => flipflop:ff5.d
+d[6] => flipflop:ff6.d
+d[7] => flipflop:ff7.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+clk => flipflop:ff4.clk
+clk => flipflop:ff5.clk
+clk => flipflop:ff6.clk
+clk => flipflop:ff7.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+load => flipflop:ff4.load
+load => flipflop:ff5.load
+load => flipflop:ff6.load
+load => flipflop:ff7.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+reset => flipflop:ff4.reset
+reset => flipflop:ff5.reset
+reset => flipflop:ff6.reset
+reset => flipflop:ff7.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+q[4] <= flipflop:ff4.q
+q[5] <= flipflop:ff5.q
+q[6] <= flipflop:ff6.q
+q[7] <= flipflop:ff7.q
+
+
+|regfile|reg8:reg0|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff5
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff6
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg0|flipflop:ff7
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+d[4] => flipflop:ff4.d
+d[5] => flipflop:ff5.d
+d[6] => flipflop:ff6.d
+d[7] => flipflop:ff7.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+clk => flipflop:ff4.clk
+clk => flipflop:ff5.clk
+clk => flipflop:ff6.clk
+clk => flipflop:ff7.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+load => flipflop:ff4.load
+load => flipflop:ff5.load
+load => flipflop:ff6.load
+load => flipflop:ff7.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+reset => flipflop:ff4.reset
+reset => flipflop:ff5.reset
+reset => flipflop:ff6.reset
+reset => flipflop:ff7.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+q[4] <= flipflop:ff4.q
+q[5] <= flipflop:ff5.q
+q[6] <= flipflop:ff6.q
+q[7] <= flipflop:ff7.q
+
+
+|regfile|reg8:reg1|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff5
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff6
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg1|flipflop:ff7
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+d[4] => flipflop:ff4.d
+d[5] => flipflop:ff5.d
+d[6] => flipflop:ff6.d
+d[7] => flipflop:ff7.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+clk => flipflop:ff4.clk
+clk => flipflop:ff5.clk
+clk => flipflop:ff6.clk
+clk => flipflop:ff7.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+load => flipflop:ff4.load
+load => flipflop:ff5.load
+load => flipflop:ff6.load
+load => flipflop:ff7.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+reset => flipflop:ff4.reset
+reset => flipflop:ff5.reset
+reset => flipflop:ff6.reset
+reset => flipflop:ff7.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+q[4] <= flipflop:ff4.q
+q[5] <= flipflop:ff5.q
+q[6] <= flipflop:ff6.q
+q[7] <= flipflop:ff7.q
+
+
+|regfile|reg8:reg2|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff5
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff6
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg2|flipflop:ff7
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3
+d[0] => flipflop:ff0.d
+d[1] => flipflop:ff1.d
+d[2] => flipflop:ff2.d
+d[3] => flipflop:ff3.d
+d[4] => flipflop:ff4.d
+d[5] => flipflop:ff5.d
+d[6] => flipflop:ff6.d
+d[7] => flipflop:ff7.d
+clk => flipflop:ff0.clk
+clk => flipflop:ff1.clk
+clk => flipflop:ff2.clk
+clk => flipflop:ff3.clk
+clk => flipflop:ff4.clk
+clk => flipflop:ff5.clk
+clk => flipflop:ff6.clk
+clk => flipflop:ff7.clk
+load => flipflop:ff0.load
+load => flipflop:ff1.load
+load => flipflop:ff2.load
+load => flipflop:ff3.load
+load => flipflop:ff4.load
+load => flipflop:ff5.load
+load => flipflop:ff6.load
+load => flipflop:ff7.load
+reset => flipflop:ff0.reset
+reset => flipflop:ff1.reset
+reset => flipflop:ff2.reset
+reset => flipflop:ff3.reset
+reset => flipflop:ff4.reset
+reset => flipflop:ff5.reset
+reset => flipflop:ff6.reset
+reset => flipflop:ff7.reset
+q[0] <= flipflop:ff0.q
+q[1] <= flipflop:ff1.q
+q[2] <= flipflop:ff2.q
+q[3] <= flipflop:ff3.q
+q[4] <= flipflop:ff4.q
+q[5] <= flipflop:ff5.q
+q[6] <= flipflop:ff6.q
+q[7] <= flipflop:ff7.q
+
+
+|regfile|reg8:reg3|flipflop:ff0
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff1
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff2
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff3
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff4
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff5
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff6
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|reg8:reg3|flipflop:ff7
+d => q~reg0.DATAIN
+clk => q~reg0.CLK
+load => q~reg0.ENA
+reset => q~reg0.ACLR
+q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|regfile|mux4_1:mux0
+A[0][0] => Mux7.IN3
+A[0][1] => Mux6.IN3
+A[0][2] => Mux5.IN3
+A[0][3] => Mux4.IN3
+A[0][4] => Mux3.IN3
+A[0][5] => Mux2.IN3
+A[0][6] => Mux1.IN3
+A[0][7] => Mux0.IN3
+A[1][0] => Mux7.IN2
+A[1][1] => Mux6.IN2
+A[1][2] => Mux5.IN2
+A[1][3] => Mux4.IN2
+A[1][4] => Mux3.IN2
+A[1][5] => Mux2.IN2
+A[1][6] => Mux1.IN2
+A[1][7] => Mux0.IN2
+A[2][0] => Mux7.IN1
+A[2][1] => Mux6.IN1
+A[2][2] => Mux5.IN1
+A[2][3] => Mux4.IN1
+A[2][4] => Mux3.IN1
+A[2][5] => Mux2.IN1
+A[2][6] => Mux1.IN1
+A[2][7] => Mux0.IN1
+A[3][0] => Mux7.IN0
+A[3][1] => Mux6.IN0
+A[3][2] => Mux5.IN0
+A[3][3] => Mux4.IN0
+A[3][4] => Mux3.IN0
+A[3][5] => Mux2.IN0
+A[3][6] => Mux1.IN0
+A[3][7] => Mux0.IN0
+S[0] => Mux0.IN5
+S[0] => Mux1.IN5
+S[0] => Mux2.IN5
+S[0] => Mux3.IN5
+S[0] => Mux4.IN5
+S[0] => Mux5.IN5
+S[0] => Mux6.IN5
+S[0] => Mux7.IN5
+S[1] => Mux0.IN4
+S[1] => Mux1.IN4
+S[1] => Mux2.IN4
+S[1] => Mux3.IN4
+S[1] => Mux4.IN4
+S[1] => Mux5.IN4
+S[1] => Mux6.IN4
+S[1] => Mux7.IN4
+Z[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
+Z[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+Z[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+Z[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+Z[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+

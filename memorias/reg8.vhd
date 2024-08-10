@@ -1,8 +1,10 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+
 -- flipflop
 entity flipflop is
-    port (
+    port(
         d : in std_logic;       -- entrada de dados
         clk : in std_logic;     -- sinal de clock
         load : in std_logic;    -- sinal de habilitação
@@ -23,6 +25,9 @@ begin
     end process;
 end behavioral;
 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
 -- registrador de 8 bits
 entity reg8 is
     port(
