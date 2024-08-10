@@ -1,3 +1,6 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
 -- comparador de 1 std_logic
 entity compare is
     port(
@@ -11,6 +14,8 @@ begin
     out_eq <= in_eq and (a xnor b);
 end behav;
 
+library ieee;
+use ieee.std_logic_1164.all;
 -- comparador de 8 bits
 entity comparator8 is
     port(
@@ -28,8 +33,8 @@ architecture hardware of comparator8 is
         );
     end component;    
     signal gt, eq : std_logic_vector (7 downto 1);
-    signal init_eq : std_logic := '1';
-    signal init_gt : std_logic := '0';
+    signal init_eq : std_logic:= '1';
+    signal init_gt : std_logic:= '0';
 begin
     c7: compare port map(a => a(7), b => b(7), in_eq => init_eq, in_gt => init_gt, out_eq => eq(7), out_gt => gt(7));
     c6: compare port map(a => a(6), b => b(6), in_eq => eq(7), in_gt => gt(7), out_eq => eq(6), out_gt => gt(6));
