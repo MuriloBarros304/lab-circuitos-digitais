@@ -18,10 +18,10 @@ ARCHITECTURE behav OF RAM16x8 IS
 BEGIN
 PROCESS(clock) IS
 BEGIN
-    IF (RISING_EDGE(clock) AND mem_enable = ‘1’) THEN
-        IF (rw_enable = ‘0’) THEN
+    IF (RISING_EDGE(clock) AND mem_enable = '1') THEN
+        IF (rw_enable = '0') THEN
             temp_address <= address;
-        ELSIF (rw_enable = ‘1’) THEN
+        ELSIF (rw_enable = '1') THEN
             ram(conv_integer(unsigned(address))) <= data_input;
         END IF;
         data_output <= ram(conv_integer(unsigned(temp_address)));

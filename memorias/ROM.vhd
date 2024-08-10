@@ -20,7 +20,7 @@ ARCHITECTURE behav OF ROM16x8 IS
 BEGIN
 PROCESS(clock) IS
 BEGIN
-    IF (RISING_EDGE(clock) AND rom_enable = ‘1’) THEN
+    IF (RISING_EDGE(clock) AND rom_enable = '1') THEN
         data_output <= mem(conv_integer(unsigned(address)));
     END IF;
 END PROCESS;
