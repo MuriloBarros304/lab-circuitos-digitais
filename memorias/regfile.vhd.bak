@@ -5,9 +5,9 @@ entity regfile is
     port(
         clk : in std_logic;
         W_data : in std_logic_vector(7 downto 0);
-        W_addr : in std_logic_vector(1 downto 0);
+        W_addr : in std_logic_vector(2 downto 0);
         W_en : in std_logic;
-        R_addr : in std_logic_vector(1 downto 0);
+        R_addr : in std_logic_vector(2 downto 0);
         R_en : in std_logic;
         R_data : out std_logic_vector(7 downto 0));
 end regfile;
@@ -34,7 +34,7 @@ end component;
 
 component mux4_1 is
     port(
-        A : tmp_array;
+        A : in tmp_array(0 to 3);
         S : in std_logic_vector(1 downto 0);
         Z : out std_logic_vector(7 downto 0));
 end component;

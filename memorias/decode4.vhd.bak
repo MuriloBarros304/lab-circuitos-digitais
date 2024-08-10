@@ -9,7 +9,7 @@ entity decode4 is
         D : out std_logic_vector(3 downto 0));
 end entity;
 
-architecture combinational of decode4 is
+architecture combinational of decoder4 is
 begin
     D(0) <= en and (not(i(1)) and not(i(0)));
     D(1) <= en and (not(i(1)) and i(0));
