@@ -73,67 +73,70 @@ entity combinacional is
         D_rd, D_wr : out std_logic;                  -- sinais de leitura e escrita na memória de dados (D)
         RF_s0, RF_s1 : out std_logic;                -- sinais de seleção do mux acima do registrador de dados (RF)
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic; -- sinais de controle do registrador de dados (RF)
-        alu_s0, alu_s1 : out std_logic               -- sinais de controle da ALU
+        alu_s0, alu_s1 : out std_logic;              -- sinais de controle da ALU
         M_s : out std_logic                          -- sinal de controle do mux que seleciona a incrementação do PC
     );
 end combinacional;
 architecture comb of combinacional is
     begin
-        n3 = (not(s3) and not(s2) and s1 and not(s0) and op3 and not(op2) and not(op1) and not(op0))
+        n3 <= (not(s3) and (not(s2)) and s1 and (not(s0)) and op3 and (not(op2)) and (not(op1)) and (not(op0)))
         or (s3 and not(s2) and not(s1) and not(s0) and (RF_Rp_zero or RF_Rp_gt_Rq));
 
-        n2 = not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2;
+        n2 <= not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2;
 
-        n1 = (not(s3) and not(s2) and ((not(s1) and s0) or ((s1 and not(s0) and not(op3) and not(op2) and op1 and op0)
+        n1 <= (not(s3) and not(s2) and ((not(s1) and s0) or ((s1 and not(s0) and not(op3) and not(op2) and op1 and op0)
         or (s1 and not(s0) and not(op3) and op2 and op1)))) or (s3 and not(s2) and not(s1) and not(s0) and ((RF_Rp_zero)
         or (RF_Rp_gt_Rq)));
 
-        n0 = (not(s3) and not(s2) and not(s1) and not(s0)) or ((not(s3) and not(s2) and s1 and not(s0)) and ((not(op3) 
+        n0 <= (not(s3) and not(s2) and not(s1) and not(s0)) or ((not(s3) and not(s2) and s1 and not(s0)) and ((not(op3) 
         and op1 and op0) or (not(op3) and op2 and not(op1) and op0) or (op3 and not(op2) and not(op1) and op0))) or
-        (not(s3) and not(s2) and s1 and s0) or (not(s3) and s2) or (s3 and not(s2) and not(s1) and not(s0) and 
-        RF_Rp_zero) or (s3 and not(s2) and not(s1) s0) or (s3 and not(s2) and s1);
+        (not(s3) and not(s2) and s1 and s0) or (not(s3) and s2) or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero)
+		  or ((s3 and not(s2) and not(s1) and s0) or (s3 and not(s2) and s1));
 
-        I_rd = not(s3) and not(s2) and not(s1) and s0;
+        I_rd <= not(s3) and not(s2) and not(s1) and s0;
 
-        PC_inc = not(s3) and not(s2) and not(s1) and s0;
+        PC_inc <= not(s3) and not(s2) and not(s1) and s0;
 
-        PC_clr = not(s3) and not(s2) and not(s1) and not(s0);
+        PC_clr <= not(s3) and not(s2) and not(s1) and not(s0);
 
-        PC_ld = s3 and not(s2) and s1;
+        PC_ld <= s3 and not(s2) and s1;
 
-        IR_ld = not(s3) and not(s2) and not(s1) and s0;
+        IR_ld <= not(s3) and not(s2) and not(s1) and s0;
 
-        D_rd = not(s3) and not(s2) and s1 and s0;
+        D_rd <= not(s3) and not(s2) and s1 and s0;
 
-        D_wr = not(s3) and s2 and not(s1) and not(s0);
+        D_wr <= not(s3) and s2 and not(s1) and not(s0);
 
-        RF_W_wr = (not(s3) and s1 and ((not(s2) and s0) or (s2)));
+        RF_W_wr <= (not(s3) and s1 and ((not(s2) and s0) or (s2)));
 
-        RF_Rp_rd = (not(s3) and s2 and (not(s1) or (s1 and s0))) or (s3 and not(s2) and not(s1));
+        RF_Rp_rd <= (not(s3) and s2 and (not(s1) or (s1 and s0))) or (s3 and not(s2) and not(s1));
 
-        RF_Rq_rd = s0 and ((not(s3) and s2) or (s3 and not(s2) and not(s1)));
+        RF_Rq_rd <= s0 and ((not(s3) and s2) or (s3 and not(s2) and not(s1)));
 
-        RF_s0 = not(s3) and not(s2) and s1 and s0;
+        RF_s0 <= not(s3) and not(s2) and s1 and s0;
 
-        RF_s1 = not(s3) and s2 and s1 and not(s0);
+        RF_s1 <= not(s3) and s2 and s1 and not(s0);
 
-        alu_s0 = not(s3) and s2 and not(s1) and s0;
+        alu_s0 <= not(s3) and s2 and not(s1) and s0;
 
-        alu_s1 = not(s3) and s2 and s1 and s0;
+        alu_s1 <= not(s3) and s2 and s1 and s0;
 
-        M_s = s3 and not(s2) and s1 and s0;
+        M_s <= s3 and not(s2) and s1 and s0;
 end comb;
 
 -- registrador de instrução
-entity ir is
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+entity instreg is
     port(
         clk : in std_logic;
         IR_ld : in std_logic;                   -- sinal de load
         I : in std_logic_vector(15 downto 0);  -- entrada de dados
         IR : out std_logic_vector(15 downto 0) -- saída do registrador
     );
-end ir;
-architecture ir of ir is
+end instreg;
+architecture behav of instreg is
     component flipflop
         port (
             d : in std_logic;       -- entrada de dados
@@ -163,25 +166,25 @@ begin
     ff15: flipflop port map (d => I(15), clk => clk, load => IR_ld, q => q_internal(15));
 
     IR <= q_internal;
-end ir;
+end behav;
 
 -- contador de programa (PC)
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;
 
 entity pc is
     port (
-        clk : in std_logic;
-        ld : in std_logic;
-        clr : in std_logic;
-        up : in std_logic;
-        load_val : in std_logic_vector(15 downto 0);
-        count : out std_logic_vector(15 downto 0)
+        clk      : in  std_logic;
+        ld       : in  std_logic;
+        clr      : in  std_logic;
+        up       : in  std_logic;
+        load_val : in  std_logic_vector(15 downto 0);
+        count    : out std_logic_vector(15 downto 0)
     );
 end pc;
-architecture pc of pc is
-    signal counter: std_logic_vector(15 downto 0) := (others => '0');
+architecture behavioral of pc is
+    signal counter: unsigned(15 downto 0) := (others => '0');
 begin
     process(clk, clr)
     begin
@@ -189,32 +192,32 @@ begin
             counter <= (others => '0');
         elsif rising_edge(clk) then
             if ld = '1' then
-                counter <= load_val; -- recebe o valor da carga
+                counter <= unsigned(load_val);  -- Converte 'load_val' para unsigned
             elsif up = '1' then
-                counter <= counter + 1; -- incrementa
+                counter <= counter + 1;  -- Incrementa o contador
             end if;
         end if;
     end process;
-    count <= counter;
-end pc;
+    count <= std_logic_vector(counter);  -- Converte 'counter' para std_logic_vector para saída
+end behavioral;
+
 
 -- somador de 16 bits
 library ieee;
 use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
+use ieee.numeric_std.all;  
 entity adder is
     port(
-        a : in std_logic_vector(15 downto 0);
-        b : in std_logic_vector(15 downto 0);
+        a   : in  std_logic_vector(15 downto 0);
+        b   : in  std_logic_vector(15 downto 0);
         sum : out std_logic_vector(15 downto 0)
     );
 end adder;
-
-architecture behavioral of adder_16bit is
+architecture behavioral of adder is
 begin
     process(a, b)
     begin
-        sum <= a + b;
+        sum <= std_logic_vector(unsigned(a) + unsigned(b));  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
     end process;
 end behavioral;
 
@@ -248,7 +251,8 @@ use ieee.std_logic_arith.all;
 entity control is
     port(
         clk : in std_logic;
-        IR : in std_logic_vector(15 downto 0);
+        IR : in std_logic_vector(15 downto 0); -- recebe de I
+		  In_IR : in std_logic_vector(11 downto 0);
         RF_Rp_zero, RF_Rp_gt_rq : in std_logic;
         RF_Rp_data : in std_logic_vector(15 downto 0); -- necessário para entrar no mux do PC
         I_rd : out std_logic; -- saída de leitura para a memória de instruções
@@ -257,7 +261,7 @@ entity control is
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
         alu_s0, alu_s1 : out std_logic;
         M_s : out std_logic;
-        I_addr : out std_logic_vector(3 downto 0);
+        I_addr : out std_logic_vector(15 downto 0)
     );
 end control;
 architecture controller of control is
@@ -266,6 +270,8 @@ architecture controller of control is
     signal ir_out : std_logic_vector(15 downto 0);
     signal ir_ld, pc_clr, pc_inc, pc_ld : std_logic;
     signal mux_out, mux_in1 : std_logic_vector(15 downto 0);
+    signal pc_out : std_logic_vector(15 downto 0);
+    signal sig_M_s : std_logic;
     component reg4 is
         port(
             d : in std_logic_vector(3 downto 0);
@@ -289,7 +295,7 @@ architecture controller of control is
             alu_s0, alu_s1 : out std_logic;
             M_s : out std_logic);
     end component;
-    component ir is
+    component instreg is
         port(
             clk : in std_logic;
             IR_ld : in std_logic;
@@ -320,22 +326,24 @@ architecture controller of control is
     end component;
 begin
     statereg: reg4 port map(d => n3_d3 & n2_d2 & n1_d1 & n0_d0, clk => clk, load => '1',
-    q => q3_s3 & q2_s2 & q1_s1 & q0_s0);
+    q(3) => q3_s3, q(2) => q2_s2, q(1) => q1_s1, q(0) => q0_s0);
 
     comb: combinacional port map(s3 => q3_s3, s2 => q2_s2, s1 => q1_s1, s0 => q0_s0, -- lembrar de mapear o restante de IR
-    clk => clk, op3 => ir_out(15), op2 => ir_out(14), op1 => ir_out(13), op0 => ir_out(12), 
+    op3 => ir_out(15), op2 => ir_out(14), op1 => ir_out(13), op0 => ir_out(12), IR=>In_IR, -- temporario 
     RF_Rp_zero => RF_Rp_zero, RF_Rp_gt_rq => RF_Rp_gt_rq, n3 => n3_d3, n2 => n2_d2,
     n1 => n1_d1, n0 => n0_d0, PC_ld => pc_ld, PC_clr => pc_clr, PC_inc => pc_inc,
     I_rd => i_rd, IR_ld => ir_ld, D_rd => D_rd, D_wr => D_wr, RF_s0 => RF_s0,
     RF_s1 => RF_s1, RF_W_wr => RF_W_wr, RF_Rp_rd => RF_Rp_rd, RF_Rq_rd => RF_Rq_rd,
-    alu_s0 => alu_s0, alu_s1 => alu_s1, M_s => M_s);
+    alu_s0 => alu_s0, alu_s1 => alu_s1, M_s => sig_M_s);
 
-    instructionreg : ir port map(clk => clk, IR_ld => IR_ld, I => IR, IR => ir_out);
+    instructionreg : instreg port map(clk => clk, IR_ld => IR_ld, I => IR, IR => ir_out);
 
     programcounter : pc port map(clk => clk, ld => pc_ld, clr => pc_clr, up => pc_inc,
-    load_val => mux_out, count => I_addr);
+    load_val => mux_out, count => pc_out);
 
-    adder : adder port map(a => I_addr, b => ir_out, sum => mux_in1);
+    add : adder port map(a => pc_out, b => ir_out, sum => mux_in1);
 
-    mux : mux port map(sel => M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
+    multiplexador : mux port map(sel => sig_M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
+    I_addr <= pc_out;
+    M_s <= sig_M_s;
 end controller;
