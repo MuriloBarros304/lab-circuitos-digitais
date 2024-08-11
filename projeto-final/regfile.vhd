@@ -4,16 +4,16 @@ use ieee.std_logic_1164.all;
 entity regfile is
     port(
         clk : in std_logic;
-        W_data : in std_logic_vector(7 downto 0);
+        W_data : in std_logic_vector(15 downto 0);
         W_addr : in std_logic_vector(3 downto 0);
         W_en : in std_logic;
         R_addr : in std_logic_vector(3 downto 0);
         R_en : in std_logic;
-        R_data : out std_logic_vector(7 downto 0));
+        R_data : out std_logic_vector(15 downto 0));
 end regfile;
 
 architecture behav of regfile is
-    type tmp_array is array(0 to 15) of std_logic_vector(7 downto 0); -- array de 16 sinais de 8 bits
+    type tmp_array is array(15 downto 0) of std_logic_vector(15 downto 0); -- array de 16 sinais de 8 bits (testando com array(0 to 15) os endereços ficavam invertidos)
 
     signal out_deco: std_logic_vector(3 downto 0);
     signal out_regs: tmp_array;
@@ -41,12 +41,12 @@ end component;
 
 begin
 
-    deco0	: decode16 port map(en=>W_en, i=>W_addr, D=>out_deco);
+    deco0 : decode16 port map(en=>W_en, i=>W_addr, D=>out_deco);
     
-    reg0 	: reg16 port map(clk=>clk, load=>out_deco(0), D=>W_data, Q=>out_regs(0));
-    reg1 	: reg16 port map(clk=>clk, load=>out_deco(1), D=>W_data, Q=>out_regs(1));
-    reg2 	: reg16 port map(clk=>clk, load=>out_deco(2), D=>W_data, Q=>out_regs(2));
-    reg3 	: reg16 port map(clk=>clk, load=>out_deco(3), D=>W_data, Q=>out_regs(3));
+    reg0 : reg16 port map(clk=>clk, load=>out_deco(0), D=>W_data, Q=>out_regs(0));
+    reg1 : reg16 port map(clk=>clk, load=>out_deco(1), D=>W_data, Q=>out_regs(1));
+    reg2 : reg16 port map(clk=>clk, load=>out_deco(2), D=>W_data, Q=>out_regs(2));
+    reg3 : reg16 port map(clk=>clk, load=>out_deco(3), D=>W_data, Q=>out_regs(3));
     
     mux0	: mux16_1 port map(A=>out_regs, S=>R_addr, Z=>R_data);
 	

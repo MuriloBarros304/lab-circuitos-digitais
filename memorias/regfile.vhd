@@ -48,6 +48,7 @@ begin
     reg1 : reg8 port map(clk=>clk, load=>out_deco(1), D=>W_data, Q=>out_regs(1));
     reg2 : reg8 port map(clk=>clk, load=>out_deco(2), D=>W_data, Q=>out_regs(2));
     reg3 : reg8 port map(clk=>clk, load=>out_deco(3), D=>W_data, Q=>out_regs(3));
+    reg4 : reg8 port map(clk=>clk, load=>out_deco(4), D=>W_data, Q=>out_regs(4));
     
     -- mux para leitura dos dados, a seleção é feita pelo endereço de leitura
     mux0 : mux4_1 port map(A=>out_regs, S=>R_addr, Z=>R_data);
