@@ -6,18 +6,19 @@ ENTITY ROM IS
 PORT(
            clock : IN STD_LOGIC; 
            rom_enable : IN STD_LOGIC;
-           address : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-           data_output : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+           address : IN STD_LOGIC_VECTOR(3 DOWNTO 0); -- mudar para 15 downto 0?
+           data_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 );
 END ROM;
 ARCHITECTURE behav OF ROM IS
-     TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0); -- 16 endereços de 8 bits
+     TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(15 DOWNTO 0); -- 16 endereços de 16 bits (utilizar 15 downto 0?)
     
      CONSTANT mem: rom_type :=
-           (2 => "01011001", -- Aloca um dado no endereço 2
-            3 => "00000100", -- Aloca um dado no endereço 3
-            4 => "00100101", -- Aloca um dado no endereço 4
-            others => "00000000"  -- Aloca 0 no outros endereços
+           (1 => "000000010001"
+            2 => "001100011001", 
+            3 => "000000000100", 
+            4 => "000000100101", 
+            others => "000000000000"
             );
 
 BEGIN

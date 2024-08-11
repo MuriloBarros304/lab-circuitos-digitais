@@ -8,12 +8,12 @@ ENTITY RAM IS
           rw_enable : IN STD_LOGIC;
           mem_enable : IN STD_LOGIC;
           address : IN STD_LOGIC_VECTOR(3 DOWNTO 0);
-          data_input : IN STD_LOGIC_VECTOR(7 DOWNTO 0);
-          data_output : OUT STD_LOGIC_VECTOR(7 DOWNTO 0)
+          data_input : IN STD_LOGIC_VECTOR(15 DOWNTO 0);
+          data_output : OUT STD_LOGIC_VECTOR(15 DOWNTO 0)
 );
 END RAM;
 ARCHITECTURE behav OF RAM IS
-     TYPE ram_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(7 DOWNTO 0);
+     TYPE ram_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
      SIGNAL ram: ram_type;
      SIGNAL temp_address: STD_LOGIC_VECTOR(3 DOWNTO 0);
 
