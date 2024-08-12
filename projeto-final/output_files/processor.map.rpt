@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Mon Aug 12 10:45:22 2024
+Mon Aug 12 11:04:27 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -10,38 +10,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff15"
- 10. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff14"
- 11. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff13"
- 12. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff12"
- 13. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff11"
- 14. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff10"
- 15. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff9"
- 16. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff8"
- 17. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff7"
- 18. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff6"
- 19. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff5"
- 20. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff4"
- 21. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff3"
- 22. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff2"
- 23. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff1"
- 24. Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff0"
- 25. Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff3"
- 26. Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff2"
- 27. Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff1"
- 28. Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff0"
- 29. Port Connectivity Checks: "control:controlunit|reg4:statereg"
- 30. Port Connectivity Checks: "control:controlunit"
- 31. Port Connectivity Checks: "operational:operationalunit|comparator16:comp1"
- 32. Port Connectivity Checks: "operational:operationalunit|comparator16:comp0"
- 33. Port Connectivity Checks: "RAM:randomaccessmemory"
- 34. Port Connectivity Checks: "ROM:readonlymemory"
- 35. Elapsed Time Per Partition
- 36. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -67,20 +36,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 12 10:45:22 2024           ;
+; Analysis & Synthesis Status        ; Failed - Mon Aug 12 11:04:26 2024               ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; processor                                       ;
 ; Top-level Entity Name              ; processor                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 0                                               ;
-;     Total combinational functions  ; 0                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 19                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -180,426 +149,23 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type             ; File Name with Absolute Path                                                          ; Library ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
-; processor.vhd                    ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/processor.vhd     ;         ;
-; ROM.vhd                          ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/ROM.vhd           ;         ;
-; RAM.vhd                          ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/RAM.vhd           ;         ;
-; operational.vhd                  ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/operational.vhd   ;         ;
-; mux3x1_16bits.vhd                ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/mux3x1_16bits.vhd ;         ;
-; regfile.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/regfile.vhd       ;         ;
-; comparator16.vhd                 ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/comparator16.vhd  ;         ;
-; alu.vhd                          ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/alu.vhd           ;         ;
-; control.vhd                      ; yes             ; Auto-Found VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/control.vhd       ;         ;
-+----------------------------------+-----------------+-----------------------+---------------------------------------------------------------------------------------+---------+
-
-
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-;                                             ;       ;
-; Total combinational functions               ; 0     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 19    ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-+---------------------------------------------+-------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |processor                 ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 19   ; 0            ; |processor          ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff15"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff14"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff13"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff12"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff11"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff10"                                                                                    ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff9"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff8"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff7"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff6"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff5"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff4"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff3"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff2"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff1"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|instreg:instructionreg|flipflop:ff0"                                                                                     ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff3"                                                                                              ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff2"                                                                                              ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff1"                                                                                              ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|reg4:statereg|flipflop:ff0"                                                                                              ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit|reg4:statereg"                                                                                                           ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                                                                                                                      ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; load  ; Input ; Info     ; Stuck at VCC                                                                                                                                 ;
-; reset ; Input ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-+-------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "control:controlunit"                                                                ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; i_rd ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "operational:operationalunit|comparator16:comp1"                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; b    ; Input  ; Info     ; Stuck at GND                                                                        ;
-; gt   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "operational:operationalunit|comparator16:comp0"                                     ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; eq   ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "RAM:randomaccessmemory" ;
-+------------+-------+----------+--------------------+
-; Port       ; Type  ; Severity ; Details            ;
-+------------+-------+----------+--------------------+
-; mem_enable ; Input ; Info     ; Stuck at VCC       ;
-+------------+-------+----------+--------------------+
-
-
-+------------------------------------------------+
-; Port Connectivity Checks: "ROM:readonlymemory" ;
-+------------+-------+----------+----------------+
-; Port       ; Type  ; Severity ; Details        ;
-+------------+-------+----------+----------------+
-; rom_enable ; Input ; Info     ; Stuck at VCC   ;
-+------------+-------+----------+----------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 12 10:45:21 2024
+    Info: Processing started: Mon Aug 12 11:04:26 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file processor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: processor-hardware
     Info (12023): Found entity 1: processor
-Info (12127): Elaborating entity "processor" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at processor.vhd(9): used implicit default value for signal "D_R_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at processor.vhd(12): used implicit default value for signal "c_rfwdata" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10541): VHDL Signal Declaration warning at processor.vhd(13): used implicit default value for signal "c_daddr" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
-Warning (10036): Verilog HDL or VHDL warning at processor.vhd(16): object "c_ird" assigned a value but never read
-Warning (12125): Using design file ROM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: ROM-behav
-    Info (12023): Found entity 1: ROM
-Info (12128): Elaborating entity "ROM" for hierarchy "ROM:readonlymemory"
-Warning (10492): VHDL Process Statement warning at ROM.vhd(28): signal "rom_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (12125): Using design file RAM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: RAM-behav
-    Info (12023): Found entity 1: RAM
-Info (12128): Elaborating entity "RAM" for hierarchy "RAM:randomaccessmemory"
-Warning (10492): VHDL Process Statement warning at RAM.vhd(22): signal "mem_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (12125): Using design file operational.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: operational-behav
-    Info (12023): Found entity 1: operational
-Info (12128): Elaborating entity "operational" for hierarchy "operational:operationalunit"
-Warning (10036): Verilog HDL or VHDL warning at operational.vhd(23): object "dummy0" assigned a value but never read
-Warning (10036): Verilog HDL or VHDL warning at operational.vhd(23): object "dummy1" assigned a value but never read
-Warning (12125): Using design file mux3x1_16bits.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: mux3x1_16bits-behavior
-    Info (12023): Found entity 1: mux3x1_16bits
-Info (12128): Elaborating entity "mux3x1_16bits" for hierarchy "operational:operationalunit|mux3x1_16bits:mux"
-Warning (12125): Using design file regfile.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: regfile-behavior
-    Info (12023): Found entity 1: regfile
-Info (12128): Elaborating entity "regfile" for hierarchy "operational:operationalunit|regfile:reg"
-Warning (10492): VHDL Process Statement warning at regfile.vhd(29): signal "W_wr" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (12125): Using design file comparator16.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: comparator16-behavior
-    Info (12023): Found entity 1: comparator16
-Info (12128): Elaborating entity "comparator16" for hierarchy "operational:operationalunit|comparator16:comp0"
-Warning (12125): Using design file alu.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
-    Info (12022): Found design unit 1: alu-behavior
-    Info (12023): Found entity 1: alu
-Info (12128): Elaborating entity "alu" for hierarchy "operational:operationalunit|alu:alu0"
-Warning (12090): Entity "mux" obtained from "control.vhd" instead of from Quartus II megafunction library
-Warning (12125): Using design file control.vhd, which is not specified as a design file for the current project, but contains definitions for 16 design units and 8 entities in project
-    Info (12022): Found design unit 1: flipflop-behavioral
-    Info (12022): Found design unit 2: reg4-structural
-    Info (12022): Found design unit 3: combinacional-comb
-    Info (12022): Found design unit 4: instreg-behav
-    Info (12022): Found design unit 5: pc-behavioral
-    Info (12022): Found design unit 6: adder-behavioral
-    Info (12022): Found design unit 7: mux-behavioral
-    Info (12022): Found design unit 8: control-controller
-    Info (12023): Found entity 1: flipflop
-    Info (12023): Found entity 2: reg4
-    Info (12023): Found entity 3: combinacional
-    Info (12023): Found entity 4: instreg
-    Info (12023): Found entity 5: pc
-    Info (12023): Found entity 6: adder
-    Info (12023): Found entity 7: mux
-    Info (12023): Found entity 8: control
-Info (12128): Elaborating entity "control" for hierarchy "control:controlunit"
-Info (12128): Elaborating entity "reg4" for hierarchy "control:controlunit|reg4:statereg"
-Info (12128): Elaborating entity "flipflop" for hierarchy "control:controlunit|reg4:statereg|flipflop:ff0"
-Warning (10492): VHDL Process Statement warning at control.vhd(20): signal "load" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Info (12128): Elaborating entity "combinacional" for hierarchy "control:controlunit|combinacional:comb"
-Info (12128): Elaborating entity "instreg" for hierarchy "control:controlunit|instreg:instructionreg"
-Info (12128): Elaborating entity "pc" for hierarchy "control:controlunit|pc:programcounter"
-Info (12128): Elaborating entity "adder" for hierarchy "control:controlunit|adder:add"
-Info (12128): Elaborating entity "mux" for hierarchy "control:controlunit|mux:multiplexador"
-Warning (12241): 21 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "D_R_data[0]" is stuck at GND
-    Warning (13410): Pin "D_R_data[1]" is stuck at GND
-    Warning (13410): Pin "D_R_data[2]" is stuck at GND
-    Warning (13410): Pin "D_R_data[3]" is stuck at GND
-    Warning (13410): Pin "D_R_data[4]" is stuck at GND
-    Warning (13410): Pin "D_R_data[5]" is stuck at GND
-    Warning (13410): Pin "D_R_data[6]" is stuck at GND
-    Warning (13410): Pin "D_R_data[7]" is stuck at GND
-    Warning (13410): Pin "D_R_data[8]" is stuck at GND
-    Warning (13410): Pin "D_R_data[9]" is stuck at GND
-    Warning (13410): Pin "D_R_data[10]" is stuck at GND
-    Warning (13410): Pin "D_R_data[11]" is stuck at GND
-    Warning (13410): Pin "D_R_data[12]" is stuck at GND
-    Warning (13410): Pin "D_R_data[13]" is stuck at GND
-    Warning (13410): Pin "D_R_data[14]" is stuck at GND
-    Warning (13410): Pin "D_R_data[15]" is stuck at GND
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "D_wr"
-    Warning (15610): No output dependent on input pin "D_rd"
-Info (21057): Implemented 19 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
-    Info (21059): Implemented 16 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 43 warnings
-    Info: Peak virtual memory: 613 megabytes
-    Info: Processing ended: Mon Aug 12 10:45:22 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Error (10568): VHDL error at processor.vhd(84): can't write to interface object "D_R_addr" of mode IN File: /home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/processor.vhd Line: 84
+Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 1 error, 2 warnings
+    Error: Peak virtual memory: 586 megabytes
+    Error: Processing ended: Mon Aug 12 11:04:27 2024
+    Error: Elapsed time: 00:00:01
+    Error: Total CPU time (on all processors): 00:00:01
 
 

@@ -5,7 +5,7 @@ use ieee.std_logic_unsigned.all;
 entity processor is
     port(
         clk : in std_logic;
-        D_wr, D_rd : in std_logic;
+        D_R_addr : in std_logic_vector(7 downto 0);
         D_R_data : out std_logic_vector(15 downto 0));
 end processor;
 architecture hardware of processor is
@@ -78,7 +78,10 @@ begin
     out_IR(9) => c_rfrpaddr(1), out_IR(8) => c_rfrpaddr(0), out_IR(7) => c_rfrqaddr(3), out_IR(6) => c_rfrqaddr(2),
     out_IR(5) => c_rfrqaddr(1), out_IR(4) => c_rfrqaddr(0), out_IR(3) => c_rfwaddr(3), out_IR(2) => c_rfwaddr(2),
     out_IR(1) => c_rfwaddr(1), out_IR(0) => c_rfwaddr(0), RF_Rp_zero => rfrpzero_c, RF_Rp_gt_rq => rfrpgtrq_c,
+    out_IR(7) => c_addr(7), out_IR(6) => c_addr(6), out_IR(5) => c_addr(5), out_IR(4) => c_addr(4), out_IR(3) => c_addr(3),
+    out_IR(2) => c_addr(2), out_IR(1) => c_addr(1), out_IR(0) => c_addr(0),
     RF_Rp_data => rfrp_dwdata, I_rd => c_ird, D_rd => c_drd, D_wr => c_dwr, RF_s0 => c_rfs0, RF_s1 => c_rfs1,
     RF_W_wr => c_rfwwr, RF_Rp_rd => c_rfrprd, RF_Rq_rd => c_rfrqrd, alu_s0 => c_alus0, alu_s1 => c_alus1,
     I_addr => pc_iaddr);
+    D_R_addr <= c_daddr;
 end hardware;
