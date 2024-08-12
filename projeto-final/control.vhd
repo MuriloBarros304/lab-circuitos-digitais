@@ -217,7 +217,7 @@ architecture behavioral of adder is
 begin
     process(a, b)
     begin
-        sum <= std_logic_vector(unsigned(a) + unsigned(b)); --- "0000000000001");  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
+        sum <= std_logic_vector(unsigned(a) + unsigned(b) - "0000000000001");  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
     end process;
 end behavioral;
 

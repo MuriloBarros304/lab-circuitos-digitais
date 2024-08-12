@@ -13,11 +13,12 @@ END ROM;
 ARCHITECTURE behav OF ROM IS
      TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(15 DOWNTO 0); -- 16 endereços de 16 bits (utilizar 15 downto 0?)
     
-     CONSTANT mem: rom_type :=
-           (0 => "0000000000000000",
-           1 => "0000000100000001",
-           2 => "0010000000010011",
-           3 => "0001001100000000",
+     CONSTANT mem: rom_type := (
+        0 => "0011000000000101", -- carregar cte 5 em RF[0]
+        1 => "0011000100000110", -- carregar cte 6 em RF[1]
+        2 => "0100000000010000", -- adicionar RF[0] + RF[1] => RF[2]
+        3 => "0011001100000011", -- carregar cte 3 em RF[3]
+        4 => "0100001100100010", -- adicionar RF[2] + RF[3] => RF[4]
            
            others => "0000000000000000"
             );
