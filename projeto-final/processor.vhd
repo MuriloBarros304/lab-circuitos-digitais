@@ -5,7 +5,9 @@ use ieee.std_logic_unsigned.all;
 entity processor is
     port(
         clk : in std_logic;
-        D_R_addr : in std_logic_vector(7 downto 0);
+        PC_addr : out std_logic_vector(15 downto 0);
+        IR_data : out std_logic_vector(15 downto 0);
+        D_W_data : out std_logic_vector(15 downto 0);
         D_R_data : out std_logic_vector(15 downto 0));
 end processor;
 architecture hardware of processor is
@@ -66,7 +68,7 @@ begin
     readonlymemory: ROM port map(clock => clk, rom_enable => '1', address => pc_iaddr,
     data_output => i_ir);
     
-    randomaccessmemory: RAM port map(clock => clk, address => c_daddr, w_enable => c_dwr,
+    randomaccessmemory: RAM port map(clock => clk, address => c_rfrqaddr & c_rfwaddr, w_enable => c_dwr,
     r_enable => c_drd, mem_enable => '1', data_input => rfrp_dwdata, data_output => drdata_mux);
 
     operationalunit: operational port map(clock => clk, R_data => drdata_mux, RF_W_data => c_rfwdata,
@@ -78,10 +80,11 @@ begin
     out_IR(9) => c_rfrpaddr(1), out_IR(8) => c_rfrpaddr(0), out_IR(7) => c_rfrqaddr(3), out_IR(6) => c_rfrqaddr(2),
     out_IR(5) => c_rfrqaddr(1), out_IR(4) => c_rfrqaddr(0), out_IR(3) => c_rfwaddr(3), out_IR(2) => c_rfwaddr(2),
     out_IR(1) => c_rfwaddr(1), out_IR(0) => c_rfwaddr(0), RF_Rp_zero => rfrpzero_c, RF_Rp_gt_rq => rfrpgtrq_c,
-    out_IR(7) => c_addr(7), out_IR(6) => c_addr(6), out_IR(5) => c_addr(5), out_IR(4) => c_addr(4), out_IR(3) => c_addr(3),
-    out_IR(2) => c_addr(2), out_IR(1) => c_addr(1), out_IR(0) => c_addr(0),
     RF_Rp_data => rfrp_dwdata, I_rd => c_ird, D_rd => c_drd, D_wr => c_dwr, RF_s0 => c_rfs0, RF_s1 => c_rfs1,
     RF_W_wr => c_rfwwr, RF_Rp_rd => c_rfrprd, RF_Rq_rd => c_rfrqrd, alu_s0 => c_alus0, alu_s1 => c_alus1,
     I_addr => pc_iaddr);
-    D_R_addr <= c_daddr;
+    D_R_data <= drdata_mux;
+    D_W_data <= rfrp_dwdata;
+    IR_data <= i_ir;
+    PC_addr <= pc_iaddr;
 end hardware;

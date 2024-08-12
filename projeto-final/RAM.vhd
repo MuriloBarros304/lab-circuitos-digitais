@@ -13,9 +13,15 @@ ENTITY RAM IS
 );
 END RAM;
 ARCHITECTURE behav OF RAM IS
-     TYPE ram_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(15 DOWNTO 0);
-     SIGNAL ram: ram_type;
      SIGNAL temp_address: STD_LOGIC_VECTOR(7 DOWNTO 0);
+     type ram_type is array (0 to 255) of std_logic_vector (15 downto 0); --vetor de vetores
+   signal ram: ram_type := 
+   (
+    0 => "0000000000000001", -- 1
+    1 => "0000000000000010", -- 2
+    2 => "0000000000000011", -- 3
+
+    others =>"0000000000000000");
 BEGIN
 PROCESS(clock) IS
 BEGIN

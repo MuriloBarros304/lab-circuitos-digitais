@@ -184,7 +184,7 @@ entity pc is
     );
 end pc;
 architecture behavioral of pc is
-    signal counter: unsigned(15 downto 0) := (others => '0');
+    signal counter: unsigned(0 to 15) := (others => '0');
 begin
     process(clk, clr)
     begin
@@ -217,7 +217,7 @@ architecture behavioral of adder is
 begin
     process(a, b)
     begin
-        sum <= std_logic_vector(unsigned(a) + unsigned(b));  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
+        sum <= std_logic_vector(unsigned(a) + unsigned(b)); --- "0000000000001");  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
     end process;
 end behavioral;
 
