@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Mon Aug 12 12:49:01 2024
+Mon Aug 12 14:20:33 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -81,15 +81,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 12 12:49:01 2024           ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 12 14:20:33 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; processor                                       ;
 ; Top-level Entity Name              ; processor                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 86                                              ;
-;     Total combinational functions  ; 69                                              ;
-;     Dedicated logic registers      ; 77                                              ;
-; Total registers                    ; 77                                              ;
+; Total logic elements               ; 92                                              ;
+;     Total combinational functions  ; 73                                              ;
+;     Dedicated logic registers      ; 82                                              ;
+; Total registers                    ; 82                                              ;
 ; Total pins                         ; 65                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 1,152                                           ;
@@ -230,29 +230,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 86    ;
+; Estimated Total logic elements              ; 92    ;
 ;                                             ;       ;
-; Total combinational functions               ; 69    ;
+; Total combinational functions               ; 73    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 28    ;
-;     -- 3 input functions                    ; 24    ;
+;     -- 4 input functions                    ; 29    ;
+;     -- 3 input functions                    ; 27    ;
 ;     -- <=2 input functions                  ; 17    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 54    ;
+;     -- normal mode                          ; 58    ;
 ;     -- arithmetic mode                      ; 15    ;
 ;                                             ;       ;
-; Total registers                             ; 77    ;
-;     -- Dedicated logic registers            ; 77    ;
+; Total registers                             ; 82    ;
+;     -- Dedicated logic registers            ; 82    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 65    ;
 ; Total memory bits                           ; 1152  ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 93    ;
-; Total fan-out                               ; 855   ;
-; Average fan-out                             ; 3.52  ;
+; Maximum fan-out                             ; 98    ;
+; Total fan-out                               ; 882   ;
+; Average fan-out                             ; 3.50  ;
 +---------------------------------------------+-------+
 
 
@@ -261,29 +261,29 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 69 (1)            ; 77 (0)       ; 1152        ; 0            ; 0       ; 0         ; 65   ; 0            ; |processor                                                                                             ; work         ;
+; |processor                                   ; 73 (1)            ; 82 (0)       ; 1152        ; 0            ; 0       ; 0         ; 65   ; 0            ; |processor                                                                                             ; work         ;
 ;    |RAM:randomaccessmemory|                  ; 1 (1)             ; 5 (5)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory                                                                      ; work         ;
 ;       |altsyncram:ram_rtl_0|                 ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0                                                 ; work         ;
 ;          |altsyncram_c0l1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0|altsyncram_c0l1:auto_generated                  ; work         ;
-;    |ROM:readonlymemory|                      ; 8 (8)             ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ROM:readonlymemory                                                                          ; work         ;
+;    |ROM:readonlymemory|                      ; 11 (11)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ROM:readonlymemory                                                                          ; work         ;
 ;    |control:controlunit|                     ; 23 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit                                                                         ; work         ;
 ;       |combinacional:comb|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|combinacional:comb                                                      ; work         ;
 ;       |instreg:instructionreg|               ; 0 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg                                                  ; work         ;
 ;          |flipflop:ff0|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff0                                     ; work         ;
 ;          |flipflop:ff13|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff13                                    ; work         ;
-;          |flipflop:ff14|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff14                                    ; work         ;
+;          |flipflop:ff15|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff15                                    ; work         ;
+;          |flipflop:ff1|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff1                                     ; work         ;
 ;          |flipflop:ff2|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff2                                     ; work         ;
 ;          |flipflop:ff4|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff4                                     ; work         ;
 ;          |flipflop:ff5|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff5                                     ; work         ;
-;          |flipflop:ff8|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff8                                     ; work         ;
 ;       |pc:programcounter|                    ; 16 (16)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|pc:programcounter                                                       ; work         ;
 ;       |reg4:statereg|                        ; 0 (0)             ; 3 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg                                                           ; work         ;
 ;          |flipflop:ff0|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg|flipflop:ff0                                              ; work         ;
 ;          |flipflop:ff1|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg|flipflop:ff1                                              ; work         ;
 ;          |flipflop:ff2|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg|flipflop:ff2                                              ; work         ;
-;    |operational:operationalunit|             ; 36 (0)            ; 38 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit                                                                 ; work         ;
+;    |operational:operationalunit|             ; 37 (0)            ; 40 (0)       ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit                                                                 ; work         ;
 ;       |mux3x1_16bits:mux|                    ; 18 (18)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit|mux3x1_16bits:mux                                               ; work         ;
-;       |regfile:reg|                          ; 18 (18)           ; 38 (38)      ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit|regfile:reg                                                     ; work         ;
+;       |regfile:reg|                          ; 19 (19)           ; 40 (40)      ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit|regfile:reg                                                     ; work         ;
 ;          |altsyncram:reg_rtl_0|              ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit|regfile:reg|altsyncram:reg_rtl_0                                ; work         ;
 ;             |altsyncram_5ki1:auto_generated| ; 0 (0)             ; 0 (0)        ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|operational:operationalunit|regfile:reg|altsyncram:reg_rtl_0|altsyncram_5ki1:auto_generated ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
@@ -305,20 +305,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+
 ; Register name                                                        ; Reason for Removal                                                       ;
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+
-; ROM:readonlymemory|data_output[3,6,7,10,11,15]                       ; Stuck at GND due to stuck port data_in                                   ;
-; control:controlunit|instreg:instructionreg|flipflop:ff15|q           ; Stuck at GND due to stuck port data_in                                   ;
+; ROM:readonlymemory|data_output[3,6,7,11]                             ; Stuck at GND due to stuck port data_in                                   ;
 ; control:controlunit|instreg:instructionreg|flipflop:ff11|q           ; Stuck at GND due to stuck port data_in                                   ;
-; control:controlunit|instreg:instructionreg|flipflop:ff10|q           ; Stuck at GND due to stuck port data_in                                   ;
 ; control:controlunit|instreg:instructionreg|flipflop:ff7|q            ; Stuck at GND due to stuck port data_in                                   ;
 ; control:controlunit|instreg:instructionreg|flipflop:ff6|q            ; Stuck at GND due to stuck port data_in                                   ;
 ; control:controlunit|instreg:instructionreg|flipflop:ff3|q            ; Stuck at GND due to stuck port data_in                                   ;
 ; RAM:randomaccessmemory|temp_address[3,6,7]                           ; Stuck at GND due to stuck port data_in                                   ;
-; ROM:readonlymemory|data_output[8]                                    ; Merged with ROM:readonlymemory|data_output[1]                            ;
 ; ROM:readonlymemory|data_output[13]                                   ; Merged with ROM:readonlymemory|data_output[12]                           ;
 ; control:controlunit|instreg:instructionreg|flipflop:ff12|q           ; Merged with control:controlunit|instreg:instructionreg|flipflop:ff13|q   ;
-; control:controlunit|instreg:instructionreg|flipflop:ff1|q            ; Merged with control:controlunit|instreg:instructionreg|flipflop:ff8|q    ;
 ; control:controlunit|reg4:statereg|flipflop:ff3|q                     ; Stuck at GND due to stuck port data_in                                   ;
-; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[6..8]       ; Stuck at GND due to stuck port data_in                                   ;
+; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[7,8]        ; Stuck at GND due to stuck port data_in                                   ;
 ; operational:operationalunit|regfile:reg|reg_rtl_1_bypass[6..8]       ; Stuck at GND due to stuck port data_in                                   ;
 ; operational:operationalunit|regfile:reg|Rq_data[0..15]               ; Lost fanout                                                              ;
 ; operational:operationalunit|regfile:reg|reg_rtl_1_bypass[0..5,9..40] ; Lost fanout                                                              ;
@@ -337,8 +333,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[16]         ; Merged with operational:operationalunit|regfile:reg|reg_rtl_0_bypass[14] ;
 ; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[14]         ; Merged with operational:operationalunit|regfile:reg|reg_rtl_0_bypass[12] ;
 ; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[12]         ; Merged with operational:operationalunit|regfile:reg|reg_rtl_0_bypass[10] ;
-; operational:operationalunit|regfile:reg|reg_rtl_0_bypass[2]          ; Merged with control:controlunit|instreg:instructionreg|flipflop:ff8|q    ;
-; Total Number of Removed Registers = 96                               ;                                                                          ;
+; Total Number of Removed Registers = 88                               ;                                                                          ;
 +----------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 
@@ -391,11 +386,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;                                                             ; due to stuck port data_in ; RAM:randomaccessmemory|temp_address[6]                        ;
 ; ROM:readonlymemory|data_output[7]                           ; Stuck at GND              ; control:controlunit|instreg:instructionreg|flipflop:ff7|q,    ;
 ;                                                             ; due to stuck port data_in ; RAM:randomaccessmemory|temp_address[7]                        ;
-; ROM:readonlymemory|data_output[10]                          ; Stuck at GND              ; control:controlunit|instreg:instructionreg|flipflop:ff10|q    ;
-;                                                             ; due to stuck port data_in ;                                                               ;
 ; ROM:readonlymemory|data_output[11]                          ; Stuck at GND              ; control:controlunit|instreg:instructionreg|flipflop:ff11|q    ;
-;                                                             ; due to stuck port data_in ;                                                               ;
-; ROM:readonlymemory|data_output[15]                          ; Stuck at GND              ; control:controlunit|instreg:instructionreg|flipflop:ff15|q    ;
 ;                                                             ; due to stuck port data_in ;                                                               ;
 +-------------------------------------------------------------+---------------------------+---------------------------------------------------------------+
 
@@ -405,12 +396,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 77    ;
+; Total registers                              ; 82    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 29    ;
+; Number of registers using Clock Enable       ; 31    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -515,14 +506,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------+---------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                                         ;
-+-----------------------------------------------------------+---------------------------------------------------+------+
-; Register Name                                             ; Megafunction                                      ; Type ;
-+-----------------------------------------------------------+---------------------------------------------------+------+
-; control:controlunit|instreg:instructionreg|flipflop:ff9|q ; operational:operationalunit|regfile:reg|reg_rtl_1 ; RAM  ;
-; RAM:randomaccessmemory|data_output[0..15]                 ; RAM:randomaccessmemory|ram_rtl_0                  ; RAM  ;
-+-----------------------------------------------------------+---------------------------------------------------+------+
++-----------------------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                                          ;
++------------------------------------------------------------+---------------------------------------------------+------+
+; Register Name                                              ; Megafunction                                      ; Type ;
++------------------------------------------------------------+---------------------------------------------------+------+
+; control:controlunit|instreg:instructionreg|flipflop:ff10|q ; operational:operationalunit|regfile:reg|reg_rtl_1 ; RAM  ;
+; control:controlunit|instreg:instructionreg|flipflop:ff9|q  ; operational:operationalunit|regfile:reg|reg_rtl_1 ; RAM  ;
+; control:controlunit|instreg:instructionreg|flipflop:ff8|q  ; operational:operationalunit|regfile:reg|reg_rtl_1 ; RAM  ;
+; RAM:randomaccessmemory|data_output[0..15]                  ; RAM:randomaccessmemory|ram_rtl_0                  ; RAM  ;
++------------------------------------------------------------+---------------------------------------------------+------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -530,7 +523,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |processor|operational:operationalunit|mux3x1_16bits:mux|D[8] ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |processor|operational:operationalunit|mux3x1_16bits:mux|D[9] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -1037,7 +1030,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 12 12:48:59 2024
+    Info: Processing started: Mon Aug 12 14:20:30 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file processor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -1050,12 +1043,12 @@ Warning (12125): Using design file ROM.vhd, which is not specified as a design f
     Info (12022): Found design unit 1: ROM-behav
     Info (12023): Found entity 1: ROM
 Info (12128): Elaborating entity "ROM" for hierarchy "ROM:readonlymemory"
-Warning (10492): VHDL Process Statement warning at ROM.vhd(30): signal "rom_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at ROM.vhd(34): signal "rom_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (12125): Using design file RAM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: RAM-behav
     Info (12023): Found entity 1: RAM
 Info (12128): Elaborating entity "RAM" for hierarchy "RAM:randomaccessmemory"
-Warning (10492): VHDL Process Statement warning at RAM.vhd(28): signal "mem_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at RAM.vhd(38): signal "mem_enable" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (12125): Using design file operational.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: operational-behav
     Info (12023): Found entity 1: operational
@@ -1239,23 +1232,21 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "IR_data[3]" is stuck at GND
     Warning (13410): Pin "IR_data[6]" is stuck at GND
     Warning (13410): Pin "IR_data[7]" is stuck at GND
-    Warning (13410): Pin "IR_data[10]" is stuck at GND
     Warning (13410): Pin "IR_data[11]" is stuck at GND
-    Warning (13410): Pin "IR_data[15]" is stuck at GND
 Info (17049): 54 registers lost all their fanouts during netlist optimizations.
 Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "RAM:randomaccessmemory|altsyncram:ram_rtl_0|altsyncram_c0l1:auto_generated|ALTSYNCRAM"
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "operational:operationalunit|regfile:reg|altsyncram:reg_rtl_0|altsyncram_5ki1:auto_generated|ALTSYNCRAM"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 200 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 207 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 103 logic cells
+    Info (21061): Implemented 110 logic cells
     Info (21064): Implemented 32 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 47 warnings
-    Info: Peak virtual memory: 665 megabytes
-    Info: Processing ended: Mon Aug 12 12:49:01 2024
-    Info: Elapsed time: 00:00:02
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 45 warnings
+    Info: Peak virtual memory: 650 megabytes
+    Info: Processing ended: Mon Aug 12 14:20:33 2024
+    Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 
 

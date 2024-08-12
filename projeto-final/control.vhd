@@ -79,19 +79,17 @@ entity combinacional is
 end combinacional;
 architecture comb of combinacional is
     begin
-        n3 <= (not(s3) and (not(s2)) and s1 and (not(s0)) and op3 and (not(op2)) and (not(op1)) and (not(op0)))
+        n3 <= (not(s3) and (not(s2)) and s1 and (not(s0)) and (not(op1)) and op0)
         or (s3 and not(s2) and not(s1) and not(s0) and (RF_Rp_zero or RF_Rp_gt_Rq));
 
-        n2 <= not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2;
+        n2 <= not(s3) and not(s2) and s1 and not(s0) and not(op3);
 
-        n1 <= (not(s3) and not(s2) and ((not(s1) and s0) or ((s1 and not(s0) and not(op3) and not(op2) and op1 and op0)
-        or (s1 and not(s0) and not(op3) and op2 and op1)))) or (s3 and not(s2) and not(s1) and not(s0) and ((RF_Rp_zero)
-        or (RF_Rp_gt_Rq)));
+        n1 <= (not(s3) and not(s2) and not(s1) and s0) or (not(s3) and not(s2) and s1 and not(s0) and op3) or
+        (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or (s3 and not(s2) and not(s1) and s0 and RF_Rp_gt_Rq);
 
-        n0 <= (not(s3) and not(s2) and not(s1) and not(s0)) or ((not(s3) and not(s2) and s1 and not(s0)) and ((not(op3) 
-        and op1 and op0) or (not(op3) and op2 and not(op1) and op0) or (op3 and not(op2) and not(op1) and op0))) or
-        (not(s3) and not(s2) and s1 and s0) or (not(s3) and s2) or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero)
-		  or ((s3 and not(s2) and not(s1) and s0) or (s3 and not(s2) and s1));
+        n0 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3) and not(op0)) or (not(s3) and not(s2) and s1 and s0)
+        or (not(s3) and s2) or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or ((s3 and not(s2) and not(s1) and s0))
+        or (s3 and not(s2) and s1);
 
         I_rd <= not(s3) and not(s2) and not(s1) and s0;
 
@@ -200,7 +198,6 @@ begin
     end process;
     count <= std_logic_vector(counter);  -- Converte 'counter' para std_logic_vector para saída
 end behavioral;
-
 
 -- somador de 16 bits
 library ieee;

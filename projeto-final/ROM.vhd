@@ -19,6 +19,10 @@ ARCHITECTURE behav OF ROM IS
         2 => "0100000000010000", -- adicionar RF[0] + RF[1] => RF[2]
         3 => "0011001100000011", -- carregar cte 3 em RF[3]
         4 => "0100001100100010", -- adicionar RF[2] + RF[3] => RF[4]
+        5 => "0000010000000000", -- carregar D[0] em RF[0] (5)
+        6 => "0000010100000001", -- carregar D[1] em RF[1] (7)
+        7 => "0100000000010000", -- adicionar RF[0] + RF[1] => RF[2]
+        8 => "1000001000000011", -- armazenar RF[2] em D[3] (armazenar 12 em D[3])
            
            others => "0000000000000000"
             );
@@ -28,7 +32,7 @@ BEGIN
 PROCESS(clock) IS
 BEGIN
     IF (RISING_EDGE(clock) AND rom_enable = '1') THEN
-           data_output <= mem(conv_integer(unsigned(address)));
+            data_output <= mem(conv_integer(unsigned(address)));
     END IF;
 END PROCESS;
 END behav;
