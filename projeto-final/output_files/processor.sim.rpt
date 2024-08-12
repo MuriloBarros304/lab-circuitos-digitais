@@ -1,5 +1,5 @@
 Simulator report for processor
-Mon Aug 12 14:21:37 2024
+Mon Aug 12 16:29:31 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -48,7 +48,7 @@ applicable agreement for further details.
 +-----------------------------+--------------+
 ; Simulation Start Time       ; 0 ps         ;
 ; Simulation End Time         ; 1.0 us       ;
-; Simulation Netlist Size     ; 2311 nodes   ;
+; Simulation Netlist Size     ; 2319 nodes   ;
 ; Simulation Coverage         ;       0.04 % ;
 ; Total Number of Transitions ; 113          ;
 ; Simulation Breakpoints      ; 0            ;
@@ -116,12 +116,12 @@ Please refer to fitter text-based report (*.fit.rpt) to view logical memory repo
 ; Type                                                ; Value        ;
 +-----------------------------------------------------+--------------+
 ; Total coverage as a percentage                      ;       0.04 % ;
-; Total nodes checked                                 ; 2311         ;
-; Total output ports checked                          ; 2311         ;
+; Total nodes checked                                 ; 2319         ;
+; Total output ports checked                          ; 2319         ;
 ; Total output ports with complete 1/0-value coverage ; 1            ;
-; Total output ports with no 1/0-value coverage       ; 2236         ;
-; Total output ports with no 1-value coverage         ; 2300         ;
-; Total output ports with no 0-value coverage         ; 2246         ;
+; Total output ports with no 1/0-value coverage       ; 2244         ;
+; Total output ports with no 1-value coverage         ; 2308         ;
+; Total output ports with no 0-value coverage         ; 2254         ;
 +-----------------------------------------------------+--------------+
 
 
@@ -287,6 +287,14 @@ The following table displays output ports that do not toggle to 1 during simulat
 ; |processor|control:controlunit|combinacional:comb|n3~8                                                               ; |processor|control:controlunit|combinacional:comb|n3~8                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n3~9                                                               ; |processor|control:controlunit|combinacional:comb|n3~9                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n3                                                                 ; |processor|control:controlunit|combinacional:comb|n3                                                                 ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~0                                                               ; |processor|control:controlunit|combinacional:comb|n2~0                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~1                                                               ; |processor|control:controlunit|combinacional:comb|n2~1                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~2                                                               ; |processor|control:controlunit|combinacional:comb|n2~2                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~3                                                               ; |processor|control:controlunit|combinacional:comb|n2~3                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~4                                                               ; |processor|control:controlunit|combinacional:comb|n2~4                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~5                                                               ; |processor|control:controlunit|combinacional:comb|n2~5                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~6                                                               ; |processor|control:controlunit|combinacional:comb|n2~6                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~7                                                               ; |processor|control:controlunit|combinacional:comb|n2~7                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n2                                                                 ; |processor|control:controlunit|combinacional:comb|n2                                                                 ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n1~0                                                               ; |processor|control:controlunit|combinacional:comb|n1~0                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|PC_inc                                                             ; |processor|control:controlunit|combinacional:comb|PC_inc                                                             ; out0             ;
@@ -2601,6 +2609,14 @@ The following table displays output ports that do not toggle to 0 during simulat
 ; |processor|control:controlunit|combinacional:comb|n3~8                                                               ; |processor|control:controlunit|combinacional:comb|n3~8                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n3~9                                                               ; |processor|control:controlunit|combinacional:comb|n3~9                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n3                                                                 ; |processor|control:controlunit|combinacional:comb|n3                                                                 ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~0                                                               ; |processor|control:controlunit|combinacional:comb|n2~0                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~1                                                               ; |processor|control:controlunit|combinacional:comb|n2~1                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~2                                                               ; |processor|control:controlunit|combinacional:comb|n2~2                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~3                                                               ; |processor|control:controlunit|combinacional:comb|n2~3                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~4                                                               ; |processor|control:controlunit|combinacional:comb|n2~4                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~5                                                               ; |processor|control:controlunit|combinacional:comb|n2~5                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~6                                                               ; |processor|control:controlunit|combinacional:comb|n2~6                                                               ; out0             ;
+; |processor|control:controlunit|combinacional:comb|n2~7                                                               ; |processor|control:controlunit|combinacional:comb|n2~7                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n2                                                                 ; |processor|control:controlunit|combinacional:comb|n2                                                                 ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|n1~0                                                               ; |processor|control:controlunit|combinacional:comb|n1~0                                                               ; out0             ;
 ; |processor|control:controlunit|combinacional:comb|PC_inc                                                             ; |processor|control:controlunit|combinacional:comb|PC_inc                                                             ; out0             ;
@@ -4712,7 +4728,7 @@ The following table displays output ports that do not toggle to 0 during simulat
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Simulator
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 12 14:21:37 2024
+    Info: Processing started: Mon Aug 12 16:29:31 2024
 Info: Command: quartus_sim --simulation_results_format=VWF processor -c processor
 Info (324025): Using vector source file "/home/murilo/Documentos/GitHub/lab-circuitos-digitais/projeto-final/Waveform.vwf"
 Info (310003): Option to preserve fewer signal transitions to reduce memory requirements is enabled
@@ -4722,8 +4738,8 @@ Info (328053): Simulation coverage is       0.04 %
 Info (328052): Number of transitions in simulation is 113
 Info (324045): Vector file processor.sim.vwf is saved in VWF text format. You can compress it into CVWF format in order to reduce file size. For more details please refer to the Quartus II Help.
 Info: Quartus II 64-Bit Simulator was successful. 0 errors, 0 warnings
-    Info: Peak virtual memory: 646 megabytes
-    Info: Processing ended: Mon Aug 12 14:21:37 2024
+    Info: Peak virtual memory: 653 megabytes
+    Info: Processing ended: Mon Aug 12 16:29:31 2024
     Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:00
 

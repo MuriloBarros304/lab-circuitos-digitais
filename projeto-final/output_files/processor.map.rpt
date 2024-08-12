@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Mon Aug 12 14:20:33 2024
+Mon Aug 12 16:28:36 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -81,15 +81,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Aug 12 14:20:33 2024           ;
+; Analysis & Synthesis Status        ; Successful - Mon Aug 12 16:28:36 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; processor                                       ;
 ; Top-level Entity Name              ; processor                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 92                                              ;
-;     Total combinational functions  ; 73                                              ;
-;     Dedicated logic registers      ; 82                                              ;
-; Total registers                    ; 82                                              ;
+; Total logic elements               ; 95                                              ;
+;     Total combinational functions  ; 75                                              ;
+;     Dedicated logic registers      ; 83                                              ;
+; Total registers                    ; 83                                              ;
 ; Total pins                         ; 65                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 1,152                                           ;
@@ -230,28 +230,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 92    ;
+; Estimated Total logic elements              ; 95    ;
 ;                                             ;       ;
-; Total combinational functions               ; 73    ;
+; Total combinational functions               ; 75    ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 29    ;
-;     -- 3 input functions                    ; 27    ;
+;     -- 4 input functions                    ; 30    ;
+;     -- 3 input functions                    ; 28    ;
 ;     -- <=2 input functions                  ; 17    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 58    ;
+;     -- normal mode                          ; 60    ;
 ;     -- arithmetic mode                      ; 15    ;
 ;                                             ;       ;
-; Total registers                             ; 82    ;
-;     -- Dedicated logic registers            ; 82    ;
+; Total registers                             ; 83    ;
+;     -- Dedicated logic registers            ; 83    ;
 ;     -- I/O registers                        ; 0     ;
 ;                                             ;       ;
 ; I/O pins                                    ; 65    ;
 ; Total memory bits                           ; 1152  ;
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 98    ;
-; Total fan-out                               ; 882   ;
+; Maximum fan-out                             ; 99    ;
+; Total fan-out                               ; 892   ;
 ; Average fan-out                             ; 3.50  ;
 +---------------------------------------------+-------+
 
@@ -261,16 +261,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 73 (1)            ; 82 (0)       ; 1152        ; 0            ; 0       ; 0         ; 65   ; 0            ; |processor                                                                                             ; work         ;
+; |processor                                   ; 75 (1)            ; 83 (0)       ; 1152        ; 0            ; 0       ; 0         ; 65   ; 0            ; |processor                                                                                             ; work         ;
 ;    |RAM:randomaccessmemory|                  ; 1 (1)             ; 5 (5)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory                                                                      ; work         ;
 ;       |altsyncram:ram_rtl_0|                 ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0                                                 ; work         ;
 ;          |altsyncram_c0l1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0|altsyncram_c0l1:auto_generated                  ; work         ;
 ;    |ROM:readonlymemory|                      ; 11 (11)           ; 11 (11)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ROM:readonlymemory                                                                          ; work         ;
-;    |control:controlunit|                     ; 23 (0)            ; 26 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit                                                                         ; work         ;
-;       |combinacional:comb|                   ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|combinacional:comb                                                      ; work         ;
-;       |instreg:instructionreg|               ; 0 (0)             ; 7 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg                                                  ; work         ;
+;    |control:controlunit|                     ; 25 (0)            ; 27 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit                                                                         ; work         ;
+;       |combinacional:comb|                   ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|combinacional:comb                                                      ; work         ;
+;       |instreg:instructionreg|               ; 0 (0)             ; 8 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg                                                  ; work         ;
 ;          |flipflop:ff0|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff0                                     ; work         ;
 ;          |flipflop:ff13|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff13                                    ; work         ;
+;          |flipflop:ff14|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff14                                    ; work         ;
 ;          |flipflop:ff15|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff15                                    ; work         ;
 ;          |flipflop:ff1|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff1                                     ; work         ;
 ;          |flipflop:ff2|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff2                                     ; work         ;
@@ -396,12 +397,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 82    ;
+; Total registers                              ; 83    ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 31    ;
+; Number of registers using Clock Enable       ; 32    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1030,7 +1031,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Aug 12 14:20:30 2024
+    Info: Processing started: Mon Aug 12 16:28:34 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file processor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -1238,15 +1239,15 @@ Info (17036): Removed 2 MSB VCC or GND address nodes from RAM block "RAM:randoma
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "operational:operationalunit|regfile:reg|altsyncram:reg_rtl_0|altsyncram_5ki1:auto_generated|ALTSYNCRAM"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 207 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 209 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 110 logic cells
+    Info (21061): Implemented 112 logic cells
     Info (21064): Implemented 32 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 45 warnings
-    Info: Peak virtual memory: 650 megabytes
-    Info: Processing ended: Mon Aug 12 14:20:33 2024
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 662 megabytes
+    Info: Processing ended: Mon Aug 12 16:28:36 2024
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 
