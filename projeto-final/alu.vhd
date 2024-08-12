@@ -3,8 +3,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 entity alu is
-	port(   s0: in std_logic;
-			s1: in std_logic;
+	port(   si: in std_logic_vector(1 downto 0);
 			 A: in std_logic_vector(15 downto 0);
 			 B: in std_logic_vector(15 downto 0);
 			 S: out std_logic_vector(15 downto 0));
@@ -14,15 +13,15 @@ architecture behavior of alu is
 
 begin 
 
-	process(s0, s1, A, B)
+	process(si, A, B)
 	
 	begin
 	
-		if (s0 = '0' and s1 = '0') then
+		if (si = "00") then
 			S <= A;
-		elsif (s0 = '0' and s1 = '1') then
+		elsif (si = "01") then
 			S <= std_logic_vector(unsigned(A) + unsigned(B));
-		elsif (s0 = '1' and s1 = '0') then
+		elsif (si = "10") then
 			S <= std_logic_vector(unsigned(A) - unsigned(B));
 		else
 			S <= (others => '0');

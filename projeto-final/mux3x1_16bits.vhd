@@ -1,26 +1,33 @@
 library ieee;
 use ieee.std_logic_1164.all;
+use ieee.std_logic_unsigned.all;
 
-package bus_array_pkg is
-        type bus_array is array(15 downto 0) of std_logic_vector(15 downto 0); -- array de 16 sinais de 16 bits
-end package;
-
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-use work.bus_array_pkg.all;
-
-entity mux3x1_16bits is
-    port(
-        A : bus_array;
-        S : in std_logic_vector(3 downto 0);
-        Z : out std_logic_vector(15 downto 0));
+entity mux3x1_16bits is 
+  port( A: in std_logic_vector (15 downto 0);
+		  B: in std_logic_vector (15 downto 0);
+		  C: in std_logic_vector (15 downto 0);
+      sel: in std_logic_vector (1 downto 0);
+		  D: out std_logic_vector (15 downto 0));
 end mux3x1_16bits;
-
-architecture main of mux3x1_16bits is
-    type tmp_array is array(0 to 15) of std_logic_vector(15 downto 0);
-begin
-    
-    Z <= A(conv_integer(unsigned(S)));
-
-end architecture main;
+ 
+architecture behavior of mux3x1_16bits is 
+ 
+begin 
+	
+	process (sel, A, B, C)
+	
+	begin
+	
+	   if (sel = "00") then 
+			D <= A;
+		elsif (sel = "01") then 
+			D <= B;
+		elsif (sel = "10") then 
+			D <= C;
+	   else 
+			D <= (others => '0');
+	   end if;
+		
+	end process;
+	
+end behavior;
