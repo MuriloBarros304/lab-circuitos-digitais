@@ -88,7 +88,7 @@ architecture comb of combinacional is
         n1 <= (not(s3) and not(s2) and not(s1) and s0) or (not(s3) and not(s2) and s1 and not(s0) and op3) or
         (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or (s3 and not(s2) and not(s1) and s0 and RF_Rp_gt_Rq);
 
-        n0 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3) and not(op0)) or (not(s3) and not(s2) and s1 and s0)
+        n0 <= (not(s3) and not(s2) and not(s1) and not(s0)) or (not(s3) and not(s2) and s1 and not(s0) and not(op3) and not(op0)) or (not(s3) and not(s2) and s1 and s0)
         or (not(s3) and s2) or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or ((s3 and not(s2) and not(s1) and s0))
         or (s3 and not(s2) and s1);
 
