@@ -8,7 +8,8 @@ entity processor is
         PC_addr : out std_logic_vector(15 downto 0);
         IR_data : out std_logic_vector(15 downto 0);
         D_W_data : out std_logic_vector(15 downto 0);
-        D_R_data : out std_logic_vector(15 downto 0));
+        D_R_data : out std_logic_vector(15 downto 0);
+        D_addr : out std_logic_vector(7 downto 0));
 end processor;
 architecture hardware of processor is
     signal pc_iaddr, i_ir, drdata_mux, rfrp_dwdata, rfrpdata_mux, c_rfwdata : std_logic_vector(15 downto 0);
@@ -87,4 +88,5 @@ begin
     D_W_data <= rfrp_dwdata;
     IR_data <= i_ir;
     PC_addr <= pc_iaddr;
+    D_addr <= c_daddr;
 end hardware;

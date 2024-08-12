@@ -3,64 +3,64 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow Model Setup 'clk'
-Slack : -4.295
-TNS   : -315.251
+Slack : -4.296
+TNS   : -281.508
 
 Type  : Slow Model Setup 'control:controlunit|reg4:statereg|flipflop:ff0|q'
-Slack : -1.235
-TNS   : -17.063
+Slack : -1.557
+TNS   : -21.758
 
 Type  : Slow Model Hold 'clk'
-Slack : -2.542
-TNS   : -72.857
+Slack : -2.535
+TNS   : -71.829
 
 Type  : Slow Model Hold 'control:controlunit|reg4:statereg|flipflop:ff0|q'
-Slack : -1.160
-TNS   : -17.958
+Slack : -0.863
+TNS   : -12.074
 
 Type  : Slow Model Recovery 'clk'
-Slack : -1.271
-TNS   : -20.183
+Slack : -1.397
+TNS   : -22.352
 
 Type  : Slow Model Removal 'clk'
-Slack : -0.545
-TNS   : -6.425
+Slack : -1.080
+TNS   : -17.280
 
 Type  : Slow Model Minimum Pulse Width 'clk'
 Slack : -1.627
-TNS   : -341.716
+TNS   : -333.716
 
 Type  : Slow Model Minimum Pulse Width 'control:controlunit|reg4:statereg|flipflop:ff0|q'
 Slack : -0.500
 TNS   : -16.000
 
 Type  : Fast Model Setup 'clk'
-Slack : -1.966
-TNS   : -123.404
+Slack : -1.942
+TNS   : -109.286
 
 Type  : Fast Model Setup 'control:controlunit|reg4:statereg|flipflop:ff0|q'
-Slack : -0.632
-TNS   : -8.930
+Slack : -0.767
+TNS   : -10.574
 
 Type  : Fast Model Hold 'clk'
-Slack : -1.584
-TNS   : -65.235
+Slack : -1.577
+TNS   : -62.350
 
 Type  : Fast Model Hold 'control:controlunit|reg4:statereg|flipflop:ff0|q'
-Slack : -0.503
-TNS   : -7.789
+Slack : -0.399
+TNS   : -5.517
 
 Type  : Fast Model Recovery 'clk'
-Slack : 0.014
-TNS   : 0.000
+Slack : -0.003
+TNS   : -0.048
 
 Type  : Fast Model Removal 'clk'
-Slack : -0.594
-TNS   : -8.379
+Slack : -0.825
+TNS   : -13.200
 
 Type  : Fast Model Minimum Pulse Width 'clk'
 Slack : -1.627
-TNS   : -341.716
+TNS   : -333.716
 
 Type  : Fast Model Minimum Pulse Width 'control:controlunit|reg4:statereg|flipflop:ff0|q'
 Slack : -0.500
