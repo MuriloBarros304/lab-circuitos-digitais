@@ -252,7 +252,7 @@ entity control is
     port(
         clk : in std_logic;
         IR : in std_logic_vector(15 downto 0); -- recebe de I
-		  In_IR : in std_logic_vector(11 downto 0);
+        out_IR : out std_logic_vector(11 downto 0);
         RF_Rp_zero, RF_Rp_gt_rq : in std_logic;
         RF_Rp_data : in std_logic_vector(15 downto 0); -- necessário para entrar no mux do PC
         I_rd : out std_logic; -- saída de leitura para a memória de instruções
@@ -260,9 +260,7 @@ entity control is
         RF_s0, RF_s1 : out std_logic;
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
         alu_s0, alu_s1 : out std_logic;
-        M_s : out std_logic;
-        I_addr : out std_logic_vector(15 downto 0)
-    );
+        I_addr : out std_logic_vector(15 downto 0));
 end control;
 architecture controller of control is
     signal q3_s3, q2_s2, q1_s1, q0_s0 : std_logic;
@@ -329,7 +327,10 @@ begin
     q(3) => q3_s3, q(2) => q2_s2, q(1) => q1_s1, q(0) => q0_s0);
 
     comb: combinacional port map(s3 => q3_s3, s2 => q2_s2, s1 => q1_s1, s0 => q0_s0, -- lembrar de mapear o restante de IR
-    op3 => ir_out(15), op2 => ir_out(14), op1 => ir_out(13), op0 => ir_out(12), IR=>In_IR, -- temporario 
+    op3 => ir_out(15), op2 => ir_out(14), op1 => ir_out(13), op0 => ir_out(12), IR(11) => ir_out(11), 
+    IR(10) => ir_out(10), IR(9) => ir_out(9), IR(8) => ir_out(8), IR(7) => ir_out(7), IR(6) => ir_out(6),
+    IR(5) => ir_out(5), IR(4) => ir_out(4), IR(3) => ir_out(3), IR(2) => ir_out(2),
+    IR(1) => ir_out(1), IR(0) => ir_out(0), 
     RF_Rp_zero => RF_Rp_zero, RF_Rp_gt_rq => RF_Rp_gt_rq, n3 => n3_d3, n2 => n2_d2,
     n1 => n1_d1, n0 => n0_d0, PC_ld => pc_ld, PC_clr => pc_clr, PC_inc => pc_inc,
     I_rd => i_rd, IR_ld => ir_ld, D_rd => D_rd, D_wr => D_wr, RF_s0 => RF_s0,
@@ -345,5 +346,5 @@ begin
 
     multiplexador : mux port map(sel => sig_M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
     I_addr <= pc_out;
-    M_s <= sig_M_s;
+    out_IR <= ir_out(11 downto 0);
 end controller;

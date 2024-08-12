@@ -1,7 +1,7 @@
 library ieee;
 use ieee.std_logic_1164.all;
 
-entity processor is
+entity operational is
 	port(clock : in std_logic;
 		  R_data : in std_logic_vector(15 downto 0);
         RF_W_data : in std_logic_vector(15 downto 0);
@@ -16,9 +16,9 @@ entity processor is
         W_data : out std_logic_vector(15 downto 0);
 		  RF_Rp_gt_Rq : out std_logic;
 		  RF_Rp_Zero : out std_logic);
-end processor;
+end operational;
 
-architecture behav of processor is
+architecture behav of operational is
 	signal aux0, aux1, aux2, aux3: std_logic_vector(15 downto 0);
 	signal dummy0, dummy1: std_logic;
 
