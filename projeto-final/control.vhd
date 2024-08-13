@@ -185,8 +185,9 @@ entity pc is
         count    : out std_logic_vector(15 downto 0)
     );
 end pc;
+
 architecture behavioral of pc is
-    signal counter: unsigned(0 to 15) := (others => '0');
+    signal counter: unsigned(15 downto 0) := (others => '0');
 begin
     process(clk, clr)
     begin
@@ -194,7 +195,7 @@ begin
             counter <= (others => '0');
         elsif rising_edge(clk) then
             if ld = '1' then
-                counter <= unsigned(load_val);  -- Converte 'load_val' para unsigned
+                counter <= unsigned(load_val) - 1;  -- Converte 'load_val' para unsigned
             elsif up = '1' then
                 counter <= counter + 1;  -- Incrementa o contador
             end if;
@@ -202,6 +203,7 @@ begin
     end process;
     count <= std_logic_vector(counter);  -- Converte 'counter' para std_logic_vector para saída
 end behavioral;
+
 
 -- somador de 16 bits
 library ieee;
@@ -218,7 +220,7 @@ architecture behavioral of adder is
 begin
     process(a, b)
     begin
-        sum <= std_logic_vector(unsigned(a) + unsigned(b) - "0000000000001");  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
+        sum <= std_logic_vector(unsigned(a) + unsigned(b) - "1");  -- Converte a e b para unsigned, realiza a soma e converte de volta para std_logic_vector
     end process;
 end behavioral;
 
@@ -261,15 +263,15 @@ entity control is
         RF_s0, RF_s1 : out std_logic;
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
         alu_s0, alu_s1 : out std_logic;
-        I_addr : out std_logic_vector(15 downto 0));
+        I_addr : out std_logic_vector(15 downto 0);
 		  --IR_load : out std_logic;
-		  --dbg : out std_logic_vector(3 downto 0));
+		dbg : out std_logic);
 end control;
 architecture controller of control is
     signal q3_s3, q2_s2, q1_s1, q0_s0 : std_logic;
     signal n3_d3, n2_d2, n1_d1, n0_d0 : std_logic;
     signal ir_out : std_logic_vector(15 downto 0);
-    signal sig_ir_ld, pc_clr, pc_inc, pc_ld : std_logic;
+    signal sig_ir_ld, pc_clr, pc_inc, pc_ld_sig : std_logic;
     signal mux_out, mux_in1 : std_logic_vector(15 downto 0);
     signal pc_out : std_logic_vector(15 downto 0);
     signal sig_M_s : std_logic;
@@ -335,14 +337,14 @@ begin
     IR(5) => ir_out(5), IR(4) => ir_out(4), IR(3) => ir_out(3), IR(2) => ir_out(2),
     IR(1) => ir_out(1), IR(0) => ir_out(0), 
     RF_Rp_zero => RF_Rp_zero, RF_Rp_gt_rq => RF_Rp_gt_rq, n3 => n3_d3, n2 => n2_d2,
-    n1 => n1_d1, n0 => n0_d0, PC_ld => pc_ld, PC_clr => pc_clr, PC_inc => pc_inc,
+    n1 => n1_d1, n0 => n0_d0, PC_ld => pc_ld_sig, PC_clr => pc_clr, PC_inc => pc_inc,
     I_rd => i_rd, IR_ld => sig_ir_ld, D_rd => D_rd, D_wr => D_wr, RF_s0 => RF_s0,
     RF_s1 => RF_s1, RF_W_wr => RF_W_wr, RF_Rp_rd => RF_Rp_rd, RF_Rq_rd => RF_Rq_rd,
     alu_s0 => alu_s0, alu_s1 => alu_s1, M_s => sig_M_s);
 
     instructionreg : instreg port map(clk => clk, IR_ld => sig_ir_ld, I => IR, IR => ir_out);
 
-    programcounter : pc port map(clk => clk, ld => pc_ld, clr => pc_clr, up => pc_inc,
+    programcounter : pc port map(clk => clk, ld => pc_ld_sig, clr => pc_clr, up => pc_inc,
     load_val => mux_out, count => pc_out);
 
     add : adder port map(a => pc_out, b => ir_out, sum => mux_in1);
@@ -350,6 +352,6 @@ begin
     multiplexador : mux port map(sel => sig_M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
     I_addr <= pc_out;
     out_IR <= ir_out(11 downto 0);
-	--dbg <= q3_s3 & q2_s2 & q1_s1 & q0_s0; -- variável para debug dos estados
+	dbg <= pc_ld_sig;
 	--ir_load <= sig_ir_ld;
 end controller;

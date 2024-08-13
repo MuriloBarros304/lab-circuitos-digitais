@@ -9,15 +9,15 @@ entity processor is
         IR_data : out std_logic_vector(15 downto 0);
         D_W_data : out std_logic_vector(15 downto 0);
         D_R_data : out std_logic_vector(15 downto 0);
-        D_addr : out std_logic_vector(7 downto 0);
-        D_R_enable : out std_logic);
+        --D_addr : out std_logic_vector(7 downto 0);
+        pc_load_sig, D_wr : out std_logic);
 end processor;
 architecture hardware of processor is
     signal pc_iaddr, i_ir, drdata_mux, rfrp_dwdata, rfrpdata_mux, c_rfwdata : std_logic_vector(15 downto 0);
     signal c_daddr : std_logic_vector(7 downto 0);
     signal c_rfwaddr, c_rfrpaddr, c_rfrqaddr : std_logic_vector(3 downto 0);
     signal c_drd, c_dwr, c_rfs1, c_rfs0, c_rfwwr, c_rfrprd, c_rfrqrd, rfrpzero_c,
-    rfrpgtrq_c, c_alus1, c_alus0, c_ird : std_logic;
+    rfrpgtrq_c, c_alus1, c_alus0, c_ird, pc_ld : std_logic;
     --signal sinal_teste : std_logic_vector(15 downto 0);
     component ROM is
         port(
@@ -48,7 +48,8 @@ architecture hardware of processor is
             RF_s0, RF_s1 : out std_logic;
             RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
             alu_s0, alu_s1 : out std_logic;
-            I_addr : out std_logic_vector(15 downto 0));
+            I_addr : out std_logic_vector(15 downto 0);
+            dbg : out std_logic);
     end component;
     component operational is
         port(
@@ -85,12 +86,13 @@ begin
     out_IR(1) => c_rfwaddr(1), out_IR(0) => c_rfwaddr(0), RF_Rp_zero => rfrpzero_c, RF_Rp_gt_rq => rfrpgtrq_c,
     RF_Rp_data => rfrp_dwdata, I_rd => c_ird, D_rd => c_drd, D_wr => c_dwr, RF_s0 => c_rfs0, RF_s1 => c_rfs1,
     RF_W_wr => c_rfwwr, RF_Rp_rd => c_rfrprd, RF_Rq_rd => c_rfrqrd, alu_s0 => c_alus0, alu_s1 => c_alus1,
-    I_addr => pc_iaddr);
+    I_addr => pc_iaddr, dbg => pc_ld);
     D_R_data <= drdata_mux;
+    D_wr <= c_dwr;
     D_W_data <= rfrp_dwdata;
     IR_data <= i_ir;
     PC_addr <= pc_iaddr;
     c_daddr <= c_rfrqaddr & c_rfwaddr;
-    D_addr <= c_daddr;
-    D_R_enable <= c_drd;
+    --D_addr <= c_daddr;
+    pc_load_sig <= pc_ld;
 end hardware;

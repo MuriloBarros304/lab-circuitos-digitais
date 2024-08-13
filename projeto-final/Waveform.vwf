@@ -812,7 +812,17 @@ SIGNAL("D_addr[0]")
 	PARENT = "D_addr";
 }
 
-SIGNAL("D_R_enable")
+SIGNAL("D_wr")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
+SIGNAL("pc_load_sig")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
 	SIGNAL_TYPE = SINGLE_BIT;
@@ -829,9 +839,9 @@ TRANSITION_LIST("clk")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 100;
-			LEVEL 0 FOR 5.0;
-			LEVEL 1 FOR 5.0;
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
 	}
 }
@@ -1484,7 +1494,16 @@ TRANSITION_LIST("D_addr[0]")
 	}
 }
 
-TRANSITION_LIST("D_R_enable")
+TRANSITION_LIST("D_wr")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("pc_load_sig")
 {
 	NODE
 	{
@@ -2274,10 +2293,19 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "D_R_enable";
+	CHANNEL = "D_wr";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 78;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "pc_load_sig";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 79;
 	TREE_LEVEL = 0;
 }
 

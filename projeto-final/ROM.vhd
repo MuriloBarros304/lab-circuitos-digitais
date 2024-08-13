@@ -21,16 +21,17 @@ ARCHITECTURE behav OF ROM IS
     --- SALTAR SE ZERO: 0101 RA3RA2RA1RA0 O7O6O5O4O3O2O1O0
     --- SALTAR SE MAIOR: 0110 RA3RA2RA1RA0 RB3RB2RB1RB0 RC3RC2RC1RC0
      CONSTANT mem: rom_type := (
-        0 => "0000000000000000", -- Carregar D[0] em RF[0]
-        1 => "0000010100000001", -- Carregar D[1] em RF[1]
-        2 => "0010000000010010", -- Somar RF[0] + RF[1] => RF[2]
-        3 => "0001001000000010", -- Armazenar RF[2] em D[2]
-        4 => "0000001100001000", -- Carregar D[8] em RF[3]
-        5 => "0110001000000011", -- Saltar se RF[2] > RF[1] para RF[3]
-        6 => "0001000000000111", -- Armazenar RF[3] em D[7]
-        7 => "0000000100000111", -- Carregar D[7] em RF[0]
-        8 => "0001000000000000", -- Armazenar RF[0] em D[0]
-		9 => "0000000000000001", -- Carregar D[1] em RF[0]
+        0  => "0000000000000000", -- Carregar D[0] em RF[0] (RF[0] = 1)
+        1  => "0000010100000001", -- Carregar D[1] em RF[1] (RF[1] = 2)
+        2  => "0010000000010010", -- Somar RF[0] + RF[1] => RF[2] (RF[2] = 3)
+        3  => "0001001000000010", -- Armazenar RF[2] em D[2]
+        4  => "0000001100001000", -- Carregar D[8] em RF[3] (RF[3] = 9)
+        5  => "0110001000000011", -- Saltar se RF[2] > RF[0] para RF[3] (Se 3 > 1, vai para endereço 9)
+        6  => "0001000000000111", -- Armazenar RF[3] em D[7]
+        7  => "0000000100000111", -- Carregar D[7] em RF[0]
+        8  => "0001000000000000", -- Armazenar RF[0] em D[0]
+        9  => "0000000000000001", -- Carregar D[1] em RF[0] (RF[0] = 2)
+        10 => "0110000001000100", -- Saltar se RF[0] > RF[2] para RF[3] (Se 2 > 3, vai para endereço 4)
   
         others => "0000000000000000"
             );
