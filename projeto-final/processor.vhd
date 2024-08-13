@@ -9,7 +9,8 @@ entity processor is
         IR_data : out std_logic_vector(15 downto 0);
         D_W_data : out std_logic_vector(15 downto 0);
         D_R_data : out std_logic_vector(15 downto 0);
-        D_addr : out std_logic_vector(7 downto 0));
+        D_addr : out std_logic_vector(7 downto 0);
+        D_R_enable : out std_logic);
 end processor;
 architecture hardware of processor is
     signal pc_iaddr, i_ir, drdata_mux, rfrp_dwdata, rfrpdata_mux, c_rfwdata : std_logic_vector(15 downto 0);
@@ -69,7 +70,7 @@ begin
     readonlymemory: ROM port map(clock => clk, rom_enable => '1', address => pc_iaddr,
     data_output => i_ir);
     
-    randomaccessmemory: RAM port map(clock => clk, address => c_rfrqaddr & c_rfwaddr, w_enable => c_dwr,
+    randomaccessmemory: RAM port map(clock => clk, address => c_daddr, w_enable => c_dwr,
     r_enable => c_drd, mem_enable => '1', data_input => rfrp_dwdata, data_output => drdata_mux);
 
     operationalunit: operational port map(clock => clk, R_data => drdata_mux, RF_W_data => c_rfwdata,
@@ -88,5 +89,7 @@ begin
     D_W_data <= rfrp_dwdata;
     IR_data <= i_ir;
     PC_addr <= pc_iaddr;
+    c_daddr <= c_rfrqaddr & c_rfwaddr;
     D_addr <= c_daddr;
+    D_R_enable <= c_drd;
 end hardware;

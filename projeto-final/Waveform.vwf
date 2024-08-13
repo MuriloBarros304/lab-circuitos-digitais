@@ -812,6 +812,16 @@ SIGNAL("D_addr[0]")
 	PARENT = "D_addr";
 }
 
+SIGNAL("D_R_enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -1466,6 +1476,15 @@ TRANSITION_LIST("D_addr[1]")
 }
 
 TRANSITION_LIST("D_addr[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL X FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("D_R_enable")
 {
 	NODE
 	{
@@ -2251,6 +2270,15 @@ DISPLAY_LINE
 	TREE_INDEX = 77;
 	TREE_LEVEL = 1;
 	PARENT = 69;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "D_R_enable";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 78;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

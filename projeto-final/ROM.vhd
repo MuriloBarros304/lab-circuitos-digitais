@@ -12,17 +12,20 @@ PORT(
 END ROM;
 ARCHITECTURE behav OF ROM IS
      TYPE rom_type IS ARRAY(0 to 15) OF STD_LOGIC_VECTOR(15 DOWNTO 0); -- 16 endereços de 16 bits (utilizar 15 downto 0?)
-    
+    --- INSTRUÇÕES
+    --- CARREGAR: 0000 R3R2R1R0 D7D6D5D4D3D2D1D0
+    --- ARMAZENAR: 0001 R3R2R1R0 D7D6D5D4D3D2D1D0
+    --- SOMAR: 0010 RA3RA2RA1RA0 RB3RB2RB1RB0 RC3RC2RC1RC0
+    --- CARREGAR CONSTANTE: 0011 R3R2R1R0 C7C6C5C4C3C2C1C0
+    --- SUBTRAIR: 0100 RA3RA2RA1RA0 RB3RB2RB1RB0 RC3RC2RC1RC0
+    --- SALTAR SE ZERO: 0101 RA3RA2RA1RA0 O7O6O5O4O3O2O1O0
+    --- SALTAR SE MAIOR: 0110 RA3RA2RA1RA0 RB3RB2RB1RB0 RC3RC2RC1RC0
      CONSTANT mem: rom_type := (
-        0 => "0000010000000000", -- carregar D[0] em RF[0] (1)
-        1 => "0000010100000001", -- carregar D[1] em RF[1] (2)
-        2 => "0100000000010000", -- adicionar RF[0] + RF[1] => RF[2]
-        3 => "1000001000000011", -- armazenar RF[2] em D[3] 
-        4 => "0100001100100010", -- adicionar RF[2] + RF[3] => RF[4]
-        5 => "0000010000000000", -- carregar D[0] em RF[0] (5)
-        6 => "0000010100000001", -- carregar D[1] em RF[1] (7)
-        7 => "0100000000010000", -- adicionar RF[0] + RF[1] => RF[2]
-        8 => "1000001000000011", -- armazenar RF[2] em D[3] 
+        0 => "0000000000000000", -- Carregar D[0] em RF[0]
+        1 => "0000010100000001", -- Carregar D[1] em RF[1]
+        2 => "0010000000010010", -- Somar RF[0] + RF[1] => RF[2]
+        3 => "0001001000000010", -- Armazenar RF[2] em D[2]
+  
         others => "0000000000000000"
             );
 

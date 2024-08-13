@@ -79,13 +79,15 @@ entity combinacional is
 end combinacional;
 architecture comb of combinacional is
     begin
-        n3 <= (not(s3) and (not(s2)) and s1 and (not(s0)) and (not(op1)) and op0)
-        or (s3 and not(s2) and not(s1) and not(s0) and (RF_Rp_zero or RF_Rp_gt_Rq));
+        n3 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2 and not(op1) and op0) or 
+        (not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2 and op1 and not(op0))
+        or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or (s3 and not(s2) and not(s1) and s0 and RF_Rp_gt_Rq); 
 
         n2 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3)) and ((not(op2) and op0) or (not(op2) and op1 and op0)
         or (op2 and not(op1) and not(op0)));
 
-        n1 <= (not(s3) and not(s2) and not(s1) and s0) or (not(s3) and not(s2) and s1 and not(s0) and op3) or
+        n1 <= (not(s3) and not(s2) and not(s1) and s0) or (not(s3) and not(s2) and s1 and not(s0) and ((not(op3) and not(op2) and not(op1) and not(op0)) or (not(op3) and not(op2) and op1 and op0)
+        or (not(op3) and op2 and not(op1) and not(op0)))) or
         (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or (s3 and not(s2) and not(s1) and s0 and RF_Rp_gt_Rq);
 
         n0 <= (not(s3) and not(s2) and not(s1) and not(s0)) or (not(s3) and not(s2) and s1 and not(s0) and not(op3) and not(op0)) or (not(s3) and not(s2) and s1 and s0)
@@ -258,7 +260,8 @@ entity control is
         RF_s0, RF_s1 : out std_logic;
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
         alu_s0, alu_s1 : out std_logic;
-        I_addr : out std_logic_vector(15 downto 0));
+        I_addr : out std_logic_vector(15 downto 0);
+		  dbg : out std_logic_vector(3 downto 0));
 end control;
 architecture controller of control is
     signal q3_s3, q2_s2, q1_s1, q0_s0 : std_logic;
@@ -335,7 +338,7 @@ begin
     RF_s1 => RF_s1, RF_W_wr => RF_W_wr, RF_Rp_rd => RF_Rp_rd, RF_Rq_rd => RF_Rq_rd,
     alu_s0 => alu_s0, alu_s1 => alu_s1, M_s => sig_M_s);
 
-    instructionreg : instreg port map(clk => clk, IR_ld => IR_ld, I => IR, IR => ir_out);
+    instructionreg : instreg port map(clk => clk, IR_ld => ir_ld, I => IR, IR => ir_out);
 
     programcounter : pc port map(clk => clk, ld => pc_ld, clr => pc_clr, up => pc_inc,
     load_val => mux_out, count => pc_out);
@@ -345,4 +348,5 @@ begin
     multiplexador : mux port map(sel => sig_M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
     I_addr <= pc_out;
     out_IR <= ir_out(11 downto 0);
+	dbg <= q3_s3 & q2_s2 & q1_s1 & q0_s0; -- variável para debug dos estados
 end controller;

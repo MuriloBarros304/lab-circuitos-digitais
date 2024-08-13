@@ -36,7 +36,7 @@ BEGIN
 PROCESS(clock) IS
 BEGIN
     IF (RISING_EDGE(clock) AND mem_enable = '1') THEN
-          IF (r_enable = '1') THEN
+          IF (r_enable = '0') THEN
                temp_address <= address;
           ELSIF (w_enable = '1') THEN
                ram(to_integer(unsigned(address))) <= data_input;
