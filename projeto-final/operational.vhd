@@ -3,7 +3,7 @@ use ieee.std_logic_1164.all;
 
 entity operational is
 	port(clock : in std_logic;
-		  R_data : in std_logic_vector(15 downto 0);
+		R_data : in std_logic_vector(15 downto 0);
         RF_W_data : in std_logic_vector(15 downto 0);
         RF_W_addr : in std_logic_vector(3 downto 0);
         RF_W_wr : in std_logic;
@@ -70,5 +70,4 @@ begin
 	alu0: alu port map(si => alu_s, A => aux1, B => aux2, S => aux3);
 	comp1: comparator16 port map(A => aux1, B => "0000000000000000", gt => dummy1, eq => RF_Rp_Zero);
 	W_data <= aux1;
-	
 end behav;

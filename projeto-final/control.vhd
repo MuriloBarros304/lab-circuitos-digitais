@@ -83,7 +83,7 @@ architecture comb of combinacional is
         (not(s3) and not(s2) and s1 and not(s0) and not(op3) and op2 and op1 and not(op0))
         or (s3 and not(s2) and not(s1) and not(s0) and RF_Rp_zero) or (s3 and not(s2) and not(s1) and s0 and RF_Rp_gt_Rq); 
 
-        n2 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3)) and ((not(op2) and op0) or (not(op2) and op1 and op0)
+        n2 <= (not(s3) and not(s2) and s1 and not(s0) and not(op3)) and ((not(op2) and not(op1) and op0) or (not(op2) and op1 and not(op0))
         or (op2 and not(op1) and not(op0)));
 
         n1 <= (not(s3) and not(s2) and not(s1) and s0) or (not(s3) and not(s2) and s1 and not(s0) and ((not(op3) and not(op2) and not(op1) and not(op0)) or (not(op3) and not(op2) and op1 and op0)
@@ -108,7 +108,8 @@ architecture comb of combinacional is
 
         D_wr <= not(s3) and s2 and not(s1) and not(s0);
 
-        RF_W_wr <= (not(s3) and s1 and ((not(s2) and s0) or (s2)));
+        RF_W_wr <= (not(s3) and not(s2) and s1 and s0) or (not(s3) and s2 and not(s1) and s0) or (not(s3) and s2 and s1 and not(s0))
+        or (not(s3) and s2 and s1 and s0);
 
         RF_Rp_rd <= (not(s3) and s2 and (not(s1) or (s1 and s0))) or (s3 and not(s2) and not(s1));
 
@@ -260,14 +261,15 @@ entity control is
         RF_s0, RF_s1 : out std_logic;
         RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
         alu_s0, alu_s1 : out std_logic;
-        I_addr : out std_logic_vector(15 downto 0);
-		  dbg : out std_logic_vector(3 downto 0));
+        I_addr : out std_logic_vector(15 downto 0));
+		  --IR_load : out std_logic;
+		  --dbg : out std_logic_vector(3 downto 0));
 end control;
 architecture controller of control is
     signal q3_s3, q2_s2, q1_s1, q0_s0 : std_logic;
     signal n3_d3, n2_d2, n1_d1, n0_d0 : std_logic;
     signal ir_out : std_logic_vector(15 downto 0);
-    signal ir_ld, pc_clr, pc_inc, pc_ld : std_logic;
+    signal sig_ir_ld, pc_clr, pc_inc, pc_ld : std_logic;
     signal mux_out, mux_in1 : std_logic_vector(15 downto 0);
     signal pc_out : std_logic_vector(15 downto 0);
     signal sig_M_s : std_logic;
@@ -334,11 +336,11 @@ begin
     IR(1) => ir_out(1), IR(0) => ir_out(0), 
     RF_Rp_zero => RF_Rp_zero, RF_Rp_gt_rq => RF_Rp_gt_rq, n3 => n3_d3, n2 => n2_d2,
     n1 => n1_d1, n0 => n0_d0, PC_ld => pc_ld, PC_clr => pc_clr, PC_inc => pc_inc,
-    I_rd => i_rd, IR_ld => ir_ld, D_rd => D_rd, D_wr => D_wr, RF_s0 => RF_s0,
+    I_rd => i_rd, IR_ld => sig_ir_ld, D_rd => D_rd, D_wr => D_wr, RF_s0 => RF_s0,
     RF_s1 => RF_s1, RF_W_wr => RF_W_wr, RF_Rp_rd => RF_Rp_rd, RF_Rq_rd => RF_Rq_rd,
     alu_s0 => alu_s0, alu_s1 => alu_s1, M_s => sig_M_s);
 
-    instructionreg : instreg port map(clk => clk, IR_ld => ir_ld, I => IR, IR => ir_out);
+    instructionreg : instreg port map(clk => clk, IR_ld => sig_ir_ld, I => IR, IR => ir_out);
 
     programcounter : pc port map(clk => clk, ld => pc_ld, clr => pc_clr, up => pc_inc,
     load_val => mux_out, count => pc_out);
@@ -348,5 +350,6 @@ begin
     multiplexador : mux port map(sel => sig_M_s, a => mux_in1, b => RF_Rp_data, y => mux_out); --i0 vai o somador, i1 vai Rp_data
     I_addr <= pc_out;
     out_IR <= ir_out(11 downto 0);
-	dbg <= q3_s3 & q2_s2 & q1_s1 & q0_s0; -- variável para debug dos estados
+	--dbg <= q3_s3 & q2_s2 & q1_s1 & q0_s0; -- variável para debug dos estados
+	--ir_load <= sig_ir_ld;
 end controller;

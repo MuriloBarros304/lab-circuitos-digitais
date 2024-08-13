@@ -18,6 +18,7 @@ architecture hardware of processor is
     signal c_rfwaddr, c_rfrpaddr, c_rfrqaddr : std_logic_vector(3 downto 0);
     signal c_drd, c_dwr, c_rfs1, c_rfs0, c_rfwwr, c_rfrprd, c_rfrqrd, rfrpzero_c,
     rfrpgtrq_c, c_alus1, c_alus0, c_ird : std_logic;
+    --signal sinal_teste : std_logic_vector(15 downto 0);
     component ROM is
         port(
             clock : in std_logic;
