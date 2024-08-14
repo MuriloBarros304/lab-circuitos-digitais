@@ -55,7 +55,7 @@ architecture hardware of processor is
         port(
             clock : in std_logic;
             R_data : in std_logic_vector(15 downto 0);
-            RF_W_data : in std_logic_vector(15 downto 0);
+            RF_W_data : in std_logic_vector(15 downto 0); -- verificar
             RF_W_addr : in std_logic_vector(3 downto 0);
             RF_W_wr : in std_logic;
             RF_s : in std_logic_vector(1 downto 0);
@@ -77,7 +77,7 @@ begin
 
     operationalunit: operational port map(clock => clk, R_data => drdata_mux, RF_W_data => c_rfwdata,
     RF_W_addr => c_rfwaddr, RF_W_wr => c_rfwwr, RF_s => (c_rfs1, c_rfs0), RF_Rp_addr => c_rfrpaddr,
-    RF_Rp_rd => c_rfrprd, RF_Rq_addr => c_rfrqaddr, RF_Rq_rd => c_rfrqrd, alu_s => (c_alus1, c_alus0),
+    RF_Rp_rd => c_rfrprd, RF_Rq_addr => c_rfrqaddr, RF_Rq_rd => c_rfrqrd, alu_s => c_alus1 & c_alus0,
     W_data => rfrp_dwdata, RF_Rp_gt_Rq => rfrpgtrq_c, RF_Rp_Zero => rfrpzero_c);
 
     controlunit: control port map(clk => clk, IR => i_ir, out_IR(11) => c_rfrpaddr(3), out_IR(10) => c_rfrpaddr(2),
@@ -89,7 +89,7 @@ begin
     I_addr => pc_iaddr, dbg => pc_ld);
     D_R_data <= drdata_mux;
     D_wr <= c_dwr;
-    D_W_data <= rfrp_dwdata;
+    D_W_data <= rfrp_dwdata; -- alterna entre 0 e 1
     IR_data <= i_ir;
     PC_addr <= pc_iaddr;
     c_daddr <= c_rfrqaddr & c_rfwaddr;
