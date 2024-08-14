@@ -48,8 +48,8 @@ architecture hardware of processor is
             RF_s0, RF_s1 : out std_logic;
             RF_W_wr, RF_Rp_rd, RF_Rq_rd : out std_logic;
             alu_s0, alu_s1 : out std_logic;
-            I_addr : out std_logic_vector(15 downto 0);
-            dbg : out std_logic);
+            I_addr : out std_logic_vector(15 downto 0));
+            --dbg : out std_logic);
     end component;
     component operational is
         port(
@@ -86,7 +86,7 @@ begin
     out_IR(1) => c_rfwaddr(1), out_IR(0) => c_rfwaddr(0), RF_Rp_zero => rfrpzero_c, RF_Rp_gt_rq => rfrpgtrq_c,
     RF_Rp_data => rfrp_dwdata, I_rd => c_ird, D_rd => c_drd, D_wr => c_dwr, RF_s0 => c_rfs0, RF_s1 => c_rfs1,
     RF_W_wr => c_rfwwr, RF_Rp_rd => c_rfrprd, RF_Rq_rd => c_rfrqrd, alu_s0 => c_alus0, alu_s1 => c_alus1,
-    I_addr => pc_iaddr, dbg => pc_ld);
+    I_addr => pc_iaddr); --dbg => pc_ld);
     D_R_data <= drdata_mux;
     D_wr <= c_dwr;
     D_W_data <= rfrp_dwdata; -- alterna entre 0 e 1

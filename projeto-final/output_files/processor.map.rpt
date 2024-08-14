@@ -1,5 +1,5 @@
 Analysis & Synthesis report for processor
-Wed Aug 14 11:06:28 2024
+Wed Aug 14 11:37:54 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -81,13 +81,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 14 11:06:28 2024           ;
+; Analysis & Synthesis Status        ; Successful - Wed Aug 14 11:37:54 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; processor                                       ;
 ; Top-level Entity Name              ; processor                                       ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 233                                             ;
-;     Total combinational functions  ; 210                                             ;
+; Total logic elements               ; 183                                             ;
+;     Total combinational functions  ; 160                                             ;
 ;     Dedicated logic registers      ; 104                                             ;
 ; Total registers                    ; 104                                             ;
 ; Total pins                         ; 67                                              ;
@@ -229,17 +229,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Estimated Total logic elements              ; 233   ;
+; Estimated Total logic elements              ; 183   ;
 ;                                             ;       ;
-; Total combinational functions               ; 210   ;
+; Total combinational functions               ; 160   ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 88    ;
-;     -- 3 input functions                    ; 96    ;
-;     -- <=2 input functions                  ; 26    ;
+;     -- 4 input functions                    ; 55    ;
+;     -- 3 input functions                    ; 95    ;
+;     -- <=2 input functions                  ; 10    ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 150   ;
-;     -- arithmetic mode                      ; 60    ;
+;     -- normal mode                          ; 115   ;
+;     -- arithmetic mode                      ; 45    ;
 ;                                             ;       ;
 ; Total registers                             ; 104   ;
 ;     -- Dedicated logic registers            ; 104   ;
@@ -250,8 +250,8 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ; Embedded Multiplier 9-bit elements          ; 0     ;
 ; Maximum fan-out node                        ; clk   ;
 ; Maximum fan-out                             ; 120   ;
-; Total fan-out                               ; 1614  ;
-; Average fan-out                             ; 3.76  ;
+; Total fan-out                               ; 1479  ;
+; Average fan-out                             ; 3.90  ;
 +---------------------------------------------+-------+
 
 
@@ -260,14 +260,14 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                    ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------+--------------+
-; |processor                                   ; 210 (1)           ; 104 (0)      ; 2560        ; 0            ; 0       ; 0         ; 67   ; 0            ; |processor                                                                                             ; work         ;
+; |processor                                   ; 160 (1)           ; 104 (0)      ; 2560        ; 0            ; 0       ; 0         ; 67   ; 0            ; |processor                                                                                             ; work         ;
 ;    |RAM:randomaccessmemory|                  ; 0 (0)             ; 6 (6)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory                                                                      ; work         ;
 ;       |altsyncram:ram_rtl_0|                 ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0                                                 ; work         ;
 ;          |altsyncram_gbk1:auto_generated|    ; 0 (0)             ; 0 (0)        ; 2048        ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|RAM:randomaccessmemory|altsyncram:ram_rtl_0|altsyncram_gbk1:auto_generated                  ; work         ;
 ;    |ROM:readonlymemory|                      ; 12 (12)           ; 12 (12)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|ROM:readonlymemory                                                                          ; work         ;
-;    |control:controlunit|                     ; 125 (0)           ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit                                                                         ; work         ;
-;       |adder:add|                            ; 81 (81)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|adder:add                                                               ; work         ;
-;       |combinacional:comb|                   ; 27 (27)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|combinacional:comb                                                      ; work         ;
+;    |control:controlunit|                     ; 75 (0)            ; 32 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit                                                                         ; work         ;
+;       |adder:add|                            ; 32 (32)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|adder:add                                                               ; work         ;
+;       |combinacional:comb|                   ; 25 (25)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|combinacional:comb                                                      ; work         ;
 ;       |instreg:instructionreg|               ; 0 (0)             ; 12 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg                                                  ; work         ;
 ;          |flipflop:ff0|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff0                                     ; work         ;
 ;          |flipflop:ff10|                     ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff10                                    ; work         ;
@@ -281,7 +281,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;          |flipflop:ff6|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff6                                     ; work         ;
 ;          |flipflop:ff8|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff8                                     ; work         ;
 ;          |flipflop:ff9|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|instreg:instructionreg|flipflop:ff9                                     ; work         ;
-;       |pc:programcounter|                    ; 17 (17)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|pc:programcounter                                                       ; work         ;
+;       |pc:programcounter|                    ; 18 (18)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|pc:programcounter                                                       ; work         ;
 ;       |reg4:statereg|                        ; 0 (0)             ; 4 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg                                                           ; work         ;
 ;          |flipflop:ff0|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg|flipflop:ff0                                              ; work         ;
 ;          |flipflop:ff1|                      ; 0 (0)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |processor|control:controlunit|reg4:statereg|flipflop:ff1                                              ; work         ;
@@ -407,7 +407,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Total registers                              ; 104   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Synchronous Load   ; 16    ;
 ; Number of registers using Asynchronous Clear ; 16    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 34    ;
@@ -529,9 +529,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
-; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |processor|control:controlunit|pc:programcounter|counter[10]  ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |processor|control:controlunit|pc:programcounter|Add1         ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |processor|operational:operationalunit|mux3x1_16bits:mux|D[8] ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |processor|control:controlunit|pc:programcounter|counter[5]   ;
+; 6:1                ; 16 bits   ; 64 LEs        ; 48 LEs               ; 16 LEs                 ; No         ; |processor|operational:operationalunit|mux3x1_16bits:mux|D[0] ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------------------------------+
 
 
@@ -1038,7 +1037,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Aug 14 11:06:26 2024
+    Info: Processing started: Wed Aug 14 11:37:52 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off processor -c processor
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Warning (12125): Using design file processor.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
@@ -1047,6 +1046,7 @@ Warning (12125): Using design file processor.vhd, which is not specified as a de
 Info (12127): Elaborating entity "processor" for the top level hierarchy
 Warning (10541): VHDL Signal Declaration warning at processor.vhd(16): used implicit default value for signal "c_rfwdata" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (10036): Verilog HDL or VHDL warning at processor.vhd(20): object "c_ird" assigned a value but never read
+Warning (10541): VHDL Signal Declaration warning at processor.vhd(19): used implicit default value for signal "pc_ld" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations.
 Warning (12125): Using design file ROM.vhd, which is not specified as a design file for the current project, but contains definitions for 2 design units and 1 entities in project
     Info (12022): Found design unit 1: ROM-behav
     Info (12023): Found entity 1: ROM
@@ -1088,7 +1088,7 @@ Warning (12125): Using design file control.vhd, which is not specified as a desi
     Info (12022): Found design unit 4: instreg-behav
     Info (12022): Found design unit 5: pc-behavioral
     Info (12022): Found design unit 6: adder-behavioral
-    Info (12022): Found design unit 7: mux-behavioral
+    Info (12022): Found design unit 7: mux-behavior
     Info (12022): Found design unit 8: control-controller
     Info (12023): Found entity 1: flipflop
     Info (12023): Found entity 2: reg4
@@ -1221,17 +1221,18 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "IR_data[7]" is stuck at GND
     Warning (13410): Pin "IR_data[11]" is stuck at GND
     Warning (13410): Pin "IR_data[15]" is stuck at GND
+    Warning (13410): Pin "pc_load_sig" is stuck at GND
 Info (17036): Removed 1 MSB VCC or GND address nodes from RAM block "RAM:randomaccessmemory|altsyncram:ram_rtl_0|altsyncram_gbk1:auto_generated|ALTSYNCRAM"
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 365 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 315 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 1 input pins
     Info (21059): Implemented 66 output pins
-    Info (21061): Implemented 250 logic cells
+    Info (21061): Implemented 200 logic cells
     Info (21064): Implemented 48 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 27 warnings
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 29 warnings
     Info: Peak virtual memory: 662 megabytes
-    Info: Processing ended: Wed Aug 14 11:06:28 2024
+    Info: Processing ended: Wed Aug 14 11:37:54 2024
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
