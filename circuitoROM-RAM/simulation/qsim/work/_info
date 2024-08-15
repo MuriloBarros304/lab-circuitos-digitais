@@ -1,0 +1,81 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\circuitoROM-RAM\simulation\qsim
+vcircuito
+Z1 !s100 `F3PM8oEhMnZa4Y8zVfo43
+Z2 IS<;W78Sh??71e`oiLeY;R2
+Z3 Vo5J4mf18eZ2h1VIbfaaPa2
+Z4 dC:\Users\filho\Documents\GitHub\lab-circuitos-digitais\circuitoROM-RAM\simulation\qsim
+Z5 w1723682985
+Z6 8circuito.vo
+Z7 Fcircuito.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|circuito.vo|
+Z10 o-work work -O0
+!i10b 1
+!s85 0
+Z11 !s108 1723682985.570000
+Z12 !s107 circuito.vo|
+!s101 -O0
+vcircuito_vlg_check_tst
+!i10b 1
+Z13 !s100 ?iTmog8BgSYi=__R=fEQ[2
+Z14 I5iZo9[zoIeDBLTQ50]l=f0
+Z15 VzEMLAo00>ATIzAmCa[4dI1
+R4
+Z16 w1723682984
+Z17 8circuito.vt
+Z18 Fcircuito.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1723682985.643000
+Z20 !s107 circuito.vt|
+Z21 !s90 -work|work|circuito.vt|
+!s101 -O0
+R10
+vcircuito_vlg_sample_tst
+!i10b 1
+Z22 !s100 iA<IAb5]dVAIeA_bgVmC50
+Z23 If>?[T1hikkSo7K5AXhanI3
+Z24 VYo8S0A:hYieZbV=kLEIT@1
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+vcircuito_vlg_vec_tst
+!i10b 1
+!s100 Rk_CR1PG]D72aH9T@hgXn1
+ISMAHK238Pglc>U[;im4a@2
+Z25 Vc?Redcod;d0dV>=[`H1aX2
+R4
+R16
+R17
+R18
+Z26 L0 595
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
