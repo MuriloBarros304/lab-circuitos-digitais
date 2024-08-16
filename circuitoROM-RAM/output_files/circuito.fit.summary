@@ -1,14 +1,14 @@
-Fitter Status : Successful - Thu Aug 15 16:33:20 2024
+Fitter Status : Successful - Fri Aug 16 13:14:23 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : circuito
 Top-level Entity Name : circuito
 Family : Cyclone II
 Device : EP2C5T144C6
 Timing Models : Final
-Total logic elements : 179 / 4,608 ( 4 % )
-    Total combinational functions : 134 / 4,608 ( 3 % )
-    Dedicated logic registers : 130 / 4,608 ( 3 % )
-Total registers : 130
+Total logic elements : 199 / 4,608 ( 4 % )
+    Total combinational functions : 139 / 4,608 ( 3 % )
+    Dedicated logic registers : 135 / 4,608 ( 3 % )
+Total registers : 135
 Total pins : 28 / 89 ( 31 % )
 Total virtual pins : 0
 Total memory bits : 0 / 119,808 ( 0 % )
