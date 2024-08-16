@@ -87,7 +87,7 @@ nCONFIG                      : 20        :        :                   :         
 GND+                         : 21        :        :                   :         : 1         :                
 GND+                         : 22        :        :                   :         : 1         :                
 VCCIO1                       : 23        : power  :                   : 3.3V    : 1         :                
-rom_data_output[6]           : 24        : output : 3.3-V LVTTL       :         : 1         : N              
+GND*                         : 24        :        :                   :         : 1         :                
 GND*                         : 25        :        :                   :         : 1         :                
 GND*                         : 26        :        :                   :         : 1         :                
 GND*                         : 27        :        :                   :         : 1         :                
@@ -106,7 +106,7 @@ GND                          : 39        : gnd    :                   :         
 GND*                         : 40        :        :                   :         : 4         :                
 GND*                         : 41        :        :                   :         : 4         :                
 GND*                         : 42        :        :                   :         : 4         :                
-ram_data_output[7]           : 43        : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : 43        :        :                   :         : 4         :                
 GND*                         : 44        :        :                   :         : 4         :                
 GND*                         : 45        :        :                   :         : 4         :                
 VCCIO4                       : 46        : power  :                   : 3.3V    : 4         :                
@@ -115,7 +115,7 @@ GND*                         : 48        :        :                   :         
 GND                          : 49        : gnd    :                   :         :           :                
 VCCINT                       : 50        : power  :                   : 1.2V    :           :                
 GND*                         : 51        :        :                   :         : 4         :                
-GND*                         : 52        :        :                   :         : 4         :                
+ram_data_output[7]           : 52        : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : 53        :        :                   :         : 4         :                
 VCCIO4                       : 54        : power  :                   : 3.3V    : 4         :                
 rom_data_output[7]           : 55        : output : 3.3-V LVTTL       :         : 4         : N              
@@ -136,7 +136,7 @@ GND*                         : 69        :        :                   :         
 GND*                         : 70        :        :                   :         : 4         :                
 GND*                         : 71        :        :                   :         : 4         :                
 GND*                         : 72        :        :                   :         : 4         :                
-GND*                         : 73        :        :                   :         : 3         :                
+ram_data_output[5]           : 73        : output : 3.3-V LVTTL       :         : 3         : N              
 GND*                         : 74        :        :                   :         : 3         :                
 GND*                         : 75        :        :                   :         : 3         :                
 ~LVDS41p/nCEO~               : 76        : output : 3.3-V LVTTL       :         : 3         : N              
@@ -157,17 +157,17 @@ GND+                         : 90        :        :                   :         
 GND+                         : 91        :        :                   :         : 3         :                
 GND*                         : 92        :        :                   :         : 3         :                
 GND*                         : 93        :        :                   :         : 3         :                
-GND*                         : 94        :        :                   :         : 3         :                
+rom_enable                   : 94        : input  : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : 95        : power  :                   : 3.3V    : 3         :                
-GND*                         : 96        :        :                   :         : 3         :                
-GND*                         : 97        :        :                   :         : 3         :                
+rom_data_output[1]           : 96        : output : 3.3-V LVTTL       :         : 3         : N              
+ram_data_output[3]           : 97        : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : 98        : gnd    :                   :         :           :                
-add_rom[0]                   : 99        : output : 3.3-V LVTTL       :         : 3         : N              
-rom_data_output[2]           : 100       : output : 3.3-V LVTTL       :         : 3         : N              
-ram_data_output[0]           : 101       : output : 3.3-V LVTTL       :         : 3         : N              
+ram_data_output[1]           : 99        : output : 3.3-V LVTTL       :         : 3         : N              
+ram_data_output[0]           : 100       : output : 3.3-V LVTTL       :         : 3         : N              
+ram_data_output[4]           : 101       : output : 3.3-V LVTTL       :         : 3         : N              
 VCCIO3                       : 102       : power  :                   : 3.3V    : 3         :                
-ram_data_output[4]           : 103       : output : 3.3-V LVTTL       :         : 3         : N              
-ram_data_output[1]           : 104       : output : 3.3-V LVTTL       :         : 3         : N              
+add_rom[1]                   : 103       : output : 3.3-V LVTTL       :         : 3         : N              
+add_rom[2]                   : 104       : output : 3.3-V LVTTL       :         : 3         : N              
 GND                          : 105       : gnd    :                   :         :           :                
 GND_PLL2                     : 106       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 107       : power  :                   : 1.2V    :           :                
@@ -175,36 +175,36 @@ GND_PLL2                     : 108       : gnd    :                   :         
 VCCA_PLL2                    : 109       : power  :                   : 1.2V    :           :                
 GNDA_PLL2                    : 110       : gnd    :                   :         :           :                
 GND                          : 111       : gnd    :                   :         :           :                
-ram_data_output[2]           : 112       : output : 3.3-V LVTTL       :         : 2         : N              
-ram_data_output[3]           : 113       : output : 3.3-V LVTTL       :         : 2         : N              
-rom_data_output[0]           : 114       : output : 3.3-V LVTTL       :         : 2         : N              
-rom_data_output[3]           : 115       : output : 3.3-V LVTTL       :         : 2         : N              
+add_rom[3]                   : 112       : output : 3.3-V LVTTL       :         : 2         : N              
+rw_enable                    : 113       : input  : 3.3-V LVTTL       :         : 2         : N              
+add_rom[0]                   : 114       : output : 3.3-V LVTTL       :         : 2         : N              
+mem_enable                   : 115       : input  : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
-rom_data_output[1]           : 118       : output : 3.3-V LVTTL       :         : 2         : N              
-rw_enable                    : 119       : input  : 3.3-V LVTTL       :         : 2         : N              
+rom_data_output[2]           : 118       : output : 3.3-V LVTTL       :         : 2         : N              
+rom_data_output[3]           : 119       : output : 3.3-V LVTTL       :         : 2         : N              
 rom_data_output[4]           : 120       : output : 3.3-V LVTTL       :         : 2         : N              
-add_ram[2]                   : 121       : output : 3.3-V LVTTL       :         : 2         : N              
-add_ram[1]                   : 122       : output : 3.3-V LVTTL       :         : 2         : N              
+add_ram[0]                   : 121       : output : 3.3-V LVTTL       :         : 2         : N              
+rom_data_output[0]           : 122       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : 123       : gnd    :                   :         :           :                
 VCCINT                       : 124       : power  :                   : 1.2V    :           :                
-mem_enable                   : 125       : input  : 3.3-V LVTTL       :         : 2         : N              
-add_ram[3]                   : 126       : output : 3.3-V LVTTL       :         : 2         : N              
+add_ram[3]                   : 125       : output : 3.3-V LVTTL       :         : 2         : N              
+add_ram[1]                   : 126       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 127       : power  :                   : 3.3V    : 2         :                
 GND                          : 128       : gnd    :                   :         :           :                
-add_ram[0]                   : 129       : output : 3.3-V LVTTL       :         : 2         : N              
+add_ram[2]                   : 129       : output : 3.3-V LVTTL       :         : 2         : N              
 GND                          : 130       : gnd    :                   :         :           :                
 VCCINT                       : 131       : power  :                   : 1.2V    :           :                
-rom_enable                   : 132       : input  : 3.3-V LVTTL       :         : 2         : N              
-add_rom[3]                   : 133       : output : 3.3-V LVTTL       :         : 2         : N              
-add_rom[2]                   : 134       : output : 3.3-V LVTTL       :         : 2         : N              
+ram_data_output[2]           : 132       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 133       :        :                   :         : 2         :                
+ram_data_output[6]           : 134       : output : 3.3-V LVTTL       :         : 2         : N              
 GND*                         : 135       :        :                   :         : 2         :                
-ram_data_output[5]           : 136       : output : 3.3-V LVTTL       :         : 2         : N              
-add_rom[1]                   : 137       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 136       :        :                   :         : 2         :                
+rom_data_output[6]           : 137       : output : 3.3-V LVTTL       :         : 2         : N              
 VCCIO2                       : 138       : power  :                   : 3.3V    : 2         :                
 GND*                         : 139       :        :                   :         : 2         :                
 GND                          : 140       : gnd    :                   :         :           :                
 GND*                         : 141       :        :                   :         : 2         :                
 rom_data_output[5]           : 142       : output : 3.3-V LVTTL       :         : 2         : N              
-ram_data_output[6]           : 143       : output : 3.3-V LVTTL       :         : 2         : N              
+GND*                         : 143       :        :                   :         : 2         :                
 GND*                         : 144       :        :                   :         : 2         :                

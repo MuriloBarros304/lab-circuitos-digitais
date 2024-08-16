@@ -74,12 +74,12 @@ begin
                 if rom_to_ram = '0' then
                     -- Operação de leitura da ROM
                     if rom_enable = '1' then
-                        address_rom <= conv_std_logic_vector(counter, 4);
+                        address_rom <= conv_std_logic_vector(15 - counter, 4);
                         rom_to_ram <= '1';  -- Alterna para escrita na RAM no próximo ciclo
                     end if;
                 else
                     -- Operação de escrita na RAM
-                    address_ram <= conv_std_logic_vector(15 - counter, 4);
+                    address_ram <= conv_std_logic_vector(counter, 4);
                     rom_to_ram <= '0';  -- Alterna para leitura da ROM no próximo ciclo
 
                     -- Incrementa o contador

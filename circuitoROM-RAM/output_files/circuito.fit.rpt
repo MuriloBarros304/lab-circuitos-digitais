@@ -1,5 +1,5 @@
 Fitter report for circuito
-Fri Aug 16 13:14:23 2024
+Fri Aug 16 17:05:22 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -62,14 +62,14 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Fri Aug 16 13:14:23 2024           ;
+; Fitter Status                      ; Successful - Fri Aug 16 17:05:22 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; circuito                                        ;
 ; Top-level Entity Name              ; circuito                                        ;
 ; Family                             ; Cyclone II                                      ;
 ; Device                             ; EP2C5T144C6                                     ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 199 / 4,608 ( 4 % )                             ;
+; Total logic elements               ; 194 / 4,608 ( 4 % )                             ;
 ;     Total combinational functions  ; 139 / 4,608 ( 3 % )                             ;
 ;     Dedicated logic registers      ; 135 / 4,608 ( 3 % )                             ;
 ; Total registers                    ; 135                                             ;
@@ -135,7 +135,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -178,7 +178,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.pin.
+The pin-out file can be found in C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.pin.
 
 
 +-------------------------------------------------------------------+
@@ -186,16 +186,16 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 +---------------------------------------------+---------------------+
 ; Resource                                    ; Usage               ;
 +---------------------------------------------+---------------------+
-; Total logic elements                        ; 199 / 4,608 ( 4 % ) ;
-;     -- Combinational with no register       ; 64                  ;
-;     -- Register only                        ; 60                  ;
-;     -- Combinational with a register        ; 75                  ;
+; Total logic elements                        ; 194 / 4,608 ( 4 % ) ;
+;     -- Combinational with no register       ; 59                  ;
+;     -- Register only                        ; 55                  ;
+;     -- Combinational with a register        ; 80                  ;
 ;                                             ;                     ;
 ; Logic element usage by number of LUT inputs ;                     ;
 ;     -- 4 input functions                    ; 94                  ;
 ;     -- 3 input functions                    ; 6                   ;
 ;     -- <=2 input functions                  ; 39                  ;
-;     -- Register only                        ; 60                  ;
+;     -- Register only                        ; 55                  ;
 ;                                             ;                     ;
 ; Logic elements by mode                      ;                     ;
 ;     -- normal mode                          ; 109                 ;
@@ -238,16 +238,16 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 +---------------------------------------------+--------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                ; Low                            ;
 ;                                             ;                    ;                                ;
-; Total logic elements                        ; 199 / 4608 ( 4 % ) ; 0 / 4608 ( 0 % )               ;
-;     -- Combinational with no register       ; 64                 ; 0                              ;
-;     -- Register only                        ; 60                 ; 0                              ;
-;     -- Combinational with a register        ; 75                 ; 0                              ;
+; Total logic elements                        ; 194 / 4608 ( 4 % ) ; 0 / 4608 ( 0 % )               ;
+;     -- Combinational with no register       ; 59                 ; 0                              ;
+;     -- Register only                        ; 55                 ; 0                              ;
+;     -- Combinational with a register        ; 80                 ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic element usage by number of LUT inputs ;                    ;                                ;
 ;     -- 4 input functions                    ; 94                 ; 0                              ;
 ;     -- 3 input functions                    ; 6                  ; 0                              ;
 ;     -- <=2 input functions                  ; 39                 ; 0                              ;
-;     -- Register only                        ; 60                 ; 0                              ;
+;     -- Register only                        ; 55                 ; 0                              ;
 ;                                             ;                    ;                                ;
 ; Logic elements by mode                      ;                    ;                                ;
 ;     -- normal mode                          ; 109                ; 0                              ;
@@ -306,9 +306,9 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; Name       ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; clock      ; 17    ; 1        ; 0            ; 6            ; 0           ; 1                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; mem_enable ; 125   ; 2        ; 14           ; 14           ; 0           ; 25                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; rom_enable ; 132   ; 2        ; 9            ; 14           ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
-; rw_enable  ; 119   ; 2        ; 21           ; 14           ; 1           ; 17                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; mem_enable ; 115   ; 2        ; 24           ; 14           ; 0           ; 25                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; rom_enable ; 94    ; 3        ; 28           ; 9            ; 2           ; 3                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
+; rw_enable  ; 113   ; 2        ; 26           ; 14           ; 1           ; 17                    ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 3.3-V LVTTL  ; Off         ; Fitter               ;
 +------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -317,29 +317,29 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 +--------------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 ; Name               ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Output Register ; Output Enable Register ; Power Up High ; PCI I/O Enabled ; Open Drain ; TRI Primitive ; Bus Hold ; Weak Pull Up ; I/O Standard ; Current Strength ; Termination ; Location assigned by ; Load ; Output Enable Source ; Output Enable Group ;
 +--------------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
-; add_ram[0]         ; 129   ; 2        ; 12           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_ram[1]         ; 122   ; 2        ; 19           ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_ram[2]         ; 121   ; 2        ; 19           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_ram[3]         ; 126   ; 2        ; 14           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_rom[0]         ; 99    ; 3        ; 28           ; 11           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_rom[1]         ; 137   ; 2        ; 3            ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_rom[2]         ; 134   ; 2        ; 7            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; add_rom[3]         ; 133   ; 2        ; 7            ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[0] ; 101   ; 3        ; 28           ; 11           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[1] ; 104   ; 3        ; 28           ; 12           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[2] ; 112   ; 2        ; 26           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[3] ; 113   ; 2        ; 26           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[4] ; 103   ; 3        ; 28           ; 12           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[5] ; 136   ; 2        ; 3            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[6] ; 143   ; 2        ; 1            ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; ram_data_output[7] ; 43    ; 4        ; 3            ; 0            ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rom_data_output[0] ; 114   ; 2        ; 26           ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rom_data_output[1] ; 118   ; 2        ; 21           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rom_data_output[2] ; 100   ; 3        ; 28           ; 11           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rom_data_output[3] ; 115   ; 2        ; 24           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_ram[0]         ; 121   ; 2        ; 19           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_ram[1]         ; 126   ; 2        ; 14           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_ram[2]         ; 129   ; 2        ; 12           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_ram[3]         ; 125   ; 2        ; 14           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_rom[0]         ; 114   ; 2        ; 26           ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_rom[1]         ; 103   ; 3        ; 28           ; 12           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_rom[2]         ; 104   ; 3        ; 28           ; 12           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; add_rom[3]         ; 112   ; 2        ; 26           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[0] ; 100   ; 3        ; 28           ; 11           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[1] ; 99    ; 3        ; 28           ; 11           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[2] ; 132   ; 2        ; 9            ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[3] ; 97    ; 3        ; 28           ; 9            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[4] ; 101   ; 3        ; 28           ; 11           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[5] ; 73    ; 3        ; 28           ; 1            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[6] ; 134   ; 2        ; 7            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; ram_data_output[7] ; 52    ; 4        ; 7            ; 0            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rom_data_output[0] ; 122   ; 2        ; 19           ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rom_data_output[1] ; 96    ; 3        ; 28           ; 9            ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rom_data_output[2] ; 118   ; 2        ; 21           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rom_data_output[3] ; 119   ; 2        ; 21           ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; rom_data_output[4] ; 120   ; 2        ; 19           ; 14           ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; rom_data_output[5] ; 142   ; 2        ; 1            ; 14           ; 1           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
-; rom_data_output[6] ; 24    ; 1        ; 0            ; 5            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
+; rom_data_output[6] ; 137   ; 2        ; 3            ; 14           ; 2           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 ; rom_data_output[7] ; 55    ; 4        ; 9            ; 0            ; 0           ; no              ; no                     ; no            ; no              ; no         ; no            ; no       ; Off          ; 3.3-V LVTTL  ; 24mA             ; Off         ; Fitter               ; 0 pF ; -                    ; -                   ;
 +--------------------+-------+----------+--------------+--------------+-------------+-----------------+------------------------+---------------+-----------------+------------+---------------+----------+--------------+--------------+------------------+-------------+----------------------+------+----------------------+---------------------+
 
@@ -349,9 +349,9 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 +----------+------------------+---------------+--------------+
 ; I/O Bank ; Usage            ; VCCIO Voltage ; VREF Voltage ;
 +----------+------------------+---------------+--------------+
-; 1        ; 4 / 19 ( 21 % )  ; 3.3V          ; --           ;
-; 2        ; 19 / 23 ( 83 % ) ; 3.3V          ; --           ;
-; 3        ; 6 / 23 ( 26 % )  ; 3.3V          ; --           ;
+; 1        ; 3 / 19 ( 16 % )  ; 3.3V          ; --           ;
+; 2        ; 16 / 23 ( 70 % ) ; 3.3V          ; --           ;
+; 3        ; 10 / 23 ( 43 % ) ; 3.3V          ; --           ;
 ; 4        ; 2 / 24 ( 8 % )   ; 3.3V          ; --           ;
 +----------+------------------+---------------+--------------+
 
@@ -384,7 +384,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 21       ; 23         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 22       ; 24         ; 1        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 23       ;            ; 1        ; VCCIO1                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 24       ; 25         ; 1        ; rom_data_output[6]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 24       ; 25         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 25       ; 26         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 26       ; 27         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 27       ; 28         ; 1        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
@@ -403,7 +403,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 40       ; 43         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 41       ; 44         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 42       ; 45         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 43       ; 46         ; 4        ; ram_data_output[7]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 43       ; 46         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 44       ; 47         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 45       ; 48         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 46       ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
@@ -412,7 +412,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 49       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 50       ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 51       ; 52         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; --       ; --           ;
-; 52       ; 53         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 52       ; 53         ; 4        ; ram_data_output[7]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 53       ; 57         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 54       ;            ; 4        ; VCCIO4                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 55       ; 58         ; 4        ; rom_data_output[7]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
@@ -433,7 +433,7 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 70       ; 81         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 71       ; 82         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 72       ; 83         ; 4        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 73       ; 84         ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 73       ; 84         ; 3        ; ram_data_output[5]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 74       ; 85         ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 75       ; 86         ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 76       ; 87         ; 3        ; ~LVDS41p/nCEO~                           ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
@@ -454,17 +454,17 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 91       ; 108        ; 3        ; GND+                                     ;        ;              ;         ; Row I/O    ;                 ; --       ; --           ;
 ; 92       ; 109        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
 ; 93       ; 110        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 94       ; 111        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 94       ; 111        ; 3        ; rom_enable                               ; input  ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 95       ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 96       ; 112        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
-; 97       ; 113        ; 3        ; GND*                                     ;        ;              ;         ; Row I/O    ;                 ; no       ; Off          ;
+; 96       ; 112        ; 3        ; rom_data_output[1]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 97       ; 113        ; 3        ; ram_data_output[3]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 98       ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 99       ; 119        ; 3        ; add_rom[0]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 100      ; 120        ; 3        ; rom_data_output[2]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 101      ; 121        ; 3        ; ram_data_output[0]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 99       ; 119        ; 3        ; ram_data_output[1]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 100      ; 120        ; 3        ; ram_data_output[0]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 101      ; 121        ; 3        ; ram_data_output[4]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 102      ;            ; 3        ; VCCIO3                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
-; 103      ; 125        ; 3        ; ram_data_output[4]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
-; 104      ; 126        ; 3        ; ram_data_output[1]                       ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 103      ; 125        ; 3        ; add_rom[1]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
+; 104      ; 126        ; 3        ; add_rom[2]                               ; output ; 3.3-V LVTTL  ;         ; Row I/O    ; N               ; no       ; Off          ;
 ; 105      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 106      ;            ;          ; GND_PLL2                                 ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 107      ;            ;          ; VCCD_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
@@ -472,38 +472,38 @@ The pin-out file can be found in /home/murilo/Documentos/GitHub/lab-circuitos-di
 ; 109      ;            ;          ; VCCA_PLL2                                ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
 ; 110      ;            ;          ; GNDA_PLL2                                ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 111      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 112      ; 127        ; 2        ; ram_data_output[2]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 113      ; 128        ; 2        ; ram_data_output[3]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 114      ; 129        ; 2        ; rom_data_output[0]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 115      ; 130        ; 2        ; rom_data_output[3]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 112      ; 127        ; 2        ; add_rom[3]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 113      ; 128        ; 2        ; rw_enable                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 114      ; 129        ; 2        ; add_rom[0]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 115      ; 130        ; 2        ; mem_enable                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 116      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 117      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 118      ; 134        ; 2        ; rom_data_output[1]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 119      ; 135        ; 2        ; rw_enable                                ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 118      ; 134        ; 2        ; rom_data_output[2]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 119      ; 135        ; 2        ; rom_data_output[3]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 120      ; 137        ; 2        ; rom_data_output[4]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 121      ; 138        ; 2        ; add_ram[2]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 122      ; 139        ; 2        ; add_ram[1]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 121      ; 138        ; 2        ; add_ram[0]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 122      ; 139        ; 2        ; rom_data_output[0]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 123      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 124      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; 125      ; 144        ; 2        ; mem_enable                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 126      ; 145        ; 2        ; add_ram[3]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 125      ; 144        ; 2        ; add_ram[3]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 126      ; 145        ; 2        ; add_ram[1]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 127      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 128      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
-; 129      ; 148        ; 2        ; add_ram[0]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 129      ; 148        ; 2        ; add_ram[2]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 130      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 131      ;            ;          ; VCCINT                                   ; power  ;              ; 1.2V    ; --         ;                 ; --       ; --           ;
-; 132      ; 153        ; 2        ; rom_enable                               ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 133      ; 154        ; 2        ; add_rom[3]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 134      ; 155        ; 2        ; add_rom[2]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 132      ; 153        ; 2        ; ram_data_output[2]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 133      ; 154        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 134      ; 155        ; 2        ; ram_data_output[6]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 135      ; 162        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 136      ; 163        ; 2        ; ram_data_output[5]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 137      ; 164        ; 2        ; add_rom[1]                               ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 136      ; 163        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
+; 137      ; 164        ; 2        ; rom_data_output[6]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
 ; 138      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 139      ; 165        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 140      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 141      ; 166        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 142      ; 167        ; 2        ; rom_data_output[5]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
-; 143      ; 168        ; 2        ; ram_data_output[6]                       ; output ; 3.3-V LVTTL  ;         ; Column I/O ; N               ; no       ; Off          ;
+; 143      ; 168        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 144      ; 169        ; 2        ; GND*                                     ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
@@ -551,8 +551,8 @@ Note: User assignments will override these defaults. The user specified values a
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name        ; Library Name ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------+--------------+
-; |circuito                  ; 199 (61)    ; 135 (41)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 28   ; 0            ; 64 (20)      ; 60 (10)           ; 75 (31)          ; |circuito                  ; work         ;
-;    |RAM16x8:ram_inst|      ; 133 (133)   ; 89 (89)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 44 (44)      ; 50 (50)           ; 39 (39)          ; |circuito|RAM16x8:ram_inst ; work         ;
+; |circuito                  ; 194 (55)    ; 135 (41)                  ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 28   ; 0            ; 59 (14)      ; 55 (3)            ; 80 (37)          ; |circuito                  ; work         ;
+;    |RAM16x8:ram_inst|      ; 135 (135)   ; 89 (89)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 45 (45)      ; 52 (52)           ; 38 (38)          ; |circuito|RAM16x8:ram_inst ; work         ;
 ;    |ROM16x8:rom_inst|      ; 5 (5)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 5 (5)            ; |circuito|ROM16x8:rom_inst ; work         ;
 +----------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -589,7 +589,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; add_ram[3]         ; Output   ; --            ; --            ; --                    ; --  ;
 ; clock              ; Input    ; (0) 171 ps    ; (0) 171 ps    ; --                    ; --  ;
 ; mem_enable         ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
-; rom_enable         ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
+; rom_enable         ; Input    ; (6) 2523 ps   ; (6) 2523 ps   ; --                    ; --  ;
 ; rw_enable          ; Input    ; (6) 2514 ps   ; (6) 2514 ps   ; --                    ; --  ;
 +--------------------+----------+---------------+---------------+-----------------------+-----+
 
@@ -627,9 +627,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ;      - RAM16x8:ram_inst|ram~174           ; 0                 ; 6       ;
 ;      - rom_to_ram~0                       ; 0                 ; 6       ;
 ; rom_enable                                ;                   ;         ;
-;      - comb~0                             ; 1                 ; 6       ;
-;      - address_rom[0]~0                   ; 1                 ; 6       ;
-;      - rom_to_ram~0                       ; 1                 ; 6       ;
+;      - comb~0                             ; 0                 ; 6       ;
+;      - address_rom[0]~0                   ; 0                 ; 6       ;
+;      - rom_to_ram~0                       ; 0                 ; 6       ;
 ; rw_enable                                 ;                   ;         ;
 ;      - RAM16x8:ram_inst|ram~144           ; 0                 ; 6       ;
 ;      - RAM16x8:ram_inst|temp_address[0]~0 ; 0                 ; 6       ;
@@ -656,29 +656,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                               ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; RAM16x8:ram_inst|ram~144           ; LCCOMB_X18_Y11_N28 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~146           ; LCCOMB_X18_Y13_N0  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~148           ; LCCOMB_X18_Y12_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~150           ; LCCOMB_X18_Y12_N10 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~152           ; LCCOMB_X20_Y12_N16 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~154           ; LCCOMB_X17_Y10_N8  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~156           ; LCCOMB_X19_Y13_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~158           ; LCCOMB_X20_Y13_N30 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~160           ; LCCOMB_X18_Y10_N16 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~162           ; LCCOMB_X20_Y10_N24 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~164           ; LCCOMB_X19_Y10_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~166           ; LCCOMB_X20_Y10_N12 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~168           ; LCCOMB_X19_Y11_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~170           ; LCCOMB_X18_Y10_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~172           ; LCCOMB_X19_Y10_N22 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|ram~174           ; LCCOMB_X19_Y11_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; RAM16x8:ram_inst|temp_address[0]~0 ; LCCOMB_X19_Y12_N16 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; address_ram[0]~0                   ; LCCOMB_X15_Y10_N6  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; address_rom[0]~0                   ; LCCOMB_X15_Y10_N4  ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~144           ; LCCOMB_X18_Y10_N4  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~146           ; LCCOMB_X17_Y11_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~148           ; LCCOMB_X19_Y10_N20 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~150           ; LCCOMB_X18_Y12_N12 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~152           ; LCCOMB_X18_Y12_N24 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~154           ; LCCOMB_X20_Y12_N28 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~156           ; LCCOMB_X18_Y12_N10 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~158           ; LCCOMB_X20_Y12_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~160           ; LCCOMB_X21_Y11_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~162           ; LCCOMB_X18_Y11_N26 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~164           ; LCCOMB_X19_Y11_N22 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~166           ; LCCOMB_X18_Y12_N16 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~168           ; LCCOMB_X17_Y11_N0  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~170           ; LCCOMB_X18_Y12_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~172           ; LCCOMB_X19_Y11_N20 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|ram~174           ; LCCOMB_X19_Y10_N14 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; RAM16x8:ram_inst|temp_address[0]~0 ; LCCOMB_X20_Y11_N26 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; address_ram[0]~0                   ; LCCOMB_X24_Y12_N0  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; address_rom[0]~0                   ; LCCOMB_X24_Y12_N14 ; 4       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; clock                              ; PIN_17             ; 135     ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; comb~0                             ; LCCOMB_X17_Y11_N0  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; counter[0]~40                      ; LCCOMB_X15_Y10_N16 ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; mem_enable                         ; PIN_125            ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; comb~0                             ; LCCOMB_X24_Y12_N22 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; counter[0]~40                      ; LCCOMB_X24_Y12_N26 ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; mem_enable                         ; PIN_115            ; 25      ; Clock enable ; no     ; --                   ; --               ; --                        ;
 +------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -770,10 +770,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; counter[5]                         ; 2       ;
 ; counter[4]                         ; 2       ;
 ; counter[31]                        ; 2       ;
-; address_ram[3]~4                   ; 1       ;
-; address_ram[2]~3                   ; 1       ;
-; address_ram[1]~2                   ; 1       ;
-; address_ram[0]~1                   ; 1       ;
+; address_rom[3]~4                   ; 1       ;
+; address_rom[2]~3                   ; 1       ;
+; address_rom[1]~2                   ; 1       ;
+; address_rom[0]~1                   ; 1       ;
 ; ROM16x8:rom_inst|data_output[0]~0  ; 1       ;
 ; counter[0]~41                      ; 1       ;
 ; counter[0]~39                      ; 1       ;
@@ -1011,48 +1011,48 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 303 / 15,666 ( 2 % )   ;
-; C16 interconnects           ; 0 / 812 ( 0 % )        ;
-; C4 interconnects            ; 107 / 11,424 ( < 1 % ) ;
-; Direct links                ; 78 / 15,666 ( < 1 % )  ;
+; Block interconnects         ; 268 / 15,666 ( 2 % )   ;
+; C16 interconnects           ; 1 / 812 ( < 1 % )      ;
+; C4 interconnects            ; 85 / 11,424 ( < 1 % )  ;
+; Direct links                ; 73 / 15,666 ( < 1 % )  ;
 ; Global clocks               ; 1 / 8 ( 13 % )         ;
-; Local interconnects         ; 106 / 4,608 ( 2 % )    ;
-; R24 interconnects           ; 0 / 652 ( 0 % )        ;
-; R4 interconnects            ; 103 / 13,328 ( < 1 % ) ;
+; Local interconnects         ; 88 / 4,608 ( 2 % )     ;
+; R24 interconnects           ; 1 / 652 ( < 1 % )      ;
+; R4 interconnects            ; 117 / 13,328 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 10.47) ; Number of LABs  (Total = 19) ;
+; Number of Logic Elements  (Average = 10.21) ; Number of LABs  (Total = 19) ;
 +---------------------------------------------+------------------------------+
 ; 1                                           ; 0                            ;
 ; 2                                           ; 1                            ;
-; 3                                           ; 1                            ;
+; 3                                           ; 2                            ;
 ; 4                                           ; 0                            ;
-; 5                                           ; 1                            ;
-; 6                                           ; 1                            ;
+; 5                                           ; 2                            ;
+; 6                                           ; 0                            ;
 ; 7                                           ; 0                            ;
-; 8                                           ; 2                            ;
-; 9                                           ; 3                            ;
+; 8                                           ; 1                            ;
+; 9                                           ; 2                            ;
 ; 10                                          ; 1                            ;
-; 11                                          ; 1                            ;
-; 12                                          ; 1                            ;
-; 13                                          ; 0                            ;
+; 11                                          ; 0                            ;
+; 12                                          ; 3                            ;
+; 13                                          ; 1                            ;
 ; 14                                          ; 2                            ;
 ; 15                                          ; 1                            ;
-; 16                                          ; 4                            ;
+; 16                                          ; 3                            ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.58) ; Number of LABs  (Total = 19) ;
+; LAB-wide Signals  (Average = 1.63) ; Number of LABs  (Total = 19) ;
 +------------------------------------+------------------------------+
 ; 1 Clock                            ; 18                           ;
-; 1 Clock enable                     ; 10                           ;
+; 1 Clock enable                     ; 11                           ;
 ; 2 Clock enables                    ; 2                            ;
 +------------------------------------+------------------------------+
 
@@ -1064,98 +1064,100 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 1                            ;
+; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 0                            ;
+; 4                                            ; 2                            ;
 ; 5                                            ; 1                            ;
-; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 1                            ;
+; 6                                            ; 1                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 1                            ;
 ; 11                                           ; 0                            ;
-; 12                                           ; 1                            ;
+; 12                                           ; 0                            ;
 ; 13                                           ; 2                            ;
-; 14                                           ; 0                            ;
+; 14                                           ; 1                            ;
 ; 15                                           ; 2                            ;
-; 16                                           ; 1                            ;
+; 16                                           ; 0                            ;
 ; 17                                           ; 0                            ;
-; 18                                           ; 0                            ;
-; 19                                           ; 0                            ;
+; 18                                           ; 1                            ;
+; 19                                           ; 2                            ;
 ; 20                                           ; 2                            ;
 ; 21                                           ; 1                            ;
-; 22                                           ; 2                            ;
-; 23                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 0                            ;
 ; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
 ; 27                                           ; 0                            ;
 ; 28                                           ; 0                            ;
-; 29                                           ; 1                            ;
+; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 1                            ;
+; 32                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
 
 +--------------------------------------------------------------------------------+
 ; LAB Signals Sourced Out                                                        ;
 +-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 7.37) ; Number of LABs  (Total = 19) ;
+; Number of Signals Sourced Out  (Average = 7.68) ; Number of LABs  (Total = 19) ;
 +-------------------------------------------------+------------------------------+
 ; 0                                               ; 0                            ;
-; 1                                               ; 0                            ;
-; 2                                               ; 2                            ;
+; 1                                               ; 2                            ;
+; 2                                               ; 1                            ;
 ; 3                                               ; 1                            ;
-; 4                                               ; 2                            ;
-; 5                                               ; 0                            ;
-; 6                                               ; 3                            ;
+; 4                                               ; 0                            ;
+; 5                                               ; 2                            ;
+; 6                                               ; 0                            ;
 ; 7                                               ; 1                            ;
-; 8                                               ; 5                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 1                            ;
-; 11                                              ; 2                            ;
+; 8                                               ; 4                            ;
+; 9                                               ; 5                            ;
+; 10                                              ; 0                            ;
+; 11                                              ; 0                            ;
 ; 12                                              ; 1                            ;
 ; 13                                              ; 0                            ;
 ; 14                                              ; 0                            ;
 ; 15                                              ; 0                            ;
 ; 16                                              ; 1                            ;
+; 17                                              ; 1                            ;
 +-------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 15.74) ; Number of LABs  (Total = 19) ;
+; Number of Distinct Inputs  (Average = 13.84) ; Number of LABs  (Total = 19) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
 ; 2                                            ; 0                            ;
-; 3                                            ; 1                            ;
-; 4                                            ; 0                            ;
-; 5                                            ; 0                            ;
+; 3                                            ; 2                            ;
+; 4                                            ; 1                            ;
+; 5                                            ; 1                            ;
 ; 6                                            ; 2                            ;
-; 7                                            ; 1                            ;
-; 8                                            ; 0                            ;
+; 7                                            ; 0                            ;
+; 8                                            ; 1                            ;
 ; 9                                            ; 0                            ;
 ; 10                                           ; 0                            ;
-; 11                                           ; 1                            ;
-; 12                                           ; 1                            ;
-; 13                                           ; 0                            ;
-; 14                                           ; 4                            ;
-; 15                                           ; 0                            ;
+; 11                                           ; 2                            ;
+; 12                                           ; 0                            ;
+; 13                                           ; 1                            ;
+; 14                                           ; 1                            ;
+; 15                                           ; 1                            ;
 ; 16                                           ; 0                            ;
-; 17                                           ; 3                            ;
+; 17                                           ; 2                            ;
 ; 18                                           ; 0                            ;
-; 19                                           ; 1                            ;
+; 19                                           ; 0                            ;
 ; 20                                           ; 0                            ;
 ; 21                                           ; 0                            ;
-; 22                                           ; 1                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 1                            ;
+; 22                                           ; 0                            ;
+; 23                                           ; 2                            ;
+; 24                                           ; 0                            ;
 ; 25                                           ; 0                            ;
-; 26                                           ; 0                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 1                            ;
+; 26                                           ; 1                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 0                            ;
 ; 29                                           ; 0                            ;
 ; 30                                           ; 0                            ;
 ; 31                                           ; 1                            ;
@@ -1262,7 +1264,7 @@ Info (170195): Router estimated average interconnect usage is 0% of the availabl
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.22 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.02 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 24 output pins without output pin load capacitance assignment
     Info (306007): Pin "ram_data_output[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -1294,17 +1296,17 @@ Info (306004): Started post-fitting delay annotation
 Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
-Info (144001): Generated suppressed messages file /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.fit.smsg
+Info (144001): Generated suppressed messages file C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 627 megabytes
-    Info: Processing ended: Fri Aug 16 13:14:23 2024
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4795 megabytes
+    Info: Processing ended: Fri Aug 16 17:05:22 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.fit.smsg.
+The suppressed messages can be found in C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/output_files/circuito.fit.smsg.
 
 

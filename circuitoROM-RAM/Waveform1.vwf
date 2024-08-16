@@ -242,26 +242,6 @@ SIGNAL("ram_data_output[0]")
 	PARENT = "ram_data_output";
 }
 
-SIGNAL("rom_enable")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
-SIGNAL("rw_enable")
-{
-	VALUE_TYPE = NINE_LEVEL_BIT;
-	SIGNAL_TYPE = SINGLE_BIT;
-	WIDTH = 1;
-	LSB_INDEX = -1;
-	DIRECTION = INPUT;
-	PARENT = "";
-}
-
 SIGNAL("rom_data_output")
 {
 	VALUE_TYPE = NINE_LEVEL_BIT;
@@ -352,6 +332,26 @@ SIGNAL("rom_data_output[0]")
 	PARENT = "rom_data_output";
 }
 
+SIGNAL("rom_enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
+SIGNAL("rw_enable")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = INPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("add_ram[3]")
 {
 	NODE
@@ -431,11 +431,10 @@ TRANSITION_LIST("clock")
 		REPEAT = 1;
 		NODE
 		{
-			REPEAT = 33;
-			LEVEL 0 FOR 15.0;
-			LEVEL 1 FOR 15.0;
+			REPEAT = 50;
+			LEVEL 0 FOR 10.0;
+			LEVEL 1 FOR 10.0;
 		}
-		LEVEL 0 FOR 10.0;
 	}
 }
 
@@ -520,24 +519,6 @@ TRANSITION_LIST("ram_data_output[0]")
 	}
 }
 
-TRANSITION_LIST("rom_enable")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 1 FOR 1000.0;
-	}
-}
-
-TRANSITION_LIST("rw_enable")
-{
-	NODE
-	{
-		REPEAT = 1;
-		LEVEL 0 FOR 1000.0;
-	}
-}
-
 TRANSITION_LIST("rom_data_output[7]")
 {
 	NODE
@@ -610,6 +591,29 @@ TRANSITION_LIST("rom_data_output[0]")
 	}
 }
 
+TRANSITION_LIST("rom_enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL 1 FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("rw_enable")
+{
+	NODE
+	{
+		REPEAT = 1;
+		NODE
+		{
+			REPEAT = 100;
+			LEVEL 0 FOR 5.0;
+			LEVEL 1 FOR 5.0;
+		}
+	}
+}
+
 DISPLAY_LINE
 {
 	CHANNEL = "clock";
@@ -648,17 +652,17 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_ram";
+	CHANNEL = "rom_data_output";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 4;
 	TREE_LEVEL = 0;
-	CHILDREN = 5, 6, 7, 8;
+	CHILDREN = 5, 6, 7, 8, 9, 10, 11, 12;
 }
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_ram[3]";
+	CHANNEL = "rom_data_output[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 5;
@@ -668,7 +672,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_ram[2]";
+	CHANNEL = "rom_data_output[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 6;
@@ -678,7 +682,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_ram[1]";
+	CHANNEL = "rom_data_output[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 7;
@@ -688,7 +692,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_ram[0]";
+	CHANNEL = "rom_data_output[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 8;
@@ -698,12 +702,52 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "add_rom";
+	CHANNEL = "rom_data_output[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 9;
+	TREE_LEVEL = 1;
+	PARENT = 4;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "rom_data_output[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 10;
+	TREE_LEVEL = 1;
+	PARENT = 4;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "rom_data_output[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 11;
+	TREE_LEVEL = 1;
+	PARENT = 4;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "rom_data_output[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 12;
+	TREE_LEVEL = 1;
+	PARENT = 4;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_rom";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 13;
 	TREE_LEVEL = 0;
-	CHILDREN = 10, 11, 12, 13;
+	CHILDREN = 14, 15, 16, 17;
 }
 
 DISPLAY_LINE
@@ -711,9 +755,9 @@ DISPLAY_LINE
 	CHANNEL = "add_rom[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 10;
+	TREE_INDEX = 14;
 	TREE_LEVEL = 1;
-	PARENT = 9;
+	PARENT = 13;
 }
 
 DISPLAY_LINE
@@ -721,9 +765,9 @@ DISPLAY_LINE
 	CHANNEL = "add_rom[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 11;
+	TREE_INDEX = 15;
 	TREE_LEVEL = 1;
-	PARENT = 9;
+	PARENT = 13;
 }
 
 DISPLAY_LINE
@@ -731,9 +775,9 @@ DISPLAY_LINE
 	CHANNEL = "add_rom[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 12;
+	TREE_INDEX = 16;
 	TREE_LEVEL = 1;
-	PARENT = 9;
+	PARENT = 13;
 }
 
 DISPLAY_LINE
@@ -741,104 +785,64 @@ DISPLAY_LINE
 	CHANNEL = "add_rom[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
-	TREE_INDEX = 13;
+	TREE_INDEX = 17;
 	TREE_LEVEL = 1;
-	PARENT = 9;
+	PARENT = 13;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_ram";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 18;
+	TREE_LEVEL = 0;
+	CHILDREN = 19, 20, 21, 22;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_ram[3]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 19;
+	TREE_LEVEL = 1;
+	PARENT = 18;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_ram[2]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 20;
+	TREE_LEVEL = 1;
+	PARENT = 18;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_ram[1]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 21;
+	TREE_LEVEL = 1;
+	PARENT = 18;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "add_ram[0]";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Unsigned;
+	TREE_INDEX = 22;
+	TREE_LEVEL = 1;
+	PARENT = 18;
 }
 
 DISPLAY_LINE
 {
 	CHANNEL = "ram_data_output";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 14;
-	TREE_LEVEL = 0;
-	CHILDREN = 15, 16, 17, 18, 19, 20, 21, 22;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[7]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 15;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[6]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 16;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[5]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 17;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[4]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 18;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[3]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 19;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[2]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 20;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[1]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 21;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "ram_data_output[0]";
-	EXPAND_STATUS = COLLAPSED;
-	RADIX = Unsigned;
-	TREE_INDEX = 22;
-	TREE_LEVEL = 1;
-	PARENT = 14;
-}
-
-DISPLAY_LINE
-{
-	CHANNEL = "rom_data_output";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 23;
@@ -848,7 +852,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[7]";
+	CHANNEL = "ram_data_output[7]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 24;
@@ -858,7 +862,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[6]";
+	CHANNEL = "ram_data_output[6]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 25;
@@ -868,7 +872,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[5]";
+	CHANNEL = "ram_data_output[5]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 26;
@@ -878,7 +882,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[4]";
+	CHANNEL = "ram_data_output[4]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 27;
@@ -888,7 +892,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[3]";
+	CHANNEL = "ram_data_output[3]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 28;
@@ -898,7 +902,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[2]";
+	CHANNEL = "ram_data_output[2]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 29;
@@ -908,7 +912,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[1]";
+	CHANNEL = "ram_data_output[1]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 30;
@@ -918,7 +922,7 @@ DISPLAY_LINE
 
 DISPLAY_LINE
 {
-	CHANNEL = "rom_data_output[0]";
+	CHANNEL = "ram_data_output[0]";
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Unsigned;
 	TREE_INDEX = 31;

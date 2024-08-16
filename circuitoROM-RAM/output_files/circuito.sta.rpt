@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for circuito
-Fri Aug 16 13:14:34 2024
+Fri Aug 16 17:05:25 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -87,7 +87,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 4      ;
+; Number detected on machine ; 8      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -101,13 +101,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
 
 
-+-------------------------------------------------+
-; Slow Model Fmax Summary                         ;
-+-----------+-----------------+------------+------+
-; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
-+-----------+-----------------+------------+------+
-; 242.9 MHz ; 242.9 MHz       ; clock      ;      ;
-+-----------+-----------------+------------+------+
++--------------------------------------------------+
+; Slow Model Fmax Summary                          ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 252.84 MHz ; 252.84 MHz      ; clock      ;      ;
++------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
 
@@ -116,7 +116,7 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -3.117 ; -278.747      ;
+; clock ; -2.955 ; -282.398      ;
 +-------+--------+---------------+
 
 
@@ -155,106 +155,106 @@ No paths to report.
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
-; -3.117 ; counter[25] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.117 ; counter[25] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.153      ;
-; -3.029 ; counter[26] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -3.029 ; counter[26] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.065      ;
-; -2.989 ; counter[30] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.989 ; counter[30] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.025      ;
-; -2.980 ; counter[1]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.006     ; 4.010      ;
-; -2.977 ; counter[24] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.977 ; counter[24] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 4.013      ;
-; -2.909 ; counter[1]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.006     ; 3.939      ;
-; -2.909 ; counter[22] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.909 ; counter[22] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.945      ;
-; -2.886 ; counter[0]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.008     ; 3.914      ;
-; -2.875 ; counter[25] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.003      ; 3.914      ;
-; -2.875 ; counter[25] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.003      ; 3.914      ;
-; -2.875 ; counter[25] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.003      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[2]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[3]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[4]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[5]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[6]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[7]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[8]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[9]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[10] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[11] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[12] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[13] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[14] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[15] ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.872 ; counter[25] ; counter[1]  ; clock        ; clock       ; 1.000        ; 0.006      ; 3.914      ;
-; -2.853 ; counter[19] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.853 ; counter[19] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.889      ;
-; -2.847 ; counter[29] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.883      ;
+; -2.955 ; counter[1]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.989      ;
+; -2.911 ; counter[0]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.945      ;
+; -2.884 ; counter[1]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.918      ;
+; -2.840 ; counter[0]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.874      ;
+; -2.814 ; counter[27] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.814 ; counter[27] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.850      ;
+; -2.813 ; counter[1]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.847      ;
+; -2.769 ; counter[0]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.803      ;
+; -2.767 ; counter[1]  ; counter[16] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[17] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[18] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[19] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[20] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[21] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[22] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[23] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[24] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[25] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[26] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[27] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.767 ; counter[1]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.801      ;
+; -2.732 ; counter[2]  ; counter[16] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[17] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[18] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[19] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[20] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[21] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[22] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[23] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[24] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[25] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[26] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[27] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.732 ; counter[2]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.766      ;
+; -2.717 ; counter[24] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.717 ; counter[24] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.753      ;
+; -2.698 ; counter[0]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.002     ; 3.732      ;
+; -2.682 ; counter[25] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.682 ; counter[25] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.718      ;
+; -2.658 ; counter[19] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
+; -2.658 ; counter[19] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 3.694      ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -265,31 +265,29 @@ No paths to report.
 +-------+----------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 ; 0.391 ; counter[0]                       ; counter[0]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
 ; 0.391 ; rom_to_ram                       ; rom_to_ram                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
-; 0.528 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~64         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.794      ;
 ; 0.531 ; counter[31]                      ; counter[31]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.797      ;
-; 0.532 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~66         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.798      ;
-; 0.534 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~67         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.800      ;
-; 0.546 ; counter[0]                       ; address_rom[0]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.812      ;
-; 0.663 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~63         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.929      ;
-; 0.664 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~65         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.930      ;
-; 0.724 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~91         ; clock        ; clock       ; 0.000        ; 0.002      ; 0.992      ;
-; 0.731 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~90         ; clock        ; clock       ; 0.000        ; 0.002      ; 0.999      ;
-; 0.768 ; counter[1]                       ; address_rom[1]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 1.036      ;
+; 0.681 ; counter[0]                       ; address_rom[0]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.947      ;
+; 0.741 ; counter[3]                       ; address_rom[3]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.007      ;
+; 0.742 ; counter[2]                       ; address_rom[2]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.008      ;
+; 0.747 ; counter[1]                       ; address_rom[1]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.013      ;
+; 0.795 ; counter[16]                      ; counter[16]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.061      ;
 ; 0.801 ; counter[9]                       ; counter[9]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.067      ;
-; 0.801 ; counter[25]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.067      ;
 ; 0.802 ; counter[11]                      ; counter[11]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.068      ;
-; 0.802 ; counter[20]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.068      ;
-; 0.802 ; counter[23]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.068      ;
-; 0.802 ; counter[27]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.068      ;
+; 0.805 ; counter[17]                      ; counter[17]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.071      ;
 ; 0.806 ; counter[13]                      ; counter[13]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
 ; 0.806 ; counter[14]                      ; counter[14]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
 ; 0.806 ; counter[15]                      ; counter[15]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[18]                      ; counter[18]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[20]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[23]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[25]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
+; 0.806 ; counter[27]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
 ; 0.806 ; counter[29]                      ; counter[29]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
 ; 0.806 ; counter[30]                      ; counter[30]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.072      ;
 ; 0.810 ; counter[4]                       ; counter[4]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
 ; 0.810 ; counter[7]                       ; counter[7]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.076      ;
 ; 0.814 ; counter[2]                       ; counter[2]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.080      ;
-; 0.829 ; RAM16x8:ram_inst|temp_address[1] ; RAM16x8:ram_inst|data_output[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.095      ;
+; 0.826 ; RAM16x8:ram_inst|temp_address[1] ; RAM16x8:ram_inst|data_output[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.092      ;
 ; 0.838 ; counter[8]                       ; counter[8]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
 ; 0.838 ; counter[10]                      ; counter[10]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
 ; 0.838 ; counter[12]                      ; counter[12]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
@@ -299,70 +297,72 @@ No paths to report.
 ; 0.838 ; counter[28]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.104      ;
 ; 0.839 ; counter[21]                      ; counter[21]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.105      ;
 ; 0.839 ; counter[22]                      ; counter[22]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.839 ; RAM16x8:ram_inst|temp_address[0] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.105      ;
+; 0.842 ; counter[5]                       ; counter[5]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.108      ;
 ; 0.842 ; counter[6]                       ; counter[6]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.108      ;
-; 0.843 ; counter[5]                       ; counter[5]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.109      ;
 ; 0.846 ; counter[3]                       ; counter[3]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.112      ;
-; 0.854 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.120      ;
-; 0.867 ; RAM16x8:ram_inst|temp_address[2] ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.133      ;
-; 0.892 ; counter[3]                       ; address_rom[3]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 1.160      ;
-; 0.894 ; counter[2]                       ; address_rom[2]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 1.162      ;
-; 0.941 ; counter[0]                       ; address_ram[0]                  ; clock        ; clock       ; 0.000        ; 0.007      ; 1.214      ;
-; 0.957 ; counter[0]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; -0.002     ; 1.221      ;
-; 0.959 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~59         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.230      ;
-; 0.967 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.010      ; 1.243      ;
-; 0.972 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; 0.010      ; 1.248      ;
-; 0.972 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.010      ; 1.248      ;
-; 0.972 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.010      ; 1.248      ;
-; 0.973 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.010      ; 1.249      ;
-; 0.997 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~92         ; clock        ; clock       ; 0.000        ; 0.002      ; 1.265      ;
-; 1.010 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~43         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.281      ;
-; 1.010 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~58         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.281      ;
-; 1.017 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~62         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.288      ;
-; 1.018 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~61         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.289      ;
-; 1.018 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~47         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.289      ;
-; 1.025 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~85         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.288      ;
-; 1.028 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~25         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.291      ;
-; 1.047 ; counter[1]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.313      ;
-; 1.058 ; RAM16x8:ram_inst|temp_address[0] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.324      ;
-; 1.062 ; RAM16x8:ram_inst|ram~88          ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.328      ;
-; 1.082 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.348      ;
-; 1.101 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~82         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.370      ;
-; 1.112 ; RAM16x8:ram_inst|ram~41          ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.002     ; 1.376      ;
-; 1.119 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~80         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.388      ;
-; 1.120 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~75         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.389      ;
-; 1.144 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~53         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.413      ;
-; 1.144 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~68         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.413      ;
-; 1.146 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~46         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.409      ;
-; 1.149 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~48         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.421      ;
-; 1.152 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~33         ; clock        ; clock       ; 0.000        ; 0.006      ; 1.424      ;
-; 1.154 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~27         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.417      ;
-; 1.154 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~87         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.417      ;
-; 1.156 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~60         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.427      ;
-; 1.156 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~45         ; clock        ; clock       ; 0.000        ; 0.005      ; 1.427      ;
-; 1.160 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~15         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.424      ;
-; 1.162 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~71         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.431      ;
-; 1.164 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~56         ; clock        ; clock       ; 0.000        ; 0.003      ; 1.433      ;
-; 1.165 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; -0.002     ; 1.429      ;
-; 1.170 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~84         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.433      ;
-; 1.171 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~24         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.434      ;
-; 1.179 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~13         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.443      ;
-; 1.183 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~73         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.447      ;
+; 0.910 ; RAM16x8:ram_inst|ram~85          ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.176      ;
+; 0.963 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~34         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.225      ;
+; 0.963 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~39         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.225      ;
+; 0.972 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~87         ; clock        ; clock       ; 0.000        ; -0.005     ; 1.233      ;
+; 0.977 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~36         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.239      ;
+; 0.977 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~41         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.239      ;
+; 0.986 ; counter[0]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.252      ;
+; 0.997 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.258      ;
+; 0.998 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.259      ;
+; 1.000 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.261      ;
+; 1.000 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[4] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.261      ;
+; 1.026 ; counter[1]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.292      ;
+; 1.065 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.331      ;
+; 1.069 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.335      ;
+; 1.099 ; RAM16x8:ram_inst|ram~84          ; RAM16x8:ram_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.002     ; 1.363      ;
+; 1.102 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~37         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.364      ;
+; 1.105 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~42         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.367      ;
+; 1.106 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~71         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.371      ;
+; 1.107 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~31         ; clock        ; clock       ; 0.000        ; -0.001     ; 1.372      ;
+; 1.108 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~44         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.372      ;
+; 1.108 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~49         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.372      ;
+; 1.108 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~50         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.372      ;
+; 1.112 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~51         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.376      ;
+; 1.113 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~43         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.377      ;
+; 1.113 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~38         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.375      ;
+; 1.113 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~48         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.377      ;
+; 1.113 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~45         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.377      ;
+; 1.113 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~46         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.377      ;
+; 1.115 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~35         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.377      ;
+; 1.116 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~40         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.378      ;
+; 1.117 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~47         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.381      ;
+; 1.117 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~52         ; clock        ; clock       ; 0.000        ; -0.002     ; 1.381      ;
+; 1.118 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~33         ; clock        ; clock       ; 0.000        ; -0.004     ; 1.380      ;
+; 1.124 ; address_rom[3]                   ; ROM16x8:rom_inst|data_output[4] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.385      ;
+; 1.125 ; address_rom[3]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.386      ;
+; 1.130 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.391      ;
+; 1.132 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[0] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.393      ;
+; 1.132 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.005     ; 1.393      ;
+; 1.139 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~27         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.402      ;
+; 1.148 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~84         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.411      ;
+; 1.151 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~24         ; clock        ; clock       ; 0.000        ; -0.003     ; 1.414      ;
+; 1.178 ; counter[16]                      ; counter[17]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.444      ;
 ; 1.184 ; counter[9]                       ; counter[10]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.450      ;
-; 1.184 ; counter[25]                      ; counter[26]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.450      ;
 ; 1.185 ; counter[11]                      ; counter[12]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.451      ;
-; 1.185 ; counter[27]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.451      ;
-; 1.185 ; counter[20]                      ; counter[21]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.451      ;
+; 1.188 ; counter[17]                      ; counter[18]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.454      ;
 ; 1.189 ; counter[30]                      ; counter[31]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
 ; 1.189 ; counter[13]                      ; counter[14]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
 ; 1.189 ; counter[14]                      ; counter[15]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
 ; 1.189 ; counter[29]                      ; counter[30]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; counter[18]                      ; counter[19]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; counter[25]                      ; counter[26]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; counter[27]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
+; 1.189 ; counter[20]                      ; counter[21]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.455      ;
 ; 1.193 ; counter[4]                       ; counter[5]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.459      ;
 ; 1.197 ; counter[2]                       ; counter[3]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.463      ;
-; 1.223 ; RAM16x8:ram_inst|temp_address[1] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.489      ;
+; 1.214 ; RAM16x8:ram_inst|temp_address[2] ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.480      ;
+; 1.220 ; RAM16x8:ram_inst|temp_address[2] ; RAM16x8:ram_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 1.486      ;
+; 1.221 ; counter[3]                       ; address_ram[3]                  ; clock        ; clock       ; 0.000        ; -0.010     ; 1.477      ;
+; 1.221 ; counter[0]                       ; address_ram[0]                  ; clock        ; clock       ; 0.000        ; -0.010     ; 1.477      ;
 ; 1.224 ; counter[8]                       ; counter[9]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 1.490      ;
-; 1.224 ; counter[24]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.490      ;
 ; 1.224 ; counter[10]                      ; counter[11]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.490      ;
-; 1.224 ; counter[19]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.490      ;
+; 1.224 ; counter[12]                      ; counter[13]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 1.490      ;
 +-------+----------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -479,9 +479,9 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; mem_enable ; clock      ; 5.787 ; 5.787 ; Rise       ; clock           ;
-; rom_enable ; clock      ; 5.410 ; 5.410 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; 5.406 ; 5.406 ; Rise       ; clock           ;
+; mem_enable ; clock      ; 5.804 ; 5.804 ; Rise       ; clock           ;
+; rom_enable ; clock      ; 4.954 ; 4.954 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; 6.110 ; 6.110 ; Rise       ; clock           ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -490,9 +490,9 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; mem_enable ; clock      ; -3.309 ; -3.309 ; Rise       ; clock           ;
-; rom_enable ; clock      ; -4.375 ; -4.375 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; -4.297 ; -4.297 ; Rise       ; clock           ;
+; mem_enable ; clock      ; -3.540 ; -3.540 ; Rise       ; clock           ;
+; rom_enable ; clock      ; -3.479 ; -3.479 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; -4.960 ; -4.960 ; Rise       ; clock           ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -501,28 +501,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 6.384 ; 6.384 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 6.395 ; 6.395 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 6.861 ; 6.861 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 6.622 ; 6.622 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 6.381 ; 6.381 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 6.543 ; 6.543 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 6.546 ; 6.546 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 6.541 ; 6.541 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 6.593 ; 6.593 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 6.823 ; 6.823 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 6.453 ; 6.453 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 6.590 ; 6.590 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 6.608 ; 6.608 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 6.320 ; 6.320 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 6.388 ; 6.388 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 6.608 ; 6.608 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 6.312 ; 6.312 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 6.314 ; 6.314 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 6.305 ; 6.305 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 6.115 ; 6.115 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 6.126 ; 6.126 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 6.314 ; 6.314 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 6.584 ; 6.584 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 6.200 ; 6.200 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 6.225 ; 6.225 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 6.584 ; 6.584 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 6.480 ; 6.480 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 6.193 ; 6.193 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 6.559 ; 6.559 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 6.559 ; 6.559 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 6.075 ; 6.075 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 6.081 ; 6.081 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -531,28 +531,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 6.384 ; 6.384 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 6.384 ; 6.384 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 6.395 ; 6.395 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 6.861 ; 6.861 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 6.622 ; 6.622 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 6.381 ; 6.381 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 6.381 ; 6.381 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 6.543 ; 6.543 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 6.546 ; 6.546 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 6.541 ; 6.541 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 6.453 ; 6.453 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 6.593 ; 6.593 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 6.823 ; 6.823 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 6.453 ; 6.453 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 6.590 ; 6.590 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 6.312 ; 6.312 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 6.320 ; 6.320 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 6.388 ; 6.388 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 6.608 ; 6.608 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 6.312 ; 6.312 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 6.115 ; 6.115 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 6.305 ; 6.305 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 6.115 ; 6.115 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 6.126 ; 6.126 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 6.314 ; 6.314 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 6.193 ; 6.193 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 6.200 ; 6.200 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 6.225 ; 6.225 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 6.584 ; 6.584 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 6.480 ; 6.480 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 6.193 ; 6.193 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 6.075 ; 6.075 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 6.559 ; 6.559 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 6.075 ; 6.075 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 6.081 ; 6.081 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -561,7 +561,7 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -0.919 ; -63.217       ;
+; clock ; -0.903 ; -65.416       ;
 +-------+--------+---------------+
 
 
@@ -600,106 +600,106 @@ No paths to report.
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 ; Slack  ; From Node   ; To Node     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
-; -0.919 ; counter[1]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.004     ; 1.947      ;
-; -0.915 ; counter[25] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.915 ; counter[25] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.947      ;
-; -0.900 ; counter[26] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.900 ; counter[26] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.932      ;
-; -0.884 ; counter[1]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.004     ; 1.912      ;
-; -0.882 ; counter[0]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.006     ; 1.908      ;
-; -0.882 ; counter[24] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.882 ; counter[24] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.914      ;
-; -0.867 ; counter[30] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.867 ; counter[30] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.899      ;
-; -0.849 ; counter[1]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.004     ; 1.877      ;
-; -0.848 ; counter[22] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.848 ; counter[22] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.880      ;
-; -0.847 ; counter[0]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.006     ; 1.873      ;
-; -0.830 ; counter[29] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.830 ; counter[29] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.862      ;
-; -0.814 ; counter[1]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.004     ; 1.842      ;
-; -0.812 ; counter[0]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.006     ; 1.838      ;
-; -0.807 ; counter[25] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.002      ; 1.841      ;
-; -0.807 ; counter[25] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.002      ; 1.841      ;
-; -0.807 ; counter[25] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.002      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[2]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[3]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[4]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[5]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[6]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[7]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[8]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[9]  ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[10] ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[11] ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[12] ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
-; -0.805 ; counter[25] ; counter[13] ; clock        ; clock       ; 1.000        ; 0.004      ; 1.841      ;
+; -0.903 ; counter[1]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.932      ;
+; -0.884 ; counter[0]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.002     ; 1.914      ;
+; -0.868 ; counter[1]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.897      ;
+; -0.849 ; counter[0]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.002     ; 1.879      ;
+; -0.833 ; counter[1]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.862      ;
+; -0.814 ; counter[0]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.002     ; 1.844      ;
+; -0.798 ; counter[1]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.827      ;
+; -0.785 ; counter[27] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.785 ; counter[27] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.817      ;
+; -0.779 ; counter[0]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.002     ; 1.809      ;
+; -0.776 ; counter[2]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.805      ;
+; -0.766 ; counter[24] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.766 ; counter[24] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.798      ;
+; -0.763 ; counter[1]  ; counter[27] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.792      ;
+; -0.757 ; counter[1]  ; counter[16] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[17] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[18] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[19] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[20] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[21] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[22] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[23] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[24] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[25] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[1]  ; counter[26] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.786      ;
+; -0.757 ; counter[25] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[25] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[25] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[25] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[25] ; counter[30] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.757 ; counter[25] ; counter[31] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.789      ;
+; -0.754 ; counter[3]  ; counter[31] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.783      ;
+; -0.746 ; counter[2]  ; counter[16] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[17] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[18] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[19] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[20] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[21] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[22] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[23] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[24] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[25] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[26] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[27] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[28] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[29] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.746 ; counter[2]  ; counter[30] ; clock        ; clock       ; 1.000        ; -0.003     ; 1.775      ;
+; -0.744 ; counter[0]  ; counter[27] ; clock        ; clock       ; 1.000        ; -0.002     ; 1.774      ;
+; -0.731 ; counter[30] ; counter[16] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[17] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[18] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[19] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[20] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[21] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[22] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[23] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[24] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[25] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[26] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[27] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[28] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
+; -0.731 ; counter[30] ; counter[29] ; clock        ; clock       ; 1.000        ; 0.000      ; 1.763      ;
 +--------+-------------+-------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -711,29 +711,27 @@ No paths to report.
 ; 0.215 ; counter[0]                       ; counter[0]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.215 ; rom_to_ram                       ; rom_to_ram                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
 ; 0.243 ; counter[31]                      ; counter[31]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.395      ;
-; 0.244 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~64         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
-; 0.244 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~66         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
-; 0.244 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~67         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.396      ;
-; 0.252 ; counter[0]                       ; address_rom[0]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.404      ;
-; 0.325 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~63         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.477      ;
-; 0.325 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~65         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.477      ;
-; 0.329 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~91         ; clock        ; clock       ; 0.000        ; 0.001      ; 0.482      ;
-; 0.336 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~90         ; clock        ; clock       ; 0.000        ; 0.001      ; 0.489      ;
+; 0.303 ; counter[0]                       ; address_rom[0]                  ; clock        ; clock       ; 0.000        ; 0.000      ; 0.455      ;
+; 0.355 ; counter[16]                      ; counter[16]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.507      ;
 ; 0.358 ; counter[9]                       ; counter[9]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
 ; 0.358 ; counter[11]                      ; counter[11]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; counter[20]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; counter[23]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; counter[25]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
-; 0.358 ; counter[27]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.510      ;
-; 0.359 ; counter[1]                       ; address_rom[1]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 0.513      ;
+; 0.359 ; counter[17]                      ; counter[17]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.511      ;
+; 0.360 ; counter[18]                      ; counter[18]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; counter[25]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.512      ;
+; 0.360 ; counter[27]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.512      ;
 ; 0.361 ; counter[13]                      ; counter[13]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
 ; 0.361 ; counter[14]                      ; counter[14]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
 ; 0.361 ; counter[15]                      ; counter[15]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[20]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.361 ; counter[23]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
 ; 0.361 ; counter[29]                      ; counter[29]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
 ; 0.361 ; counter[30]                      ; counter[30]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.513      ;
+; 0.362 ; counter[2]                       ; address_rom[2]                  ; clock        ; clock       ; 0.000        ; -0.001     ; 0.513      ;
+; 0.363 ; counter[3]                       ; address_rom[3]                  ; clock        ; clock       ; 0.000        ; -0.001     ; 0.514      ;
 ; 0.365 ; counter[2]                       ; counter[2]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.517      ;
 ; 0.365 ; counter[4]                       ; counter[4]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.517      ;
 ; 0.366 ; counter[7]                       ; counter[7]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.518      ;
+; 0.366 ; counter[1]                       ; address_rom[1]                  ; clock        ; clock       ; 0.000        ; -0.001     ; 0.517      ;
 ; 0.371 ; counter[8]                       ; counter[8]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
 ; 0.371 ; counter[10]                      ; counter[10]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
 ; 0.371 ; counter[19]                      ; counter[19]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.523      ;
@@ -744,70 +742,72 @@ No paths to report.
 ; 0.372 ; counter[22]                      ; counter[22]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.524      ;
 ; 0.372 ; counter[28]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.524      ;
 ; 0.373 ; RAM16x8:ram_inst|temp_address[1] ; RAM16x8:ram_inst|data_output[1] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.525      ;
+; 0.374 ; RAM16x8:ram_inst|temp_address[0] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.526      ;
 ; 0.376 ; counter[3]                       ; counter[3]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.528      ;
 ; 0.376 ; counter[5]                       ; counter[5]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.528      ;
 ; 0.376 ; counter[6]                       ; counter[6]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.528      ;
-; 0.380 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.532      ;
-; 0.387 ; RAM16x8:ram_inst|temp_address[2] ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.539      ;
-; 0.435 ; counter[2]                       ; address_rom[2]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 0.589      ;
-; 0.437 ; counter[3]                       ; address_rom[3]                  ; clock        ; clock       ; 0.000        ; 0.002      ; 0.591      ;
-; 0.438 ; counter[0]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; -0.002     ; 0.588      ;
-; 0.442 ; counter[0]                       ; address_ram[0]                  ; clock        ; clock       ; 0.000        ; 0.005      ; 0.599      ;
-; 0.444 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.010      ; 0.606      ;
-; 0.445 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; 0.010      ; 0.607      ;
-; 0.445 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~59         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.601      ;
-; 0.445 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.010      ; 0.607      ;
-; 0.445 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.010      ; 0.607      ;
-; 0.456 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~92         ; clock        ; clock       ; 0.000        ; 0.001      ; 0.609      ;
-; 0.459 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.010      ; 0.621      ;
-; 0.462 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~58         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.618      ;
-; 0.462 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~62         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.618      ;
-; 0.463 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~43         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.619      ;
-; 0.464 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~61         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.620      ;
-; 0.465 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~47         ; clock        ; clock       ; 0.000        ; 0.004      ; 0.621      ;
-; 0.470 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~85         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.618      ;
-; 0.470 ; counter[1]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.622      ;
-; 0.471 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~25         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.619      ;
-; 0.472 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.624      ;
-; 0.475 ; RAM16x8:ram_inst|temp_address[0] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.627      ;
+; 0.426 ; RAM16x8:ram_inst|ram~85          ; RAM16x8:ram_inst|data_output[2] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.578      ;
+; 0.441 ; counter[0]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.001      ; 0.594      ;
+; 0.442 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~34         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.591      ;
+; 0.442 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~39         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.591      ;
+; 0.448 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~87         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.596      ;
+; 0.450 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~36         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.599      ;
+; 0.451 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~41         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.600      ;
+; 0.455 ; counter[1]                       ; counter[1]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.607      ;
+; 0.465 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.614      ;
+; 0.465 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.614      ;
+; 0.466 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[4] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.615      ;
+; 0.467 ; address_rom[1]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.616      ;
+; 0.479 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.631      ;
+; 0.483 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[4] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.635      ;
+; 0.493 ; counter[16]                      ; counter[17]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.645      ;
 ; 0.496 ; counter[9]                       ; counter[10]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
-; 0.496 ; counter[25]                      ; counter[26]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
 ; 0.496 ; counter[11]                      ; counter[12]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
-; 0.496 ; counter[20]                      ; counter[21]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
-; 0.496 ; counter[27]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.648      ;
-; 0.499 ; RAM16x8:ram_inst|ram~88          ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.497 ; counter[17]                      ; counter[18]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.649      ;
+; 0.498 ; counter[18]                      ; counter[19]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; counter[25]                      ; counter[26]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.650      ;
+; 0.498 ; counter[27]                      ; counter[28]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.650      ;
 ; 0.499 ; counter[30]                      ; counter[31]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
 ; 0.499 ; counter[13]                      ; counter[14]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
 ; 0.499 ; counter[14]                      ; counter[15]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
 ; 0.499 ; counter[29]                      ; counter[30]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
+; 0.499 ; counter[20]                      ; counter[21]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.651      ;
 ; 0.503 ; counter[2]                       ; counter[3]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.655      ;
 ; 0.503 ; counter[4]                       ; counter[5]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.655      ;
+; 0.507 ; RAM16x8:ram_inst|ram~84          ; RAM16x8:ram_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.001     ; 0.658      ;
 ; 0.511 ; counter[8]                       ; counter[9]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
 ; 0.511 ; counter[10]                      ; counter[11]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
-; 0.511 ; counter[19]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
 ; 0.511 ; counter[24]                      ; counter[25]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
 ; 0.511 ; counter[26]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
-; 0.512 ; counter[22]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.511 ; counter[19]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.663      ;
 ; 0.512 ; counter[12]                      ; counter[13]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.512 ; counter[22]                      ; counter[23]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
 ; 0.512 ; counter[28]                      ; counter[29]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
 ; 0.512 ; counter[21]                      ; counter[22]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.664      ;
+; 0.516 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[0] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.665      ;
 ; 0.516 ; counter[3]                       ; counter[4]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.668      ;
 ; 0.516 ; counter[6]                       ; counter[7]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.668      ;
 ; 0.516 ; counter[5]                       ; counter[6]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.668      ;
-; 0.516 ; RAM16x8:ram_inst|ram~41          ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.001     ; 0.667      ;
-; 0.522 ; RAM16x8:ram_inst|temp_address[3] ; RAM16x8:ram_inst|data_output[0] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.671      ;
+; 0.516 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[2] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.665      ;
+; 0.518 ; address_rom[0]                   ; ROM16x8:rom_inst|data_output[1] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.667      ;
+; 0.525 ; address_rom[3]                   ; ROM16x8:rom_inst|data_output[3] ; clock        ; clock       ; 0.000        ; -0.003     ; 0.674      ;
+; 0.528 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~71         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.679      ;
+; 0.528 ; counter[16]                      ; counter[18]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.680      ;
+; 0.529 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~31         ; clock        ; clock       ; 0.000        ; -0.001     ; 0.680      ;
+; 0.529 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~37         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.678      ;
 ; 0.531 ; counter[9]                       ; counter[11]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
-; 0.531 ; counter[25]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
 ; 0.531 ; counter[11]                      ; counter[13]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
-; 0.531 ; counter[27]                      ; counter[29]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
-; 0.531 ; counter[20]                      ; counter[22]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
-; 0.533 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~80         ; clock        ; clock       ; 0.000        ; 0.003      ; 0.688      ;
+; 0.532 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~42         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.681      ;
+; 0.532 ; counter[17]                      ; counter[19]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.684      ;
+; 0.533 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~44         ; clock        ; clock       ; 0.000        ; -0.002     ; 0.683      ;
+; 0.533 ; ROM16x8:rom_inst|data_output[1]  ; RAM16x8:ram_inst|ram~49         ; clock        ; clock       ; 0.000        ; -0.002     ; 0.683      ;
+; 0.533 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~50         ; clock        ; clock       ; 0.000        ; -0.002     ; 0.683      ;
+; 0.533 ; ROM16x8:rom_inst|data_output[3]  ; RAM16x8:ram_inst|ram~51         ; clock        ; clock       ; 0.000        ; -0.002     ; 0.683      ;
+; 0.533 ; counter[25]                      ; counter[27]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; counter[18]                      ; counter[20]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.533 ; counter[27]                      ; counter[29]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.685      ;
+; 0.534 ; ROM16x8:rom_inst|data_output[0]  ; RAM16x8:ram_inst|ram~38         ; clock        ; clock       ; 0.000        ; -0.003     ; 0.683      ;
 ; 0.534 ; counter[29]                      ; counter[31]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.686      ;
-; 0.534 ; counter[13]                      ; counter[15]                     ; clock        ; clock       ; 0.000        ; 0.000      ; 0.686      ;
-; 0.535 ; ROM16x8:rom_inst|data_output[2]  ; RAM16x8:ram_inst|ram~75         ; clock        ; clock       ; 0.000        ; 0.003      ; 0.690      ;
-; 0.535 ; ROM16x8:rom_inst|data_output[4]  ; RAM16x8:ram_inst|ram~82         ; clock        ; clock       ; 0.000        ; 0.003      ; 0.690      ;
-; 0.537 ; RAM16x8:ram_inst|temp_address[1] ; RAM16x8:ram_inst|data_output[3] ; clock        ; clock       ; 0.000        ; 0.000      ; 0.689      ;
-; 0.538 ; counter[2]                       ; counter[4]                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.690      ;
 +-------+----------------------------------+---------------------------------+--------------+-------------+--------------+------------+------------+
 
 
@@ -924,9 +924,9 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; mem_enable ; clock      ; 3.048 ; 3.048 ; Rise       ; clock           ;
-; rom_enable ; clock      ; 2.900 ; 2.900 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; 2.881 ; 2.881 ; Rise       ; clock           ;
+; mem_enable ; clock      ; 3.071 ; 3.071 ; Rise       ; clock           ;
+; rom_enable ; clock      ; 2.701 ; 2.701 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; 3.233 ; 3.233 ; Rise       ; clock           ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -935,9 +935,9 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; mem_enable ; clock      ; -1.855 ; -1.855 ; Rise       ; clock           ;
-; rom_enable ; clock      ; -2.346 ; -2.346 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; -2.362 ; -2.362 ; Rise       ; clock           ;
+; mem_enable ; clock      ; -1.959 ; -1.959 ; Rise       ; clock           ;
+; rom_enable ; clock      ; -1.950 ; -1.950 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; -2.729 ; -2.729 ; Rise       ; clock           ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -946,28 +946,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 3.724 ; 3.724 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 3.724 ; 3.724 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 3.618 ; 3.618 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 3.891 ; 3.891 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 3.628 ; 3.628 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 3.891 ; 3.891 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 3.830 ; 3.830 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 3.696 ; 3.696 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 3.696 ; 3.696 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 3.663 ; 3.663 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 3.798 ; 3.798 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 3.777 ; 3.777 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 3.568 ; 3.568 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 3.798 ; 3.798 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 3.673 ; 3.673 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 3.709 ; 3.709 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 3.588 ; 3.588 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 3.709 ; 3.709 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 3.547 ; 3.547 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 3.555 ; 3.555 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 3.552 ; 3.552 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 3.464 ; 3.464 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 3.555 ; 3.555 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 3.692 ; 3.692 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 3.456 ; 3.456 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 3.467 ; 3.467 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 3.692 ; 3.692 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 3.580 ; 3.580 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 3.636 ; 3.636 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 3.563 ; 3.563 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 3.636 ; 3.636 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 3.445 ; 3.445 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 3.561 ; 3.561 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -976,28 +976,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 3.724 ; 3.724 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 3.618 ; 3.618 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 3.628 ; 3.628 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 3.628 ; 3.628 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 3.891 ; 3.891 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 3.830 ; 3.830 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 3.696 ; 3.696 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 3.663 ; 3.663 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 3.568 ; 3.568 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 3.777 ; 3.777 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 3.568 ; 3.568 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 3.798 ; 3.798 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 3.673 ; 3.673 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 3.547 ; 3.547 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 3.588 ; 3.588 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 3.709 ; 3.709 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 3.547 ; 3.547 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 3.552 ; 3.552 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 3.464 ; 3.464 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 3.555 ; 3.555 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 3.456 ; 3.456 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 3.467 ; 3.467 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 3.692 ; 3.692 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 3.580 ; 3.580 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 3.445 ; 3.445 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 3.563 ; 3.563 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 3.636 ; 3.636 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 3.445 ; 3.445 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 3.561 ; 3.561 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1006,10 +1006,10 @@ No paths to report.
 +------------------+----------+-------+----------+---------+---------------------+
 ; Clock            ; Setup    ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +------------------+----------+-------+----------+---------+---------------------+
-; Worst-case Slack ; -3.117   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-;  clock           ; -3.117   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
-; Design-wide TNS  ; -278.747 ; 0.0   ; 0.0      ; 0.0     ; -136.38             ;
-;  clock           ; -278.747 ; 0.000 ; N/A      ; N/A     ; -136.380            ;
+; Worst-case Slack ; -2.955   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+;  clock           ; -2.955   ; 0.215 ; N/A      ; N/A     ; -1.380              ;
+; Design-wide TNS  ; -282.398 ; 0.0   ; 0.0      ; 0.0     ; -136.38             ;
+;  clock           ; -282.398 ; 0.000 ; N/A      ; N/A     ; -136.380            ;
 +------------------+----------+-------+----------+---------+---------------------+
 
 
@@ -1018,9 +1018,9 @@ No paths to report.
 +------------+------------+-------+-------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +------------+------------+-------+-------+------------+-----------------+
-; mem_enable ; clock      ; 5.787 ; 5.787 ; Rise       ; clock           ;
-; rom_enable ; clock      ; 5.410 ; 5.410 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; 5.406 ; 5.406 ; Rise       ; clock           ;
+; mem_enable ; clock      ; 5.804 ; 5.804 ; Rise       ; clock           ;
+; rom_enable ; clock      ; 4.954 ; 4.954 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; 6.110 ; 6.110 ; Rise       ; clock           ;
 +------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1029,9 +1029,9 @@ No paths to report.
 +------------+------------+--------+--------+------------+-----------------+
 ; Data Port  ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
 +------------+------------+--------+--------+------------+-----------------+
-; mem_enable ; clock      ; -1.855 ; -1.855 ; Rise       ; clock           ;
-; rom_enable ; clock      ; -2.346 ; -2.346 ; Rise       ; clock           ;
-; rw_enable  ; clock      ; -2.362 ; -2.362 ; Rise       ; clock           ;
+; mem_enable ; clock      ; -1.959 ; -1.959 ; Rise       ; clock           ;
+; rom_enable ; clock      ; -1.950 ; -1.950 ; Rise       ; clock           ;
+; rw_enable  ; clock      ; -2.729 ; -2.729 ; Rise       ; clock           ;
 +------------+------------+--------+--------+------------+-----------------+
 
 
@@ -1040,28 +1040,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 6.434 ; 6.434 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 6.384 ; 6.384 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 6.395 ; 6.395 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 6.619 ; 6.619 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 7.051 ; 7.051 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 6.861 ; 6.861 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 6.622 ; 6.622 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 6.381 ; 6.381 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 6.543 ; 6.543 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 6.596 ; 6.596 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 6.546 ; 6.546 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 6.541 ; 6.541 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 6.593 ; 6.593 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 6.823 ; 6.823 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 6.453 ; 6.453 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 6.846 ; 6.846 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 6.590 ; 6.590 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 6.608 ; 6.608 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 6.320 ; 6.320 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 6.388 ; 6.388 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 6.608 ; 6.608 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 6.312 ; 6.312 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 6.314 ; 6.314 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 6.305 ; 6.305 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 6.115 ; 6.115 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 6.126 ; 6.126 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 6.314 ; 6.314 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 6.584 ; 6.584 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 6.200 ; 6.200 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 6.225 ; 6.225 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 6.584 ; 6.584 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 6.480 ; 6.480 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 6.193 ; 6.193 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 6.559 ; 6.559 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 6.559 ; 6.559 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 6.075 ; 6.075 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 6.081 ; 6.081 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 6.322 ; 6.322 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1070,28 +1070,28 @@ No paths to report.
 +---------------------+------------+-------+-------+------------+-----------------+
 ; Data Port           ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
 +---------------------+------------+-------+-------+------------+-----------------+
-; add_ram[*]          ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-;  add_ram[0]         ; clock      ; 3.724 ; 3.724 ; Rise       ; clock           ;
-;  add_ram[1]         ; clock      ; 3.618 ; 3.618 ; Rise       ; clock           ;
-;  add_ram[2]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-;  add_ram[3]         ; clock      ; 3.593 ; 3.593 ; Rise       ; clock           ;
-; add_rom[*]          ; clock      ; 3.628 ; 3.628 ; Rise       ; clock           ;
-;  add_rom[0]         ; clock      ; 3.628 ; 3.628 ; Rise       ; clock           ;
-;  add_rom[1]         ; clock      ; 3.891 ; 3.891 ; Rise       ; clock           ;
-;  add_rom[2]         ; clock      ; 3.830 ; 3.830 ; Rise       ; clock           ;
-;  add_rom[3]         ; clock      ; 3.706 ; 3.706 ; Rise       ; clock           ;
-; ram_data_output[*]  ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
-;  ram_data_output[0] ; clock      ; 3.526 ; 3.526 ; Rise       ; clock           ;
-;  ram_data_output[1] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-;  ram_data_output[2] ; clock      ; 3.696 ; 3.696 ; Rise       ; clock           ;
-;  ram_data_output[3] ; clock      ; 3.663 ; 3.663 ; Rise       ; clock           ;
-;  ram_data_output[4] ; clock      ; 3.650 ; 3.650 ; Rise       ; clock           ;
-; rom_data_output[*]  ; clock      ; 3.568 ; 3.568 ; Rise       ; clock           ;
-;  rom_data_output[0] ; clock      ; 3.690 ; 3.690 ; Rise       ; clock           ;
-;  rom_data_output[1] ; clock      ; 3.777 ; 3.777 ; Rise       ; clock           ;
-;  rom_data_output[2] ; clock      ; 3.568 ; 3.568 ; Rise       ; clock           ;
-;  rom_data_output[3] ; clock      ; 3.798 ; 3.798 ; Rise       ; clock           ;
-;  rom_data_output[4] ; clock      ; 3.673 ; 3.673 ; Rise       ; clock           ;
+; add_ram[*]          ; clock      ; 3.547 ; 3.547 ; Rise       ; clock           ;
+;  add_ram[0]         ; clock      ; 3.556 ; 3.556 ; Rise       ; clock           ;
+;  add_ram[1]         ; clock      ; 3.588 ; 3.588 ; Rise       ; clock           ;
+;  add_ram[2]         ; clock      ; 3.709 ; 3.709 ; Rise       ; clock           ;
+;  add_ram[3]         ; clock      ; 3.547 ; 3.547 ; Rise       ; clock           ;
+; add_rom[*]          ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  add_rom[0]         ; clock      ; 3.552 ; 3.552 ; Rise       ; clock           ;
+;  add_rom[1]         ; clock      ; 3.462 ; 3.462 ; Rise       ; clock           ;
+;  add_rom[2]         ; clock      ; 3.464 ; 3.464 ; Rise       ; clock           ;
+;  add_rom[3]         ; clock      ; 3.555 ; 3.555 ; Rise       ; clock           ;
+; ram_data_output[*]  ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+;  ram_data_output[0] ; clock      ; 3.456 ; 3.456 ; Rise       ; clock           ;
+;  ram_data_output[1] ; clock      ; 3.467 ; 3.467 ; Rise       ; clock           ;
+;  ram_data_output[2] ; clock      ; 3.692 ; 3.692 ; Rise       ; clock           ;
+;  ram_data_output[3] ; clock      ; 3.580 ; 3.580 ; Rise       ; clock           ;
+;  ram_data_output[4] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+; rom_data_output[*]  ; clock      ; 3.445 ; 3.445 ; Rise       ; clock           ;
+;  rom_data_output[0] ; clock      ; 3.563 ; 3.563 ; Rise       ; clock           ;
+;  rom_data_output[1] ; clock      ; 3.636 ; 3.636 ; Rise       ; clock           ;
+;  rom_data_output[2] ; clock      ; 3.445 ; 3.445 ; Rise       ; clock           ;
+;  rom_data_output[3] ; clock      ; 3.452 ; 3.452 ; Rise       ; clock           ;
+;  rom_data_output[4] ; clock      ; 3.561 ; 3.561 ; Rise       ; clock           ;
 +---------------------+------------+-------+-------+------------+-----------------+
 
 
@@ -1147,7 +1147,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Fri Aug 16 13:14:34 2024
+    Info: Processing started: Fri Aug 16 17:05:24 2024
 Info: Command: quartus_sta circuito -c circuito
 Info: qsta_default_script.tcl version: #1
 Warning (20028): Parallel compilation is not licensed and has been disabled
@@ -1158,10 +1158,10 @@ Info (332105): Deriving Clocks
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -3.117
+Info (332146): Worst-case setup slack is -2.955
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -3.117      -278.747 clock 
+    Info (332119):    -2.955      -282.398 clock 
 Info (332146): Worst-case hold slack is 0.391
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1175,10 +1175,10 @@ Info (332146): Worst-case minimum pulse width slack is -1.380
 Info (332001): The selected device family is not supported by the report_metastability command.
 Info: Analyzing Fast Model
 Critical Warning (332148): Timing requirements not met
-Info (332146): Worst-case setup slack is -0.919
+Info (332146): Worst-case setup slack is -0.903
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
-    Info (332119):    -0.919       -63.217 clock 
+    Info (332119):    -0.903       -65.416 clock 
 Info (332146): Worst-case hold slack is 0.215
     Info (332119):     Slack End Point TNS Clock 
     Info (332119): ========= ============= =====================
@@ -1193,9 +1193,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 483 megabytes
-    Info: Processing ended: Fri Aug 16 13:14:34 2024
-    Info: Elapsed time: 00:00:00
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4538 megabytes
+    Info: Processing ended: Fri Aug 16 17:05:25 2024
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
 
 
