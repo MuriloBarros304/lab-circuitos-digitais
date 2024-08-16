@@ -40,7 +40,7 @@ W_addr[1] => decode4:deco0.i[1]
 W_en => decode4:deco0.en
 R_addr[0] => mux4_1:mux0.S[0]
 R_addr[1] => mux4_1:mux0.S[1]
-R_en => ~NO_FANOUT~
+R_en => mux4_1:mux0.en
 R_data[0] <= mux4_1:mux0.Z[0]
 R_data[1] <= mux4_1:mux0.Z[1]
 R_data[2] <= mux4_1:mux0.Z[2]
@@ -95,14 +95,6 @@ load => flipflop:ff4.load
 load => flipflop:ff5.load
 load => flipflop:ff6.load
 load => flipflop:ff7.load
-reset => flipflop:ff0.reset
-reset => flipflop:ff1.reset
-reset => flipflop:ff2.reset
-reset => flipflop:ff3.reset
-reset => flipflop:ff4.reset
-reset => flipflop:ff5.reset
-reset => flipflop:ff6.reset
-reset => flipflop:ff7.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
@@ -117,7 +109,6 @@ q[7] <= flipflop:ff7.q
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -125,7 +116,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -133,7 +123,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -141,7 +130,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -149,7 +137,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -157,7 +144,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -165,7 +151,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -173,7 +158,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -202,14 +186,6 @@ load => flipflop:ff4.load
 load => flipflop:ff5.load
 load => flipflop:ff6.load
 load => flipflop:ff7.load
-reset => flipflop:ff0.reset
-reset => flipflop:ff1.reset
-reset => flipflop:ff2.reset
-reset => flipflop:ff3.reset
-reset => flipflop:ff4.reset
-reset => flipflop:ff5.reset
-reset => flipflop:ff6.reset
-reset => flipflop:ff7.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
@@ -224,7 +200,6 @@ q[7] <= flipflop:ff7.q
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -232,7 +207,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -240,7 +214,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -248,7 +221,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -256,7 +228,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -264,7 +235,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -272,7 +242,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -280,7 +249,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -309,14 +277,6 @@ load => flipflop:ff4.load
 load => flipflop:ff5.load
 load => flipflop:ff6.load
 load => flipflop:ff7.load
-reset => flipflop:ff0.reset
-reset => flipflop:ff1.reset
-reset => flipflop:ff2.reset
-reset => flipflop:ff3.reset
-reset => flipflop:ff4.reset
-reset => flipflop:ff5.reset
-reset => flipflop:ff6.reset
-reset => flipflop:ff7.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
@@ -331,7 +291,6 @@ q[7] <= flipflop:ff7.q
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -339,7 +298,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -347,7 +305,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -355,7 +312,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -363,7 +319,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -371,7 +326,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -379,7 +333,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -387,7 +340,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -416,14 +368,6 @@ load => flipflop:ff4.load
 load => flipflop:ff5.load
 load => flipflop:ff6.load
 load => flipflop:ff7.load
-reset => flipflop:ff0.reset
-reset => flipflop:ff1.reset
-reset => flipflop:ff2.reset
-reset => flipflop:ff3.reset
-reset => flipflop:ff4.reset
-reset => flipflop:ff5.reset
-reset => flipflop:ff6.reset
-reset => flipflop:ff7.reset
 q[0] <= flipflop:ff0.q
 q[1] <= flipflop:ff1.q
 q[2] <= flipflop:ff2.q
@@ -438,7 +382,6 @@ q[7] <= flipflop:ff7.q
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -446,7 +389,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -454,7 +396,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -462,7 +403,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -470,7 +410,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -478,7 +417,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -486,7 +424,6 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
@@ -494,43 +431,50 @@ q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 d => q~reg0.DATAIN
 clk => q~reg0.CLK
 load => q~reg0.ENA
-reset => q~reg0.ACLR
 q <= q~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |regfile|mux4_1:mux0
-A[0][0] => Mux7.IN3
-A[0][1] => Mux6.IN3
-A[0][2] => Mux5.IN3
-A[0][3] => Mux4.IN3
-A[0][4] => Mux3.IN3
-A[0][5] => Mux2.IN3
-A[0][6] => Mux1.IN3
-A[0][7] => Mux0.IN3
-A[1][0] => Mux7.IN2
-A[1][1] => Mux6.IN2
-A[1][2] => Mux5.IN2
-A[1][3] => Mux4.IN2
-A[1][4] => Mux3.IN2
-A[1][5] => Mux2.IN2
-A[1][6] => Mux1.IN2
-A[1][7] => Mux0.IN2
-A[2][0] => Mux7.IN1
-A[2][1] => Mux6.IN1
-A[2][2] => Mux5.IN1
-A[2][3] => Mux4.IN1
-A[2][4] => Mux3.IN1
-A[2][5] => Mux2.IN1
-A[2][6] => Mux1.IN1
-A[2][7] => Mux0.IN1
-A[3][0] => Mux7.IN0
-A[3][1] => Mux6.IN0
-A[3][2] => Mux5.IN0
-A[3][3] => Mux4.IN0
-A[3][4] => Mux3.IN0
-A[3][5] => Mux2.IN0
-A[3][6] => Mux1.IN0
-A[3][7] => Mux0.IN0
+A[3][0] => Mux7.IN3
+A[3][1] => Mux6.IN3
+A[3][2] => Mux5.IN3
+A[3][3] => Mux4.IN3
+A[3][4] => Mux3.IN3
+A[3][5] => Mux2.IN3
+A[3][6] => Mux1.IN3
+A[3][7] => Mux0.IN3
+A[2][0] => Mux7.IN2
+A[2][1] => Mux6.IN2
+A[2][2] => Mux5.IN2
+A[2][3] => Mux4.IN2
+A[2][4] => Mux3.IN2
+A[2][5] => Mux2.IN2
+A[2][6] => Mux1.IN2
+A[2][7] => Mux0.IN2
+A[1][0] => Mux7.IN1
+A[1][1] => Mux6.IN1
+A[1][2] => Mux5.IN1
+A[1][3] => Mux4.IN1
+A[1][4] => Mux3.IN1
+A[1][5] => Mux2.IN1
+A[1][6] => Mux1.IN1
+A[1][7] => Mux0.IN1
+A[0][0] => Mux7.IN0
+A[0][1] => Mux6.IN0
+A[0][2] => Mux5.IN0
+A[0][3] => Mux4.IN0
+A[0][4] => Mux3.IN0
+A[0][5] => Mux2.IN0
+A[0][6] => Mux1.IN0
+A[0][7] => Mux0.IN0
+en => Z~0.OUTPUTSELECT
+en => Z~1.OUTPUTSELECT
+en => Z~2.OUTPUTSELECT
+en => Z~3.OUTPUTSELECT
+en => Z~4.OUTPUTSELECT
+en => Z~5.OUTPUTSELECT
+en => Z~6.OUTPUTSELECT
+en => Z~7.OUTPUTSELECT
 S[0] => Mux0.IN5
 S[0] => Mux1.IN5
 S[0] => Mux2.IN5
@@ -547,13 +491,13 @@ S[1] => Mux4.IN4
 S[1] => Mux5.IN4
 S[1] => Mux6.IN4
 S[1] => Mux7.IN4
-Z[0] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
-Z[1] <= Mux6.DB_MAX_OUTPUT_PORT_TYPE
-Z[2] <= Mux5.DB_MAX_OUTPUT_PORT_TYPE
-Z[3] <= Mux4.DB_MAX_OUTPUT_PORT_TYPE
-Z[4] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-Z[5] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-Z[6] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-Z[7] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+Z[0] <= Z~7.DB_MAX_OUTPUT_PORT_TYPE
+Z[1] <= Z~6.DB_MAX_OUTPUT_PORT_TYPE
+Z[2] <= Z~5.DB_MAX_OUTPUT_PORT_TYPE
+Z[3] <= Z~4.DB_MAX_OUTPUT_PORT_TYPE
+Z[4] <= Z~3.DB_MAX_OUTPUT_PORT_TYPE
+Z[5] <= Z~2.DB_MAX_OUTPUT_PORT_TYPE
+Z[6] <= Z~1.DB_MAX_OUTPUT_PORT_TYPE
+Z[7] <= Z~0.DB_MAX_OUTPUT_PORT_TYPE
 
 

@@ -1,20 +1,16 @@
-Fitter Status : Successful - Wed Aug 14 21:44:21 2024
+Fitter Status : Successful - Thu Aug 15 16:33:20 2024
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : circuito
 Top-level Entity Name : circuito
-Family : Cyclone IV GX
-Device : EP4CGX15BF14C6
+Family : Cyclone II
+Device : EP2C5T144C6
 Timing Models : Final
-Total logic elements : 183 / 14,400 ( 1 % )
-    Total combinational functions : 137 / 14,400 ( < 1 % )
-    Dedicated logic registers : 134 / 14,400 ( < 1 % )
-Total registers : 134
-Total pins : 28 / 81 ( 35 % )
+Total logic elements : 179 / 4,608 ( 4 % )
+    Total combinational functions : 134 / 4,608 ( 3 % )
+    Dedicated logic registers : 130 / 4,608 ( 3 % )
+Total registers : 130
+Total pins : 28 / 89 ( 31 % )
 Total virtual pins : 0
-Total memory bits : 0 / 552,960 ( 0 % )
-Embedded Multiplier 9-bit elements : 0
-Total GXB Receiver Channel PCS : 0 / 2 ( 0 % )
-Total GXB Receiver Channel PMA : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PCS : 0 / 2 ( 0 % )
-Total GXB Transmitter Channel PMA : 0 / 2 ( 0 % )
-Total PLLs : 0 / 3 ( 0 % )
+Total memory bits : 0 / 119,808 ( 0 % )
+Embedded Multiplier 9-bit elements : 0 / 26 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

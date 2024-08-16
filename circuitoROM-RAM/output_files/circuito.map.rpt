@@ -1,5 +1,5 @@
 Analysis & Synthesis report for circuito
-Wed Aug 14 21:44:16 2024
+Thu Aug 15 16:33:15 2024
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -43,23 +43,19 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Aug 14 21:44:16 2024           ;
+; Analysis & Synthesis Status        ; Successful - Thu Aug 15 16:33:15 2024           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; circuito                                        ;
 ; Top-level Entity Name              ; circuito                                        ;
-; Family                             ; Cyclone IV GX                                   ;
-; Total logic elements               ; 225                                             ;
-;     Total combinational functions  ; 137                                             ;
-;     Dedicated logic registers      ; 134                                             ;
-; Total registers                    ; 134                                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 219                                             ;
+;     Total combinational functions  ; 134                                             ;
+;     Dedicated logic registers      ; 130                                             ;
+; Total registers                    ; 130                                             ;
 ; Total pins                         ; 28                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total GXB Receiver Channel PCS     ; 0                                               ;
-; Total GXB Receiver Channel PMA     ; 0                                               ;
-; Total GXB Transmitter Channel PCS  ; 0                                               ;
-; Total GXB Transmitter Channel PMA  ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
@@ -70,7 +66,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Top-level entity name                                                      ; circuito           ; circuito           ;
-; Family name                                                                ; Cyclone IV GX      ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -109,14 +105,12 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -124,7 +118,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -156,57 +150,77 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 8      ;
+; Number detected on machine ; 4      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                               ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                        ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
-; RAM16x8.vhd                      ; yes             ; User VHDL File  ; C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/RAM16x8.vhd  ;         ;
-; ROM16x8.vhd                      ; yes             ; User VHDL File  ; C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/ROM16x8.vhd  ;         ;
-; circuito.vhd                     ; yes             ; User VHDL File  ; C:/Users/filho/Documents/GitHub/lab-circuitos-digitais/circuitoROM-RAM/circuito.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                              ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                       ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
+; RAM16x8.vhd                      ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/RAM16x8.vhd  ;         ;
+; ROM16x8.vhd                      ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/ROM16x8.vhd  ;         ;
+; circuito.vhd                     ; yes             ; User VHDL File  ; /home/murilo/Documentos/GitHub/lab-circuitos-digitais/circuitoROM-RAM/circuito.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary ;
-+--------------------------+------------------+
-; Resource                 ; Usage            ;
-+--------------------------+------------------+
-; I/O pins                 ; 28               ;
-; DSP block 9-bit elements ; 0                ;
-; Maximum fan-out node     ; clock~input      ;
-; Maximum fan-out          ; 134              ;
-; Total fan-out            ; 895              ;
-; Average fan-out          ; 2.74             ;
-+--------------------------+------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 219   ;
+;                                             ;       ;
+; Total combinational functions               ; 134   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 77    ;
+;     -- 3 input functions                    ; 19    ;
+;     -- <=2 input functions                  ; 38    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 104   ;
+;     -- arithmetic mode                      ; 30    ;
+;                                             ;       ;
+; Total registers                             ; 130   ;
+;     -- Dedicated logic registers            ; 130   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 28    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clock ;
+; Maximum fan-out                             ; 130   ;
+; Total fan-out                               ; 843   ;
+; Average fan-out                             ; 2.89  ;
++---------------------------------------------+-------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                            ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------+--------------+
-; |circuito                  ; 137 (49)          ; 134 (40)     ; 0           ; 0            ; 0       ; 0         ; 0         ; 28   ; 0            ; |circuito                  ; work         ;
-;    |RAM16x8:ram_inst|      ; 83 (83)           ; 89 (89)      ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |circuito|RAM16x8:ram_inst ; work         ;
-;    |ROM16x8:rom_inst|      ; 5 (5)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |circuito|ROM16x8:rom_inst ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+-----------+------+--------------+----------------------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name        ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
+; |circuito                  ; 134 (48)          ; 130 (36)     ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |circuito                  ; work         ;
+;    |RAM16x8:ram_inst|      ; 82 (82)           ; 89 (89)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |circuito|RAM16x8:ram_inst ; work         ;
+;    |ROM16x8:rom_inst|      ; 4 (4)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |circuito|ROM16x8:rom_inst ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+--------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                             ;
-+---------------------------------------+----------------------------------------+
-; Register name                         ; Reason for Removal                     ;
-+---------------------------------------+----------------------------------------+
-; ROM16x8:rom_inst|data_output[5..7]    ; Stuck at GND due to stuck port data_in ;
-; RAM16x8:ram_inst|data_output[5..7]    ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 6 ;                                        ;
-+---------------------------------------+----------------------------------------+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; ROM16x8:rom_inst|data_output[5..7]     ; Stuck at GND due to stuck port data_in ;
+; RAM16x8:ram_inst|data_output[5..7]     ; Stuck at GND due to stuck port data_in ;
+; address_rom[0]                         ; Merged with address_ram[0]             ;
+; address_rom[1]                         ; Merged with address_ram[1]             ;
+; address_rom[2]                         ; Merged with address_ram[2]             ;
+; address_rom[3]                         ; Merged with address_ram[3]             ;
+; Total Number of Removed Registers = 10 ;                                        ;
++----------------------------------------+----------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------+
@@ -224,12 +238,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 134   ;
+; Total registers                              ; 130   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 133   ;
+; Number of registers using Clock Enable       ; 129   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -249,13 +263,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Aug 14 21:44:15 2024
+    Info: Processing started: Thu Aug 15 16:33:13 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off circuito -c circuito
 Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 2 design units, including 1 entities, in source file ram16x8.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file RAM16x8.vhd
     Info (12022): Found design unit 1: RAM16x8-behav
     Info (12023): Found entity 1: RAM16x8
-Info (12021): Found 2 design units, including 1 entities, in source file rom16x8.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file ROM16x8.vhd
     Info (12022): Found design unit 1: ROM16x8-behav
     Info (12023): Found entity 1: ROM16x8
 Info (12021): Found 2 design units, including 1 entities, in source file circuito.vhd
@@ -275,17 +289,16 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rom_data_output[5]" is stuck at GND
     Warning (13410): Pin "rom_data_output[6]" is stuck at GND
     Warning (13410): Pin "rom_data_output[7]" is stuck at GND
-Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 253 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 248 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 4 input pins
     Info (21059): Implemented 24 output pins
-    Info (21061): Implemented 225 logic cells
+    Info (21061): Implemented 220 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4675 megabytes
-    Info: Processing ended: Wed Aug 14 21:44:16 2024
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 629 megabytes
+    Info: Processing ended: Thu Aug 15 16:33:15 2024
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
